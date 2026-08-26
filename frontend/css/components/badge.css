@@ -45,21 +45,79 @@
   border-color: var(--color-status-warning-border);
 }
 
-.badge--purple {
-  background-color: var(--color-accent-purple-subtle);
-  color: var(--color-accent-purple);
+/* ==========================================================================
+   MODERN SAAS GLOWING PULSE BADGE (Clean Micro-Typography + Live Radar Dot)
+   ========================================================================== */
+
+.badge--saas-pulse {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 9999px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  font-size: 0.75rem;
+  font-weight: 700;
+  font-family: var(--font-family-heading);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #1E293B;
+  transition: all 0.2s ease;
 }
 
-.badge--outline {
-  background-color: transparent;
-  border-color: var(--color-border-strong);
-  color: var(--color-text-secondary);
+.badge--saas-pulse:hover {
+  border-color: rgba(253, 129, 39, 0.4);
+  box-shadow: 0 4px 14px rgba(253, 129, 39, 0.14);
+  transform: translateY(-1px);
 }
 
-/* Status Indicator Dot */
-.badge__dot {
-  width: 6px;
-  height: 6px;
-  border-radius: var(--radius-full);
-  background-color: currentColor;
+/* Radar Live Pulse Indicator Dot */
+.badge-pulse-dot {
+  position: relative;
+  display: inline-flex;
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+}
+
+.badge-pulse-dot__ping {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background-color: #10B981;
+  opacity: 0.75;
+  animation: radar-ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.badge-pulse-dot__core {
+  position: relative;
+  display: inline-flex;
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background-color: #10B981;
+}
+
+/* Amber Variant */
+.badge--saas-pulse--amber .badge-pulse-dot__ping,
+.badge--saas-pulse--amber .badge-pulse-dot__core {
+  background-color: #FD8127;
+}
+
+@keyframes radar-ping {
+  75%, 100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  .badge-pulse-dot__ping {
+    animation: none;
+  }
 }
