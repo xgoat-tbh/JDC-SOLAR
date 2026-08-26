@@ -8,10 +8,11 @@ import { createElement, qs } from '../core/dom.js';
 class ToastManager {
   constructor() {
     this.container = null;
-    this.ensureContainer();
   }
 
   ensureContainer() {
+    if (typeof document === 'undefined' || !document.body) return null;
+    
     this.container = qs('.toast-container');
     if (!this.container) {
       this.container = createElement('div', {
@@ -21,17 +22,19 @@ class ToastManager {
       });
       document.body.appendChild(this.container);
     }
+    return this.container;
   }
 
   show(message, type = 'success', duration = 4500) {
-    this.ensureContainer();
+    const container = this.ensureContainer();
+    if (!container) return;
 
     const toast = createElement('div', {
       className: `toast toast--${type}`,
       role: 'status'
     }, [message]);
 
-    this.container.appendChild(toast);
+    container.appendChild(toast);
 
     setTimeout(() => {
       toast.style.opacity = '0';

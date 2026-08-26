@@ -7,7 +7,7 @@ import { qsa } from '../core/dom.js';
 
 export function initScrollAnimations() {
   // Respect user preference for reduced motion
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     const reveals = qsa('[data-reveal]');
     reveals.forEach(el => el.classList.add('is-revealed'));
     return;
@@ -16,10 +16,13 @@ export function initScrollAnimations() {
   const revealElements = qsa('[data-reveal]');
   if (!revealElements.length) return;
 
+  // Activate animation classes safely
+  document.documentElement.classList.add('js-animations-active');
+
   const observerOptions = {
     root: null,
-    rootMargin: '0px 0px -40px 0px',
-    threshold: 0.12
+    rootMargin: '0px 0px 50px 0px',
+    threshold: 0.05
   };
 
   const observer = new IntersectionObserver((entries, obs) => {

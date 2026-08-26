@@ -23,6 +23,10 @@ export function qsa(selector, scope = document) {
   return Array.from(scope.querySelectorAll(selector));
 }
 
+// Aliases for convenience
+export const $ = qs;
+export const $$ = qsa;
+
 /**
  * Sanitize string to prevent XSS injection
  * @param {string} str 
