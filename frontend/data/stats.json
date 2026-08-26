@@ -1,0 +1,42 @@
+{
+  "milestones": [
+    {
+      "id": "projects-completed",
+      "value": 500,
+      "suffix": "+",
+      "label": "Solar Installations",
+      "description": "Completed across residential, commercial & industrial sectors"
+    },
+    {
+      "id": "capacity-installed",
+      "value": 25,
+      "suffix": "+ MW",
+      "label": "Total Capacity Installed",
+      "description": "Clean solar power actively generating across Eastern India"
+    },
+    {
+      "id": "bill-reduction",
+      "value": 90,
+      "suffix": "%",
+      "label": "Avg. Bill Reduction",
+      "description": "Average electricity cost reduction achieved for our clients"
+    },
+    {
+      "id": "co2-offset",
+      "value": 25000,
+      "suffix": "+ Tons",
+      "label": "Lifetime CO₂ Offset",
+      "description": "Equivalent to planting over 580,000 mature trees"
+    }
+  ],
+  "corporateInfo": {
+    "brandName": "JDC Solar",
+    "parentEntity": "Jagatdhan Commodities Pvt. Ltd.",
+    "establishedYear": 2018,
+    "headquarters": "A-21, 2nd Phase, Industrial Area, Adityapur, Jamshedpur, Jharkhand 832109",
+    "primaryPhone": "+91 9234611112",
+    "whatsappNumber": "+91 9288381112",
+    "salesEmail": "sales@jdcsolar.com",
+    "infoEmail": "info@jdcsolar.com"
+  }
+}

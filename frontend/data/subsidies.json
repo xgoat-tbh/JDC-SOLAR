@@ -1,0 +1,35 @@
+{
+  "schemeName": "PM Surya Ghar: Muft Bijli Yojana",
+  "governingBody": "Ministry of New and Renewable Energy (MNRE), Government of India",
+  "lastUpdated": "2026-08-01",
+  "residentialSlabs": [
+    {
+      "minKw": 1.0,
+      "maxKw": 1.0,
+      "fixedSubsidy": 30000,
+      "description": "₹30,000 fixed central financial assistance for 1 kW rooftop solar system"
+    },
+    {
+      "minKw": 2.0,
+      "maxKw": 2.0,
+      "fixedSubsidy": 60000,
+      "description": "₹60,000 fixed central financial assistance for 2 kW rooftop solar system"
+    },
+    {
+      "minKw": 3.0,
+      "maxKw": 10.0,
+      "fixedSubsidy": 78000,
+      "description": "₹78,000 fixed maximum central subsidy for systems between 3 kW and 10 kW capacity"
+    }
+  ],
+  "rwaGroupHousing": {
+    "subsidyPerKw": 18000,
+    "maxCapKw": 500,
+    "description": "₹18,000 per kW for Group Housing Societies and Residential Welfare Associations (up to 500 kW)"
+  },
+  "commercialIndustrial": {
+    "subsidyAmount": 0,
+    "taxBenefit": "Section 32 Accelerated Depreciation (40% Year 1 tax shield)",
+    "description": "Zero direct central subsidy; eligible for 40% accelerated tax depreciation under Indian Income Tax Act"
+  }
+}

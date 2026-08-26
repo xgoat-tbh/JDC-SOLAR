@@ -1,0 +1,92 @@
+/**
+ * JDC SOLAR 2.0 - MODERN CSS RESET
+ * Standards-compliant, lightweight reset ensuring consistent cross-browser baseline
+ */
+
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 2. Prevent font size inflation on mobile Safari */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* 3. Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: var(--line-height-body, 1.65);
+  font-family: var(--font-family-body, system-ui, sans-serif);
+  font-size: var(--font-size-body, 1rem);
+  color: var(--color-text-primary, #1E293B);
+  background-color: var(--color-bg-base, #FFFFFF);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* 4. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 5. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+  color: inherit;
+  border: none;
+  background: none;
+}
+
+/* 6. Remove list styles on ul, ol elements with a list role */
+ul[role='list'], ol[role='list'] {
+  list-style: none;
+}
+
+/* 7. Balance headings */
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+  font-family: var(--font-family-heading, system-ui, sans-serif);
+  color: var(--color-text-headings, #0F172A);
+  font-weight: var(--font-weight-bold, 700);
+}
+
+p, li, figcaption {
+  text-wrap: pretty;
+}
+
+/* 8. Accessible focus styles */
+:focus-visible {
+  outline: 2px solid var(--color-brand-accent, #FD8127);
+  outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* 9. Reset anchor defaults */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 10. Table reset */
+table {
+  border-collapse: collapse;
+  width: 100%;
+}

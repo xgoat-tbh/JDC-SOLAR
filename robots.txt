@@ -1,0 +1,16 @@
+# ==============================================================================
+# JDC SOLAR 2.0 - ROBOTS.TXT
+# ==============================================================================
+User-agent: *
+Allow: /
+
+# Exclude Development, Test, and Internal Directories
+Disallow: /tests/
+Disallow: /research/
+Disallow: /docs/
+Disallow: /scripts/
+Disallow: /scratch/
+Disallow: /tmp/
+
+# Canonical HTTPS XML Sitemap Directive
+Sitemap: https://jdcsolar.com/sitemap.xml

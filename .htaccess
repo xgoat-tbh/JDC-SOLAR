@@ -1,0 +1,120 @@
+# ==============================================================================
+# JDC SOLAR 2.0 - PRODUCTION HOSTINGER APACHE CONFIGURATION
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. SECURITY HEADERS & SERVER HARDENING
+# ------------------------------------------------------------------------------
+<IfModule mod_headers.c>
+    # Enforce HTTP Strict Transport Security (HSTS) - 1 Year Preload
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+
+    # Prevent MIME-Sniffing Execution
+    Header always set X-Content-Type-Options "nosniff"
+
+    # Prevent Clickjacking & Frame Overlays
+    Header always set X-Frame-Options "SAMEORIGIN"
+
+    # Referrer Information Protection
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+    # Restrict Unused Browser Device Features
+    Header always set Permissions-Policy "geolocation=(), camera=(), microphone=(), payment=()"
+
+    # Modern Content Security Policy (CSP)
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://wa.me; frame-ancestors 'self';"
+
+    # Unset PHP/Server Signature Exposure
+    Header unset X-Powered-By
+</IfModule>
+
+# Disable Directory Browsing
+Options -Indexes
+
+# Block Access to Hidden & Dot Files
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Block Direct Web Access to Source & Test Directories
+RedirectMatch 404 ^/(research|tests|docs|scripts|scratch)/
+
+# ------------------------------------------------------------------------------
+# 2. CANONICAL HTTPS, CLEAN URLS & 301 REDIRECTS
+# ------------------------------------------------------------------------------
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Force HTTPS & Strip WWW Prefix
+    RewriteCond %{HTTPS} off [OR]
+    RewriteCond %{HTTP_HOST} ^www\.jdcsolar\.com$ [NC]
+    RewriteRule ^(.*)$ https://jdcsolar.com/$1 [L,R=301]
+
+    # Legacy 301 Permanent Redirects
+    RewriteRule ^about-us/?$ /about/ [R=301,L]
+    RewriteRule ^contact-us/?$ /contact/ [R=301,L]
+    RewriteRule ^project/?$ /projects/ [R=301,L]
+    RewriteRule ^our-projects/?$ /projects/ [R=301,L]
+    RewriteRule ^calculator/?$ /solar-calculator/ [R=301,L]
+    RewriteRule ^detail-service/?$ /services/ [R=301,L]
+    RewriteRule ^team/?$ /about/ [R=301,L]
+    RewriteRule ^elementor-9/?$ / [R=301,L]
+    RewriteRule ^residential-solar/?$ /services/residential-solar/ [R=301,L]
+    RewriteRule ^commercial-solar/?$ /services/commercial-solar/ [R=301,L]
+    RewriteRule ^industrial-solar/?$ /services/commercial-solar/ [R=301,L]
+
+    # Strip Legacy Royal Elementor Template Query Strings
+    RewriteCond %{QUERY_STRING} ^wpr_templates= [NC]
+    RewriteRule ^(.*)$ /? [R=301,L]
+
+    # Clean URLs: Serve .html files without displaying extension
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME}\.html -f
+    RewriteRule ^(.*)$ $1.html [L]
+
+    # Custom 404 Handler
+    ErrorDocument 404 /404.html
+</IfModule>
+
+# ------------------------------------------------------------------------------
+# 3. GZIP & BROTLI COMPRESSION (mod_deflate)
+# ------------------------------------------------------------------------------
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
+    AddOutputFilterByType DEFLATE text/javascript application/javascript application/x-javascript
+    AddOutputFilterByType DEFLATE application/json application/xml application/xhtml+xml
+    AddOutputFilterByType DEFLATE image/svg+xml font/woff2 font/woff
+</IfModule>
+
+# ------------------------------------------------------------------------------
+# 4. BROWSER CACHING HEADERS (mod_expires)
+# ------------------------------------------------------------------------------
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresDefault "access plus 1 month"
+
+    # HTML Documents - Cache 1 Hour (Fast update propagation)
+    ExpiresByType text/html "access plus 1 hour"
+
+    # CSS & JavaScript - Cache 1 Month
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+
+    # Webfonts (Immutable WOFF2) - Cache 1 Year
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+
+    # Media & Images (WebP, AVIF, PNG, JPG, SVG) - Cache 6 Months
+    ExpiresByType image/webp "access plus 6 months"
+    ExpiresByType image/avif "access plus 6 months"
+    ExpiresByType image/jpeg "access plus 6 months"
+    ExpiresByType image/png "access plus 6 months"
+    ExpiresByType image/svg+xml "access plus 6 months"
+    ExpiresByType image/x-icon "access plus 1 year"
+
+    # Data Schemas - Cache 1 Day
+    ExpiresByType application/json "access plus 1 day"
+</IfModule>

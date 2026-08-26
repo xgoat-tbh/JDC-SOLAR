@@ -1,0 +1,24 @@
+{
+  "name": "jdc-solar-2.0",
+  "version": "2.0.0",
+  "description": "JDC Solar 2.0 - High-Performance Standards-Based Solar EPC Platform",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/serve.js",
+    "test": "node tests/calculator.test.js",
+    "test:all": "node tests/runAllTests.js",
+    "build": "node scripts/build.js",
+    "lint:html": "node scripts/validateHtml.js"
+  },
+  "keywords": [
+    "solar",
+    "epc",
+    "pm-surya-ghar",
+    "solar-calculator",
+    "jharkhand",
+    "jdc-solar"
+  ],
+  "author": "JDC Solar / Jagatdhan Commodities Pvt. Ltd.",
+  "license": "UNLICENSED",
+  "private": true
+}

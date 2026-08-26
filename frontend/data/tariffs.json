@@ -1,0 +1,151 @@
+{
+  "lastUpdated": "2026-08-01",
+  "currency": "INR",
+  "unit": "kWh",
+  "states": {
+    "Jharkhand": {
+      "name": "Jharkhand",
+      "discom": "JBVNL / TSUISL",
+      "domesticTariff": 6.50,
+      "commercialTariff": 8.50,
+      "industrialTariff": 8.00,
+      "solarIrradianceHours": 4.5,
+      "isPrimaryHub": true
+    },
+    "Bihar": {
+      "name": "Bihar",
+      "discom": "NBPDCL / SBPDCL",
+      "domesticTariff": 7.00,
+      "commercialTariff": 8.80,
+      "industrialTariff": 8.20,
+      "solarIrradianceHours": 4.5,
+      "isPrimaryHub": false
+    },
+    "West Bengal": {
+      "name": "West Bengal",
+      "discom": "WBSEDCL / CESC",
+      "domesticTariff": 7.20,
+      "commercialTariff": 9.20,
+      "industrialTariff": 8.50,
+      "solarIrradianceHours": 4.2,
+      "isPrimaryHub": false
+    },
+    "Odisha": {
+      "name": "Odisha",
+      "discom": "TPCODL / TPNODL / TPSODL",
+      "domesticTariff": 6.00,
+      "commercialTariff": 8.00,
+      "industrialTariff": 7.50,
+      "solarIrradianceHours": 4.6,
+      "isPrimaryHub": false
+    },
+    "Uttar Pradesh": {
+      "name": "Uttar Pradesh",
+      "discom": "UPPCL",
+      "domesticTariff": 7.00,
+      "commercialTariff": 9.00,
+      "industrialTariff": 8.40,
+      "solarIrradianceHours": 4.5,
+      "isPrimaryHub": false
+    },
+    "Delhi": {
+      "name": "Delhi",
+      "discom": "BSES Rajdhani / Yamuna / TPDDL",
+      "domesticTariff": 6.50,
+      "commercialTariff": 9.50,
+      "industrialTariff": 8.80,
+      "solarIrradianceHours": 4.6,
+      "isPrimaryHub": false
+    },
+    "Maharashtra": {
+      "name": "Maharashtra",
+      "discom": "MSEDCL / Adani Electricity / Tata Power",
+      "domesticTariff": 8.50,
+      "commercialTariff": 11.50,
+      "industrialTariff": 10.00,
+      "solarIrradianceHours": 4.8,
+      "isPrimaryHub": false
+    },
+    "Rajasthan": {
+      "name": "Rajasthan",
+      "discom": "JVVNL / AVVNL / JdVVNL",
+      "domesticTariff": 7.50,
+      "commercialTariff": 9.50,
+      "industrialTariff": 8.50,
+      "solarIrradianceHours": 5.2,
+      "isPrimaryHub": false
+    },
+    "Gujarat": {
+      "name": "Gujarat",
+      "discom": "DGVCL / MGVCL / PGVCL / UGVCL",
+      "domesticTariff": 6.20,
+      "commercialTariff": 8.20,
+      "industrialTariff": 7.80,
+      "solarIrradianceHours": 5.0,
+      "isPrimaryHub": false
+    },
+    "Karnataka": {
+      "name": "Karnataka",
+      "discom": "BESCOM / HESCOM / MESCOM",
+      "domesticTariff": 7.80,
+      "commercialTariff": 9.80,
+      "industrialTariff": 8.60,
+      "solarIrradianceHours": 4.7,
+      "isPrimaryHub": false
+    },
+    "Tamil Nadu": {
+      "name": "Tamil Nadu",
+      "discom": "TANGEDCO",
+      "domesticTariff": 6.80,
+      "commercialTariff": 9.20,
+      "industrialTariff": 8.20,
+      "solarIrradianceHours": 4.8,
+      "isPrimaryHub": false
+    },
+    "Telangana": {
+      "name": "Telangana",
+      "discom": "TSSPDCL / TSNPDCL",
+      "domesticTariff": 7.20,
+      "commercialTariff": 9.60,
+      "industrialTariff": 8.40,
+      "solarIrradianceHours": 4.8,
+      "isPrimaryHub": false
+    },
+    "Andhra Pradesh": {
+      "name": "Andhra Pradesh",
+      "discom": "APCPDCL / APEPDCL / APSPDCL",
+      "domesticTariff": 7.00,
+      "commercialTariff": 9.40,
+      "industrialTariff": 8.20,
+      "solarIrradianceHours": 4.8,
+      "isPrimaryHub": false
+    },
+    "Chhattisgarh": {
+      "name": "Chhattisgarh",
+      "discom": "CSPDCL",
+      "domesticTariff": 6.20,
+      "commercialTariff": 8.40,
+      "industrialTariff": 7.60,
+      "solarIrradianceHours": 4.6,
+      "isPrimaryHub": false
+    },
+    "Assam": {
+      "name": "Assam",
+      "discom": "APDCL",
+      "domesticTariff": 7.20,
+      "commercialTariff": 9.00,
+      "industrialTariff": 8.00,
+      "solarIrradianceHours": 4.0,
+      "isPrimaryHub": false
+    },
+    "Other States": {
+      "name": "Other States",
+      "discom": "Generic DISCOM Benchmark",
+      "domesticTariff": 7.00,
+      "commercialTariff": 9.00,
+      "industrialTariff": 8.20,
+      "solarIrradianceHours": 4.5,
+      "isPrimaryHub": false
+    }
+  }
+}
