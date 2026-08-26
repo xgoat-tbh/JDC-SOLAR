@@ -20,7 +20,7 @@
       "inverterBrand": "Growatt 50kW On-Grid String Inverters (5 Units)",
       "gridConnection": "High Tension (HT) 11kV Bidirectional Net-Metering",
       "description": "High-capacity turnkey rooftop solar installation for a tier-1 automotive manufacturing plant. Engineered with non-penetrative standing seam roof clamps and high-tension grid evacuation to eliminate peak industrial tariffs.",
-      "image": "/assets/images/projects/project-adityapur-250kw.svg",
+      "image": "/assets/images/projects/project-adityapur-250kw.jpg",
       "featured": true
     },
     {
@@ -43,7 +43,7 @@
       "inverterBrand": "Havells 25kW On-Grid Inverters (2 Units)",
       "gridConnection": "Low Tension (LT) 415V with Automatic DG Synchronization",
       "description": "Uninterrupted clean solar power engineered for 24/7 healthcare diagnostics and patient care. Features reverse-power DG synchronization to slash diesel fuel consumption during grid outages.",
-      "image": "/assets/images/projects/project-bistupur-50kw.svg",
+      "image": "/assets/images/projects/project-bistupur-50kw.jpg",
       "featured": true
     },
     {
@@ -66,7 +66,7 @@
       "inverterBrand": "Luminous 5kVA Hybrid Solar Inverter",
       "gridConnection": "JBVNL Single-Phase Net-Meter with ₹78,000 Subsidy",
       "description": "Turnkey residential installation slashing household electricity bills by over 90%. JDC Solar managed the full National Portal PM Surya Ghar subsidy application and JBVNL net-metering commissioning.",
-      "image": "/assets/images/projects/project-sakchi-15kw.svg",
+      "image": "/assets/images/projects/project-sakchi-villa.jpg",
       "featured": true
     },
     {
@@ -89,7 +89,7 @@
       "inverterBrand": "Sungrow 50kW Inverters (2 Units)",
       "gridConnection": "Low Tension (LT) 415V Three-Phase Net-Metering",
       "description": "Multi-tenant retail and commercial complex solarization designed to power central air conditioning and common area lighting, achieving 40% Section 32 tax shield benefits in Year 1.",
-      "image": "/assets/images/projects/project-ranchi-30kw.svg",
+      "image": "/assets/images/projects/project-sakchi-plaza.jpg",
       "featured": false
     },
     {
@@ -112,7 +112,7 @@
       "inverterBrand": "Growatt 50kW Inverters (3 Units)",
       "gridConnection": "High Tension (HT) 11kV Net-Metering",
       "description": "Custom curved-roof solar installation over industrial cold storage sheds, optimizing power output for continuous heavy refrigeration compressors.",
-      "image": "/assets/images/projects/project-dhanbad-100kw.svg",
+      "image": "/assets/images/projects/project-dhanbad-storage.jpg",
       "featured": false
     },
     {
@@ -135,7 +135,7 @@
       "inverterBrand": "Central Inverter Station 1000kW with SCADA",
       "gridConnection": "33kV Transmission Grid Evacuation & Dedicated Switchyard",
       "description": "Megawatt-scale ground-mounted solar park spanning 4.2 acres with automated pile-rammed tracker structures and cloud SCADA generation telemetry.",
-      "image": "/assets/images/projects/project-bokaro-park.svg",
+      "image": "/assets/images/projects/project-bokaro-park.jpg",
       "featured": false
     },
     {
@@ -158,7 +158,7 @@
       "inverterBrand": "Internal MPPT Intelligent Controller",
       "gridConnection": "Off-Grid Autonomous LiFePO4 Battery Storage",
       "description": "Turnkey supply and erection of 120 hot-dip galvanized octagonal poles with intelligent All-in-One solar street luminaires operating automatically dusk-to-dawn.",
-      "image": "/assets/images/projects/project-chaibasa-lights.svg",
+      "image": "/assets/images/projects/project-jamshedpur-lights.jpg",
       "featured": false
     },
     {
@@ -181,7 +181,7 @@
       "inverterBrand": "Growatt 25kW Inverters (3 Units)",
       "gridConnection": "JBVNL 415V Three-Phase Net-Metering",
       "description": "Public sector tender execution under state renewable guidelines featuring 100% DCR modules and a 5-year Comprehensive Maintenance Contract (CMC).",
-      "image": "/assets/images/projects/project-jamshedpur-school.svg",
+      "image": "/assets/images/projects/project-ranchi-gov.jpg",
       "featured": false
     }
   ]
