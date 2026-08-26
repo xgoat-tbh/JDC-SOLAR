@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "node scripts/serve.js",
-    "test": "node tests/calculator.test.js",
-    "test:all": "node tests/runAllTests.js",
+    "test": "node tests/runAllTests.js",
+    "test:calculator": "node tests/calculator.test.js",
+    "test:security": "node tests/security/security.test.js",
     "build": "node scripts/build.js",
     "lint:html": "node scripts/validateHtml.js"
   },
