@@ -13,6 +13,7 @@ import { initForms } from './components/formHandler.js';
 import { initCalculator } from './components/calculatorUI.js';
 import { initProjectExplorer } from './components/projectExplorer.js';
 import { initResourceExplorer } from './components/resourceExplorer.js';
+import { initScrollAnimations } from './components/scrollAnimations.js';
 
 /**
  * Initialize global components active across all pages
@@ -57,6 +58,9 @@ function initGlobalComponents() {
 
   // 9. Resources & Educational Content Explorer (if present on page)
   initResourceExplorer();
+
+  // 10. Scroll Reveal Animations & Micro-Interactions
+  initScrollAnimations();
 }
 
 /**

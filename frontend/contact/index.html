@@ -211,20 +211,20 @@
     </section>
 
     <!-- Section 2: 2-Column Contact Experience -->
-    <section class="section section--alt" style="padding-top: 2rem;">
+    <section class="section section--alt bg-tech-grid" style="padding-top: 2rem;">
       <div class="container">
         
         <div class="grid grid--2col" style="gap: 2.5rem; align-items: flex-start;">
           
           <!-- Left Column: Verified Channels & Headquarters -->
-          <div>
+          <div data-reveal="fade-up">
             <span class="badge badge--accent" style="margin-bottom: 0.75rem;">DIRECT CONTACT CHANNELS</span>
             <h2 style="font-size: 1.6rem; margin-bottom: 1.5rem;">Reach Our Solar Engineering Desk</h2>
             
             <div style="display: flex; flex-direction: column; gap: 1.25rem;">
               
               <!-- Office Location -->
-              <div class="card" style="display: flex; gap: 1.25rem; align-items: flex-start;">
+              <div class="card card--interactive" style="display: flex; gap: 1.25rem; align-items: flex-start;">
                 <div style="font-size: 1.5rem; color: var(--color-brand-accent);">
                   <svg class="icon" style="width: 28px; height: 28px;"><use href="/assets/icons/sprite.svg#icon-location"></use></svg>
                 </div>
@@ -240,7 +240,7 @@
               </div>
 
               <!-- Phone Support -->
-              <div class="card" style="display: flex; gap: 1.25rem; align-items: flex-start;">
+              <div class="card card--interactive" style="display: flex; gap: 1.25rem; align-items: flex-start;">
                 <div style="font-size: 1.5rem; color: var(--color-brand-accent);">
                   <svg class="icon" style="width: 28px; height: 28px;"><use href="/assets/icons/sprite.svg#icon-phone"></use></svg>
                 </div>
@@ -252,7 +252,7 @@
               </div>
 
               <!-- WhatsApp Engineering Desk -->
-              <div class="card" style="display: flex; gap: 1.25rem; align-items: flex-start;">
+              <div class="card card--interactive" style="display: flex; gap: 1.25rem; align-items: flex-start;">
                 <div style="font-size: 1.5rem; color: #25D366;">
                   <svg class="icon" style="width: 28px; height: 28px;"><use href="/assets/icons/sprite.svg#icon-whatsapp"></use></svg>
                 </div>
@@ -266,7 +266,7 @@
               </div>
 
               <!-- Email Enquiries -->
-              <div class="card" style="display: flex; gap: 1.25rem; align-items: flex-start;">
+              <div class="card card--interactive" style="display: flex; gap: 1.25rem; align-items: flex-start;">
                 <div style="font-size: 1.5rem; color: var(--color-brand-accent);">
                   <svg class="icon" style="width: 28px; height: 28px;"><use href="/assets/icons/sprite.svg#icon-email"></use></svg>
                 </div>
@@ -281,8 +281,8 @@
           </div>
 
           <!-- Right Column: Accessible Consultation & Site Survey Form -->
-          <div style="background: var(--color-bg-surface); border: 1px solid var(--color-border-default); border-radius: var(--radius-xl); padding: var(--space-2xl); box-shadow: var(--shadow-md);">
-            <span class="badge badge--primary" style="margin-bottom: 0.5rem;">FREE ROOFTOP SURVEY</span>
+          <div class="card--glass" style="padding: var(--space-2xl);" data-reveal="zoom">
+            <span class="badge badge--primary badge--pulse" style="margin-bottom: 0.5rem;">FREE ROOFTOP SURVEY</span>
             <h2 style="font-size: 1.4rem; margin-bottom: 0.5rem;">Book an On-Site Rooftop Inspection</h2>
             <p class="text-small text-muted" style="margin-bottom: 1.5rem;">
               Fill out the details below. Our technical team in Adityapur will inspect your roof topography, conduct a 3D shadow analysis, and prepare an exact proposal.
@@ -292,7 +292,7 @@
             <div class="form-success-banner hidden" style="background: #F0FDF4; border: 1px solid #86EFAC; border-radius: var(--radius-lg); padding: var(--space-xl); text-align: center; margin-bottom: 1.5rem;">
               <svg class="icon" style="width: 48px; height: 48px; color: #15803D; margin-bottom: 0.75rem;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
               <h3 style="color: #15803D; margin-bottom: 0.5rem;">Thank You! Your Request Has Been Received.</h3>
-              <p class="text-small" style="color: #166534; line-height: 1.5;">Our engineering team will call you within 2 business hours to schedule your free site survey.</p>
+              <p class="text-small" style="color: #166534; line-height: 1.5;">Our engineering team will connect via WhatsApp and call you within 2 business hours.</p>
             </div>
 
             <!-- Contact Form -->
@@ -307,36 +307,28 @@
                 <span id="contact-name-error" class="form-error-msg hidden">Please enter your full name.</span>
               </div>
 
-              <div class="grid grid--2col">
-                <div class="form-group">
-                  <label class="form-label" for="contact-phone">Mobile Phone (10 Digits) <span class="required-mark">*</span></label>
-                  <input type="tel" id="contact-phone" name="phone" class="form-control" placeholder="e.g. 9876543210" autocomplete="tel" required>
-                  <span id="contact-phone-error" class="form-error-msg hidden">Please enter a valid 10-digit Indian phone number.</span>
-                </div>
-                <div class="form-group">
-                  <label class="form-label" for="contact-email">Email Address <span class="text-muted">(Optional)</span></label>
-                  <input type="email" id="contact-email" name="email" class="form-control" placeholder="e.g. rajesh@example.com" autocomplete="email">
-                  <span id="contact-email-error" class="form-error-msg hidden">Please enter a valid email address.</span>
-                </div>
+              <div class="form-group">
+                <label class="form-label" for="contact-phone">Mobile Phone (10 Digits) <span class="required-mark">*</span></label>
+                <input type="tel" id="contact-phone" name="phone" class="form-control" placeholder="e.g. 9876543210" autocomplete="tel" required>
+                <span id="contact-phone-error" class="form-error-msg hidden">Please enter a valid 10-digit Indian phone number.</span>
               </div>
 
-              <div class="grid grid--2col">
-                <div class="form-group">
-                  <label class="form-label" for="contact-service">Solar Installation Type <span class="required-mark">*</span></label>
-                  <select id="contact-service" name="service" class="form-select" required>
-                    <option value="residential" selected>Residential Rooftop Solar</option>
-                    <option value="commercial">Commercial & Industrial Solar</option>
-                    <option value="institutional">Institutional Solar (Hospital/School)</option>
-                    <option value="government">Government & Tender EPC</option>
-                    <option value="street-lights">Solar Street Lighting</option>
-                    <option value="solar-parks">Utility Solar Parks</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label class="form-label" for="contact-city">City / Pincode in Jharkhand <span class="required-mark">*</span></label>
-                  <input type="text" id="contact-city" name="city" class="form-control" placeholder="e.g. Jamshedpur, 831001" autocomplete="address-level2" required>
-                  <span id="contact-city-error" class="form-error-msg hidden">Please enter your city or pincode.</span>
-                </div>
+              <div class="form-group">
+                <label class="form-label" for="contact-service">Solar Installation Type <span class="required-mark">*</span></label>
+                <select id="contact-service" name="service" class="form-select" required>
+                  <option value="Residential Rooftop Solar" selected>Residential Rooftop Solar</option>
+                  <option value="Commercial & Industrial Solar">Commercial & Industrial Solar</option>
+                  <option value="Institutional Solar (Hospital/School)">Institutional Solar (Hospital/School)</option>
+                  <option value="Government & Tender EPC">Government & Tender EPC</option>
+                  <option value="Solar Street Lighting">Solar Street Lighting</option>
+                  <option value="Utility Solar Parks">Utility Solar Parks</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="contact-city">City / Pincode in Jharkhand <span class="required-mark">*</span></label>
+                <input type="text" id="contact-city" name="city" class="form-control" placeholder="e.g. Jamshedpur, 831001" autocomplete="address-level2" required>
+                <span id="contact-city-error" class="form-error-msg hidden">Please enter your city or pincode.</span>
               </div>
 
               <div class="form-group">

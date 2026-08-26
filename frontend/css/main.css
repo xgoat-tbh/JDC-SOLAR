@@ -1,6 +1,6 @@
 /**
  * JDC SOLAR 2.0 - MASTER STYLESHEET
- * Modular CSS Architecture importing foundational layers, global UI components, and page layouts
+ * Modular CSS Architecture importing foundational layers, global UI components, animations, and page layouts
  */
 
 /* 1. Design Tokens & Custom Properties */
@@ -15,8 +15,9 @@
 /* 4. Layout, Containers & Grid */
 @import url('./layout.css');
 
-/* 5. Accessible Utilities */
+/* 5. Accessible Utilities & Animations */
 @import url('./utilities.css');
+@import url('./base/animations.css');
 
 /* 6. Global Reusable Components */
 @import url('./components/button.css');

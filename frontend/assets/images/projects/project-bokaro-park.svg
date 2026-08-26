@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%" role="img" aria-label="Bokaro 1 MWp Ground-Mounted Utility Solar Park">
+  <defs>
+    <linearGradient id="bgPark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064E3B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" rx="16" fill="url(#bgPark)"/>
+  <circle cx="500" cy="80" r="40" fill="#F59E0B"/>
+
+  <!-- Multi-Row Ground Mounted Solar Arrays -->
+  <polygon points="50,260 250,260 220,200 80,200" fill="#0284C7" stroke="#38BDF8" stroke-width="1.5"/>
+  <polygon points="270,260 470,260 440,200 300,200" fill="#0284C7" stroke="#38BDF8" stroke-width="1.5"/>
+  <polygon points="120,330 320,330 290,270 150,270" fill="#0369A1" stroke="#38BDF8" stroke-width="1.5"/>
+  <polygon points="340,330 540,330 510,270 370,270" fill="#0369A1" stroke="#38BDF8" stroke-width="1.5"/>
+
+  <!-- Badges -->
+  <rect x="30" y="30" width="170" height="34" rx="8" fill="#10B981"/>
+  <text x="45" y="52" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="13" font-weight="bold">1.0 MWp Solar Park</text>
+
+  <rect x="30" y="330" width="220" height="40" rx="8" fill="rgba(15, 23, 42, 0.85)" stroke="#334155"/>
+  <text x="45" y="355" fill="#F8FAFC" font-family="system-ui, sans-serif" font-size="13" font-weight="600">Bokaro Industrial Area</text>
+</svg>

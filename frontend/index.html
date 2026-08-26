@@ -221,12 +221,12 @@
     <!-- ====================================================================
          SECTION 1: HERO SECTION
          ==================================================================== -->
-    <section class="hero" aria-label="Hero Introduction">
+    <section class="hero bg-sunlit-hero" aria-label="Hero Introduction">
       <div class="container hero-grid">
         <!-- Hero Text Content -->
-        <div class="hero__content">
+        <div class="hero__content" data-reveal="fade-up">
           <div class="hero__eyebrow">
-            <span class="badge badge--accent">☀️ JHARKHAND'S PREMIER SOLAR EPC PARTNER</span>
+            <span class="badge badge--accent badge--pulse">☀️ JHARKHAND'S PREMIER SOLAR EPC PARTNER</span>
           </div>
           <h1 class="display-title hero__title">
             Power Your Home & Business with High-Efficiency Solar Energy
@@ -258,34 +258,9 @@
           </div>
         </div>
 
-        <!-- Hero Visual Composition Card -->
-        <div class="hero-visual-card">
-          <div class="hero-visual-card__header">
-            <span class="hero-visual-card__badge">Live EPC Benchmark</span>
-            <span style="font-size: 0.8rem; opacity: 0.85;">Jamshedpur / Ranchi</span>
-          </div>
-          <div class="hero-visual-card__stat-box">
-            <div class="hero-visual-card__stat-number">90%</div>
-            <div class="hero-visual-card__stat-label">Average Monthly Power Bill Reduction</div>
-          </div>
-          <div class="hero-visual-card__grid">
-            <div class="hero-visual-card__mini-stat">
-              <div class="hero-visual-card__mini-stat-val">₹ 78,000</div>
-              <div class="hero-visual-card__mini-stat-lbl">Central Direct Subsidy</div>
-            </div>
-            <div class="hero-visual-card__mini-stat">
-              <div class="hero-visual-card__mini-stat-val">2.8 - 3.5 Yrs</div>
-              <div class="hero-visual-card__mini-stat-lbl">Est. Payback Period</div>
-            </div>
-            <div class="hero-visual-card__mini-stat">
-              <div class="hero-visual-card__mini-stat-val">Tier-1 DCR</div>
-              <div class="hero-visual-card__mini-stat-lbl">Mono PERC Panels</div>
-            </div>
-            <div class="hero-visual-card__mini-stat">
-              <div class="hero-visual-card__mini-stat-val">25 Years</div>
-              <div class="hero-visual-card__mini-stat-lbl">Linear Generation Life</div>
-            </div>
-          </div>
+        <!-- Hero Visual Showcase Composition -->
+        <div class="hero-visual-wrapper" data-reveal="zoom">
+          <img src="/assets/images/hero/hero-solar-showcase.svg" alt="JDC Solar 3D Rooftop Solar Engineering and Subsidy Benefits" width="800" height="600" loading="eager">
         </div>
       </div>
     </section>
@@ -293,9 +268,9 @@
     <!-- ====================================================================
          SECTION 2: TRUST & MILESTONE PROOF BAR
          ==================================================================== -->
-    <section class="section section--compact section--alt" aria-label="Company Milestone Statistics">
+    <section class="section section--compact stats-bar-wrapper" aria-label="Company Milestone Statistics">
       <div class="container">
-        <div class="grid grid--4col">
+        <div class="grid grid--4col" data-reveal="stagger">
           <div class="card-stat">
             <div class="card-stat__value">
               <span data-counter-target="500">500</span><span class="card-stat__suffix">+</span>
@@ -331,15 +306,15 @@
     <!-- ====================================================================
          SECTION 3: CORE SOLAR SOLUTIONS
          ==================================================================== -->
-    <section class="section" aria-label="Our Solar Services">
+    <section class="section bg-tech-grid" aria-label="Our Solar Services">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header" data-reveal="fade-up">
           <span class="badge badge--primary">CUSTOM SOLAR SOLUTIONS</span>
           <h2>Engineered for Every Energy Need</h2>
           <p class="lead">From residential homes claiming government subsidies to high-capacity industrial manufacturing complexes.</p>
         </div>
 
-        <div class="grid grid--3col">
+        <div class="grid grid--3col" data-reveal="stagger">
           <!-- 1. Residential Solar -->
           <div class="card card-service card--interactive">
             <div class="card-service__icon-wrap">

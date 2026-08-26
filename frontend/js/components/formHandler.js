@@ -1,6 +1,7 @@
 /**
- * JDC SOLAR 2.0 - ACCESSIBLE FORM HANDLER & VALIDATOR
- * Handles honeypot spam protection, 10-digit Indian phone regex (/^[6-9]\d{9}$/), email validation, inline errors, and submit states
+ * JDC SOLAR 2.0 - ACCESSIBLE FORM HANDLER & DIRECT WHATSAPP LEAD ROUTER
+ * Handles honeypot spam protection, 10-digit Indian phone regex (/^[6-9]\d{9}$/), email validation,
+ * inline error feedback, and automated WhatsApp lead forwarding to +91 92883 81112.
  */
 
 import { qs, qsa } from '../core/dom.js';
@@ -23,6 +24,7 @@ export function initForms() {
       // 2. Validate Form Fields
       let isValid = true;
       const inputs = qsa('input, select, textarea', form);
+      const formData = {};
 
       inputs.forEach(input => {
         if (input.name === 'b_url') return; // Skip honeypot
@@ -30,6 +32,7 @@ export function initForms() {
         const errorEl = qs(`#${input.id}-error`, form);
         let fieldValid = true;
         const val = input.value.trim();
+        if (input.name) formData[input.name] = val;
 
         if (input.hasAttribute('required') && !val) {
           fieldValid = false;
@@ -66,13 +69,29 @@ export function initForms() {
         return;
       }
 
-      // 3. Simulated Submission / Webhook Trigger
+      // 3. Submission / WhatsApp Forwarding Trigger
       const submitBtn = qs('button[type="submit"]', form);
       const originalText = submitBtn ? submitBtn.innerHTML : '';
       if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.innerHTML = '<span class="spinner"></span> Submitting...';
+        submitBtn.innerHTML = '<span class="spinner"></span> Connecting...';
       }
+
+      // Construct Structured WhatsApp Lead Message
+      const name = formData.name || 'Website Visitor';
+      const phone = formData.phone || 'N/A';
+      const city = formData.city || 'Jharkhand';
+      const service = formData.service || 'Rooftop Solar Survey';
+      const message = formData.message || 'I would like to schedule a rooftop solar site survey.';
+
+      const waText = `☀️ *New Solar Lead from JDC Website*:\n` +
+        `👤 *Name*: ${name}\n` +
+        `📞 *Phone*: ${phone}\n` +
+        `📍 *Location*: ${city}\n` +
+        `⚡ *Service Category*: ${service}\n` +
+        `📝 *Requirement*: ${message}`;
+
+      const waUrl = `https://wa.me/919288381112?text=${encodeURIComponent(waText)}`;
 
       setTimeout(() => {
         if (submitBtn) {
@@ -80,7 +99,7 @@ export function initForms() {
           submitBtn.innerHTML = originalText;
         }
         form.reset();
-        toast.show('Thank you! Your enquiry has been received. Our engineering team will contact you within 2 business hours.', 'success');
+        toast.show('Thank you! Opening WhatsApp to connect with our senior solar engineer...', 'success');
         
         // Show in-page success alert if present
         const successBanner = qs('.form-success-banner', form.parentElement);
@@ -89,12 +108,15 @@ export function initForms() {
           form.classList.add('hidden');
         }
 
+        // Open WhatsApp in new tab
+        window.open(waUrl, '_blank', 'noopener,noreferrer');
+
         // If inside a dialog, close it
         const dialog = form.closest('dialog');
         if (dialog && typeof dialog.close === 'function') {
-          setTimeout(() => dialog.close(), 1200);
+          setTimeout(() => dialog.close(), 1500);
         }
-      }, 1000);
+      }, 700);
     });
 
     // Clear error on input
