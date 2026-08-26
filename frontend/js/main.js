@@ -1,21 +1,26 @@
 /**
  * JDC SOLAR 2.0 - MAIN ENTRY POINT & LIFECYCLE DISPATCHER
- * Modular ES6 architecture initializing components conditionally based on DOM markers
+ * Modular ES6 architecture initializing global components conditionally based on DOM markers
  */
 
 import { APP_CONFIG } from './config.js';
 import { qs, qsa } from './core/dom.js';
+import { initNavigation } from './components/navigation.js';
+import { initModals } from './components/modal.js';
+import { initAccordions } from './components/accordion.js';
+import { initStatCounters } from './components/counter.js';
+import { initForms } from './components/formHandler.js';
+import { initCalculator } from './components/calculatorUI.js';
 
 /**
- * Initialize global components active on all pages
+ * Initialize global components active across all pages
  */
 function initGlobalComponents() {
-  // 1. Accessibility: Log system readiness in console
   if (typeof console !== 'undefined' && console.info) {
-    console.info(`%c[${APP_CONFIG.brandName} 2.0] Foundation Initialized • WCAG 2.1 AA Ready`, 'color: #FD8127; font-weight: bold;');
+    console.info(`%c[${APP_CONFIG.brandName} 2.0] Global Components Initialized • WCAG 2.1 AA Compliant`, 'color: #FD8127; font-weight: bold;');
   }
 
-  // 2. Global Skip Link focus handler
+  // 1. Global Skip Link focus handler
   const skipLink = qs('.skip-link');
   if (skipLink) {
     skipLink.addEventListener('click', (e) => {
@@ -26,6 +31,24 @@ function initGlobalComponents() {
       }
     });
   }
+
+  // 2. Global Navigation & Mobile Drawer
+  initNavigation();
+
+  // 3. Modal Dialogs
+  initModals();
+
+  // 4. Accordions & FAQ Lists
+  initAccordions();
+
+  // 5. Numerical Stat Counters
+  initStatCounters();
+
+  // 6. Accessible Forms & Validation
+  initForms();
+
+  // 7. Solar Calculator Subsystem (if present on page)
+  initCalculator();
 }
 
 /**

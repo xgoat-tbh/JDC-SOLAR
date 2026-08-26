@@ -1,0 +1,65 @@
+/**
+ * JDC SOLAR 2.0 - BADGES & TAGS
+ * Category indicators, status indicators, and metadata pills
+ */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-semibold);
+  font-family: var(--font-family-body);
+  line-height: 1.2;
+  letter-spacing: var(--letter-spacing-caption, 0.04em);
+  text-transform: uppercase;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+  background-color: var(--color-brand-primary-subtle);
+  color: var(--color-brand-primary);
+  border: 1px solid transparent;
+}
+
+/* Category Variants */
+.badge--primary {
+  background-color: var(--color-brand-primary-subtle);
+  color: var(--color-brand-primary);
+}
+
+.badge--accent {
+  background-color: var(--color-brand-accent-subtle);
+  color: var(--color-brand-accent-hover);
+  border-color: rgba(253, 129, 39, 0.2);
+}
+
+.badge--success {
+  background-color: var(--color-status-success-bg);
+  color: var(--color-status-success);
+  border-color: var(--color-status-success-border);
+}
+
+.badge--warning {
+  background-color: var(--color-status-warning-bg);
+  color: var(--color-status-warning);
+  border-color: var(--color-status-warning-border);
+}
+
+.badge--purple {
+  background-color: var(--color-accent-purple-subtle);
+  color: var(--color-accent-purple);
+}
+
+.badge--outline {
+  background-color: transparent;
+  border-color: var(--color-border-strong);
+  color: var(--color-text-secondary);
+}
+
+/* Status Indicator Dot */
+.badge__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background-color: currentColor;
+}

@@ -1,0 +1,238 @@
+/**
+ * JDC SOLAR 2.0 - CARD FAMILY SYSTEM
+ * Base card container, service card, testimonial card, stat card, and process card
+ */
+
+/* ==========================================================================
+   BASE CARD CONTAINER
+   ========================================================================== */
+
+.card {
+  position: relative;
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--duration-base) var(--ease-standard),
+              box-shadow var(--duration-base) var(--ease-standard),
+              border-color var(--duration-base) var(--ease-standard);
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-border-strong);
+}
+
+.card--interactive:hover {
+  transform: translateY(-4px);
+}
+
+/* ==========================================================================
+   1. SERVICE CARD
+   ========================================================================== */
+
+.card-service {
+  padding: var(--space-xl);
+  height: 100%;
+  border-top: 4px solid var(--color-brand-primary);
+}
+
+.card-service:hover {
+  border-top-color: var(--color-brand-accent);
+}
+
+.card-service__icon-wrap {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-md);
+  background-color: var(--color-brand-primary-subtle);
+  color: var(--color-brand-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-md);
+  transition: background-color var(--duration-fast) ease, color var(--duration-fast) ease;
+}
+
+.card-service:hover .card-service__icon-wrap {
+  background-color: var(--color-brand-accent-subtle);
+  color: var(--color-brand-accent-hover);
+}
+
+.card-service__title {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-headings);
+  margin-bottom: var(--space-xs);
+}
+
+.card-service__description {
+  font-size: var(--font-size-body-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--space-md);
+  flex-grow: 1;
+}
+
+.card-service__features {
+  list-style: none;
+  margin-bottom: var(--space-lg);
+  padding: 0;
+}
+
+.card-service__feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-xs);
+  font-size: var(--font-size-body-sm);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-2xs);
+}
+
+.card-service__feature-item .icon {
+  color: var(--color-status-success);
+  margin-top: 3px;
+}
+
+.card-service__footer {
+  margin-top: auto;
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+/* ==========================================================================
+   2. TESTIMONIAL CARD
+   ========================================================================== */
+
+.card-testimonial {
+  padding: var(--space-xl);
+  height: 100%;
+}
+
+.card-testimonial__rating {
+  display: flex;
+  gap: 4px;
+  color: var(--color-accent-amber);
+  margin-bottom: var(--space-md);
+}
+
+.card-testimonial__quote {
+  font-size: var(--font-size-body);
+  line-height: 1.6;
+  color: var(--color-text-primary);
+  font-style: italic;
+  margin-bottom: var(--space-lg);
+  flex-grow: 1;
+}
+
+.card-testimonial__author {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  margin-top: auto;
+}
+
+.card-testimonial__avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-brand-primary);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-family-heading);
+}
+
+.card-testimonial__name {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-headings);
+  font-size: var(--font-size-body);
+}
+
+.card-testimonial__meta {
+  font-size: var(--font-size-caption);
+  color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   3. STAT CARD
+   ========================================================================== */
+
+.card-stat {
+  text-align: center;
+  padding: var(--space-xl) var(--space-md);
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-lg);
+}
+
+.card-stat__value {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-stat);
+  font-weight: var(--font-weight-extrabold);
+  color: var(--color-brand-primary);
+  line-height: 1.1;
+  margin-bottom: var(--space-2xs);
+}
+
+.card-stat__suffix {
+  color: var(--color-brand-accent);
+}
+
+.card-stat__label {
+  font-size: var(--font-size-body-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-headings);
+  margin-bottom: var(--space-2xs);
+}
+
+.card-stat__subtext {
+  font-size: var(--font-size-caption);
+  color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   4. PROCESS STEP CARD
+   ========================================================================== */
+
+.card-process {
+  padding: var(--space-xl);
+  position: relative;
+}
+
+.card-process__number {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  font-size: 2.5rem;
+  font-weight: 800;
+  font-family: var(--font-family-heading);
+  color: var(--color-border-default);
+  line-height: 1;
+}
+
+.card-process__title {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-xs);
+  color: var(--color-text-headings);
+}
+
+.card-process__desc {
+  font-size: var(--font-size-body-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  .card, .card--interactive {
+    transition: none !important;
+    transform: none !important;
+  }
+}

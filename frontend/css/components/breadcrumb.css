@@ -1,0 +1,46 @@
+/**
+ * JDC SOLAR 2.0 - BREADCRUMB NAVIGATION
+ * Accessible, schema-ready breadcrumbs
+ */
+
+.breadcrumb {
+  padding: var(--space-md) 0;
+  font-size: var(--font-size-body-sm);
+  color: var(--color-text-muted);
+}
+
+.breadcrumb__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-xs);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.breadcrumb__item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.breadcrumb__link {
+  color: var(--color-text-secondary);
+  transition: color var(--duration-fast) ease;
+}
+
+.breadcrumb__link:hover {
+  color: var(--color-brand-accent-hover);
+  text-decoration: underline;
+}
+
+.breadcrumb__separator {
+  color: var(--color-border-strong);
+  user-select: none;
+}
+
+.breadcrumb__item[aria-current='page'] {
+  color: var(--color-text-headings);
+  font-weight: var(--font-weight-semibold);
+}

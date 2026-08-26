@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JDC Solar 2.0 — Global UI Component Preview & QA Showcase</title>
+  <meta name="description" content="Isolated testing and quality assurance showcase for all JDC Solar 2.0 reusable UI components.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#1B3766">
+  
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+  <!-- Accessible Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Top Trust Micro-Bar -->
+  <div class="header-topbar hide-on-mobile">
+    <div class="container flex flex--between">
+      <div class="header-topbar__trust-badge">
+        <span>☀️ A Jagatdhan Commodities Pvt. Ltd. Company</span>
+        <span>•</span>
+        <span>Jharkhand's Premier Solar EPC Partner</span>
+      </div>
+      <div class="flex gap-md">
+        <a href="tel:+919234611112">📞 +91 92346 11112</a>
+        <a href="mailto:info@jdcsolar.com">✉️ info@jdcsolar.com</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Global Sticky Header -->
+  <header class="header" role="banner">
+    <div class="container header-main">
+      <!-- Brand Logo -->
+      <a href="/" class="header__brand" aria-label="JDC Solar Homepage">
+        <svg class="icon" style="width: 28px; height: 28px; color: var(--color-brand-accent);" aria-hidden="true">
+          <use href="/assets/icons/sprite.svg#icon-sun"></use>
+        </svg>
+        <div>
+          <div class="header__logo-text">JDC <span>SOLAR</span></div>
+          <span class="header__logo-tag">Engineering • EPC • Subsidies</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="header__nav" aria-label="Main Navigation">
+        <ul class="nav-desktop" role="list">
+          <li class="nav-desktop__item">
+            <a href="/" class="nav-desktop__link" aria-current="page">Home</a>
+          </li>
+          <li class="nav-desktop__item">
+            <a href="/about/" class="nav-desktop__link">About Us</a>
+          </li>
+          <li class="nav-desktop__item">
+            <a href="/services/" class="nav-desktop__link">
+              Services
+              <svg class="icon" style="width: 14px; height: 14px;" aria-hidden="true">
+                <use href="/assets/icons/sprite.svg#icon-chevron-down"></use>
+              </svg>
+            </a>
+            <ul class="nav-desktop__dropdown" role="list">
+              <li><a href="/services/residential-solar/" class="nav-desktop__dropdown-link">Residential Rooftop Solar</a></li>
+              <li><a href="/services/commercial-solar/" class="nav-desktop__dropdown-link">Commercial & Industrial Solar</a></li>
+              <li><a href="/services/institutional-solar/" class="nav-desktop__dropdown-link">Institutional Solar</a></li>
+              <li><a href="/services/government-solar/" class="nav-desktop__dropdown-link">Government & Tender EPC</a></li>
+              <li><a href="/services/street-lights/" class="nav-desktop__dropdown-link">Solar Street Lighting</a></li>
+              <li><a href="/services/solar-parks/" class="nav-desktop__dropdown-link">Utility Solar Parks</a></li>
+            </ul>
+          </li>
+          <li class="nav-desktop__item">
+            <a href="/projects/" class="nav-desktop__link">Projects</a>
+          </li>
+          <li class="nav-desktop__item">
+            <a href="/pm-surya-ghar/" class="nav-desktop__link">PM Surya Ghar</a>
+          </li>
+          <li class="nav-desktop__item">
+            <a href="/solar-calculator/" class="nav-desktop__link">Calculator</a>
+          </li>
+          <li class="nav-desktop__item">
+            <a href="/contact/" class="nav-desktop__link">Contact</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header__actions">
+        <button type="button" class="btn btn--primary hide-on-mobile" data-modal-open="survey-modal">
+          Book Free Survey
+        </button>
+        <button type="button" class="header__toggle-btn" aria-label="Open Navigation Menu" aria-expanded="false" aria-controls="mobile-drawer">
+          <svg class="icon" style="width: 24px; height: 24px;" aria-hidden="true">
+            <use href="/assets/icons/sprite.svg#icon-menu"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Overlay & Drawer -->
+  <div class="drawer-overlay" aria-hidden="true"></div>
+  <aside id="mobile-drawer" class="drawer" aria-label="Mobile Navigation" aria-modal="true" role="dialog">
+    <div class="drawer__header">
+      <strong style="color: var(--color-brand-primary); font-size: 1.25rem;">JDC SOLAR</strong>
+      <button type="button" class="drawer__close-btn" aria-label="Close Navigation Menu">
+        <svg class="icon" style="width: 24px; height: 24px;" aria-hidden="true">
+          <use href="/assets/icons/sprite.svg#icon-close"></use>
+        </svg>
+      </button>
+    </div>
+    <div class="drawer__body">
+      <ul class="drawer__nav-list" role="list">
+        <li class="drawer__nav-item"><a href="/" class="drawer__nav-link" aria-current="page">Home</a></li>
+        <li class="drawer__nav-item"><a href="/about/" class="drawer__nav-link">About Us</a></li>
+        <li class="drawer__nav-item">
+          <a href="/services/" class="drawer__nav-link">Services</a>
+          <ul class="drawer__sub-nav" role="list">
+            <li><a href="/services/residential-solar/" class="drawer__sub-link">Residential Solar</a></li>
+            <li><a href="/services/commercial-solar/" class="drawer__sub-link">Commercial Solar</a></li>
+            <li><a href="/services/institutional-solar/" class="drawer__sub-link">Institutional Solar</a></li>
+            <li><a href="/services/government-solar/" class="drawer__sub-link">Government & Tender Solar</a></li>
+            <li><a href="/services/street-lights/" class="drawer__sub-link">Solar Street Lights</a></li>
+            <li><a href="/services/solar-parks/" class="drawer__sub-link">Solar Parks</a></li>
+          </ul>
+        </li>
+        <li class="drawer__nav-item"><a href="/projects/" class="drawer__nav-link">Projects</a></li>
+        <li class="drawer__nav-item"><a href="/pm-surya-ghar/" class="drawer__nav-link">PM Surya Ghar Subsidy</a></li>
+        <li class="drawer__nav-item"><a href="/solar-calculator/" class="drawer__nav-link">Solar Calculator</a></li>
+        <li class="drawer__nav-item"><a href="/contact/" class="drawer__nav-link">Contact Us</a></li>
+      </ul>
+    </div>
+    <div class="drawer__footer">
+      <button type="button" class="btn btn--primary btn--block" data-modal-open="survey-modal">
+        Book Free Site Survey
+      </button>
+      <a href="tel:+919234611112" class="btn btn--secondary btn--block">
+        📞 Call +91 92346 11112
+      </a>
+    </div>
+  </aside>
+
+  <!-- Main Content Showcase -->
+  <main id="main-content" role="main">
+    
+    <!-- Section 1: Breadcrumbs & Introduction -->
+    <section class="section section--compact">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumbs">
+          <ol class="breadcrumb__list">
+            <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">Home</a></li>
+            <li class="breadcrumb__separator" aria-hidden="true">/</li>
+            <li class="breadcrumb__item"><a href="#" class="breadcrumb__link">Design System</a></li>
+            <li class="breadcrumb__separator" aria-hidden="true">/</li>
+            <li class="breadcrumb__item" aria-current="page">Global Components Preview</li>
+          </ol>
+        </nav>
+        
+        <div class="section-header">
+          <span class="badge badge--accent">COMPONENT SHOWCASE</span>
+          <h1 class="display-title">Global UI Components Catalog</h1>
+          <p class="lead">Interactive, accessible, and responsive component library engineered for JDC Solar 2.0.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Buttons & Badges -->
+    <section class="section section--alt">
+      <div class="container">
+        <h2>1. Button & Badge System</h2>
+        <div class="flex" style="flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem; align-items: center;">
+          <button type="button" class="btn btn--primary btn--lg">Primary Action (LG)</button>
+          <button type="button" class="btn btn--primary">Primary (MD)</button>
+          <button type="button" class="btn btn--primary btn--sm">Primary (SM)</button>
+          <button type="button" class="btn btn--secondary">Secondary Navy</button>
+          <a href="https://wa.me/919288381112" class="btn btn--whatsapp" target="_blank" rel="noopener noreferrer">
+            <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-whatsapp"></use></svg>
+            WhatsApp Direct
+          </a>
+          <button type="button" class="btn btn--ghost">Ghost Link →</button>
+          <button type="button" class="btn btn--primary btn--icon" aria-label="Solar Action">
+            <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-sun"></use></svg>
+          </button>
+          <button type="button" class="btn btn--primary" disabled>Disabled Button</button>
+        </div>
+
+        <h3>Badges & Tags</h3>
+        <div class="flex" style="flex-wrap: wrap; gap: 0.75rem; margin-bottom: 2rem;">
+          <span class="badge badge--primary">Residential Solar</span>
+          <span class="badge badge--accent">PM Surya Ghar Approved</span>
+          <span class="badge badge--success"><span class="badge__dot"></span> Verified EPC Partner</span>
+          <span class="badge badge--warning">₹78,000 Central Subsidy</span>
+          <span class="badge badge--purple">25-Year Warranty</span>
+          <span class="badge badge--outline">Commercial Tariff</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Stat Cards & Animated Counters -->
+    <section class="section">
+      <div class="container">
+        <h2>2. Numerical Stat Cards & Counters</h2>
+        <div class="grid grid--4col">
+          <div class="card-stat">
+            <div class="card-stat__value">
+              <span data-counter-target="500">500</span><span class="card-stat__suffix">+</span>
+            </div>
+            <div class="card-stat__label">Solar Projects Completed</div>
+            <div class="card-stat__subtext">Across residential & commercial sectors</div>
+          </div>
+          <div class="card-stat">
+            <div class="card-stat__value">
+              <span data-counter-target="25">25</span><span class="card-stat__suffix">+ MW</span>
+            </div>
+            <div class="card-stat__label">Capacity Installed</div>
+            <div class="card-stat__subtext">Generating clean power daily</div>
+          </div>
+          <div class="card-stat">
+            <div class="card-stat__value">
+              <span data-counter-target="90">90</span><span class="card-stat__suffix">%</span>
+            </div>
+            <div class="card-stat__label">Avg. Bill Reduction</div>
+            <div class="card-stat__subtext">Lower monthly utility costs</div>
+          </div>
+          <div class="card-stat">
+            <div class="card-stat__value">
+              <span data-counter-target="25000">25,000</span><span class="card-stat__suffix">+</span>
+            </div>
+            <div class="card-stat__label">Tons CO₂ Offset</div>
+            <div class="card-stat__subtext">Lifetime environmental impact</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Service Cards & Project Cards -->
+    <section class="section section--alt">
+      <div class="container">
+        <h2>3. Reusable Card Family</h2>
+        <div class="grid grid--3col" style="margin-bottom: 3rem;">
+          <!-- Service Card -->
+          <div class="card card-service card--interactive">
+            <div class="card-service__icon-wrap">
+              <svg class="icon" style="width: 28px; height: 28px;" aria-hidden="true">
+                <use href="/assets/icons/sprite.svg#icon-home"></use>
+              </svg>
+            </div>
+            <h3 class="card-service__title">Residential Rooftop Solar</h3>
+            <p class="card-service__description">Turnkey solar solutions for villas and housing societies with up to ₹78,000 PM Surya Ghar subsidy.</p>
+            <ul class="card-service__features">
+              <li class="card-service__feature-item">
+                <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+                <span>₹78k Fixed Central Subsidy</span>
+              </li>
+              <li class="card-service__feature-item">
+                <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+                <span>JBVNL/TSUISL Net-Metering</span>
+              </li>
+            </ul>
+            <div class="card-service__footer">
+              <a href="/services/residential-solar/" class="btn btn--primary btn--block">Explore Service →</a>
+            </div>
+          </div>
+
+          <!-- Project Case Study Card -->
+          <div class="card-project">
+            <div class="card-project__media-wrap">
+              <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: #1B3766; color: white;">
+                <span>☀️ 250 kWp Industrial Rooftop</span>
+              </div>
+              <div class="card-project__badge-overlay">
+                <span class="badge badge--accent">Commercial Solar</span>
+              </div>
+            </div>
+            <div class="card-project__body">
+              <div class="card-project__location">
+                <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-location"></use></svg>
+                <span>Adityapur Industrial Area, Jamshedpur</span>
+              </div>
+              <h3 class="card-project__title">Heavy Engineering Manufacturing Plant</h3>
+              <div class="card-project__metrics">
+                <div class="card-project__metric-item">
+                  <span class="card-project__metric-label">Capacity</span>
+                  <span class="card-project__metric-value">250 kWp</span>
+                </div>
+                <div class="card-project__metric-item">
+                  <span class="card-project__metric-label">Annual Savings</span>
+                  <span class="card-project__metric-value">₹28.5 Lakhs</span>
+                </div>
+              </div>
+              <div class="card-project__footer">
+                <span class="text-small text-muted">Payback: 3.2 Years</span>
+                <a href="/projects/" class="btn btn--ghost btn--sm">Case Study →</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial Card -->
+          <div class="card card-testimonial">
+            <div class="card-testimonial__rating" aria-label="5 out of 5 stars rating">
+              ★★★★★
+            </div>
+            <p class="card-testimonial__quote">"JDC Solar managed our complete PM Surya Ghar subsidy application and net-metering without any hassle. Our monthly electricity bill dropped from ₹4,500 to less than ₹500!"</p>
+            <div class="card-testimonial__author">
+              <div class="card-testimonial__avatar">RK</div>
+              <div>
+                <div class="card-testimonial__name">Rajesh K. Sharma</div>
+                <div class="card-testimonial__meta">Homeowner, Bistupur Jamshedpur</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Solar Calculator UI Subsystem -->
+    <section class="section">
+      <div class="container">
+        <h2>4. Reusable Solar Calculator UI Dashboard</h2>
+        <div class="solar-calculator-ui" style="background: var(--color-bg-surface); border: 1px solid var(--color-border-default); border-radius: var(--radius-xl); padding: var(--space-2xl); box-shadow: var(--shadow-md);">
+          <div class="grid grid--2col">
+            <!-- Calculator Inputs -->
+            <div>
+              <h3>Estimate Your Solar Sizing & Subsidy</h3>
+              <p class="text-small text-muted" style="margin-bottom: 1.5rem;">Select your state, property category, and monthly electricity consumption.</p>
+
+              <div class="form-group">
+                <label class="form-label" for="calc-state">Select State / DISCOM</label>
+                <select id="calc-state" class="form-select">
+                  <option value="Jharkhand" selected>Jharkhand (JBVNL / TSUISL)</option>
+                  <option value="Bihar">Bihar (NBPDCL / SBPDCL)</option>
+                  <option value="West Bengal">West Bengal (WBSEDCL / CESC)</option>
+                  <option value="Odisha">Odisha (TPCODL / TPNODL)</option>
+                  <option value="Uttar Pradesh">Uttar Pradesh (UPPCL)</option>
+                  <option value="Maharashtra">Maharashtra (MSEDCL / Tata)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Property Category</label>
+                <div class="radio-tile-group">
+                  <label class="radio-tile">
+                    <input type="radio" name="calc_service_type" value="residential" checked>
+                    <span class="radio-tile__label">🏠 Residential</span>
+                  </label>
+                  <label class="radio-tile">
+                    <input type="radio" name="calc_service_type" value="commercial">
+                    <span class="radio-tile__label">🏭 Commercial</span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="calc-units">Monthly Electricity Consumption (kWh Units)</label>
+                <input type="number" id="calc-units" class="form-control" value="360" min="50" max="10000" step="10">
+              </div>
+            </div>
+
+            <!-- Calculator Outputs -->
+            <div style="background: var(--color-bg-alt); padding: var(--space-xl); border-radius: var(--radius-lg); border: 1px solid var(--color-border-subtle); display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <span class="badge badge--accent" style="margin-bottom: 0.75rem;">ESTIMATED FEASIBILITY</span>
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1rem;">
+                  <span style="font-size: 1.1rem; font-weight: 600;">Recommended Capacity:</span>
+                  <span id="out-system-size" style="font-size: 2rem; font-weight: 800; color: var(--color-brand-primary);">3.0 kWp</span>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+                  <div>
+                    <span class="text-small text-muted">Gross Turnkey Cost:</span>
+                    <div id="out-gross-cost" style="font-weight: 700;">₹ 1,65,000</div>
+                  </div>
+                  <div>
+                    <span class="text-small text-muted">PM Surya Ghar Subsidy:</span>
+                    <div id="out-subsidy" style="font-weight: 700; color: var(--color-status-success);">₹ 78,000</div>
+                  </div>
+                  <div>
+                    <span class="text-small text-muted">Net Outflow:</span>
+                    <div id="out-net-cost" style="font-weight: 700; color: var(--color-brand-primary);">₹ 87,000</div>
+                  </div>
+                  <div>
+                    <span class="text-small text-muted">Annual Bill Savings:</span>
+                    <div id="out-annual-savings" style="font-weight: 700; color: var(--color-status-success);">₹ 28,470 / yr</div>
+                  </div>
+                  <div>
+                    <span class="text-small text-muted">Rooftop Area Needed:</span>
+                    <div id="out-area" style="font-weight: 600;">~300 sq.ft</div>
+                  </div>
+                  <div>
+                    <span class="text-small text-muted">Estimated Payback:</span>
+                    <div id="out-payback" style="font-weight: 600;">3.1 Years</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex gap-sm" style="flex-wrap: wrap;">
+                <a id="calc-whatsapp-quote" href="#" class="btn btn--whatsapp" target="_blank" rel="noopener noreferrer" style="flex-grow: 1;">
+                  <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-whatsapp"></use></svg>
+                  Share Quote on WhatsApp
+                </a>
+                <button type="button" class="btn btn--primary" data-modal-open="survey-modal" style="flex-grow: 1;">
+                  Book Free Site Survey
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: FAQ Accordion -->
+    <section class="section section--alt">
+      <div class="container container--medium">
+        <div class="section-header">
+          <span class="badge badge--primary">FREQUENTLY ASKED QUESTIONS</span>
+          <h2>5. Accessible FAQ Accordion</h2>
+        </div>
+
+        <div class="accordion-group" data-single-expand="true">
+          <details class="accordion-item" open>
+            <summary class="accordion-summary">
+              <span>What is the PM Surya Ghar Muft Bijli Yojana subsidy amount?</span>
+              <span class="accordion-summary__icon" aria-hidden="true">
+                <svg class="icon"><use href="/assets/icons/sprite.svg#icon-chevron-down"></use></svg>
+              </span>
+            </summary>
+            <div class="accordion-content">
+              <p>Under the PM Surya Ghar scheme, residential homeowners receive ₹30,000 for a 1 kW system, ₹60,000 for a 2 kW system, and ₹78,000 for systems of 3 kW or higher capacity. The subsidy is credited directly via DBT to your bank account after net-meter commissioning.</p>
+            </div>
+          </details>
+
+          <details class="accordion-item">
+            <summary class="accordion-summary">
+              <span>How does grid-connected solar net-metering work with JBVNL?</span>
+              <span class="accordion-summary__icon" aria-hidden="true">
+                <svg class="icon"><use href="/assets/icons/sprite.svg#icon-chevron-down"></use></svg>
+              </span>
+            </summary>
+            <div class="accordion-content">
+              <p>A bidirectional net-meter records electricity exported to the grid when your solar panels produce more than you consume, and imports grid power at night. You are billed only for the net difference.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: Brand Ribbon Marquee -->
+    <section class="section" style="padding-bottom: 0;">
+      <div class="container text-center">
+        <span class="badge badge--outline">TIER-1 OEM & TECHNOLOGY PARTNERS</span>
+      </div>
+      <div class="brand-ribbon">
+        <div class="brand-ribbon__track">
+          <div class="brand-ribbon__item">WAAREE SOLAR</div>
+          <div class="brand-ribbon__item">TATA POWER SOLAR</div>
+          <div class="brand-ribbon__item">ADANI SOLAR</div>
+          <div class="brand-ribbon__item">GROWATT INVERTERS</div>
+          <div class="brand-ribbon__item">HAVELLS SOLAR</div>
+          <div class="brand-ribbon__item">SUNGROW POWER</div>
+          <!-- Duplicate for seamless infinite marquee -->
+          <div class="brand-ribbon__item">WAAREE SOLAR</div>
+          <div class="brand-ribbon__item">TATA POWER SOLAR</div>
+          <div class="brand-ribbon__item">ADANI SOLAR</div>
+          <div class="brand-ribbon__item">GROWATT INVERTERS</div>
+          <div class="brand-ribbon__item">HAVELLS SOLAR</div>
+          <div class="brand-ribbon__item">SUNGROW POWER</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 8: CTA Pre-Footer Banner -->
+    <section class="section">
+      <div class="container">
+        <div class="cta-banner">
+          <div class="cta-banner__content">
+            <span class="badge badge--accent" style="margin-bottom: 1rem;">GET STARTED TODAY</span>
+            <h2 class="cta-banner__title">Ready to Cut Your Electricity Bill by 90%?</h2>
+            <p class="cta-banner__description">Schedule a free technical rooftop site survey with our solar engineers in Jharkhand. Zero obligation, instant feasibility report.</p>
+            <div class="cta-banner__actions">
+              <button type="button" class="btn btn--primary btn--lg" data-modal-open="survey-modal">
+                Book Free Rooftop Survey →
+              </button>
+              <a href="https://wa.me/919288381112" class="btn btn--whatsapp btn--lg" target="_blank" rel="noopener noreferrer">
+                <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-whatsapp"></use></svg>
+                Chat on WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Column 1: Brand Info -->
+        <div>
+          <div style="font-size: 1.5rem; font-weight: 800; color: #FFFFFF; margin-bottom: 0.75rem;">
+            JDC <span style="color: var(--color-brand-accent);">SOLAR</span>
+          </div>
+          <p style="font-size: 0.9rem; line-height: 1.6; color: var(--color-text-inverse-muted); margin-bottom: 1.5rem;">
+            A Jagatdhan Commodities Pvt. Ltd. Company. Engineering high-performance rooftop solar and ground-mounted power plants across Eastern India.
+          </p>
+          <div class="badge badge--accent">Verified MNRE Channel Partner</div>
+        </div>
+
+        <!-- Column 2: Solar Services -->
+        <div>
+          <h3 class="footer__column-title">Solar Services</h3>
+          <ul class="footer__links-list">
+            <li class="footer__link-item"><a href="/services/residential-solar/" class="footer__link">Residential Rooftop</a></li>
+            <li class="footer__link-item"><a href="/services/commercial-solar/" class="footer__link">Commercial & Industrial</a></li>
+            <li class="footer__link-item"><a href="/services/institutional-solar/" class="footer__link">Institutional Solar</a></li>
+            <li class="footer__link-item"><a href="/services/government-solar/" class="footer__link">Government Tenders</a></li>
+            <li class="footer__link-item"><a href="/services/street-lights/" class="footer__link">Solar Street Lighting</a></li>
+            <li class="footer__link-item"><a href="/services/solar-parks/" class="footer__link">Utility Solar Parks</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Quick Navigation -->
+        <div>
+          <h3 class="footer__column-title">Quick Links</h3>
+          <ul class="footer__links-list">
+            <li class="footer__link-item"><a href="/about/" class="footer__link">About JDC Solar</a></li>
+            <li class="footer__link-item"><a href="/projects/" class="footer__link">Project Portfolio</a></li>
+            <li class="footer__link-item"><a href="/pm-surya-ghar/" class="footer__link">PM Surya Ghar Guide</a></li>
+            <li class="footer__link-item"><a href="/solar-calculator/" class="footer__link">Solar Calculator</a></li>
+            <li class="footer__link-item"><a href="/contact/" class="footer__link">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Verified Contact Info -->
+        <div>
+          <h3 class="footer__column-title">Headquarters</h3>
+          <div class="footer-contact">
+            <div class="footer-contact__item">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-location"></use></svg>
+              <span>A-21, 2nd Phase, Industrial Area, Adityapur, Jamshedpur, Jharkhand 832109</span>
+            </div>
+            <div class="footer-contact__item">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-phone"></use></svg>
+              <a href="tel:+919234611112">+91 92346 11112</a>
+            </div>
+            <div class="footer-contact__item">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-whatsapp"></use></svg>
+              <a href="https://wa.me/919288381112" target="_blank" rel="noopener noreferrer">+91 92883 81112 (WhatsApp)</a>
+            </div>
+            <div class="footer-contact__item">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-email"></use></svg>
+              <a href="mailto:sales@jdcsolar.com">sales@jdcsolar.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sub-Footer -->
+      <div class="sub-footer">
+        <div>
+          © 2026 JDC Solar. A Jagatdhan Commodities Pvt. Ltd. Company. All rights reserved.
+        </div>
+        <div class="sub-footer__legal-links">
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <span>•</span>
+          <a href="/contact/">Site Survey</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sticky Mobile Action Bar -->
+  <aside class="mobile-action-bar" aria-label="Quick Mobile Actions">
+    <a href="tel:+919234611112" class="mobile-action-bar__tile mobile-action-bar__tile--call">
+      <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-phone"></use></svg>
+      <span>Call Us</span>
+    </a>
+    <a href="https://wa.me/919288381112" class="mobile-action-bar__tile mobile-action-bar__tile--whatsapp" target="_blank" rel="noopener noreferrer">
+      <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-whatsapp"></use></svg>
+      <span>WhatsApp</span>
+    </a>
+    <a href="/solar-calculator/" class="mobile-action-bar__tile mobile-action-bar__tile--calc">
+      <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-calculator"></use></svg>
+      <span>Calculate</span>
+    </a>
+  </aside>
+
+  <!-- Reusable Accessible Modal Dialog -->
+  <dialog id="survey-modal" class="modal-dialog" aria-labelledby="survey-modal-title">
+    <div class="modal-dialog__header">
+      <h2 id="survey-modal-title" class="modal-dialog__title">Book Free Rooftop Survey</h2>
+      <button type="button" class="modal-dialog__close-btn" data-modal-close aria-label="Close Dialog">
+        <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-close"></use></svg>
+      </button>
+    </div>
+    <div class="modal-dialog__body">
+      <p class="text-small text-muted" style="margin-bottom: 1.5rem;">Enter your contact details. Our solar engineering team will inspect your roof and prepare an exact subsidy proposal.</p>
+      
+      <form data-validate="true">
+        <!-- Anti-Spam Honeypot Field -->
+        <input type="text" name="b_url" class="sr-only" tabindex="-1" autocomplete="off">
+
+        <div class="form-group">
+          <label class="form-label" for="survey-name">Full Name <span class="required-mark">*</span></label>
+          <input type="text" id="survey-name" name="name" class="form-control" placeholder="e.g. Ramesh Kumar" required>
+          <span id="survey-name-error" class="form-error-msg hidden">Please enter your full name.</span>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="survey-phone">Mobile Number (10 Digits) <span class="required-mark">*</span></label>
+          <input type="tel" id="survey-phone" name="phone" class="form-control" placeholder="e.g. 9876543210" required>
+          <span id="survey-phone-error" class="form-error-msg hidden">Please enter a valid 10-digit Indian phone number.</span>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="survey-city">City / Pincode <span class="required-mark">*</span></label>
+          <input type="text" id="survey-city" name="city" class="form-control" placeholder="e.g. Jamshedpur, 831001" required>
+          <span id="survey-city-error" class="form-error-msg hidden">Please enter your city or pincode.</span>
+        </div>
+
+        <button type="submit" class="btn btn--primary btn--block btn--lg" style="margin-top: 1rem;">
+          Submit Survey Request →
+        </button>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- Global Application Scripts -->
+  <script type="module" src="/js/main.js"></script>
+</body>
+</html>

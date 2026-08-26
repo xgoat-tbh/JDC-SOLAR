@@ -1,0 +1,43 @@
+/**
+ * JDC SOLAR 2.0 - LOADING STATES
+ * Button spinner and skeleton screen loaders
+ */
+
+.spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius-full);
+  border-top-color: #FFFFFF;
+  animation: spinnerRotate 0.6s linear infinite;
+}
+
+.spinner--primary {
+  border-color: var(--color-border-default);
+  border-top-color: var(--color-brand-accent);
+}
+
+@keyframes spinnerRotate {
+  to { transform: rotate(360deg); }
+}
+
+/* Skeleton Placeholder */
+.skeleton {
+  background: linear-gradient(90deg, #F1F5F9 25%, #E2E8F0 50%, #F1F5F9 75%);
+  background-size: 200% 100%;
+  animation: skeletonShimmer 1.5s infinite;
+  border-radius: var(--radius-sm);
+}
+
+@keyframes skeletonShimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  .spinner, .skeleton {
+    animation: none !important;
+  }
+}

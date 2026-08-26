@@ -1,0 +1,31 @@
+/**
+ * JDC SOLAR 2.0 - RESPONSIVE MEDIA PRIMITIVES
+ * Aspect-ratio media wrappers, picture containers, and responsive images
+ */
+
+.media-wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background-color: var(--color-bg-surface-sunken);
+}
+
+.media-wrap--16-9 {
+  aspect-ratio: 16 / 9;
+}
+
+.media-wrap--4-3 {
+  aspect-ratio: 4 / 3;
+}
+
+.media-wrap--1-1 {
+  aspect-ratio: 1 / 1;
+}
+
+.media-wrap img,
+.media-wrap picture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

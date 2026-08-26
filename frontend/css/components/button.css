@@ -1,0 +1,222 @@
+/**
+ * JDC SOLAR 2.0 - BUTTON SYSTEM
+ * Semantic, accessible buttons with high-contrast states and fluid sizing
+ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-body-sm);
+  line-height: 1;
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  border: 2px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: var(--transition-button, transform 150ms ease, background-color 150ms ease, border-color 150ms ease, box-shadow 150ms ease);
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ==========================================================================
+   BUTTON SIZES
+   ========================================================================== */
+
+/* Size LG (Hero / Main Conversion CTAs) */
+.btn--lg {
+  min-height: 52px;
+  padding: 14px 28px;
+  font-size: var(--font-size-body);
+  border-radius: var(--radius-md);
+}
+
+/* Size MD (Default Forms & Cards) */
+.btn--md, .btn:not([class*='btn--sm']):not([class*='btn--lg']) {
+  min-height: 44px;
+  padding: 10px 20px;
+  font-size: var(--font-size-body-sm);
+}
+
+/* Size SM (Table Filters & Compact Actions) */
+.btn--sm {
+  min-height: 36px;
+  padding: 6px 14px;
+  font-size: var(--font-size-caption);
+  border-radius: var(--radius-sm);
+}
+
+/* Full Width Utility */
+.btn--block {
+  width: 100%;
+  display: flex;
+}
+
+/* ==========================================================================
+   BUTTON VARIANTS
+   ========================================================================== */
+
+/* 1. Primary Action Button (Solar Energetic Orange) */
+.btn--primary {
+  background-color: var(--color-brand-accent);
+  color: #FFFFFF;
+  border-color: var(--color-brand-accent);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn--primary:hover {
+  background-color: var(--color-brand-accent-hover);
+  border-color: var(--color-brand-accent-hover);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.btn--primary:active {
+  background-color: var(--color-brand-accent-active);
+  border-color: var(--color-brand-accent-active);
+  transform: translateY(0);
+}
+
+/* 2. Secondary Button (Deep Navy Outline) */
+.btn--secondary {
+  background-color: transparent;
+  color: var(--color-brand-primary);
+  border-color: var(--color-brand-primary);
+}
+
+.btn--secondary:hover {
+  background-color: var(--color-brand-primary);
+  color: #FFFFFF;
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-1px);
+}
+
+.btn--secondary:active {
+  background-color: var(--color-brand-primary-dark);
+  border-color: var(--color-brand-primary-dark);
+  transform: translateY(0);
+}
+
+/* Secondary Button on Dark Navy Surfaces */
+.section--dark .btn--secondary,
+.header .btn--secondary {
+  border-color: var(--color-border-inverse, rgba(255,255,255,0.4));
+  color: #FFFFFF;
+}
+
+.section--dark .btn--secondary:hover,
+.header .btn--secondary:hover {
+  background-color: #FFFFFF;
+  color: var(--color-brand-primary);
+  border-color: #FFFFFF;
+}
+
+/* 3. WhatsApp Direct Action Button */
+.btn--whatsapp {
+  background-color: var(--color-accent-whatsapp);
+  color: #FFFFFF;
+  border-color: var(--color-accent-whatsapp);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn--whatsapp:hover {
+  background-color: var(--color-accent-whatsapp-hover);
+  border-color: var(--color-accent-whatsapp-hover);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.btn--whatsapp:active {
+  background-color: #179E4C;
+  transform: translateY(0);
+}
+
+/* 4. Ghost / Text Link Button */
+.btn--ghost {
+  background-color: transparent;
+  color: var(--color-brand-primary);
+  border-color: transparent;
+  padding-left: var(--space-xs);
+  padding-right: var(--space-xs);
+}
+
+.btn--ghost:hover {
+  background-color: var(--color-brand-primary-subtle);
+  color: var(--color-brand-primary-dark);
+}
+
+/* 5. Icon-Only Button */
+.btn--icon {
+  padding: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 6. Floating Action Button (FAB) */
+.btn-fab {
+  position: fixed;
+  bottom: var(--space-xl);
+  right: var(--space-xl);
+  z-index: var(--z-layer-fab);
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-brand-primary);
+  color: #FFFFFF;
+  box-shadow: var(--shadow-xl);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  transition: transform var(--duration-fast) var(--ease-standard),
+              background-color var(--duration-fast) var(--ease-standard),
+              opacity var(--duration-fast) var(--ease-standard);
+}
+
+.btn-fab:hover {
+  background-color: var(--color-brand-accent);
+  transform: translateY(-3px) scale(1.05);
+}
+
+.btn-fab--whatsapp {
+  bottom: calc(var(--space-xl) + 64px);
+  background-color: var(--color-accent-whatsapp);
+}
+
+.btn-fab--whatsapp:hover {
+  background-color: var(--color-accent-whatsapp-hover);
+}
+
+/* ==========================================================================
+   ACCESSIBILITY & STATE HANDLERS
+   ========================================================================== */
+
+.btn:focus-visible,
+.btn-fab:focus-visible {
+  outline: 3px solid var(--color-brand-accent);
+  outline-offset: 3px;
+}
+
+.btn:disabled,
+.btn[aria-disabled='true'] {
+  opacity: 0.55;
+  cursor: not-allowed;
+  pointer-events: none;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .btn, .btn-fab {
+    transition: none !important;
+    transform: none !important;
+  }
+}
