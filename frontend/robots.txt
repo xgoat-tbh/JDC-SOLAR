@@ -1,0 +1,16 @@
+# JDC Solar 2.0 - Production Robots Directive
+# https://jdcsolar.com/
+
+User-agent: *
+Allow: /
+Allow: /css/
+Allow: /js/
+Allow: /assets/
+Allow: /data/
+
+# Disallow internal test utilities and server configurations
+Disallow: /components-preview.html
+Disallow: /tests/
+
+# Reference Authoritative XML Sitemap
+Sitemap: https://jdcsolar.com/sitemap.xml
