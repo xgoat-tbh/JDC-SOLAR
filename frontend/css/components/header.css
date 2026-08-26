@@ -232,8 +232,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1rem;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  color: var(--color-brand-primary);
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.nav-desktop__dropdown-link .dropdown-icon .icon {
+  width: 18px;
+  height: 18px;
 }
 
 .nav-desktop__dropdown-link:hover {
@@ -244,6 +250,7 @@
 
 .nav-desktop__dropdown-link:hover .dropdown-icon {
   background-color: #FEF3C7;
+  color: var(--color-brand-accent);
   transform: scale(1.08);
 }
 

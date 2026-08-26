@@ -136,12 +136,12 @@
               </svg>
             </a>
             <ul class="nav-desktop__dropdown" role="list">
-              <li><a href="/services/residential-solar/" class="nav-desktop__dropdown-link"><span class="dropdown-icon">🏠</span><span>Residential Rooftop Solar</span></a></li>
-              <li><a href="/services/commercial-solar/" class="nav-desktop__dropdown-link"><span class="dropdown-icon">🏭</span><span>Commercial & Industrial Solar</span></a></li>
-              <li><a href="/services/institutional-solar/" class="nav-desktop__dropdown-link"><span class="dropdown-icon">🏥</span><span>Institutional Solar</span></a></li>
-              <li><a href="/services/government-solar/" class="nav-desktop__dropdown-link"><span class="dropdown-icon">🏛️</span><span>Government & Tender EPC</span></a></li>
-              <li><a href="/services/street-lights/" class="nav-desktop__dropdown-link"><span class="dropdown-icon">💡</span><span>Solar Street Lighting</span></a></li>
-              <li><a href="/services/solar-parks/" class="nav-desktop__dropdown-link"><span class="dropdown-icon">⚡</span><span>Utility Solar Parks</span></a></li>
+              <li><a href="/services/residential-solar/" class="nav-desktop__dropdown-link"><span class="dropdown-icon"><svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-home"></use></svg></span><span>Residential Rooftop Solar</span></a></li>
+              <li><a href="/services/commercial-solar/" class="nav-desktop__dropdown-link"><span class="dropdown-icon"><svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-building"></use></svg></span><span>Commercial & Industrial Solar</span></a></li>
+              <li><a href="/services/institutional-solar/" class="nav-desktop__dropdown-link"><span class="dropdown-icon"><svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-hospital"></use></svg></span><span>Institutional Solar</span></a></li>
+              <li><a href="/services/government-solar/" class="nav-desktop__dropdown-link"><span class="dropdown-icon"><svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-government"></use></svg></span><span>Government & Tender EPC</span></a></li>
+              <li><a href="/services/street-lights/" class="nav-desktop__dropdown-link"><span class="dropdown-icon"><svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-lightbulb"></use></svg></span><span>Solar Street Lighting</span></a></li>
+              <li><a href="/services/solar-parks/" class="nav-desktop__dropdown-link"><span class="dropdown-icon"><svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-solar-park"></use></svg></span><span>Utility Solar Parks</span></a></li>
             </ul>
           </li>
           <li class="nav-desktop__item">
@@ -210,7 +210,7 @@
         Book Free Site Survey
       </button>
       <a href="tel:+919234611112" class="btn btn--secondary btn--block">
-        📞 Call +91 92346 11112
+        <svg class="icon" style="margin-right: 6px;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-phone"></use></svg> Call +91 92346 11112
       </a>
     </div>
   </aside>
@@ -264,9 +264,7 @@
           
           <!-- Floating Badge 1: PM Surya Ghar Subsidy -->
           <div class="hero-floating-badge hero-floating-badge--top-left badge--floating-1">
-            <div style="width: 42px; height: 42px; border-radius: 50%; background: #FEF3C7; display: flex; align-items: center; justify-content: center; color: #F59E0B; font-size: 1.25rem;">
-              ☀️
-            </div>
+            <div style="width: 42px; height: 42px; border-radius: 50%; background: #FEF3C7; display: flex; align-items: center; justify-content: center; color: #F59E0B;"><svg class="icon" style="width: 22px; height: 22px;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-sun"></use></svg></div>
             <div>
               <div style="font-size: 0.7rem; font-weight: 700; color: #64748B; text-transform: uppercase; letter-spacing: 0.05em;">PM Surya Ghar</div>
               <div style="font-size: 1.15rem; font-weight: 800; color: #0F172A; line-height: 1.2;">₹78,000 Subsidy</div>
@@ -276,9 +274,7 @@
 
           <!-- Floating Badge 2: 25-Year Warranty -->
           <div class="hero-floating-badge hero-floating-badge--bottom-right badge--floating-2">
-            <div style="width: 42px; height: 42px; border-radius: 50%; background: #D1FAE5; display: flex; align-items: center; justify-content: center; color: #10B981; font-size: 1.25rem;">
-              ⚡
-            </div>
+            <div style="width: 42px; height: 42px; border-radius: 50%; background: #D1FAE5; display: flex; align-items: center; justify-content: center; color: #10B981;"><svg class="icon" style="width: 22px; height: 22px;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-solar-park"></use></svg></div>
             <div>
               <div style="font-size: 0.7rem; font-weight: 700; color: #64748B; text-transform: uppercase; letter-spacing: 0.05em;">Power Generation</div>
               <div style="font-size: 1.15rem; font-weight: 800; color: #0F172A; line-height: 1.2;">25 Yrs Warranty</div>
@@ -593,11 +589,17 @@
                 <div class="radio-tile-group">
                   <label class="radio-tile">
                     <input type="radio" name="calc_service_type" value="residential" checked>
-                    <span class="radio-tile__label">🏠 Residential</span>
+                    <span class="radio-tile__label" style="display: flex; align-items: center; gap: 8px;">
+                      <svg class="icon" style="width: 18px; height: 18px; color: var(--color-brand-accent);" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-home"></use></svg>
+                      Residential
+                    </span>
                   </label>
                   <label class="radio-tile">
                     <input type="radio" name="calc_service_type" value="commercial">
-                    <span class="radio-tile__label">🏭 Commercial</span>
+                    <span class="radio-tile__label" style="display: flex; align-items: center; gap: 8px;">
+                      <svg class="icon" style="width: 18px; height: 18px; color: var(--color-brand-primary);" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-building"></use></svg>
+                      Commercial
+                    </span>
                   </label>
                 </div>
               </div>

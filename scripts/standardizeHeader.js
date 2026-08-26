@@ -30,12 +30,12 @@ const targetServicesLink = `<a href="/services/" class="nav-desktop__link">
             </a>`;
 
 const targetDropdown = `<ul class="nav-desktop__dropdown" role="list">
-              <li><a href="/services/residential-solar/" class="nav-desktop__dropdown-link"><span class="dropdown-icon">🏠</span><span>Residential Rooftop Solar</span></a></li>
-              <li><a href="/services/commercial-solar/" class="nav-desktop__dropdown-link"><span class="dropdown-icon">🏭</span><span>Commercial & Industrial Solar</span></a></li>
-              <li><a href="/services/institutional-solar/" class="nav-desktop__dropdown-link"><span class="dropdown-icon">🏥</span><span>Institutional Solar</span></a></li>
-              <li><a href="/services/government-solar/" class="nav-desktop__dropdown-link"><span class="dropdown-icon">🏛️</span><span>Government & Tender EPC</span></a></li>
-              <li><a href="/services/street-lights/" class="nav-desktop__dropdown-link"><span class="dropdown-icon">💡</span><span>Solar Street Lighting</span></a></li>
-              <li><a href="/services/solar-parks/" class="nav-desktop__dropdown-link"><span class="dropdown-icon">⚡</span><span>Utility Solar Parks</span></a></li>
+              <li><a href="/services/residential-solar/" class="nav-desktop__dropdown-link"><span class="dropdown-icon"><svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-home"></use></svg></span><span>Residential Rooftop Solar</span></a></li>
+              <li><a href="/services/commercial-solar/" class="nav-desktop__dropdown-link"><span class="dropdown-icon"><svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-building"></use></svg></span><span>Commercial & Industrial Solar</span></a></li>
+              <li><a href="/services/institutional-solar/" class="nav-desktop__dropdown-link"><span class="dropdown-icon"><svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-hospital"></use></svg></span><span>Institutional Solar</span></a></li>
+              <li><a href="/services/government-solar/" class="nav-desktop__dropdown-link"><span class="dropdown-icon"><svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-government"></use></svg></span><span>Government & Tender EPC</span></a></li>
+              <li><a href="/services/street-lights/" class="nav-desktop__dropdown-link"><span class="dropdown-icon"><svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-lightbulb"></use></svg></span><span>Solar Street Lighting</span></a></li>
+              <li><a href="/services/solar-parks/" class="nav-desktop__dropdown-link"><span class="dropdown-icon"><svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-solar-park"></use></svg></span><span>Utility Solar Parks</span></a></li>
             </ul>`;
 
 let updatedCount = 0;
@@ -46,7 +46,7 @@ htmlFiles.forEach(file => {
   // Replace old services link with chevron
   content = content.replace(/<a href="\/services\/" class="nav-desktop__link">[\s\S]*?<\/a>/g, targetServicesLink);
 
-  // Replace old dropdown menu with rich icons dropdown
+  // Replace old dropdown menu with clean vector icon dropdown
   content = content.replace(/<ul class="nav-desktop__dropdown" role="list">[\s\S]*?<\/ul>/g, targetDropdown);
 
   if (content !== original) {
