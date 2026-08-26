@@ -1,6 +1,6 @@
 /**
  * JDC SOLAR 2.0 - ACCESSIBLE FORM HANDLER & VALIDATOR
- * Handles honeypot spam protection, 10-digit Indian phone regex (/^[6-9]\d{9}$/), inline errors, and submit states
+ * Handles honeypot spam protection, 10-digit Indian phone regex (/^[6-9]\d{9}$/), email validation, inline errors, and submit states
  */
 
 import { qs, qsa } from '../core/dom.js';
@@ -22,19 +22,27 @@ export function initForms() {
 
       // 2. Validate Form Fields
       let isValid = true;
-      const inputs = qsa('input[required], select[required], textarea[required]', form);
+      const inputs = qsa('input, select, textarea', form);
 
       inputs.forEach(input => {
+        if (input.name === 'b_url') return; // Skip honeypot
+
         const errorEl = qs(`#${input.id}-error`, form);
         let fieldValid = true;
+        const val = input.value.trim();
 
-        if (!input.value.trim()) {
+        if (input.hasAttribute('required') && !val) {
           fieldValid = false;
-        } else if (input.type === 'tel') {
+        } else if (val && input.type === 'tel') {
           // Indian 10-digit mobile number validation: 6,7,8,9 followed by 9 digits
-          const cleanedPhone = input.value.replace(/\D/g, '');
+          const cleanedPhone = val.replace(/\D/g, '');
           const phoneRegex = /^[6-9]\d{9}$/;
           if (!phoneRegex.test(cleanedPhone)) {
+            fieldValid = false;
+          }
+        } else if (val && input.type === 'email') {
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(val)) {
             fieldValid = false;
           }
         }
@@ -72,8 +80,15 @@ export function initForms() {
           submitBtn.innerHTML = originalText;
         }
         form.reset();
-        toast.show('Thank you! Your rooftop survey request has been received. Our engineering team will call you within 2 hours.', 'success');
+        toast.show('Thank you! Your enquiry has been received. Our engineering team will contact you within 2 business hours.', 'success');
         
+        // Show in-page success alert if present
+        const successBanner = qs('.form-success-banner', form.parentElement);
+        if (successBanner) {
+          successBanner.classList.remove('hidden');
+          form.classList.add('hidden');
+        }
+
         // If inside a dialog, close it
         const dialog = form.closest('dialog');
         if (dialog && typeof dialog.close === 'function') {
