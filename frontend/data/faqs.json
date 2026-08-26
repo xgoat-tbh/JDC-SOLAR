@@ -1,58 +1,59 @@
 {
-  "categories": [
+  "lastUpdated": "2026-08-01",
+  "faqs": [
     {
-      "id": "general",
-      "name": "General & Solar Basics",
-      "faqs": [
-        {
-          "question": "How do on-grid rooftop solar systems work?",
-          "answer": "Solar photovoltaic (PV) panels absorb sunlight and convert it into direct current (DC) electricity. An on-grid string inverter converts this DC power into standard alternating current (AC) electricity to power your lights, appliances, and machinery. Any excess energy produced during the day is exported to the public grid via a bidirectional net-meter, earning energy credits that reduce your monthly power bill."
-        },
-        {
-          "question": "How much can I reduce my electricity bill with solar?",
-          "answer": "A correctly sized grid-tied solar system typically reduces monthly electricity bills by 70% to 90%. In Eastern India, a 3 kW residential rooftop solar plant generates roughly 360 units (kWh) per month, delivering annual savings of ₹25,000 to ₹30,000 with a full investment payback period of approximately 3 years."
-        },
-        {
-          "question": "What is the lifespan of solar panels and inverters?",
-          "answer": "Tier-1 monocrystalline solar panels have an operational lifespan of 25 to 30 years and come with a 25-year linear performance warranty guaranteeing >= 80% output efficiency at Year 25. High-quality grid-tie string inverters typically have a lifespan of 10 to 15 years and carry 5 to 10-year manufacturer replacement warranties."
-        }
-      ]
+      "id": "faq-01",
+      "category": "general",
+      "priority": 1,
+      "question": "Is my rooftop suitable for solar panel installation?",
+      "answer": "Most RCC concrete, tin shed, or industrial curved roofs with unobstructed access and south/south-west exposure are suitable. Each 1 kW capacity requires approximately 100 sq.ft of shadow-free rooftop area. JDC Solar conducts a complimentary 3D shadow analysis to confirm structural integrity.",
+      "relatedPage": "/services/residential-solar/",
+      "source": "JDC Engineering Feasibility SOP"
     },
     {
-      "id": "subsidy",
-      "name": "PM Surya Ghar & Government Subsidies",
-      "faqs": [
-        {
-          "question": "What is the subsidy amount under PM Surya Ghar Muft Bijli Yojana?",
-          "answer": "Under the Central Government's PM Surya Ghar scheme, residential homeowners receive a fixed financial subsidy of ₹30,000 for a 1 kW system, ₹60,000 for a 2 kW system, and ₹78,000 for systems of 3 kW or higher capacity. The subsidy amount is credited directly into the homeowner's bank account following technical inspection and net-meter commissioning."
-        },
-        {
-          "question": "What documents are required to apply for the solar subsidy?",
-          "answer": "You only need four simple documents: (1) Latest electricity bill from your DISCOM (e.g. JBVNL/TSUISL), (2) Aadhaar card of the electricity connection holder, (3) Bank account passbook or cancelled cheque for direct subsidy credit, and (4) Clear rooftop photographs. JDC Solar handles 100% of the National Portal registration and submission on your behalf."
-        },
-        {
-          "question": "How long does it take to receive the PM Surya Ghar subsidy in my bank account?",
-          "answer": "Once the physical installation is complete and the DISCOM installs the bidirectional net-meter, a joint commissioning certificate is uploaded to the National Solar Portal. Subsidies are typically disbursed directly into your bank account via DBT (Direct Benefit Transfer) within 30 to 45 days of commissioning."
-        }
-      ]
+      "id": "faq-02",
+      "category": "general",
+      "priority": 2,
+      "question": "What is the expected lifespan and warranty of a solar power plant?",
+      "answer": "Tier-1 Mono PERC and TOPCon solar modules carry a 25-to-30-year linear power output warranty (guaranteeing at least 80–85% efficiency at Year 25). Solar grid-tie inverters generally carry a 5-to-10-year OEM warranty and have an operational lifespan of 10–15 years.",
+      "relatedPage": "/resources/solar-maintenance-guide/",
+      "source": "OEM Manufacturer Warranties"
     },
     {
-      "id": "technical",
-      "name": "Installation, Approvals & Maintenance",
-      "faqs": [
-        {
-          "question": "How much rooftop area is required for a solar installation?",
-          "answer": "As a standard engineering benchmark, each 1 kWp of solar panel capacity requires approximately 100 square feet (9.3 square meters) of shadow-free rooftop space. For example, a 3 kW home system requires about 300 sq.ft, while a 250 kW industrial rooftop installation requires about 25,000 sq.ft."
-        },
-        {
-          "question": "Will solar panel installation damage my roof?",
-          "answer": "No. JDC Solar uses non-penetrative anchoring techniques or specialized chemical waterproofing sealant on flat concrete RCC roofs. For industrial metal shed roofs, specialized aluminum rail clamps are used that attach securely to the roof purlins without puncturing or causing water leakage."
-        },
-        {
-          "question": "What happens on cloudy, rainy, or hazy days?",
-          "answer": "Solar panels continue to generate electricity even under diffuse light on overcast and rainy days, producing roughly 25% to 40% of their peak capacity. Because your system is connected to the grid via net-metering, any shortfall in solar power is automatically drawn seamlessly from the utility grid with zero power interruption."
-        }
-      ]
+      "id": "faq-03",
+      "category": "subsidy",
+      "priority": 3,
+      "question": "How much subsidy is available under PM Surya Ghar Yojana?",
+      "answer": "Under the PM Surya Ghar: Muft Bijli Yojana, individual residential homeowners receive ₹30,000 for 1 kW, ₹60,000 for 2 kW, and a maximum capped central subsidy of ₹78,000 for systems 3 kW or larger. The subsidy is deposited directly into the consumer's bank account via DBT.",
+      "relatedPage": "/pm-surya-ghar/",
+      "source": "MNRE PM Surya Ghar Notification"
+    },
+    {
+      "id": "faq-04",
+      "category": "technical",
+      "priority": 4,
+      "question": "What is bidirectional net-metering and how does it adjust electricity bills?",
+      "answer": "A bidirectional net-meter measures both electricity imported from the DISCOM grid and surplus solar power exported into the grid. At the end of each billing cycle, you only pay for 'Net Units' (Import minus Export). Surplus units are credited forward into subsequent billing cycles.",
+      "relatedPage": "/resources/how-solar-rooftop-works/",
+      "source": "JSERC Net-Metering Regulations"
+    },
+    {
+      "id": "faq-05",
+      "category": "financial",
+      "priority": 5,
+      "question": "Can commercial enterprises and factories claim tax depreciation on solar?",
+      "answer": "Yes. Under Section 32 of the Indian Income Tax Act, commercial and industrial enterprises can claim 40% Accelerated Depreciation in Year 1 on solar energy equipment, allowing businesses to significantly lower their taxable profits and shorten ROI to 3–4 years.",
+      "relatedPage": "/resources/commercial-solar-tax-benefits/",
+      "source": "Indian Income Tax Act Sec 32"
+    },
+    {
+      "id": "faq-06",
+      "category": "technical",
+      "priority": 6,
+      "question": "Does an on-grid solar system work during a grid power outage?",
+      "answer": "Standard on-grid solar inverters feature built-in anti-islanding safety protection that automatically shuts down power generation during a grid blackout to protect utility linesmen working on the grid. If uninterrupted power during blackouts is required, a Hybrid Solar System with lithium battery storage or DG-synchronization controller is recommended.",
+      "relatedPage": "/services/commercial-solar/",
+      "source": "IEEE 1547 & CEA Safety Guidelines"
     }
   ]
 }

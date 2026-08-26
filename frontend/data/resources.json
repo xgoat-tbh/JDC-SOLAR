@@ -1,0 +1,62 @@
+{
+  "lastUpdated": "2026-08-01",
+  "resources": [
+    {
+      "id": "res-01",
+      "slug": "how-solar-rooftop-works",
+      "title": "How Rooftop Solar Works: Net-Metering, Inverters & Grid Synchronization",
+      "category": "basics",
+      "categoryLabel": "Solar Basics",
+      "readTime": "5 min read",
+      "lastUpdated": "2026-08-01",
+      "summary": "Understand how photovoltaic cells convert sunlight into DC electricity, how inverters synchronize with the grid, and how bidirectional net-meters reduce power bills.",
+      "featured": true,
+      "relatedService": "/services/residential-solar/",
+      "downloadUrl": null
+    },
+    {
+      "id": "res-02",
+      "slug": "solar-maintenance-guide",
+      "title": "Solar Panel Maintenance & Cleaning: Preventive Care for Maximum Generation",
+      "category": "maintenance",
+      "categoryLabel": "Maintenance & O&M",
+      "readTime": "6 min read",
+      "lastUpdated": "2026-08-01",
+      "summary": "Learn recommended cleaning cycles, water quality standards, thermal hotspot inspection, and inverter health monitoring to safeguard your 25-year solar investment.",
+      "featured": true,
+      "relatedService": "/services/commercial-solar/",
+      "downloadUrl": null
+    },
+    {
+      "id": "res-03",
+      "slug": "commercial-solar-tax-benefits",
+      "title": "Section 32 Accelerated Depreciation: 40% Year-1 Tax Shield for Businesses",
+      "category": "commercial",
+      "categoryLabel": "Commercial & Tax",
+      "readTime": "7 min read",
+      "lastUpdated": "2026-08-01",
+      "summary": "A comprehensive financial guide on how Indian corporate and commercial entities can claim 40% accelerated depreciation to write off solar capital costs in Year 1.",
+      "featured": true,
+      "relatedService": "/services/commercial-solar/",
+      "downloadUrl": null
+    }
+  ],
+  "downloads": [
+    {
+      "id": "doc-01",
+      "title": "JDC Solar Corporate Capability Deck & Technical Brochure",
+      "format": "PDF Document",
+      "size": "2.4 MB",
+      "description": "Comprehensive engineering portfolio, EPC credentials, Tier-1 component certifications, and client case studies.",
+      "downloadUrl": "/assets/docs/jdc-solar-company-brochure.pdf"
+    },
+    {
+      "id": "doc-02",
+      "title": "PM Surya Ghar National Portal Homeowner Registration Checklist",
+      "format": "PDF Document",
+      "size": "1.1 MB",
+      "description": "Official step-by-step document guide and consumer number verification checklist for claiming up to ₹78,000 central subsidy.",
+      "downloadUrl": "/assets/docs/pm-surya-ghar-checklist.pdf"
+    }
+  ]
+}

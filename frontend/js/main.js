@@ -12,6 +12,7 @@ import { initStatCounters } from './components/counter.js';
 import { initForms } from './components/formHandler.js';
 import { initCalculator } from './components/calculatorUI.js';
 import { initProjectExplorer } from './components/projectExplorer.js';
+import { initResourceExplorer } from './components/resourceExplorer.js';
 
 /**
  * Initialize global components active across all pages
@@ -53,6 +54,9 @@ function initGlobalComponents() {
 
   // 8. Projects & Case Studies Explorer (if present on page)
   initProjectExplorer();
+
+  // 9. Resources & Educational Content Explorer (if present on page)
+  initResourceExplorer();
 }
 
 /**
