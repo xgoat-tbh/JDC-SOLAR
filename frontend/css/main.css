@@ -1,6 +1,6 @@
 /**
  * JDC SOLAR 2.0 - MASTER STYLESHEET
- * Modular CSS Architecture importing foundational layers and global UI components
+ * Modular CSS Architecture importing foundational layers, global UI components, and page layouts
  */
 
 /* 1. Design Tokens & Custom Properties */
@@ -37,3 +37,6 @@
 @import url('./components/cta.css');
 @import url('./components/carousel.css');
 @import url('./components/media.css');
+
+/* 7. Page Specific Layouts */
+@import url('./pages/home.css');
