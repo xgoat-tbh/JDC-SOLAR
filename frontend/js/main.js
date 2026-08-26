@@ -4,13 +4,14 @@
  */
 
 import { APP_CONFIG } from './config.js';
-import { qs, qsa } from './core/dom.js';
+import { qs } from './core/dom.js';
 import { initNavigation } from './components/navigation.js';
 import { initModals } from './components/modal.js';
 import { initAccordions } from './components/accordion.js';
 import { initStatCounters } from './components/counter.js';
 import { initForms } from './components/formHandler.js';
 import { initCalculator } from './components/calculatorUI.js';
+import { initProjectExplorer } from './components/projectExplorer.js';
 
 /**
  * Initialize global components active across all pages
@@ -23,7 +24,7 @@ function initGlobalComponents() {
   // 1. Global Skip Link focus handler
   const skipLink = qs('.skip-link');
   if (skipLink) {
-    skipLink.addEventListener('click', (e) => {
+    skipLink.addEventListener('click', () => {
       const target = qs('#main-content');
       if (target) {
         target.setAttribute('tabindex', '-1');
@@ -49,6 +50,9 @@ function initGlobalComponents() {
 
   // 7. Solar Calculator Subsystem (if present on page)
   initCalculator();
+
+  // 8. Projects & Case Studies Explorer (if present on page)
+  initProjectExplorer();
 }
 
 /**
