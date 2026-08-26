@@ -94,15 +94,17 @@
           <li class="nav-desktop__item">
             <a href="/services/" class="nav-desktop__link">
               Services
-              <svg class="icon" style="width: 14px; height: 14px;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-chevron-down"></use></svg>
+              <svg class="nav-chevron icon" aria-hidden="true">
+                <use href="/assets/icons/sprite.svg#icon-chevron-down"></use>
+              </svg>
             </a>
             <ul class="nav-desktop__dropdown" role="list">
-              <li><a href="/services/residential-solar/" class="nav-desktop__dropdown-link">Residential Rooftop Solar</a></li>
-              <li><a href="/services/commercial-solar/" class="nav-desktop__dropdown-link">Commercial & Industrial Solar</a></li>
-              <li><a href="/services/institutional-solar/" class="nav-desktop__dropdown-link">Institutional Solar</a></li>
-              <li><a href="/services/government-solar/" class="nav-desktop__dropdown-link">Government & Tender EPC</a></li>
-              <li><a href="/services/street-lights/" class="nav-desktop__dropdown-link">Solar Street Lighting</a></li>
-              <li><a href="/services/solar-parks/" class="nav-desktop__dropdown-link">Utility Solar Parks</a></li>
+              <li><a href="/services/residential-solar/" class="nav-desktop__dropdown-link"><span class="dropdown-icon">🏠</span><span>Residential Rooftop Solar</span></a></li>
+              <li><a href="/services/commercial-solar/" class="nav-desktop__dropdown-link"><span class="dropdown-icon">🏭</span><span>Commercial & Industrial Solar</span></a></li>
+              <li><a href="/services/institutional-solar/" class="nav-desktop__dropdown-link"><span class="dropdown-icon">🏥</span><span>Institutional Solar</span></a></li>
+              <li><a href="/services/government-solar/" class="nav-desktop__dropdown-link"><span class="dropdown-icon">🏛️</span><span>Government & Tender EPC</span></a></li>
+              <li><a href="/services/street-lights/" class="nav-desktop__dropdown-link"><span class="dropdown-icon">💡</span><span>Solar Street Lighting</span></a></li>
+              <li><a href="/services/solar-parks/" class="nav-desktop__dropdown-link"><span class="dropdown-icon">⚡</span><span>Utility Solar Parks</span></a></li>
             </ul>
           </li>
           <li class="nav-desktop__item"><a href="/projects/" class="nav-desktop__link">Projects</a></li>
@@ -245,58 +247,57 @@
             </div>
 
             <!-- Right Column: System Estimate Breakdown -->
-            <div style="background: var(--color-bg-alt); padding: var(--space-xl); border-radius: var(--radius-lg); border: 1px solid var(--color-border-subtle); display: flex; flex-direction: column; justify-content: space-between;">
+            <div class="card--neomorph-raised" style="padding: var(--space-xl); display: flex; flex-direction: column; justify-content: space-between; gap: 1.5rem;">
               <div>
-                <span class="badge badge--accent" style="margin-bottom: 0.75rem;">SYSTEM ESTIMATE</span>
-                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1.25rem;">
-                  <span style="font-size: 1.15rem; font-weight: 600;">Recommended Sizing:</span>
-                  <span id="out-system-size" style="font-size: 2.25rem; font-weight: 800; color: var(--color-brand-primary); line-height: 1;">3.0 kWp</span>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem;">
+                  <span class="badge badge--accent badge--pulse">SYSTEM ESTIMATE</span>
+                  <span id="out-system-size" class="metric-tile__value--primary" style="font-size: 2.25rem; font-weight: 800; line-height: 1;">3.0 kWp</span>
                 </div>
                 
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
-                  <div>
-                    <span class="text-small text-muted">Gross Turnkey Cost:</span>
-                    <div id="out-gross-cost" style="font-weight: 700;">₹ 1,65,000</div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; margin-bottom: 1.25rem;">
+                  <div class="metric-tile--neomorph">
+                    <div class="metric-tile__label">Gross Turnkey Cost</div>
+                    <div id="out-gross-cost" class="metric-tile__value">₹ 1,65,000</div>
                   </div>
-                  <div>
-                    <span class="text-small text-muted">PM Surya Ghar Subsidy:</span>
-                    <div id="out-subsidy" style="font-weight: 700; color: var(--color-status-success);">₹ 78,000</div>
+                  <div class="metric-tile--neomorph" style="border-color: rgba(16, 185, 129, 0.4); background: #F0FDF4;">
+                    <div class="metric-tile__label" style="color: #059669;">PM Surya Ghar Subsidy</div>
+                    <div id="out-subsidy" class="metric-tile__value metric-tile__value--success">₹ 78,000</div>
                   </div>
-                  <div>
-                    <span class="text-small text-muted">Net Outflow Cost:</span>
-                    <div id="out-net-cost" style="font-weight: 700; color: var(--color-brand-primary);">₹ 87,000</div>
+                  <div class="metric-tile--neomorph">
+                    <div class="metric-tile__label">Net Outflow Cost</div>
+                    <div id="out-net-cost" class="metric-tile__value metric-tile__value--primary">₹ 87,000</div>
                   </div>
-                  <div>
-                    <span class="text-small text-muted">Annual Bill Savings:</span>
-                    <div id="out-annual-savings" style="font-weight: 700; color: var(--color-status-success);">₹ 28,470 / yr</div>
+                  <div class="metric-tile--neomorph" style="background: #F0FDF4;">
+                    <div class="metric-tile__label" style="color: #059669;">Annual Bill Savings</div>
+                    <div id="out-annual-savings" class="metric-tile__value metric-tile__value--success">₹ 28,470 / yr</div>
                   </div>
-                  <div>
-                    <span class="text-small text-muted">Rooftop Area Needed:</span>
-                    <div id="out-area" style="font-weight: 600;">~300 sq.ft</div>
+                  <div class="metric-tile--neomorph">
+                    <div class="metric-tile__label">Rooftop Area Needed</div>
+                    <div id="out-area" class="metric-tile__value" style="font-size: 1.05rem;">~300 sq.ft</div>
                   </div>
-                  <div>
-                    <span class="text-small text-muted">Estimated Payback:</span>
-                    <div id="out-payback" style="font-weight: 600;">3.1 Years</div>
+                  <div class="metric-tile--neomorph">
+                    <div class="metric-tile__label">Estimated Payback</div>
+                    <div id="out-payback" class="metric-tile__value" style="font-size: 1.05rem;">3.1 Years</div>
                   </div>
-                  <div>
-                    <span class="text-small text-muted">Annual Clean Power:</span>
-                    <div id="out-generation" style="font-weight: 600;">~4,380 kWh / yr</div>
+                  <div class="metric-tile--neomorph">
+                    <div class="metric-tile__label">Annual Clean Power</div>
+                    <div id="out-generation" class="metric-tile__value" style="font-size: 1.05rem;">~4,380 kWh / yr</div>
                   </div>
-                  <div>
-                    <span class="text-small text-muted">CO₂ Avoided:</span>
-                    <div id="out-co2" style="font-weight: 600;">3.6 Tons / yr</div>
+                  <div class="metric-tile--neomorph">
+                    <div class="metric-tile__label">CO₂ Avoided</div>
+                    <div id="out-co2" class="metric-tile__value" style="font-size: 1.05rem;">3.6 Tons / yr</div>
                   </div>
                 </div>
               </div>
 
               <!-- Quick Quote & Survey Actions -->
               <div class="flex gap-sm" style="flex-wrap: wrap;">
-                <a id="calc-whatsapp-quote" href="#" class="btn btn--whatsapp" target="_blank" rel="noopener noreferrer" style="flex-grow: 1;">
+                <a id="calc-whatsapp-quote" href="#" class="btn btn--whatsapp btn--lg" target="_blank" rel="noopener noreferrer" style="flex-grow: 1;">
                   <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-whatsapp"></use></svg>
                   Share Quote on WhatsApp
                 </a>
-                <button type="button" class="btn btn--primary" data-modal-open="survey-modal" style="flex-grow: 1;">
-                  Book Free Site Survey
+                <button type="button" class="btn btn--primary btn--lg" data-modal-open="survey-modal" style="flex-grow: 1;">
+                  Book Free Site Survey →
                 </button>
               </div>
             </div>
