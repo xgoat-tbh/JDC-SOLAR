@@ -274,22 +274,78 @@
         </div>
       </div>
 
-      <!-- Floating Glassmorphic Stat Badges (Desktop Only) -->
-      <div class="hero-floating-stats" data-reveal="slide-left">
-        <div class="hero-stat-badge badge--floating-1">
-          <div class="hero-stat-badge__value" data-counter="500" data-counter-suffix="+">500+</div>
-          <div class="hero-stat-badge__label">Projects Delivered</div>
+      <!-- Sleek Frosted Glass Live Telemetry Card (Desktop Only) -->
+      <div class="hero-telemetry-card" data-reveal="slide-left">
+        <div class="hero-telemetry__header">
+          <div class="hero-telemetry__tag">⚡ Live Telemetry</div>
+          <div class="hero-telemetry__status">
+            <span class="hero-telemetry__status-dot"></span>
+            <span>Grid Connected</span>
+          </div>
         </div>
-        <div class="hero-stat-badge badge--floating-2">
-          <div class="hero-stat-badge__value" data-counter="25" data-counter-suffix="+ MW">25+ MW</div>
-          <div class="hero-stat-badge__label">Capacity Installed</div>
+        <div class="hero-telemetry__output">
+          <div>
+            <div class="hero-telemetry__watts">18.4 <span>kW</span></div>
+            <div style="font-size: 0.65rem; color: rgba(226,232,240,0.7); text-transform: uppercase;">Realtime Generation</div>
+          </div>
+          <div class="hero-telemetry__efficiency">98.2% Sizing Opt</div>
         </div>
-        <div class="hero-stat-badge badge--floating-1">
-          <div class="hero-stat-badge__value" style="color: #10B981;">90%</div>
-          <div class="hero-stat-badge__label">Avg Bill Reduction</div>
+
+        <!-- SVG Solar Generation Power Curve -->
+        <svg class="hero-telemetry__graph" viewBox="0 0 280 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <linearGradient id="curveGrad" x1="0" y1="0" x2="0" y2="48" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FD8127" stop-opacity="0.35" />
+              <stop offset="1" stop-color="#FD8127" stop-opacity="0" />
+            </linearGradient>
+          </defs>
+          <path d="M0 44 C40 44, 70 12, 140 8 C210 4, 240 38, 280 44 L280 48 L0 48 Z" fill="url(#curveGrad)" />
+          <path d="M0 44 C40 44, 70 12, 140 8 C210 4, 240 38, 280 44" stroke="#FD8127" stroke-width="2.5" stroke-linecap="round" />
+        </svg>
+
+        <div class="hero-telemetry__stats-grid">
+          <div class="hero-telemetry__stat-item">
+            <div class="hero-telemetry__stat-num" data-counter="500" data-counter-suffix="+">500+</div>
+            <div class="hero-telemetry__stat-lbl">Projects</div>
+          </div>
+          <div class="hero-telemetry__stat-item">
+            <div class="hero-telemetry__stat-num" data-counter="25" data-counter-suffix="+ MW">25+ MW</div>
+            <div class="hero-telemetry__stat-lbl">Installed</div>
+          </div>
+          <div class="hero-telemetry__stat-item">
+            <div class="hero-telemetry__stat-num" style="color: #10B981;">90%</div>
+            <div class="hero-telemetry__stat-lbl">Savings</div>
+          </div>
+        </div>
+
+        <div class="hero-telemetry__footer-badge">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-shield"></use></svg>
+          <span>Tier-1 DCR ALMM Modules • JBVNL Approved</span>
         </div>
       </div>
     </section>
+
+    <!-- ====================================================================
+         DYNAMIC KINETIC MARQUEE TICKER (Continuous Horizontal Motion)
+         ==================================================================== -->
+    <div class="kinetic-ticker" aria-label="Live Solar Statistics & Approvals">
+      <div class="kinetic-ticker__track">
+        <div class="kinetic-ticker__item"><svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-sun"></use></svg><span>500+ Commissioned Rooftop Installations Across Eastern India</span><span class="ticker-dot"></span></div>
+        <div class="kinetic-ticker__item"><svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-shield"></use></svg><span>₹78,000 Direct DBT Central Subsidy Under PM Surya Ghar</span><span class="ticker-dot"></span></div>
+        <div class="kinetic-ticker__item"><svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg><span>25-Year Linear Performance Warranty on Tier-1 Monocrystalline Modules</span><span class="ticker-dot"></span></div>
+        <div class="kinetic-ticker__item"><svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-factory"></use></svg><span>High-Tension (HT) 11kV/33kV Net-Metering Specialists</span><span class="ticker-dot"></span></div>
+        <div class="kinetic-ticker__item"><svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-leaf"></use></svg><span>25,000+ Tons CO₂ Carbon Offset Achieved</span><span class="ticker-dot"></span></div>
+        <div class="kinetic-ticker__item"><svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-verified"></use></svg><span>Approved Channel Partner for MNRE & JBVNL Net-Metering</span><span class="ticker-dot"></span></div>
+        
+        <!-- Duplicate for seamless 100% infinite loop -->
+        <div class="kinetic-ticker__item"><svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-sun"></use></svg><span>500+ Commissioned Rooftop Installations Across Eastern India</span><span class="ticker-dot"></span></div>
+        <div class="kinetic-ticker__item"><svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-shield"></use></svg><span>₹78,000 Direct DBT Central Subsidy Under PM Surya Ghar</span><span class="ticker-dot"></span></div>
+        <div class="kinetic-ticker__item"><svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg><span>25-Year Linear Performance Warranty on Tier-1 Monocrystalline Modules</span><span class="ticker-dot"></span></div>
+        <div class="kinetic-ticker__item"><svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-factory"></use></svg><span>High-Tension (HT) 11kV/33kV Net-Metering Specialists</span><span class="ticker-dot"></span></div>
+        <div class="kinetic-ticker__item"><svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-leaf"></use></svg><span>25,000+ Tons CO₂ Carbon Offset Achieved</span><span class="ticker-dot"></span></div>
+        <div class="kinetic-ticker__item"><svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-verified"></use></svg><span>Approved Channel Partner for MNRE & JBVNL Net-Metering</span><span class="ticker-dot"></span></div>
+      </div>
+    </div>
 
     <!-- ====================================================================
          SECTION 2: TRUST & MILESTONE PROOF BAR
@@ -682,116 +738,194 @@
     </div>
 
     <!-- ====================================================================
-         SECTION 6: FEATURED PROJECT CASE STUDIES (Bento Portfolio)
+         SECTION 6: FEATURED PROJECT MOMENTUM HORIZONTAL CAROUSEL
          ==================================================================== -->
     <section class="section section--alt" aria-label="Featured Solar Projects">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header" data-reveal="fade-up">
           <div class="badge--saas-pulse" style="margin-bottom: 0.75rem;">
             <span class="badge-pulse-dot"><span class="badge-pulse-dot__ping"></span><span class="badge-pulse-dot__core"></span></span>
             <span>Proven Track Record</span>
           </div>
           <h2>Featured Solar EPC Installations</h2>
-          <p class="lead">Real operational performance and verified savings delivered across Jharkhand.</p>
+          <p class="lead">Swipe or use arrow controls to explore verified engineering projects delivered across Eastern India.</p>
         </div>
 
-        <div class="grid grid--3col" style="margin-bottom: 2.5rem;" data-reveal="stagger">
-          <!-- Project 1: Industrial (Adityapur) -->
-          <div class="card-project" data-tilt>
-            <div class="card-project__media-wrap">
-              <img src="/assets/images/projects/project-adityapur-250kw.jpg" alt="250 kWp Industrial Rooftop Solar in Adityapur Jamshedpur" width="600" height="400" loading="lazy">
-              <div class="card-project__badge-overlay">
-                <div class="badge--saas-pulse"><span class="badge-pulse-dot"><span class="badge-pulse-dot__ping"></span><span class="badge-pulse-dot__core"></span></span><span>Industrial Solar</span></div>
+        <div class="project-carousel-wrapper">
+          <!-- Navigation Arrows -->
+          <button type="button" class="carousel-nav-btn carousel-nav-btn--prev" aria-label="Previous Projects">
+            <svg class="icon" style="width: 20px; height: 20px;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-chevron-left"></use></svg>
+          </button>
+          <button type="button" class="carousel-nav-btn carousel-nav-btn--next" aria-label="Next Projects">
+            <svg class="icon" style="width: 20px; height: 20px;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-chevron-right"></use></svg>
+          </button>
+
+          <!-- Horizontal Momentum Track -->
+          <div class="project-carousel-track" data-reveal="fade-up">
+            <!-- Project 1: Industrial (Adityapur) -->
+            <div class="card-project" data-tilt>
+              <div class="card-project__media-wrap">
+                <img src="/assets/images/projects/project-adityapur-250kw.jpg" alt="250 kWp Industrial Rooftop Solar in Adityapur Jamshedpur" width="600" height="400" loading="lazy">
+                <div class="card-project__badge-overlay">
+                  <div class="badge--saas-pulse"><span class="badge-pulse-dot"><span class="badge-pulse-dot__ping"></span><span class="badge-pulse-dot__core"></span></span><span>Industrial Solar</span></div>
+                </div>
+              </div>
+              <div class="card-project__body">
+                <div class="card-project__location">
+                  <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-location"></use></svg>
+                  <span>Adityapur Industrial Area, Jamshedpur</span>
+                </div>
+                <h3 class="card-project__title">Heavy Engineering & Auto Ancillary Unit</h3>
+                <div class="card-project__metrics">
+                  <div class="card-project__metric-item">
+                    <span class="card-project__metric-label">System Size</span>
+                    <span class="card-project__metric-value">250 kWp</span>
+                  </div>
+                  <div class="card-project__metric-item">
+                    <span class="card-project__metric-label">Annual Savings</span>
+                    <span class="card-project__metric-value">₹ 28.5 Lakhs</span>
+                  </div>
+                </div>
+                <div class="card-project__footer">
+                  <span>Payback: 3.2 Years</span>
+                  <a href="/projects/" class="btn btn--ghost btn--sm">View Case Study →</a>
+                </div>
               </div>
             </div>
-            <div class="card-project__body">
-              <div class="card-project__location">
-                <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-location"></use></svg>
-                <span>Adityapur Industrial Area, Jamshedpur</span>
-              </div>
-              <h3 class="card-project__title">Heavy Engineering & Auto Ancillary Unit</h3>
-              <div class="card-project__metrics">
-                <div class="card-project__metric-item">
-                  <span class="card-project__metric-label">System Size</span>
-                  <span class="card-project__metric-value">250 kWp</span>
-                </div>
-                <div class="card-project__metric-item">
-                  <span class="card-project__metric-label">Annual Savings</span>
-                  <span class="card-project__metric-value">₹ 28.5 Lakhs</span>
+
+            <!-- Project 2: Institutional (Bistupur Hospital) -->
+            <div class="card-project" data-tilt>
+              <div class="card-project__media-wrap">
+                <img src="/assets/images/projects/project-bistupur-50kw.jpg" alt="50 kWp Hospital Rooftop Solar in Bistupur Jamshedpur" width="600" height="400" loading="lazy">
+                <div class="card-project__badge-overlay">
+                  <div class="badge--saas-pulse"><span class="badge-pulse-dot"><span class="badge-pulse-dot__ping"></span><span class="badge-pulse-dot__core"></span></span><span>Institutional Solar</span></div>
                 </div>
               </div>
-              <div class="card-project__footer">
-                <span>Payback: 3.2 Years</span>
-                <a href="/projects/" class="btn btn--ghost btn--sm">View Case Study →</a>
+              <div class="card-project__body">
+                <div class="card-project__location">
+                  <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-location"></use></svg>
+                  <span>Bistupur, Jamshedpur</span>
+                </div>
+                <h3 class="card-project__title">Multi-Speciality Hospital & Diagnostics</h3>
+                <div class="card-project__metrics">
+                  <div class="card-project__metric-item">
+                    <span class="card-project__metric-label">System Size</span>
+                    <span class="card-project__metric-value">50 kWp</span>
+                  </div>
+                  <div class="card-project__metric-item">
+                    <span class="card-project__metric-label">Annual Savings</span>
+                    <span class="card-project__metric-value">₹ 5.7 Lakhs</span>
+                  </div>
+                </div>
+                <div class="card-project__footer">
+                  <span>DG-Sync Active</span>
+                  <a href="/projects/" class="btn btn--ghost btn--sm">View Case Study →</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 3: Residential Villa (Ranchi) -->
+            <div class="card-project" data-tilt>
+              <div class="card-project__media-wrap">
+                <img src="/assets/images/projects/project-sakchi-villa.jpg" alt="5 kWp Residential Rooftop Solar in Morabadi Ranchi" width="600" height="400" loading="lazy">
+                <div class="card-project__badge-overlay">
+                  <div class="badge--saas-pulse"><span class="badge-pulse-dot"><span class="badge-pulse-dot__ping"></span><span class="badge-pulse-dot__core"></span></span><span>Residential Solar</span></div>
+                </div>
+              </div>
+              <div class="card-project__body">
+                <div class="card-project__location">
+                  <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-location"></use></svg>
+                  <span>Morabadi, Ranchi</span>
+                </div>
+                <h3 class="card-project__title">Independent Residential Villa</h3>
+                <div class="card-project__metrics">
+                  <div class="card-project__metric-item">
+                    <span class="card-project__metric-label">System Size</span>
+                    <span class="card-project__metric-value">5.0 kWp</span>
+                  </div>
+                  <div class="card-project__metric-item">
+                    <span class="card-project__metric-label">Annual Savings</span>
+                    <span class="card-project__metric-value">₹ 48,000</span>
+                  </div>
+                </div>
+                <div class="card-project__footer">
+                  <span>₹78k Subsidy Disbursed</span>
+                  <a href="/projects/" class="btn btn--ghost btn--sm">View Case Study →</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 4: Utility Solar Park (Bokaro) -->
+            <div class="card-project" data-tilt>
+              <div class="card-project__media-wrap">
+                <img src="/assets/images/hero/cta-solar-farm.jpg" alt="1.5 MW Utility Ground Mount Solar in Bokaro" width="600" height="400" loading="lazy">
+                <div class="card-project__badge-overlay">
+                  <div class="badge--saas-pulse"><span class="badge-pulse-dot"><span class="badge-pulse-dot__ping"></span><span class="badge-pulse-dot__core"></span></span><span>Utility Solar Park</span></div>
+                </div>
+              </div>
+              <div class="card-project__body">
+                <div class="card-project__location">
+                  <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-location"></use></svg>
+                  <span>Chas, Bokaro</span>
+                </div>
+                <h3 class="card-project__title">1.5 MW Utility Ground-Mount Array</h3>
+                <div class="card-project__metrics">
+                  <div class="card-project__metric-item">
+                    <span class="card-project__metric-label">System Size</span>
+                    <span class="card-project__metric-value">1.5 MWp</span>
+                  </div>
+                  <div class="card-project__metric-item">
+                    <span class="card-project__metric-label">Annual Yield</span>
+                    <span class="card-project__metric-value">2.25M kWh</span>
+                  </div>
+                </div>
+                <div class="card-project__footer">
+                  <span>33kV Grid Export</span>
+                  <a href="/projects/" class="btn btn--ghost btn--sm">View Case Study →</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 5: Commercial Plaza (Sakchi) -->
+            <div class="card-project" data-tilt>
+              <div class="card-project__media-wrap">
+                <img src="/assets/images/banners/banner-services.jpg" alt="75 kW Commercial Plaza Solar in Sakchi Jamshedpur" width="600" height="400" loading="lazy">
+                <div class="card-project__badge-overlay">
+                  <div class="badge--saas-pulse"><span class="badge-pulse-dot"><span class="badge-pulse-dot__ping"></span><span class="badge-pulse-dot__core"></span></span><span>Commercial Solar</span></div>
+                </div>
+              </div>
+              <div class="card-project__body">
+                <div class="card-project__location">
+                  <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-location"></use></svg>
+                  <span>Sakchi, Jamshedpur</span>
+                </div>
+                <h3 class="card-project__title">Commercial Retail Complex</h3>
+                <div class="card-project__metrics">
+                  <div class="card-project__metric-item">
+                    <span class="card-project__metric-label">System Size</span>
+                    <span class="card-project__metric-value">75 kWp</span>
+                  </div>
+                  <div class="card-project__metric-item">
+                    <span class="card-project__metric-label">Annual Savings</span>
+                    <span class="card-project__metric-value">₹ 8.6 Lakhs</span>
+                  </div>
+                </div>
+                <div class="card-project__footer">
+                  <span>40% Tax Benefit</span>
+                  <a href="/projects/" class="btn btn--ghost btn--sm">View Case Study →</a>
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- Project 2: Institutional (Bistupur Hospital) -->
-          <div class="card-project" data-tilt>
-            <div class="card-project__media-wrap">
-              <img src="/assets/images/projects/project-bistupur-50kw.jpg" alt="50 kWp Hospital Rooftop Solar in Bistupur Jamshedpur" width="600" height="400" loading="lazy">
-              <div class="card-project__badge-overlay">
-                <div class="badge--saas-pulse"><span class="badge-pulse-dot"><span class="badge-pulse-dot__ping"></span><span class="badge-pulse-dot__core"></span></span><span>Institutional Solar</span></div>
-              </div>
-            </div>
-            <div class="card-project__body">
-              <div class="card-project__location">
-                <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-location"></use></svg>
-                <span>Bistupur, Jamshedpur</span>
-              </div>
-              <h3 class="card-project__title">Multi-Speciality Hospital & Diagnostics</h3>
-              <div class="card-project__metrics">
-                <div class="card-project__metric-item">
-                  <span class="card-project__metric-label">System Size</span>
-                  <span class="card-project__metric-value">50 kWp</span>
-                </div>
-                <div class="card-project__metric-item">
-                  <span class="card-project__metric-label">Annual Savings</span>
-                  <span class="card-project__metric-value">₹ 5.7 Lakhs</span>
-                </div>
-              </div>
-              <div class="card-project__footer">
-                <span>DG-Sync Active</span>
-                <a href="/projects/" class="btn btn--ghost btn--sm">View Case Study →</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 3: Residential Villa (Ranchi) -->
-          <div class="card-project" data-tilt>
-            <div class="card-project__media-wrap">
-              <img src="/assets/images/projects/project-sakchi-villa.jpg" alt="5 kWp Residential Rooftop Solar in Morabadi Ranchi" width="600" height="400" loading="lazy">
-              <div class="card-project__badge-overlay">
-                <div class="badge--saas-pulse"><span class="badge-pulse-dot"><span class="badge-pulse-dot__ping"></span><span class="badge-pulse-dot__core"></span></span><span>Residential Solar</span></div>
-              </div>
-            </div>
-            <div class="card-project__body">
-              <div class="card-project__location">
-                <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-location"></use></svg>
-                <span>Morabadi, Ranchi</span>
-              </div>
-              <h3 class="card-project__title">Independent Residential Villa</h3>
-              <div class="card-project__metrics">
-                <div class="card-project__metric-item">
-                  <span class="card-project__metric-label">System Size</span>
-                  <span class="card-project__metric-value">5.0 kWp</span>
-                </div>
-                <div class="card-project__metric-item">
-                  <span class="card-project__metric-label">Annual Savings</span>
-                  <span class="card-project__metric-value">₹ 48,000</span>
-                </div>
-              </div>
-              <div class="card-project__footer">
-                <span>₹78k Subsidy Disbursed</span>
-                <a href="/projects/" class="btn btn--ghost btn--sm">View Case Study →</a>
-              </div>
-            </div>
+          <!-- Synchronized Progress Indicator -->
+          <div class="carousel-progress-bar">
+            <div class="carousel-progress-fill"></div>
           </div>
         </div>
 
-        <div class="text-center">
-          <a href="/projects/" class="btn btn--secondary btn--lg">Explore Full Project Portfolio →</a>
+        <div class="text-center" style="margin-top: 2rem;">
+          <a href="/projects/" class="btn btn--secondary btn--lg">Explore All 500+ Verified Projects →</a>
         </div>
       </div>
     </section>

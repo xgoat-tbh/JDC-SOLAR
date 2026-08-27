@@ -14,6 +14,7 @@ import { initProjectExplorer } from './components/projectExplorer.js';
 import { initResourceExplorer } from './components/resourceExplorer.js';
 import { initScrollAnimations } from './components/scrollAnimations.js';
 import { initTiltEffects } from './components/tiltEffect.js';
+import { initCarousel } from './components/carousel.js';
 
 /**
  * Initialize global components active across all pages
@@ -47,16 +48,19 @@ function initGlobalComponents() {
   // 6. Accessible Forms & Validation
   initForms();
 
-  // 7. Solar Calculator Subsystem (if present on page)
+  // 7. Horizontal Momentum Carousel
+  initCarousel();
+
+  // 8. Solar Calculator Subsystem (if present on page)
   initCalculator();
 
-  // 8. Projects & Case Studies Explorer (if present on page)
+  // 9. Projects & Case Studies Explorer (if present on page)
   initProjectExplorer();
 
-  // 9. Resources & Educational Content Explorer (if present on page)
+  // 10. Resources & Educational Content Explorer (if present on page)
   initResourceExplorer();
 
-  // 10. Scroll Reveal Animations & Micro-Interactions
+  // 11. Scroll Reveal Animations & Micro-Interactions
   initScrollAnimations();
 }
 
