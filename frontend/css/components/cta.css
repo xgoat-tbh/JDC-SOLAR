@@ -1,17 +1,46 @@
 /**
  * JDC SOLAR 2.0 - CALL TO ACTION (CTA) SYSTEMS
- * Pre-footer conversion banners and high-contrast callouts
+ * Pre-footer conversion banners with cinematic solar photography and glassmorphic depth
  */
 
 .cta-banner {
-  background: linear-gradient(135deg, var(--color-brand-primary-dark) 0%, var(--color-brand-primary) 100%);
+  background-image: url('/assets/images/cta/cta-card-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: #FFFFFF;
   border-radius: var(--radius-2xl);
-  padding: var(--space-3xl) var(--space-xl);
+  padding: clamp(3rem, 6vh, 4.5rem) var(--space-xl);
   text-align: center;
   position: relative;
   overflow: hidden;
-  box-shadow: var(--shadow-xl);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 25px 60px -15px rgba(11, 25, 44, 0.6), 0 0 0 1px rgba(253, 129, 39, 0.25);
+}
+
+/* Dark cinematic overlay */
+.cta-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(11, 20, 38, 0.82) 0%,
+    rgba(15, 23, 42, 0.88) 50%,
+    rgba(11, 25, 44, 0.94) 100%
+  );
+  z-index: 1;
+}
+
+/* Micro-dot texture overlay */
+.cta-banner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+  opacity: 0.6;
+  z-index: 1;
 }
 
 .cta-banner__content {
@@ -25,12 +54,15 @@
   font-size: var(--font-size-h1);
   color: #FFFFFF;
   margin-bottom: var(--space-md);
+  font-weight: 800;
+  line-height: 1.2;
 }
 
 .cta-banner__description {
   font-size: var(--font-size-body-lg);
-  color: var(--color-text-inverse-body);
+  color: rgba(226, 232, 240, 0.95);
   margin-bottom: var(--space-xl);
+  line-height: 1.65;
 }
 
 .cta-banner__actions {
@@ -38,4 +70,5 @@
   justify-content: center;
   gap: var(--space-md);
   flex-wrap: wrap;
+  align-items: center;
 }

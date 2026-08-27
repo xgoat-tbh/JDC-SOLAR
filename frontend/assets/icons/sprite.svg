@@ -144,4 +144,44 @@
   <symbol id="icon-verified" viewBox="0 0 24 24">
     <path fill="currentColor" d="M12 1l3.22 2.28 3.95.42.79 3.89L22 11l-2.04 3.41.79 3.89-3.95.42L12 23l-3.22-2.28-3.95-.42-.79-3.89L2 13l2.04-3.41-.79-3.89 3.95-.42L12 1zm-1.41 14.58l6.36-6.36-1.41-1.41-4.95 4.95-2.12-2.12-1.41 1.41 3.53 3.53z"/>
   </symbol>
+
+  <!-- Document / Bill -->
+  <symbol id="icon-document" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+  </symbol>
+
+  <!-- ID Card / Aadhaar -->
+  <symbol id="icon-id-card" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M20 4H4c-1.11 0-2 .89-2 2v12c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4V6h16v12zM6 10h4v4H6zm0-2h4v1H6zm6 2h6v1h-6zm0 2h6v1h-6zm0-4h6v1h-6z"/>
+  </symbol>
+
+  <!-- Bank / Financial Institution -->
+  <symbol id="icon-bank" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M4 10v7h3v-7H4zm6 0v7h3v-7h-3zM2 22h19v-3H2v3zm14-12v7h3v-7h-3zm-4.5-9L2 6v2h19V6l-9.5-5z"/>
+  </symbol>
+
+  <!-- Globe / Web Portal -->
+  <symbol id="icon-globe" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+  </symbol>
+
+  <!-- Lightning / Energy -->
+  <symbol id="icon-lightning" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M7 2v11h3v9l7-12h-4l4-8z"/>
+  </symbol>
+
+  <!-- Ruler / Roof Dimension -->
+  <symbol id="icon-ruler" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 10H3V8h2v4h2V8h2v4h2V8h2v4h2V8h2v4h2V8h3v8z"/>
+  </symbol>
+
+  <!-- Rupee / Currency -->
+  <symbol id="icon-currency-inr" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M13.66 7C13.1 5.82 11.9 5 10.5 5H6V3h12v2h-3.26c.48.58.84 1.26 1.05 2H18v2h-2.02c-.25 2.8-2.61 5-5.48 5H9.77l6.59 7H13.5l-6.5-7V12h3.5c2.03 0 3.71-1.46 3.96-3.4H6V7h7.66z"/>
+  </symbol>
+
+  <!-- Info Circle -->
+  <symbol id="icon-info" viewBox="0 0 24 24">
+    <path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+  </symbol>
 </svg>
