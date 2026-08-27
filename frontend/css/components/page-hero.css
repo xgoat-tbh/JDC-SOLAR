@@ -1,0 +1,218 @@
+/**
+ * JDC SOLAR 2.0 - CINEMATIC SUBPAGE HERO BANNER & SECTION ATMOSPHERE
+ * Rich dark photographic headers, integrated breadcrumbs, SaaS pulse badge, and translucent highlight chips
+ */
+
+/* ==========================================================================
+   1. REUSABLE SUBPAGE HERO CONTAINER
+   ========================================================================== */
+
+.page-hero {
+  position: relative;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(2.5rem, 5vh, 4rem) 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #FFFFFF;
+  overflow: hidden;
+}
+
+/* Dark atmospheric gradient overlay */
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(11, 20, 38, 0.65) 0%,
+    rgba(15, 23, 42, 0.82) 60%,
+    rgba(11, 20, 38, 0.92) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Subtle dot-matrix overlay */
+.page-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+  opacity: 0.6;
+  z-index: 1;
+}
+
+.page-hero > .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* ==========================================================================
+   2. PAGE THEMATIC BACKGROUNDS
+   ========================================================================== */
+
+.page-hero--about {
+  background-image: url('/assets/images/banners/banner-about.jpg');
+}
+
+.page-hero--surya-ghar {
+  background-image: url('/assets/images/banners/banner-surya-ghar.jpg');
+}
+
+.page-hero--calculator {
+  background-image: url('/assets/images/banners/banner-calculator.jpg');
+}
+
+.page-hero--services {
+  background-image: url('/assets/images/banners/banner-services.jpg');
+}
+
+.page-hero--projects {
+  background-image: url('/assets/images/banners/banner-projects.jpg');
+}
+
+.page-hero--contact {
+  background-image: url('/assets/images/banners/banner-contact.jpg');
+}
+
+.page-hero--resources {
+  background-image: url('/assets/images/banners/banner-resources.jpg');
+}
+
+.page-hero--privacy {
+  background-image: url('/assets/images/banners/banner-about.jpg');
+}
+
+/* ==========================================================================
+   3. INTEGRATED DARK BREADCRUMBS
+   ========================================================================== */
+
+.page-hero .breadcrumb {
+  margin-bottom: var(--space-md);
+}
+
+.page-hero .breadcrumb__list {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.85rem;
+}
+
+.page-hero .breadcrumb__link {
+  color: rgba(226, 232, 240, 0.75);
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.page-hero .breadcrumb__link:hover {
+  color: #FD8127;
+}
+
+.page-hero .breadcrumb__separator {
+  color: rgba(255, 255, 255, 0.35);
+  user-select: none;
+}
+
+.page-hero .breadcrumb__item[aria-current="page"] {
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   4. TYPOGRAPHY & CHIPS
+   ========================================================================== */
+
+.page-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 0.75rem;
+}
+
+.page-hero .badge--saas-pulse {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.22);
+  color: #FFFFFF;
+}
+
+.page-hero__title {
+  font-size: clamp(2rem, 3.2vw + 0.5rem, 3rem);
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+  margin-bottom: 0.85rem;
+}
+
+.page-hero__lead {
+  font-size: 1.08rem;
+  line-height: 1.65;
+  color: rgba(226, 232, 240, 0.95);
+  max-width: 720px;
+  margin-bottom: 1.25rem;
+}
+
+.page-hero__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  padding-top: 0.5rem;
+}
+
+.page-hero__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.page-hero__chip .icon {
+  width: 14px;
+  height: 14px;
+  color: #10B981;
+}
+
+/* ==========================================================================
+   5. LAYERED ATMOSPHERIC SECTION BACKGROUNDS
+   ========================================================================== */
+
+.section--atmospheric {
+  background: linear-gradient(180deg, #F8FAFC 0%, #EFF6FF 50%, #F8FAFC 100%);
+  position: relative;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+.section--dark-tech {
+  background: linear-gradient(180deg, #0B192C 0%, #0F172A 100%);
+  color: #FFFFFF;
+  position: relative;
+}
+
+.section--dark-tech h2,
+.section--dark-tech h3 {
+  color: #FFFFFF;
+}
+
+.section--dark-tech .lead {
+  color: rgba(226, 232, 240, 0.9);
+}

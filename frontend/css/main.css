@@ -41,6 +41,7 @@
 @import url('./components/carousel.css');
 @import url('./components/media.css');
 @import url('./components/parallax-divider.css');
+@import url('./components/page-hero.css');
 
 /* 7. Page Specific Layouts */
 @import url('./pages/home.css');
