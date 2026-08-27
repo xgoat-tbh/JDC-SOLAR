@@ -1,7 +1,9 @@
 /**
- * JDC SOLAR 2.0 - ACCESSIBLE FORM HANDLER & DUAL LEAD ROUTER
- * Handles honeypot spam protection, 10-digit Indian phone regex (/^[6-9]\d{9}$/), email validation,
- * inline error feedback, Formspree email dispatch, and automated WhatsApp lead forwarding.
+ * JDC SOLAR 2.0 - ACCESSIBLE FORM HANDLER & DUAL LEAD ROUTER (WHATSAPP + EMAIL)
+ * 1. Validates all required inputs, phone regex (/^[6-9]\d{9}$/), and email
+ * 2. Asynchronously dispatches lead data to Formspree / Email in the background
+ * 3. Immediately triggers WhatsApp with a structured, pre-formatted lead card
+ * 4. Displays instant toast confirmation and on-page success notification
  */
 
 import { APP_CONFIG } from '../config.js';
@@ -63,7 +65,7 @@ export function initForms() {
       });
 
       if (!isValid) {
-        toast.show('Please correct the highlighted form errors.', 'error');
+        toast.show('Please fill in the required fields correctly.', 'error');
         const firstInvalid = qs('.is-invalid', form);
         if (firstInvalid) firstInvalid.focus();
         return;
@@ -74,47 +76,65 @@ export function initForms() {
       const originalText = submitBtn ? submitBtn.innerHTML : '';
       if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.innerHTML = '<span class="spinner"></span> Submitting...';
+        submitBtn.innerHTML = '<span class="spinner"></span> Connecting to WhatsApp & Email...';
       }
 
       // Construct Structured Lead Data
       const name = formData.name || 'Website Visitor';
       const phone = formData.phone || 'N/A';
+      const email = formData.email || 'Not Provided';
       const city = formData.city || 'Jharkhand';
-      const service = formData.service || 'Rooftop Solar Survey';
-      const message = formData.message || 'I would like to schedule a rooftop solar site survey.';
+      const service = formData.service || 'Rooftop Solar Site Survey';
+      const message = formData.message || 'I would like to schedule a free rooftop solar site survey and subsidy assessment.';
+      const bill = formData.bill || formData.monthly_bill || 'N/A';
+      const pageSource = window.location.pathname || '/';
 
-      // Attempt Formspree submission if endpoint configured
+      // 4. Background Asynchronous Email Dispatch (Formspree)
       const endpoint = form.getAttribute('action') || APP_CONFIG.contact.formspreeEndpoint;
       if (endpoint && !endpoint.includes('placeholder')) {
-        try {
-          await fetch(endpoint, {
-            method: 'POST',
-            headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name, phone, city, service, message, source: window.location.pathname })
-          });
-        } catch (err) {
-          // Non-blocking error handling
-        }
+        fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name,
+            phone,
+            email,
+            city,
+            service,
+            monthly_bill: bill,
+            requirement: message,
+            page_url: window.location.href,
+            submitted_at: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
+          })
+        }).catch(() => {
+          // Fail silently without blocking WhatsApp redirect
+        });
       }
 
-      // Construct WhatsApp URL
-      const waText = `☀️ *New Solar Lead from JDC Website*:\n` +
-        `👤 *Name*: ${name}\n` +
-        `📞 *Phone*: ${phone}\n` +
-        `📍 *Location*: ${city}\n` +
-        `⚡ *Service Category*: ${service}\n` +
-        `📝 *Requirement*: ${message}`;
+      // 5. Structured High-Conversion WhatsApp Message
+      const waText = 
+`*NEW SOLAR LEAD — JDC SOLAR WEBSITE*
+━━━━━━━━━━━━━━━━━━━━
+👤 *Customer Name:* ${name}
+📞 *Mobile:* ${phone}
+📧 *Email:* ${email}
+📍 *Location / City:* ${city}
+⚡ *Solar Service:* ${service}
+${bill !== 'N/A' ? `💰 *Monthly Electricity Bill:* ₹${bill}\n` : ''}📝 *Requirement:* ${message}
+━━━━━━━━━━━━━━━━━━━━
+🌐 *Submitted From:* ${pageSource}
+⏰ *Time:* ${new Date().toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit', hour12: true })}`;
 
       const waUrl = `https://wa.me/${APP_CONFIG.contact.whatsappNumber}?text=${encodeURIComponent(waText)}`;
 
+      // 6. UI Feedback & Immediate WhatsApp Launch
       setTimeout(() => {
         if (submitBtn) {
           submitBtn.disabled = false;
           submitBtn.innerHTML = originalText;
         }
         form.reset();
-        toast.show('Thank you! Your survey request has been submitted successfully.', 'success');
+        toast.show('Thank you! Redirecting to WhatsApp...', 'success');
         
         // Show in-page success alert if present
         const successBanner = qs('.form-success-banner', form.parentElement);
@@ -126,12 +146,17 @@ export function initForms() {
         // Close modal if inside one
         const modal = form.closest('dialog');
         if (modal && typeof modal.close === 'function') {
-          setTimeout(() => modal.close(), 1500);
+          setTimeout(() => modal.close(), 1200);
         }
 
-        // Open WhatsApp for instant chat after short delay
-        window.open(waUrl, '_blank', 'noopener,noreferrer');
-      }, 600);
+        // Redirect to WhatsApp (Direct redirect on mobile, new tab on desktop)
+        const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+        if (isMobile) {
+          window.location.href = waUrl;
+        } else {
+          window.open(waUrl, '_blank', 'noopener,noreferrer');
+        }
+      }, 450);
     });
 
     // Clear error on input
