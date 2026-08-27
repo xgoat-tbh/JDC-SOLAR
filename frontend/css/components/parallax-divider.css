@@ -1,0 +1,74 @@
+/**
+ * JDC SOLAR 2.0 - CINEMATIC PARALLAX IMAGE DIVIDERS
+ * Full-width fixed-background photographic strips between content sections
+ */
+
+.parallax-divider {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+/* Dark gradient overlay for atmosphere */
+.parallax-divider::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(11, 20, 38, 0.45) 0%,
+    rgba(15, 23, 42, 0.25) 50%,
+    rgba(11, 20, 38, 0.45) 100%
+  );
+  pointer-events: none;
+}
+
+/* Optional centered text in divider */
+.parallax-divider__text {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: var(--font-family-heading);
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Specific divider images */
+.parallax-divider--panels {
+  background-image: url('/assets/images/hero/divider-solar-panels.jpg');
+}
+
+.parallax-divider--worker {
+  background-image: url('/assets/images/hero/divider-worker-silhouette.jpg');
+}
+
+.parallax-divider--farm {
+  background-image: url('/assets/images/hero/cta-solar-farm.jpg');
+}
+
+/* Mobile: disable fixed attachment (iOS doesn't support it) */
+@media (max-width: 767px) {
+  .parallax-divider {
+    background-attachment: scroll;
+    height: 150px;
+  }
+}
+
+/* Reduced motion: remove parallax */
+@media (prefers-reduced-motion: reduce) {
+  .parallax-divider {
+    background-attachment: scroll;
+  }
+}

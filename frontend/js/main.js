@@ -8,20 +8,17 @@ import { qs } from './core/dom.js';
 import { initNavigation } from './components/navigation.js';
 import { initModals } from './components/modal.js';
 import { initAccordions } from './components/accordion.js';
-import { initStatCounters } from './components/counter.js';
 import { initForms } from './components/formHandler.js';
 import { initCalculator } from './components/calculatorUI.js';
 import { initProjectExplorer } from './components/projectExplorer.js';
 import { initResourceExplorer } from './components/resourceExplorer.js';
 import { initScrollAnimations } from './components/scrollAnimations.js';
+import { initTiltEffects } from './components/tiltEffect.js';
 
 /**
  * Initialize global components active across all pages
  */
 function initGlobalComponents() {
-  if (typeof console !== 'undefined' && console.info) {
-    console.info(`%c[${APP_CONFIG.brandName} 2.0] Global Components Initialized • WCAG 2.1 AA Compliant`, 'color: #FD8127; font-weight: bold;');
-  }
 
   // 1. Global Skip Link focus handler
   const skipLink = qs('.skip-link');
@@ -44,8 +41,8 @@ function initGlobalComponents() {
   // 4. Accordions & FAQ Lists
   initAccordions();
 
-  // 5. Numerical Stat Counters
-  initStatCounters();
+  // 5. Cursor-Reactive 3D Tilt Effects
+  initTiltEffects();
 
   // 6. Accessible Forms & Validation
   initForms();

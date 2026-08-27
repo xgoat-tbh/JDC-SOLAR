@@ -3,8 +3,7 @@
  * Modular CSS Architecture importing foundational layers, global UI components, animations, and page layouts
  */
 
-/* 0. Professional SaaS Fonts (Plus Jakarta Sans & Inter) */
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+/* 0. Fonts loaded via HTML <link> preconnect for optimal performance */
 
 /* 1. Design Tokens & Custom Properties */
 @import url('./tokens.css');
@@ -41,6 +40,7 @@
 @import url('./components/cta.css');
 @import url('./components/carousel.css');
 @import url('./components/media.css');
+@import url('./components/parallax-divider.css');
 
 /* 7. Page Specific Layouts */
 @import url('./pages/home.css');

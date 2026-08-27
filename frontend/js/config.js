@@ -12,6 +12,7 @@ export const APP_CONFIG = Object.freeze({
     primaryPhoneDisplay: '+91 92346 11112',
     primaryPhoneE164: '+919234611112',
     whatsappNumber: '919288381112',
+    formspreeEndpoint: 'https://formspree.io/f/placeholder',
     salesEmail: 'sales@jdcsolar.com',
     infoEmail: 'info@jdcsolar.com',
     headquartersAddress: 'A-21, 2nd Phase, Industrial Area, Adityapur, Jamshedpur, Jharkhand 832109'

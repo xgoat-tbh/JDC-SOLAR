@@ -1,34 +1,34 @@
 /**
- * JDC SOLAR 2.0 - HOMEPAGE ENHANCED STYLESHEET
- * Eye-catching modern clean-tech visuals, sunlit ambient glows, 3D floating cards, and micro-interactions
+ * JDC SOLAR 2.0 - HOMEPAGE PREMIUM STYLESHEET
+ * Cinematic hero, neomorphic stats, masonry projects, vertical timeline, glassmorphic testimonials
  */
 
 /* ==========================================================================
-   1. HERO SECTION - SUNLIT TECH AMBIENCE
+   1. CINEMATIC FULL-BLEED HERO
    ========================================================================== */
 
 .hero {
   position: relative;
-  padding-top: clamp(2.5rem, 2.0rem + 3.0vw, 5.0rem);
-  padding-bottom: clamp(3.0rem, 2.5rem + 3.5vw, 6.0rem);
-  background: radial-gradient(circle at 85% 15%, rgba(245, 158, 11, 0.12) 0%, transparent 40%),
-              radial-gradient(circle at 10% 85%, rgba(2, 132, 199, 0.08) 0%, transparent 40%),
-              linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  background-image:
+    linear-gradient(to bottom, rgba(11, 20, 38, 0.50) 0%, rgba(15, 23, 42, 0.70) 100%),
+    url('/assets/images/hero/hero-cinematic-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   overflow: hidden;
-  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
 }
 
 .hero::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: radial-gradient(rgba(203, 213, 225, 0.4) 1.5px, transparent 1.5px);
-  background-size: 28px 28px;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
   pointer-events: none;
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
 .hero-grid {
@@ -38,11 +38,13 @@
   align-items: center;
   position: relative;
   z-index: 1;
+  max-width: 800px;
 }
 
 @media (min-width: 1024px) {
   .hero-grid {
-    grid-template-columns: 1.1fr 0.9fr;
+    grid-template-columns: 1fr;
+    max-width: 720px;
   }
 }
 
@@ -54,17 +56,19 @@
 }
 
 .hero__title {
-  margin-bottom: var(--space-md);
-  letter-spacing: -0.02em;
-  line-height: 1.15;
+  margin-bottom: var(--space-lg);
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  color: #FFFFFF;
+  font-size: clamp(2.2rem, 4vw + 1rem, 3.5rem);
 }
 
 .hero__lead {
   margin-bottom: var(--space-xl);
-  max-width: 580px;
-  font-size: 1.125rem;
-  line-height: 1.6;
-  color: var(--color-text-secondary);
+  max-width: 620px;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: rgba(226, 232, 240, 0.95);
 }
 
 .hero__actions {
@@ -79,7 +83,7 @@
   flex-wrap: wrap;
   gap: var(--space-lg);
   padding-top: var(--space-md);
-  border-top: 1px solid var(--color-border-default);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .hero__trust-item {
@@ -88,95 +92,153 @@
   gap: 8px;
   font-size: var(--font-size-body-sm);
   font-weight: var(--font-weight-medium);
-  color: var(--color-text-secondary);
+  color: rgba(226, 232, 240, 0.85);
 }
 
 .hero__trust-item .icon {
-  color: var(--color-brand-accent);
+  color: #FD8127;
 }
 
-/* Hero Visual Showcase Wrapper */
-.hero-visual-wrapper {
-  position: relative;
-  border-radius: var(--radius-2xl);
-  overflow: visible;
-}
-
-.hero-visual-wrapper img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  border-radius: var(--radius-2xl);
-  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.2), 0 0 0 1px rgba(226, 232, 240, 0.8);
-  transition: transform 0.4s ease;
-  display: block;
-}
-
-.hero-visual-wrapper:hover img {
-  transform: scale(1.02);
-}
-
-.hero-floating-badge {
+/* Floating glassmorphic stat badges */
+.hero-floating-stats {
   position: absolute;
-  padding: 12px 18px;
-  border-radius: var(--radius-xl);
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.9);
-  box-shadow: 0 15px 35px -5px rgba(15, 23, 42, 0.18);
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  display: none;
+  flex-direction: column;
+  gap: var(--space-md);
   z-index: 2;
-  display: flex;
-  align-items: center;
-  gap: 12px;
 }
 
-.hero-floating-badge--top-left {
-  top: 18px;
-  left: -20px;
-}
-
-.hero-floating-badge--bottom-right {
-  bottom: 20px;
-  right: -20px;
-}
-
-@media (max-width: 768px) {
-  .hero-floating-badge--top-left {
-    left: 8px;
-    top: 8px;
+@media (min-width: 1200px) {
+  .hero-floating-stats {
+    display: flex;
   }
-  .hero-floating-badge--bottom-right {
-    right: 8px;
-    bottom: 8px;
+}
+
+.hero-stat-badge {
+  padding: 16px 24px;
+  border-radius: var(--radius-xl);
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 12px 32px -4px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  min-width: 160px;
+}
+
+.hero-stat-badge__value {
+  font-size: 2rem;
+  font-weight: 800;
+  font-family: var(--font-family-heading);
+  color: #FD8127;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.hero-stat-badge__label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: rgba(226, 232, 240, 0.8);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Hero SaaS pulse badge on dark */
+.hero .badge--saas-pulse {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: rgba(226, 232, 240, 0.9);
+}
+
+@media (max-width: 767px) {
+  .hero {
+    min-height: 70vh;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
   }
 }
 
 /* ==========================================================================
-   2. MILESTONE STATS BAR
+   2. NEOMORPHIC GLASS STATS DASHBOARD
    ========================================================================== */
 
 .stats-bar-wrapper {
-  background: linear-gradient(180deg, #FFFFFF 0%, #F1F5F9 100%);
+  background: linear-gradient(180deg, #F8FAFC 0%, #F1F5F9 100%);
   border-bottom: 1px solid var(--color-border-default);
   padding: var(--space-2xl) 0;
 }
 
 .card-stat {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(226, 232, 240, 0.9);
   border-radius: var(--radius-xl);
-  padding: var(--space-xl);
-  box-shadow: 0 4px 15px -3px rgba(15, 23, 42, 0.05);
+  padding: var(--space-xl) var(--space-lg);
+  box-shadow:
+    0 4px 16px rgba(15, 23, 42, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8),
+    inset 0 -1px 2px rgba(15, 23, 42, 0.03);
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-stat::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #FD8127, #10B981);
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .card-stat:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 30px -8px rgba(15, 23, 42, 0.12), 0 0 0 1px rgba(245, 158, 11, 0.3);
+  box-shadow:
+    0 20px 40px -8px rgba(15, 23, 42, 0.12),
+    0 0 0 1px rgba(245, 158, 11, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
   border-color: rgba(245, 158, 11, 0.4);
+}
+
+.card-stat:hover::before {
+  opacity: 1;
+}
+
+.card-stat__value {
+  font-size: clamp(2rem, 3vw, 2.5rem);
+  font-weight: 800;
+  font-family: var(--font-family-heading);
+  color: var(--color-text-headings);
+  margin-bottom: 4px;
+}
+
+.card-stat__value span[data-counter] {
+  background: linear-gradient(135deg, #FD8127, #F59E0B);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.card-stat__label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-text-headings);
+  margin-bottom: 2px;
+}
+
+.card-stat__subtext {
+  font-size: 0.78rem;
+  color: var(--color-text-secondary);
+  line-height: 1.4;
 }
 
 /* ==========================================================================
@@ -184,7 +246,8 @@
    ========================================================================== */
 
 .why-jdc-card {
-  background: #FFFFFF;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
   border: 1px solid var(--color-border-default);
   border-radius: var(--radius-xl);
   padding: var(--space-xl);
@@ -208,7 +271,7 @@
 
 .why-jdc-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 15px 30px -5px rgba(15, 23, 42, 0.1);
+  box-shadow: 0 20px 40px -5px rgba(15, 23, 42, 0.1);
   border-color: rgba(245, 158, 11, 0.4);
 }
 
@@ -236,7 +299,245 @@
 }
 
 /* ==========================================================================
-   4. PM SURYA GHAR CITIZEN HIGHLIGHT SECTION
+   4. MASONRY BENTO PROJECT GRID
+   ========================================================================== */
+
+.bento-projects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: var(--space-md);
+}
+
+.bento-projects .card-project:first-child {
+  grid-row: span 2;
+}
+
+@media (max-width: 767px) {
+  .bento-projects {
+    grid-template-columns: 1fr;
+  }
+  .bento-projects .card-project:first-child {
+    grid-row: span 1;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .bento-projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Project card with full-bleed image + hover reveal */
+.card-project {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  min-height: 280px;
+  cursor: pointer;
+}
+
+.card-project__media-wrap {
+  position: absolute;
+  inset: 0;
+}
+
+.card-project__media-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-project:hover .card-project__media-wrap img {
+  transform: scale(1.08);
+}
+
+/* Gradient overlay (always visible, lightens on hover) */
+.card-project__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(11, 20, 38, 0.85) 0%,
+    rgba(11, 20, 38, 0.35) 50%,
+    rgba(11, 20, 38, 0.15) 100%
+  );
+  transition: background 0.4s ease;
+  z-index: 1;
+}
+
+.card-project:hover .card-project__overlay {
+  background: linear-gradient(
+    0deg,
+    rgba(11, 20, 38, 0.75) 0%,
+    rgba(11, 20, 38, 0.15) 60%,
+    transparent 100%
+  );
+}
+
+/* Content positioned at bottom */
+.card-project__body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-lg);
+  z-index: 2;
+  transform: translateY(20px);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-project:hover .card-project__body {
+  transform: translateY(0);
+}
+
+.card-project__badge-overlay {
+  position: absolute;
+  top: var(--space-md);
+  left: var(--space-md);
+  z-index: 2;
+}
+
+.card-project__location {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: rgba(226, 232, 240, 0.8);
+  margin-bottom: 6px;
+}
+
+.card-project__location .icon {
+  width: 14px;
+  height: 14px;
+  color: #FD8127;
+}
+
+.card-project__title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.card-project__metrics {
+  display: flex;
+  gap: var(--space-lg);
+  margin-bottom: 8px;
+}
+
+.card-project__metric-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-project__metric-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: rgba(226, 232, 240, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.card-project__metric-value {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #FD8127;
+}
+
+.card-project__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all 0.3s ease 0.1s;
+}
+
+.card-project:hover .card-project__footer {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   5. VERTICAL TIMELINE PROCESS
+   ========================================================================== */
+
+.timeline-process {
+  position: relative;
+  padding-left: 58px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.timeline-step {
+  position: relative;
+  padding-bottom: var(--space-2xl);
+  padding-left: var(--space-lg);
+}
+
+.timeline-step:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-step__number {
+  position: absolute;
+  left: -58px;
+  top: 0;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FD8127, #F59E0B);
+  color: #FFFFFF;
+  font-size: 1.1rem;
+  font-weight: 800;
+  font-family: var(--font-family-heading);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(253, 129, 39, 0.3);
+  z-index: 3;
+  transition: all 0.3s ease;
+}
+
+.timeline-step:hover .timeline-step__number {
+  transform: scale(1.12);
+  box-shadow: 0 8px 24px rgba(253, 129, 39, 0.4);
+}
+
+.timeline-step__content {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: var(--radius-xl);
+  padding: var(--space-lg) var(--space-xl);
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.timeline-step:hover .timeline-step__content {
+  transform: translateX(6px);
+  box-shadow: 0 12px 28px -4px rgba(15, 23, 42, 0.1);
+  border-color: rgba(253, 129, 39, 0.3);
+}
+
+.timeline-step__title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-text-headings);
+  margin-bottom: 6px;
+}
+
+.timeline-step__desc {
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  line-height: 1.65;
+}
+
+/* ==========================================================================
+   6. PM SURYA GHAR HIGHLIGHT
    ========================================================================== */
 
 .subsidy-highlight-card {
@@ -274,4 +575,187 @@
   font-size: 1.25rem;
   font-weight: 800;
   color: var(--color-status-success);
+}
+
+/* ==========================================================================
+   7. GLASSMORPHIC TESTIMONIALS
+   ========================================================================== */
+
+.card-testimonial {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-testimonial:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px -8px rgba(15, 23, 42, 0.1);
+}
+
+.card-testimonial__quote-icon {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-lg);
+  width: 48px;
+  height: 48px;
+  color: rgba(253, 129, 39, 0.12);
+}
+
+.card-testimonial__rating {
+  display: flex;
+  gap: 2px;
+  margin-bottom: var(--space-sm);
+}
+
+.card-testimonial__rating .icon {
+  width: 18px;
+  height: 18px;
+  color: #F59E0B;
+}
+
+.card-testimonial__quote {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-lg);
+  font-style: italic;
+}
+
+.card-testimonial__author {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.card-testimonial__avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1B3766, #FD8127);
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.card-testimonial__name {
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--color-text-headings);
+}
+
+.card-testimonial__meta {
+  font-size: 0.78rem;
+  color: var(--color-text-secondary);
+}
+
+.card-testimonial__verified {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #059669;
+  margin-top: 2px;
+}
+
+.card-testimonial__verified .icon {
+  width: 14px;
+  height: 14px;
+  color: #10B981;
+}
+
+/* ==========================================================================
+   8. FULL-WIDTH CTA BANNER
+   ========================================================================== */
+
+.cta-banner--cinematic {
+  position: relative;
+  background-image:
+    linear-gradient(135deg, rgba(11, 25, 44, 0.88) 0%, rgba(30, 58, 138, 0.82) 100%),
+    url('/assets/images/hero/cta-solar-farm.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: clamp(3rem, 6vw, 5rem) 0;
+  text-align: center;
+  color: #FFFFFF;
+  overflow: hidden;
+}
+
+.cta-banner--cinematic::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: 10%;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(253, 129, 39, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cta-banner--cinematic::after {
+  content: '';
+  position: absolute;
+  bottom: -80px;
+  left: 15%;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cta-banner__title {
+  font-size: clamp(1.75rem, 3vw + 0.5rem, 2.5rem);
+  font-weight: 800;
+  margin-bottom: var(--space-md);
+  letter-spacing: -0.02em;
+}
+
+.cta-banner__description {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(226, 232, 240, 0.9);
+  max-width: 620px;
+  margin: 0 auto var(--space-xl);
+}
+
+.cta-banner__actions {
+  display: flex;
+  gap: var(--space-md);
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
+}
+
+/* Glowing CTA buttons */
+.cta-banner--cinematic .btn--primary {
+  box-shadow: 0 0 20px rgba(253, 129, 39, 0.4);
+}
+
+.cta-banner--cinematic .btn--primary:hover {
+  box-shadow: 0 0 30px rgba(253, 129, 39, 0.6);
+}
+
+.cta-banner--cinematic .btn--whatsapp {
+  box-shadow: 0 0 20px rgba(37, 211, 102, 0.3);
+}
+
+@media (max-width: 767px) {
+  .cta-banner--cinematic {
+    background-attachment: scroll;
+  }
 }

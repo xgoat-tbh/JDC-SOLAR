@@ -60,8 +60,8 @@ ErrorDocument 404 /404.html
   # HTTP Strict Transport Security (1 Year)
   Header set Strict-Transport-Security "max-age=31536000; includeSubDomains"
   
-  # Content Security Policy (Self-contained assets, Google Maps navigation, WhatsApp links)
-  Header set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self'; frame-ancestors 'self';"
+  # Content Security Policy (Self-contained assets, Google Fonts, WhatsApp links)
+  Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://wa.me https://formspree.io; frame-ancestors 'self';"
 </IfModule>
 
 # Browser Caching & Expiration

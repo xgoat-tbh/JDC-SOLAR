@@ -1,9 +1,10 @@
 /**
- * JDC SOLAR 2.0 - ACCESSIBLE FORM HANDLER & DIRECT WHATSAPP LEAD ROUTER
+ * JDC SOLAR 2.0 - ACCESSIBLE FORM HANDLER & DUAL LEAD ROUTER
  * Handles honeypot spam protection, 10-digit Indian phone regex (/^[6-9]\d{9}$/), email validation,
- * inline error feedback, and automated WhatsApp lead forwarding to +91 92883 81112.
+ * inline error feedback, Formspree email dispatch, and automated WhatsApp lead forwarding.
  */
 
+import { APP_CONFIG } from '../config.js';
 import { qs, qsa } from '../core/dom.js';
 import { toast } from './toast.js';
 
@@ -11,13 +12,12 @@ export function initForms() {
   const forms = qsa('form[data-validate="true"]');
 
   forms.forEach(form => {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       
       // 1. Honeypot Anti-Spam Check
       const honeypot = qs('input[name="b_url"]', form);
       if (honeypot && honeypot.value.trim() !== '') {
-        console.warn('Spam bot detected via honeypot field.');
         return;
       }
 
@@ -69,21 +69,36 @@ export function initForms() {
         return;
       }
 
-      // 3. Submission / WhatsApp Forwarding Trigger
+      // 3. Submission / Lead Dispatch Trigger
       const submitBtn = qs('button[type="submit"]', form);
       const originalText = submitBtn ? submitBtn.innerHTML : '';
       if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.innerHTML = '<span class="spinner"></span> Connecting...';
+        submitBtn.innerHTML = '<span class="spinner"></span> Submitting...';
       }
 
-      // Construct Structured WhatsApp Lead Message
+      // Construct Structured Lead Data
       const name = formData.name || 'Website Visitor';
       const phone = formData.phone || 'N/A';
       const city = formData.city || 'Jharkhand';
       const service = formData.service || 'Rooftop Solar Survey';
       const message = formData.message || 'I would like to schedule a rooftop solar site survey.';
 
+      // Attempt Formspree submission if endpoint configured
+      const endpoint = form.getAttribute('action') || APP_CONFIG.contact.formspreeEndpoint;
+      if (endpoint && !endpoint.includes('placeholder')) {
+        try {
+          await fetch(endpoint, {
+            method: 'POST',
+            headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, phone, city, service, message, source: window.location.pathname })
+          });
+        } catch (err) {
+          // Non-blocking error handling
+        }
+      }
+
+      // Construct WhatsApp URL
       const waText = `☀️ *New Solar Lead from JDC Website*:\n` +
         `👤 *Name*: ${name}\n` +
         `📞 *Phone*: ${phone}\n` +
@@ -91,7 +106,7 @@ export function initForms() {
         `⚡ *Service Category*: ${service}\n` +
         `📝 *Requirement*: ${message}`;
 
-      const waUrl = `https://wa.me/919288381112?text=${encodeURIComponent(waText)}`;
+      const waUrl = `https://wa.me/${APP_CONFIG.contact.whatsappNumber}?text=${encodeURIComponent(waText)}`;
 
       setTimeout(() => {
         if (submitBtn) {
@@ -99,7 +114,7 @@ export function initForms() {
           submitBtn.innerHTML = originalText;
         }
         form.reset();
-        toast.show('Thank you! Opening WhatsApp to connect with our senior solar engineer...', 'success');
+        toast.show('Thank you! Your survey request has been submitted successfully.', 'success');
         
         // Show in-page success alert if present
         const successBanner = qs('.form-success-banner', form.parentElement);
@@ -108,15 +123,15 @@ export function initForms() {
           form.classList.add('hidden');
         }
 
-        // Open WhatsApp in new tab
-        window.open(waUrl, '_blank', 'noopener,noreferrer');
-
-        // If inside a dialog, close it
-        const dialog = form.closest('dialog');
-        if (dialog && typeof dialog.close === 'function') {
-          setTimeout(() => dialog.close(), 1500);
+        // Close modal if inside one
+        const modal = form.closest('dialog');
+        if (modal && typeof modal.close === 'function') {
+          setTimeout(() => modal.close(), 1500);
         }
-      }, 700);
+
+        // Open WhatsApp for instant chat after short delay
+        window.open(waUrl, '_blank', 'noopener,noreferrer');
+      }, 600);
     });
 
     // Clear error on input

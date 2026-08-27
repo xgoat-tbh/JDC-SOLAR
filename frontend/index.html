@@ -233,12 +233,12 @@
     <!-- ====================================================================
          SECTION 1: HERO SECTION
          ==================================================================== -->
-    <section class="hero bg-sunlit-hero" aria-label="Hero Introduction">
+    <section class="hero" aria-label="Hero Introduction">
       <div class="container hero-grid">
         <!-- Hero Text Content -->
         <div class="hero__content" data-reveal="fade-up">
           <div class="hero__eyebrow">
-            <div class="badge--saas-pulse">
+            <div class="badge--saas-pulse" style="background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); color: rgba(226,232,240,0.9);">
               <span class="badge-pulse-dot"><span class="badge-pulse-dot__ping"></span><span class="badge-pulse-dot__core"></span></span>
               <span>Jharkhand's Premier Solar EPC Partner</span>
             </div>
@@ -253,7 +253,7 @@
             <button type="button" class="btn btn--primary btn--lg" data-modal-open="survey-modal">
               Book Free Rooftop Survey →
             </button>
-            <a href="#calculator" class="btn btn--secondary btn--lg">
+            <a href="#calculator" class="btn btn--secondary btn--lg" style="background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.25); color: #FFFFFF;">
               Calculate Savings
             </a>
           </div>
@@ -272,30 +272,21 @@
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Hero Visual Showcase Composition -->
-        <div class="hero-visual-wrapper" data-reveal="zoom">
-          <img src="/assets/images/hero/hero-solar-home.jpg" alt="Turnkey Rooftop Solar Installation by JDC Solar" width="800" height="600" loading="eager">
-          
-          <!-- Floating Badge 1: PM Surya Ghar Subsidy -->
-          <div class="hero-floating-badge hero-floating-badge--top-left badge--floating-1">
-            <div style="width: 42px; height: 42px; border-radius: 50%; background: #FEF3C7; display: flex; align-items: center; justify-content: center; color: #F59E0B;"><svg class="icon" style="width: 22px; height: 22px;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-sun"></use></svg></div>
-            <div>
-              <div style="font-size: 0.7rem; font-weight: 700; color: #64748B; text-transform: uppercase; letter-spacing: 0.05em;">PM Surya Ghar</div>
-              <div style="font-size: 1.15rem; font-weight: 800; color: #0F172A; line-height: 1.2;">₹78,000 Subsidy</div>
-              <div style="font-size: 0.72rem; font-weight: 700; color: #10B981;">✓ Direct DBT Transfer</div>
-            </div>
-          </div>
-
-          <!-- Floating Badge 2: 25-Year Warranty -->
-          <div class="hero-floating-badge hero-floating-badge--bottom-right badge--floating-2">
-            <div style="width: 42px; height: 42px; border-radius: 50%; background: #D1FAE5; display: flex; align-items: center; justify-content: center; color: #10B981;"><svg class="icon" style="width: 22px; height: 22px;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-solar-park"></use></svg></div>
-            <div>
-              <div style="font-size: 0.7rem; font-weight: 700; color: #64748B; text-transform: uppercase; letter-spacing: 0.05em;">Power Generation</div>
-              <div style="font-size: 1.15rem; font-weight: 800; color: #0F172A; line-height: 1.2;">25 Yrs Warranty</div>
-              <div style="font-size: 0.72rem; font-weight: 700; color: #0284C7;">✓ Tier-1 DCR Panels</div>
-            </div>
-          </div>
+      <!-- Floating Glassmorphic Stat Badges (Desktop Only) -->
+      <div class="hero-floating-stats" data-reveal="slide-left">
+        <div class="hero-stat-badge badge--floating-1">
+          <div class="hero-stat-badge__value" data-counter="500" data-counter-suffix="+">500+</div>
+          <div class="hero-stat-badge__label">Projects Delivered</div>
+        </div>
+        <div class="hero-stat-badge badge--floating-2">
+          <div class="hero-stat-badge__value" data-counter="25" data-counter-suffix="+ MW">25+ MW</div>
+          <div class="hero-stat-badge__label">Capacity Installed</div>
+        </div>
+        <div class="hero-stat-badge badge--floating-1">
+          <div class="hero-stat-badge__value" style="color: #10B981;">90%</div>
+          <div class="hero-stat-badge__label">Avg Bill Reduction</div>
         </div>
       </div>
     </section>
@@ -344,14 +335,17 @@
     <section class="section bg-tech-grid" aria-label="Our Solar Services">
       <div class="container">
         <div class="section-header" data-reveal="fade-up">
-          <span class="badge badge--primary">CUSTOM SOLAR SOLUTIONS</span>
+          <div class="badge--saas-pulse" style="margin-bottom: 0.75rem;">
+            <span class="badge-pulse-dot"><span class="badge-pulse-dot__ping"></span><span class="badge-pulse-dot__core"></span></span>
+            <span>Custom Solar Solutions</span>
+          </div>
           <h2>Engineered for Every Energy Need</h2>
           <p class="lead">From residential homes claiming government subsidies to high-capacity industrial manufacturing complexes.</p>
         </div>
 
         <div class="grid grid--3col" data-reveal="stagger">
           <!-- 1. Residential Solar -->
-          <div class="card card-service card--interactive">
+          <div class="card card-service card--interactive" data-tilt>
             <div class="card-service__icon-wrap">
               <svg class="icon" style="width: 28px; height: 28px;" aria-hidden="true">
                 <use href="/assets/icons/sprite.svg#icon-home"></use>
@@ -379,7 +373,7 @@
           </div>
 
           <!-- 2. Commercial & Industrial Solar -->
-          <div class="card card-service card--interactive">
+          <div class="card card-service card--interactive" data-tilt>
             <div class="card-service__icon-wrap">
               <svg class="icon" style="width: 28px; height: 28px;" aria-hidden="true">
                 <use href="/assets/icons/sprite.svg#icon-factory"></use>
@@ -407,7 +401,7 @@
           </div>
 
           <!-- 3. Institutional Solar -->
-          <div class="card card-service card--interactive">
+          <div class="card card-service card--interactive" data-tilt>
             <div class="card-service__icon-wrap">
               <svg class="icon" style="width: 28px; height: 28px;" aria-hidden="true">
                 <use href="/assets/icons/sprite.svg#icon-hospital"></use>
@@ -435,7 +429,7 @@
           </div>
 
           <!-- 4. Government & Tender Solar -->
-          <div class="card card-service card--interactive">
+          <div class="card card-service card--interactive" data-tilt>
             <div class="card-service__icon-wrap">
               <svg class="icon" style="width: 28px; height: 28px;" aria-hidden="true">
                 <use href="/assets/icons/sprite.svg#icon-shield"></use>
@@ -463,7 +457,7 @@
           </div>
 
           <!-- 5. Solar Street Lighting -->
-          <div class="card card-service card--interactive">
+          <div class="card card-service card--interactive" data-tilt>
             <div class="card-service__icon-wrap">
               <svg class="icon" style="width: 28px; height: 28px;" aria-hidden="true">
                 <use href="/assets/icons/sprite.svg#icon-lightbulb"></use>
@@ -491,7 +485,7 @@
           </div>
 
           <!-- 6. Utility Solar Parks -->
-          <div class="card card-service card--interactive">
+          <div class="card card-service card--interactive" data-tilt>
             <div class="card-service__icon-wrap">
               <svg class="icon" style="width: 28px; height: 28px;" aria-hidden="true">
                 <use href="/assets/icons/sprite.svg#icon-solar-panel"></use>
@@ -521,19 +515,24 @@
       </div>
     </section>
 
+    <!-- Parallax Divider 1: Glistening Solar Panels -->
+    <div class="parallax-divider parallax-divider--panels" role="img" aria-label="High-efficiency monocrystalline solar panels glistening in sunlight">
+      <div class="parallax-divider__text">Tier-1 Solar Engineering • 25-Year Performance Guarantee</div>
+    </div>
+
     <!-- ====================================================================
          SECTION 4: WHY JDC SOLAR / DIFFERENTIATORS
          ==================================================================== -->
     <section class="section section--alt" aria-label="Why Choose JDC Solar">
       <div class="container">
         <div class="section-header">
-          <div class="badge--saas-pulse"><span class="badge-pulse-dot"><span class="badge-pulse-dot__ping"></span><span class="badge-pulse-dot__core"></span></span><span>THE JDC ENGINEERING ADVANTAGE</span></div>
+          <div class="badge--saas-pulse" style="margin-bottom: 0.75rem;"><span class="badge-pulse-dot"><span class="badge-pulse-dot__ping"></span><span class="badge-pulse-dot__core"></span></span><span>THE JDC ENGINEERING ADVANTAGE</span></div>
           <h2>Why Eastern India Trusts JDC Solar</h2>
           <p class="lead">Backed by the industrial heritage of Jagatdhan Commodities Pvt. Ltd. with end-to-end EPC accountability.</p>
         </div>
 
-        <div class="grid grid--4col">
-          <div class="why-jdc-card">
+        <div class="grid grid--4col" data-reveal="stagger">
+          <div class="why-jdc-card" data-tilt>
             <div class="why-jdc-card__icon">
               <svg class="icon" style="width: 24px; height: 24px;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-shield"></use></svg>
             </div>
@@ -541,7 +540,7 @@
             <p class="text-small text-muted">We handle every phase in-house: 3D shadow analysis, structural civil engineering, electrical net-metering, and subsidy disbursal.</p>
           </div>
 
-          <div class="why-jdc-card">
+          <div class="why-jdc-card" data-tilt>
             <div class="why-jdc-card__icon">
               <svg class="icon" style="width: 24px; height: 24px;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-solar-panel"></use></svg>
             </div>
@@ -549,7 +548,7 @@
             <p class="text-small text-muted">We install exclusively ALMM & DCR certified monocrystalline solar panels with 25-year linear performance warranties.</p>
           </div>
 
-          <div class="why-jdc-card">
+          <div class="why-jdc-card" data-tilt>
             <div class="why-jdc-card__icon">
               <svg class="icon" style="width: 24px; height: 24px;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-location"></use></svg>
             </div>
@@ -557,7 +556,7 @@
             <p class="text-small text-muted">Physical headquarters at Adityapur Industrial Area, Jamshedpur ensures a rapid 2-hour technical support response across Jharkhand.</p>
           </div>
 
-          <div class="why-jdc-card">
+          <div class="why-jdc-card" data-tilt>
             <div class="why-jdc-card__icon">
               <svg class="icon" style="width: 24px; height: 24px;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
             </div>
@@ -677,24 +676,31 @@
       </div>
     </section>
 
+    <!-- Parallax Divider 2: Certified Installation Specialists -->
+    <div class="parallax-divider parallax-divider--worker" role="img" aria-label="Solar installation technician working on rooftop at sunrise">
+      <div class="parallax-divider__text">Certified MNRE & JBVNL Specialists • Zero-Leakage Rooftop Mounting</div>
+    </div>
+
     <!-- ====================================================================
-         SECTION 6: FEATURED PROJECT CASE STUDIES
+         SECTION 6: FEATURED PROJECT CASE STUDIES (Bento Portfolio)
          ==================================================================== -->
     <section class="section section--alt" aria-label="Featured Solar Projects">
       <div class="container">
         <div class="section-header">
-          <span class="badge badge--primary">PROVEN TRACK RECORD</span>
+          <div class="badge--saas-pulse" style="margin-bottom: 0.75rem;">
+            <span class="badge-pulse-dot"><span class="badge-pulse-dot__ping"></span><span class="badge-pulse-dot__core"></span></span>
+            <span>Proven Track Record</span>
+          </div>
           <h2>Featured Solar EPC Installations</h2>
           <p class="lead">Real operational performance and verified savings delivered across Jharkhand.</p>
         </div>
 
-        <div class="grid grid--3col" style="margin-bottom: 2.5rem;">
-          <!-- Project 1 -->
-          <div class="card-project">
+        <div class="grid grid--3col" style="margin-bottom: 2.5rem;" data-reveal="stagger">
+          <!-- Project 1: Industrial (Adityapur) -->
+          <div class="card-project" data-tilt>
             <div class="card-project__media-wrap">
-              <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: #122544; color: #FFFFFF; font-weight: 700;">
-                <span>☀️ 250 kWp Industrial Rooftop</span>
-              </div>
+              <img src="/assets/images/projects/project-adityapur-250kw.jpg" alt="250 kWp Industrial Rooftop Solar in Adityapur Jamshedpur" width="600" height="400" loading="lazy">
+              <div class="card-project__overlay"></div>
               <div class="card-project__badge-overlay">
                 <div class="badge--saas-pulse"><span class="badge-pulse-dot"><span class="badge-pulse-dot__ping"></span><span class="badge-pulse-dot__core"></span></span><span>Industrial Solar</span></div>
               </div>
@@ -716,20 +722,19 @@
                 </div>
               </div>
               <div class="card-project__footer">
-                <span class="text-small text-muted">Payback: 3.2 Years</span>
-                <a href="/projects/" class="btn btn--ghost btn--sm">View Case Study →</a>
+                <span class="text-small text-muted" style="color: rgba(226,232,240,0.8);">Payback: 3.2 Years</span>
+                <a href="/projects/" class="btn btn--ghost btn--sm" style="color: #FD8127; border-color: rgba(253,129,39,0.4);">View Case Study →</a>
               </div>
             </div>
           </div>
 
-          <!-- Project 2 -->
-          <div class="card-project">
+          <!-- Project 2: Institutional (Bistupur Hospital) -->
+          <div class="card-project" data-tilt>
             <div class="card-project__media-wrap">
-              <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: #1B3766; color: #FFFFFF; font-weight: 700;">
-                <span>🏥 50 kWp Hospital Rooftop</span>
-              </div>
+              <img src="/assets/images/projects/project-bistupur-50kw.jpg" alt="50 kWp Hospital Rooftop Solar in Bistupur Jamshedpur" width="600" height="400" loading="lazy">
+              <div class="card-project__overlay"></div>
               <div class="card-project__badge-overlay">
-                <span class="badge badge--primary">Institutional Solar</span>
+                <div class="badge--saas-pulse"><span class="badge-pulse-dot"><span class="badge-pulse-dot__ping"></span><span class="badge-pulse-dot__core"></span></span><span>Institutional Solar</span></div>
               </div>
             </div>
             <div class="card-project__body">
@@ -749,18 +754,17 @@
                 </div>
               </div>
               <div class="card-project__footer">
-                <span class="text-small text-muted">DG-Sync Active</span>
-                <a href="/projects/" class="btn btn--ghost btn--sm">View Case Study →</a>
+                <span class="text-small text-muted" style="color: rgba(226,232,240,0.8);">DG-Sync Active</span>
+                <a href="/projects/" class="btn btn--ghost btn--sm" style="color: #FD8127; border-color: rgba(253,129,39,0.4);">View Case Study →</a>
               </div>
             </div>
           </div>
 
-          <!-- Project 3 -->
-          <div class="card-project">
+          <!-- Project 3: Residential Villa (Ranchi) -->
+          <div class="card-project" data-tilt>
             <div class="card-project__media-wrap">
-              <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: #1E293B; color: #FFFFFF; font-weight: 700;">
-                <span>🏡 5 kWp Hybrid Rooftop</span>
-              </div>
+              <img src="/assets/images/projects/project-sakchi-villa.jpg" alt="5 kWp Residential Rooftop Solar in Morabadi Ranchi" width="600" height="400" loading="lazy">
+              <div class="card-project__overlay"></div>
               <div class="card-project__badge-overlay">
                 <div class="badge--saas-pulse"><span class="badge-pulse-dot"><span class="badge-pulse-dot__ping"></span><span class="badge-pulse-dot__core"></span></span><span>Residential Solar</span></div>
               </div>
@@ -782,8 +786,8 @@
                 </div>
               </div>
               <div class="card-project__footer">
-                <span class="text-small text-muted">PM Surya Ghar Credit</span>
-                <a href="/projects/" class="btn btn--ghost btn--sm">View Case Study →</a>
+                <span class="text-small text-muted" style="color: rgba(226,232,240,0.8);">₹78k Subsidy Disbursed</span>
+                <a href="/projects/" class="btn btn--ghost btn--sm" style="color: #FD8127; border-color: rgba(253,129,39,0.4);">View Case Study →</a>
               </div>
             </div>
           </div>
@@ -796,9 +800,9 @@
     </section>
 
     <!-- ====================================================================
-         SECTION 7: TURNKEY 4-STEP PROCESS
+         SECTION 7: TURNKEY 4-STEP PROCESS (Connected Vertical Timeline)
          ==================================================================== -->
-    <section class="section" aria-label="Our Turnkey Process">
+    <section class="section" aria-label="Our Turnkey Process" id="process">
       <div class="container">
         <div class="section-header">
           <div class="badge--saas-pulse" style="margin-bottom: 0.75rem;">
@@ -809,29 +813,37 @@
           <p class="lead">We manage the complete engineering and administrative cycle with zero friction for you.</p>
         </div>
 
-        <div class="grid grid--4col">
-          <div class="card card-process">
-            <div class="card-process__number">01</div>
-            <h3 class="card-process__title">Free Site Survey</h3>
-            <p class="card-process__desc">Our solar engineers inspect your roof shadow profile, structure strength, and historical power bills.</p>
+        <div class="timeline-process" data-reveal="stagger">
+          <div class="timeline-step">
+            <div class="timeline-step__number">01</div>
+            <div class="timeline-step__content" data-tilt>
+              <h3 class="timeline-step__title">Free Site Survey & Shadow Analysis</h3>
+              <p class="timeline-step__desc">Our certified engineers inspect your roof orientation, structural strength, shadow profile via 3D mapping, and audit your historical power bills.</p>
+            </div>
           </div>
 
-          <div class="card card-process card--interactive">
-            <div class="card-process__number">02</div>
-            <h3 class="card-process__title">Engineering & Sizing</h3>
-            <p class="card-process__desc">We prepare 3D PVsyst simulations and submit your PM Surya Ghar subsidy application on the National Portal.</p>
+          <div class="timeline-step">
+            <div class="timeline-step__number">02</div>
+            <div class="timeline-step__content" data-tilt>
+              <h3 class="timeline-step__title">Engineering Design & Subsidy Filing</h3>
+              <p class="timeline-step__desc">We prepare 3D PVsyst yield simulations, submit your PM Surya Ghar subsidy application on the National Portal, and secure DISCOM approvals.</p>
+            </div>
           </div>
 
-          <div class="card card-process card--interactive">
-            <div class="card-process__number">03</div>
-            <h3 class="card-process__title">Precision Installation</h3>
-            <p class="card-process__desc">Certified technicians mount Tier-1 panels, inverters, and surge protection with zero roof leakage risk.</p>
+          <div class="timeline-step">
+            <div class="timeline-step__number">03</div>
+            <div class="timeline-step__content" data-tilt>
+              <h3 class="timeline-step__title">Precision Mechanical & Electrical Installation</h3>
+              <p class="timeline-step__desc">Certified technicians mount Tier-1 DCR monocrystalline panels, string inverters, and multi-stage surge protection with zero roof leakage risk.</p>
+            </div>
           </div>
 
-          <div class="card card-process card--interactive">
-            <div class="card-process__number">04</div>
-            <h3 class="card-process__title">Net-Metering & Subsidy</h3>
-            <p class="card-process__desc">JBVNL commissions the bidirectional net-meter, and your central subsidy is credited directly to your bank.</p>
+          <div class="timeline-step">
+            <div class="timeline-step__number">04</div>
+            <div class="timeline-step__content" data-tilt>
+              <h3 class="timeline-step__title">Bidirectional Net-Metering & Subsidy Disbursal</h3>
+              <p class="timeline-step__desc">JBVNL / TSUISL commissions the bidirectional net-meter, solar power starts rolling your meter backwards, and your ₹78,000 subsidy is credited via DBT.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -888,52 +900,79 @@
     </section>
 
     <!-- ====================================================================
-         SECTION 9: VERIFIED CUSTOMER TESTIMONIALS
+         SECTION 9: VERIFIED CUSTOMER TESTIMONIALS (Glassmorphic Reviews)
          ==================================================================== -->
     <section class="section" aria-label="Customer Reviews">
       <div class="container">
         <div class="section-header">
-          <span class="badge badge--primary">CLIENT EXPERIENCES</span>
+          <div class="badge--saas-pulse" style="margin-bottom: 0.75rem;">
+            <span class="badge-pulse-dot"><span class="badge-pulse-dot__ping"></span><span class="badge-pulse-dot__core"></span></span>
+            <span>Client Experiences</span>
+          </div>
           <h2>Trusted by Homeowners & Industrial Leaders</h2>
           <p class="lead">Read real feedback from clients powered by JDC Solar installations in Jharkhand.</p>
         </div>
 
-        <div class="grid grid--3col">
+        <div class="grid grid--3col" data-reveal="stagger">
           <!-- Review 1 -->
-          <div class="card card-testimonial">
-            <div class="card-testimonial__rating" aria-label="5 out of 5 stars rating">★★★★★</div>
+          <div class="card-testimonial" data-tilt>
+            <svg class="icon card-testimonial__quote-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-quote"></use></svg>
+            <div class="card-testimonial__rating" aria-label="5 out of 5 stars rating">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-star-filled"></use></svg>
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-star-filled"></use></svg>
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-star-filled"></use></svg>
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-star-filled"></use></svg>
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-star-filled"></use></svg>
+            </div>
             <p class="card-testimonial__quote">"JDC Solar managed our complete PM Surya Ghar subsidy application and net-metering without any hassle. Our monthly electricity bill dropped from ₹4,500 to less than ₹500. Highly professional engineering team!"</p>
             <div class="card-testimonial__author">
               <div class="card-testimonial__avatar">RS</div>
               <div>
                 <div class="card-testimonial__name">Rajesh K. Sharma</div>
                 <div class="card-testimonial__meta">Homeowner, Bistupur Jamshedpur (5 kWp)</div>
+                <div class="card-testimonial__verified"><svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-verified"></use></svg> Verified Homeowner</div>
               </div>
             </div>
           </div>
 
           <!-- Review 2 -->
-          <div class="card card-testimonial">
-            <div class="card-testimonial__rating" aria-label="5 out of 5 stars rating">★★★★★</div>
+          <div class="card-testimonial" data-tilt>
+            <svg class="icon card-testimonial__quote-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-quote"></use></svg>
+            <div class="card-testimonial__rating" aria-label="5 out of 5 stars rating">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-star-filled"></use></svg>
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-star-filled"></use></svg>
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-star-filled"></use></svg>
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-star-filled"></use></svg>
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-star-filled"></use></svg>
+            </div>
             <p class="card-testimonial__quote">"We installed a 250 kWp system on our plant shed. JDC Solar finished execution within 20 days with zero disruption to our manufacturing shifts. The Section 32 tax benefit and bill savings made the payback under 3.5 years."</p>
             <div class="card-testimonial__author">
               <div class="card-testimonial__avatar">AV</div>
               <div>
                 <div class="card-testimonial__name">Anand K. Verma</div>
                 <div class="card-testimonial__meta">MD, Auto Ancillary Unit, Adityapur (250 kWp)</div>
+                <div class="card-testimonial__verified"><svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-verified"></use></svg> Verified Industrial Client</div>
               </div>
             </div>
           </div>
 
           <!-- Review 3 -->
-          <div class="card card-testimonial">
-            <div class="card-testimonial__rating" aria-label="5 out of 5 stars rating">★★★★★</div>
+          <div class="card-testimonial" data-tilt>
+            <svg class="icon card-testimonial__quote-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-quote"></use></svg>
+            <div class="card-testimonial__rating" aria-label="5 out of 5 stars rating">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-star-filled"></use></svg>
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-star-filled"></use></svg>
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-star-filled"></use></svg>
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-star-filled"></use></svg>
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-star-filled"></use></svg>
+            </div>
             <p class="card-testimonial__quote">"Power continuity and clean energy were essential for our MRI and CT scan equipment. JDC Solar designed a DG-synchronized plant that slashed our diesel consumption drastically."</p>
             <div class="card-testimonial__author">
               <div class="card-testimonial__avatar">SM</div>
               <div>
                 <div class="card-testimonial__name">Dr. S. Mukherjee</div>
                 <div class="card-testimonial__meta">Medical Director, Ranchi (25 kWp)</div>
+                <div class="card-testimonial__verified"><svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-verified"></use></svg> Verified Healthcare Client</div>
               </div>
             </div>
           </div>
@@ -973,7 +1012,10 @@
     <section class="section" aria-label="Frequently Asked Questions">
       <div class="container container--medium">
         <div class="section-header">
-          <span class="badge badge--primary">FREQUENTLY ASKED QUESTIONS</span>
+          <div class="badge--saas-pulse" style="margin-bottom: 0.75rem;">
+            <span class="badge-pulse-dot"><span class="badge-pulse-dot__ping"></span><span class="badge-pulse-dot__core"></span></span>
+            <span>Frequently Asked Questions</span>
+          </div>
           <h2>Solar Rooftop & Subsidy FAQs</h2>
           <p class="lead">Clear, transparent answers to help you make an informed clean energy investment.</p>
         </div>
@@ -1043,27 +1085,26 @@
     </section>
 
     <!-- ====================================================================
-         SECTION 12: PRE-FOOTER CTA CONVERSION BANNER
+         SECTION 12: PRE-FOOTER CTA CONVERSION BANNER (Full-Width Cinematic)
          ==================================================================== -->
-    <section class="section section--compact" aria-label="Call to Action Banner">
+    <section class="cta-banner--cinematic" aria-label="Call to Action Banner">
       <div class="container">
-        <div class="cta-banner">
-          <div class="cta-banner__content">
-            <span class="badge badge--accent" style="margin-bottom: 1rem;">GET STARTED TODAY</span>
-            <h2 class="cta-banner__title">Ready to Cut Your Electricity Bill by 90%?</h2>
-            <p class="cta-banner__description">
-              Schedule a free rooftop site inspection with JDC Solar's certified engineers. We prepare your custom 3D shadow report and handle 100% of government subsidy approvals.
-            </p>
-            <div class="cta-banner__actions">
-              <button type="button" class="btn btn--primary btn--lg" data-modal-open="survey-modal">
-                Book Free Rooftop Survey →
-              </button>
-              <a href="https://wa.me/919288381112" class="btn btn--whatsapp btn--lg" target="_blank" rel="noopener noreferrer">
-                <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-whatsapp"></use></svg>
-                Chat on WhatsApp
-              </a>
-            </div>
-          </div>
+        <div class="badge--saas-pulse" style="margin-bottom: 1rem; background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.25); color: #FFFFFF;">
+          <span class="badge-pulse-dot"><span class="badge-pulse-dot__ping"></span><span class="badge-pulse-dot__core"></span></span>
+          <span>Get Started Today</span>
+        </div>
+        <h2 class="cta-banner__title">Ready to Cut Your Electricity Bill by 90%?</h2>
+        <p class="cta-banner__description">
+          Schedule a free rooftop site inspection with JDC Solar's certified engineers. We prepare your custom 3D shadow report and handle 100% of government subsidy approvals.
+        </p>
+        <div class="cta-banner__actions">
+          <button type="button" class="btn btn--primary btn--lg" data-modal-open="survey-modal">
+            Book Free Rooftop Survey →
+          </button>
+          <a href="https://wa.me/919288381112" class="btn btn--whatsapp btn--lg" target="_blank" rel="noopener noreferrer">
+            <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-whatsapp"></use></svg>
+            Chat on WhatsApp
+          </a>
         </div>
       </div>
     </section>
@@ -1177,7 +1218,7 @@
     <div class="modal-dialog__body">
       <p class="text-small text-muted" style="margin-bottom: 1.5rem;">Enter your contact details. Our solar engineering team will inspect your roof and prepare an exact PM Surya Ghar subsidy proposal.</p>
       
-      <form data-validate="true">
+      <form data-validate="true" action="https://formspree.io/f/placeholder" method="POST">
         <!-- Anti-Spam Honeypot Field -->
         <input type="text" name="b_url" class="sr-only" tabindex="-1" autocomplete="off">
 
