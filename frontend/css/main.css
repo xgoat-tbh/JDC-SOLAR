@@ -43,6 +43,7 @@
 @import url('./components/parallax-divider.css');
 @import url('./components/page-hero.css');
 @import url('./components/kinetic-ticker.css');
+@import url('./components/horizontal-scroll.css');
 
 /* 7. Page Specific Layouts */
 @import url('./pages/home.css');
