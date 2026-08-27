@@ -255,10 +255,31 @@
 }
 
 /* Header Actions */
+.header__nav {
+  margin-left: auto;
+  margin-right: 1.75rem;
+}
+
 .header__actions {
   display: flex;
   align-items: center;
   gap: var(--space-md);
+  flex-shrink: 0;
+}
+
+.header__actions .btn--primary {
+  padding: 0.625rem 1.45rem;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 0.88rem;
+  box-shadow: 0 4px 14px rgba(253, 129, 39, 0.3);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.header__actions .btn--primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(253, 129, 39, 0.45);
 }
 
 .header__toggle-btn {
