@@ -1,34 +1,24 @@
-/**
- * JDC SOLAR 2.0 - HEADER & DESKTOP NAVIGATION
- * Sticky floating glassmorphic header, responsive brand logo, rich SaaS dropdown, and quick dialer
- */
-
 .header {
   position: sticky;
   top: 0;
   left: 0;
   width: 100%;
   z-index: var(--z-layer-sticky);
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
-  transition: all var(--duration-fast) var(--ease-standard);
+  background: var(--header-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--header-border);
+  transform: translateZ(0);
+  transition: background-color var(--duration-fast) ease, border-color var(--duration-fast) ease, box-shadow var(--duration-fast) ease;
 }
 
 .header--scrolled {
-  background: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  box-shadow: 0 10px 30px -10px rgba(15, 23, 42, 0.08), 0 1px 0 rgba(226, 232, 240, 0.8);
+  background: var(--header-bg-scrolled, var(--header-bg));
+  box-shadow: var(--shadow-md);
 }
 
-/* ==========================================================================
-   TOP TRUST MICRO-BAR (Desktop only)
-   ========================================================================== */
-
 .header-topbar {
-  background: linear-gradient(90deg, #0B192C 0%, #1E3A8A 100%);
+  background: var(--color-brand-primary-dark);
   color: var(--color-text-inverse-muted);
   font-size: var(--font-size-caption);
   padding: 6px 0;
@@ -48,73 +38,100 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  color: #FFFFFF;
+  font-weight: 500;
 }
 
-/* ==========================================================================
-   MAIN NAVIGATION CONTAINER
-   ========================================================================== */
+.header-topbar__trust-badge span {
+  opacity: 0.9;
+}
 
 .header-main {
   height: 72px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1rem;
+  transition: height var(--duration-base) var(--ease-standard);
 }
 
 .header--scrolled .header-main {
   height: 62px;
 }
 
-/* Brand Logo */
 .header__brand {
   display: flex;
   align-items: center;
   gap: var(--space-xs);
   text-decoration: none;
   flex-shrink: 0;
+  min-width: max-content;
+  white-space: nowrap;
+}
+
+.header__logo-img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  flex-shrink: 0;
+  display: block;
 }
 
 .header__logo-text {
   font-family: var(--font-family-heading);
   font-size: 1.35rem;
   font-weight: 800;
-  color: var(--color-brand-primary);
+  color: var(--color-text-headings);
   line-height: 1;
   letter-spacing: -0.02em;
+  white-space: nowrap;
 }
 
 .header__logo-text span {
-  color: var(--color-brand-accent);
+  color: var(--color-brand-accent-text, #C25E00);
 }
 
 .header__logo-tag {
   font-size: 0.65rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   color: var(--color-text-muted);
   display: block;
   margin-top: 2px;
+  white-space: nowrap;
 }
-
-/* ==========================================================================
-   DESKTOP NAV LIST
-   ========================================================================== */
 
 .nav-desktop {
   display: none;
   align-items: center;
-  gap: clamp(0.75rem, 1.35vw, 1.5rem);
+  gap: clamp(0.35rem, 0.9vw, 1.25rem);
   list-style: none;
   margin: 0;
   padding: 0;
+  position: relative;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1140px) {
   .nav-desktop {
     display: flex;
   }
+}
+
+.nav-desktop__indicator {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  height: 2.5px;
+  background: var(--color-brand-accent);
+  border-radius: 2px;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate3d(0, 0, 0);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              width 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.2s ease;
+  will-change: transform, width;
+  z-index: 2;
 }
 
 .nav-desktop__item {
@@ -125,9 +142,9 @@
 
 .nav-desktop__link {
   font-family: var(--font-family-heading);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 600;
-  color: #334155;
+  color: var(--nav-link-color);
   padding: 8px 4px;
   display: inline-flex;
   align-items: center;
@@ -140,10 +157,11 @@
 
 .nav-desktop__link:hover,
 .nav-desktop__link[aria-current='page'] {
-  color: var(--color-brand-accent);
+  color: var(--color-brand-accent-text, #9A3412);
+  font-weight: 600;
 }
 
-.nav-desktop__link[aria-current='page']::after {
+.no-js .nav-desktop__link[aria-current='page']::after {
   content: '';
   position: absolute;
   bottom: -4px;
@@ -154,12 +172,11 @@
   background: var(--color-brand-accent);
 }
 
-/* Chevron Smooth Rotation */
 .nav-desktop__link .nav-chevron {
   width: 14px;
   height: 14px;
-  color: #64748B;
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), color 0.25s ease;
+  color: var(--color-text-muted);
+  transition: transform 0.2s ease, color 0.2s ease;
   display: inline-flex;
 }
 
@@ -169,29 +186,21 @@
   color: var(--color-brand-accent);
 }
 
-/* ==========================================================================
-   RICH SAAS SERVICES DROPDOWN MENU
-   ========================================================================== */
-
 .nav-desktop__dropdown {
   position: absolute;
   top: calc(100% + 10px);
   left: -20px;
   width: 320px;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(226, 232, 240, 0.9);
+  background: var(--color-bg-surface-elevated);
+  border: 1px solid var(--color-border-default);
   border-radius: var(--radius-xl);
-  box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.14), 0 0 0 1px rgba(255, 255, 255, 0.8);
+  box-shadow: var(--shadow-xl);
   padding: 8px;
   list-style: none;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(12px) scale(0.98);
-  transition: opacity 0.22s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.22s cubic-bezier(0.16, 1, 0.3, 1),
-              visibility 0.22s;
+  transform: translateY(8px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
   z-index: var(--z-layer-dropdown);
 }
 
@@ -202,9 +211,9 @@
   left: 36px;
   width: 12px;
   height: 12px;
-  background: #FFFFFF;
-  border-left: 1px solid rgba(226, 232, 240, 0.9);
-  border-top: 1px solid rgba(226, 232, 240, 0.9);
+  background: var(--color-bg-surface-elevated);
+  border-left: 1px solid var(--color-border-default);
+  border-top: 1px solid var(--color-border-default);
   transform: rotate(45deg);
 }
 
@@ -212,7 +221,7 @@
 .nav-desktop__item:focus-within .nav-desktop__dropdown {
   opacity: 1;
   visibility: visible;
-  transform: translateY(0) scale(1);
+  transform: translateY(0);
 }
 
 .nav-desktop__dropdown-link {
@@ -222,21 +231,26 @@
   padding: 10px 14px;
   font-size: 0.875rem;
   font-weight: 600;
-  color: #1E293B;
+  color: var(--color-text-primary);
   text-decoration: none;
   border-radius: var(--radius-md);
   transition: all var(--duration-fast) ease;
+}
+
+.nav-desktop__dropdown-link:hover {
+  background: var(--color-bg-surface-sunken);
+  color: var(--color-brand-accent);
 }
 
 .nav-desktop__dropdown-link .dropdown-icon {
   width: 32px;
   height: 32px;
   border-radius: 8px;
-  background: #F1F5F9;
+  background: var(--color-bg-surface-sunken);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-brand-primary);
+  color: var(--color-brand-accent);
   flex-shrink: 0;
   transition: all 0.2s ease;
 }
@@ -247,59 +261,100 @@
 }
 
 .nav-desktop__dropdown-link:hover {
-  background-color: #F8FAFC;
+  background-color: var(--color-bg-surface-sunken);
   color: var(--color-brand-accent);
   transform: translateX(4px);
 }
 
 .nav-desktop__dropdown-link:hover .dropdown-icon {
-  background-color: #FEF3C7;
+  background-color: var(--color-brand-accent-subtle);
   color: var(--color-brand-accent);
   transform: scale(1.08);
 }
 
-/* Header Actions */
 .header__nav {
-  margin-left: auto;
-  margin-right: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
 }
 
+@media (min-width: 1140px) {
+  .header-main {
+    display: grid;
+    grid-template-columns: minmax(max-content, 1fr) auto minmax(max-content, 1fr);
+    align-items: center;
+    gap: clamp(0.75rem, 1.5vw, 1.5rem);
+  }
+
+  .header__brand {
+    justify-self: start;
+  }
+
+  .header__nav {
+    justify-self: center;
+    margin: 0;
+  }
+
+  .header-actions,
+  .header__actions {
+    justify-self: end;
+  }
+}
+
+.header-actions,
 .header__actions {
   display: flex;
   align-items: center;
-  gap: var(--space-md);
+  gap: 12px;
   flex-shrink: 0;
 }
 
+.header-actions .btn--primary,
 .header__actions .btn--primary {
-  padding: 0.625rem 1.45rem;
+  padding: 0.55rem 1.25rem;
   border-radius: var(--radius-full);
   font-weight: 700;
   font-size: 0.88rem;
-  box-shadow: 0 4px 14px rgba(253, 129, 39, 0.3);
+  box-shadow: var(--shadow-sm);
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   white-space: nowrap;
 }
 
+.header-actions .btn--primary:hover,
 .header__actions .btn--primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 22px rgba(253, 129, 39, 0.45);
+  box-shadow: var(--shadow-md);
 }
 
 .header__toggle-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
-  background: transparent;
-  color: var(--color-brand-primary);
-  border-radius: var(--radius-sm);
+  width: 42px;
+  height: 42px;
+  background: var(--color-bg-surface);
+  color: var(--color-text-primary);
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--color-border-default);
   cursor: pointer;
+  transition: all var(--duration-fast) ease;
 }
 
-@media (min-width: 1024px) {
+.header__toggle-btn:hover {
+  background: var(--color-bg-surface-sunken);
+  color: var(--color-brand-accent);
+  border-color: var(--color-brand-accent);
+}
+
+@media (min-width: 1140px) {
   .header__toggle-btn {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .header__logo-tag {
     display: none;
   }
 }

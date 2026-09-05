@@ -122,11 +122,11 @@ pages.forEach(p => {
   }
   let content = fs.readFileSync(filePath, 'utf8');
 
-  // Extract breadcrumb HTML
+  
   const breadcrumbMatch = content.match(/<nav class="breadcrumb"[^>]*>([\s\S]*?)<\/nav>/i);
   const breadcrumbInner = breadcrumbMatch ? breadcrumbMatch[1].trim() : '';
 
-  // Extract h1 and lead
+  
   const h1Match = content.match(/<h1[^>]*>([\s\S]*?)<\/h1>/i);
   const leadMatch = content.match(/<p class="lead"[^>]*>([\s\S]*?)<\/p>/i);
 

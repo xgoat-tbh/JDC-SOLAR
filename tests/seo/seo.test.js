@@ -1,9 +1,3 @@
-/**
- * JDC SOLAR 2.0 - AUTOMATED SEO TEST SUITE
- * Validates that indexable HTML files have title tags, canonical links, and viewport tags,
- * while non-indexable utility files (404, components-preview) correctly enforce noindex.
- */
-
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -54,15 +48,15 @@ htmlFiles.forEach(filePath => {
   const relPath = path.relative(frontendDir, filePath).replace(/\\/g, '/');
   const content = fs.readFileSync(filePath, 'utf8');
 
-  // 1. Title Tag
+  
   const hasTitle = /<title>[^<]+<\/title>/i.test(content);
   assert(hasTitle, `[${relPath}] Contains valid <title> tag`);
 
-  // 2. Viewport Tag
+  
   const hasViewport = /<meta\s+name=["']viewport["']/i.test(content);
   assert(hasViewport, `[${relPath}] Contains responsive viewport meta tag`);
 
-  // 3. Canonical Tag or Noindex
+  
   const isUtilityPage = relPath === '404.html' || relPath === 'components-preview.html';
   if (isUtilityPage) {
     const hasNoIndex = /<meta\s+name=["']robots["']\s+content=["'][^"']*noindex/i.test(content);
@@ -73,7 +67,6 @@ htmlFiles.forEach(filePath => {
   }
 });
 
-// Summary
 console.log('\n========================================');
 console.log(`SEO Test Summary: ${passedTests} Passed, ${failedTests} Failed`);
 console.log('========================================\n');

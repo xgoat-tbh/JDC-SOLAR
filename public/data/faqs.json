@@ -1,0 +1,59 @@
+{
+  "lastUpdated": "2026-08-01",
+  "faqs": [
+    {
+      "id": "faq-01",
+      "category": "general",
+      "priority": 1,
+      "question": "Is my rooftop suitable for solar panel installation?",
+      "answer": "Most RCC concrete, tin shed, or industrial curved roofs with unobstructed access and south/south-west exposure are suitable. Each 1 kW capacity requires approximately 100 sq.ft of shadow-free rooftop area. JDC Solar conducts a complimentary 3D shadow analysis to confirm structural integrity.",
+      "relatedPage": "/services/residential-solar/",
+      "source": "JDC Engineering Feasibility SOP"
+    },
+    {
+      "id": "faq-02",
+      "category": "general",
+      "priority": 2,
+      "question": "What is the expected lifespan and warranty of a solar power plant?",
+      "answer": "Tier-1 Mono PERC and TOPCon solar modules carry a 25-to-30-year linear power output warranty (guaranteeing at least 80–85% efficiency at Year 25). Solar grid-tie inverters generally carry a 5-to-10-year OEM warranty and have an operational lifespan of 10–15 years.",
+      "relatedPage": "/resources/solar-maintenance-guide/",
+      "source": "OEM Manufacturer Warranties"
+    },
+    {
+      "id": "faq-03",
+      "category": "subsidy",
+      "priority": 3,
+      "question": "How much subsidy is available under PM Surya Ghar Yojana?",
+      "answer": "Under the PM Surya Ghar: Muft Bijli Yojana, individual residential homeowners receive ₹30,000 for 1 kW, ₹60,000 for 2 kW, and a maximum capped central subsidy of ₹78,000 for systems 3 kW or larger. The subsidy is deposited directly into the consumer's bank account via DBT.",
+      "relatedPage": "/pm-surya-ghar/",
+      "source": "MNRE PM Surya Ghar Notification"
+    },
+    {
+      "id": "faq-04",
+      "category": "technical",
+      "priority": 4,
+      "question": "What is bidirectional net-metering and how does it adjust electricity bills?",
+      "answer": "A bidirectional net-meter measures both electricity imported from the DISCOM grid and surplus solar power exported into the grid. At the end of each billing cycle, you only pay for 'Net Units' (Import minus Export). Surplus units are credited forward into subsequent billing cycles.",
+      "relatedPage": "/resources/how-solar-rooftop-works/",
+      "source": "JSERC Net-Metering Regulations"
+    },
+    {
+      "id": "faq-05",
+      "category": "financial",
+      "priority": 5,
+      "question": "Can commercial enterprises and factories claim tax depreciation on solar?",
+      "answer": "Yes. Under Section 32 of the Indian Income Tax Act, commercial and industrial enterprises can claim 40% Accelerated Depreciation in Year 1 on solar energy equipment, allowing businesses to significantly lower their taxable profits and shorten ROI to 3–4 years.",
+      "relatedPage": "/resources/commercial-solar-tax-benefits/",
+      "source": "Indian Income Tax Act Sec 32"
+    },
+    {
+      "id": "faq-06",
+      "category": "technical",
+      "priority": 6,
+      "question": "Does an on-grid solar system work during a grid power outage?",
+      "answer": "Standard on-grid solar inverters feature built-in anti-islanding safety protection that automatically shuts down power generation during a grid blackout to protect utility linesmen working on the grid. If uninterrupted power during blackouts is required, a Hybrid Solar System with lithium battery storage or DG-synchronization controller is recommended.",
+      "relatedPage": "/services/commercial-solar/",
+      "source": "IEEE 1547 & CEA Safety Guidelines"
+    }
+  ]
+}

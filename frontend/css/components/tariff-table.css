@@ -1,0 +1,210 @@
+.tariff-table-wrap {
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.tariff-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+  line-height: 1.4;
+}
+
+.tariff-table thead {
+  background: var(--color-bg-surface-sunken);
+}
+
+.tariff-table th {
+  padding: 0.85rem 1rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid var(--color-border-default);
+}
+
+.tariff-table td {
+  padding: 0.85rem 1rem;
+  vertical-align: middle;
+  border-bottom: 1px solid var(--color-border-subtle);
+  white-space: nowrap;
+  color: var(--color-text-primary);
+}
+
+.tariff-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.tariff-table tbody tr:hover {
+  background: var(--color-bg-surface-sunken);
+}
+
+.tariff-table__highlight {
+  background: rgba(16, 185, 129, 0.06);
+}
+
+.tariff-table__highlight td:first-child strong {
+  color: var(--color-status-success-text);
+}
+
+.tariff-table td[data-label="Central Subsidy"] {
+  color: var(--color-status-success-text) !important;
+  font-weight: 700;
+}
+
+.tariff-table__sub {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 400;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+.tariff-table__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.tariff-table__status--active {
+  background: var(--color-status-success-bg);
+  color: var(--color-status-success-text);
+  border: 1px solid var(--color-status-success-border);
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .tariff-table thead {
+    display: none;
+  }
+
+  .tariff-table,
+  .tariff-table tbody,
+  .tariff-table tr,
+  .tariff-table td {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+  }
+
+  .tariff-table tr {
+    padding: 1rem 1.15rem;
+    border-bottom: 1px solid var(--color-border-subtle);
+  }
+
+  .tariff-table tbody tr:last-child {
+    border-bottom: none;
+  }
+
+  .tariff-table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: none;
+    white-space: normal;
+    font-size: 0.92rem;
+    line-height: 1.4;
+  }
+
+  .tariff-table td::before {
+    content: attr(data-label);
+    flex-shrink: 0;
+    font-weight: 700;
+    font-size: 0.76rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-right: 1rem;
+    min-width: 105px;
+  }
+
+  
+  .tariff-table td:first-child {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 0.6rem;
+    margin-bottom: 0.35rem;
+    border-bottom: 1px solid var(--color-border-subtle);
+  }
+
+  .tariff-table td:first-child::before {
+    display: none;
+  }
+
+  .tariff-table td:first-child strong {
+    font-size: 1.05rem;
+  }
+
+  .tariff-table__sub {
+    display: inline;
+    margin-top: 0;
+    margin-left: 0;
+  }
+
+  .tariff-table__highlight {
+    background: rgba(16, 185, 129, 0.06);
+    border-left: 4px solid #10B981;
+    border-radius: var(--radius-md);
+  }
+}
+
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: 1.5rem;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border-default);
+  background: var(--color-bg-surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.table-responsive table {
+  width: 100%;
+  min-width: 580px;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.table-responsive thead {
+  background: var(--color-bg-surface-sunken);
+}
+
+.table-responsive th {
+  padding: 0.9rem 1.15rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 2px solid var(--color-border-default);
+}
+
+.table-responsive td {
+  padding: 0.9rem 1.15rem;
+  vertical-align: middle;
+  border-bottom: 1px solid var(--color-border-subtle);
+  color: var(--color-text-primary);
+}
+
+.table-responsive tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table-responsive tbody tr:hover {
+  background: var(--color-bg-surface-sunken);
+}

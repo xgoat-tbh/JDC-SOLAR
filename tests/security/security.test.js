@@ -1,8 +1,3 @@
-/**
- * JDC SOLAR 2.0 - AUTOMATED SECURITY TEST SUITE
- * Validates zero exposed secrets, XSS-safe DOM operations, security headers, honeypot forms, and no-database invariants.
- */
-
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -31,7 +26,6 @@ console.log('\n========================================');
 console.log('JDC SOLAR 2.0 - SECURITY & HARDENING TESTS');
 console.log('========================================\n');
 
-// 1. Secret Exposure Scan
 console.log('--- 1. Testing Secret Exposure Invariants ---');
 const secretPatterns = [
   /api[_-]?key\s*[:=]\s*['"][a-zA-Z0-9_\-]{16,}['"]/i,
@@ -66,7 +60,6 @@ function scanDirForSecrets(dir) {
 const secretScanResult = scanDirForSecrets(frontendDir);
 assert(!secretScanResult.found, 'Zero secrets, passwords, or private keys found in frontend codebase');
 
-// 2. DOM & XSS Safety Audit
 console.log('\n--- 2. Testing DOM & XSS Security Invariants ---');
 function scanDirForUnsafeDOM(dir) {
   const files = fs.readdirSync(dir);
@@ -89,13 +82,11 @@ function scanDirForUnsafeDOM(dir) {
 const unsafeDOMCount = scanDirForUnsafeDOM(path.join(frontendDir, 'js'));
 assert(unsafeDOMCount === 0, 'Zero unsafe eval(), document.write(), or new Function() calls in JS modules');
 
-// 3. Form Honeypot & Input Security
 console.log('\n--- 3. Testing Form Security & Spam Protection ---');
 const formHandlerContent = fs.readFileSync(path.join(frontendDir, 'js/components/formHandler.js'), 'utf8');
 assert(formHandlerContent.includes('input[name="b_url"]'), 'Form handler inspects honeypot anti-spam field (b_url)');
 assert(formHandlerContent.includes('^[6-9]\\d{9}$'), 'Form handler validates 10-digit Indian phone regex (/^[6-9]\\d{9}$/)');
 
-// 4. Server Configuration & Security Headers
 console.log('\n--- 4. Testing Server Configuration (.htaccess) ---');
 const htaccessPath = path.join(frontendDir, '.htaccess');
 assert(fs.existsSync(htaccessPath), '.htaccess file exists in frontend web root');
@@ -109,7 +100,6 @@ if (fs.existsSync(htaccessPath)) {
   assert(htaccessContent.includes('ErrorDocument 404 /404.html'), 'Directs 404 errors to custom branded 404.html');
 }
 
-// 5. Zero Database / Zero Admin Architecture
 console.log('\n--- 5. Testing Zero-Database & Zero-Admin Invariants ---');
 const packageJson = JSON.parse(fs.readFileSync(path.join(rootDir, 'package.json'), 'utf8'));
 const hasDbDeps = packageJson.dependencies && (packageJson.dependencies.pg || packageJson.dependencies.mysql || packageJson.dependencies.mongodb || packageJson.dependencies.mongoose || packageJson.dependencies.prisma);
@@ -118,7 +108,6 @@ assert(!hasDbDeps, 'Confirmed zero database packages or drivers in package.json'
 const hasAdminPanel = fs.existsSync(path.join(frontendDir, 'admin')) || fs.existsSync(path.join(frontendDir, 'dashboard'));
 assert(!hasAdminPanel, 'Confirmed zero public admin or lead dashboard directories');
 
-// Summary
 console.log('\n========================================');
 console.log(`Security Test Summary: ${passedTests} Passed, ${failedTests} Failed`);
 console.log('========================================\n');

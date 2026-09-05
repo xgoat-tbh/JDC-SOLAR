@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%" fill="none">
+  <defs>
+    
+    <linearGradient id="glassBody" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.25" />
+      <stop offset="30%" stop-color="#BAE6FD" stop-opacity="0.08" />
+      <stop offset="70%" stop-color="#0284C7" stop-opacity="0.04" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.18" />
+    </linearGradient>
+
+    
+    <linearGradient id="glassEdge" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95" />
+      <stop offset="35%" stop-color="#38BDF8" stop-opacity="0.8" />
+      <stop offset="70%" stop-color="#0284C7" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.9" />
+    </linearGradient>
+
+    
+    <linearGradient id="glareSweep1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.45" />
+      <stop offset="50%" stop-color="#E0F2FE" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
+    </linearGradient>
+
+    <linearGradient id="glareSweep2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0" />
+      <stop offset="50%" stop-color="#BAE6FD" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.5" />
+    </linearGradient>
+
+    <radialGradient id="cornerGlint" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1" />
+      <stop offset="40%" stop-color="#38BDF8" stop-opacity="0.7" />
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  
+  <rect x="22" y="24" width="556" height="356" rx="8" fill="#0284C7" fill-opacity="0.15" />
+
+  
+  <rect x="20" y="20" width="560" height="360" rx="8" fill="url(#glassBody)" stroke="url(#glassEdge)" stroke-width="2.5" />
+
+  
+  <polygon points="120,20 260,20 160,380 20,380" fill="url(#glareSweep1)" />
+  <polygon points="400,20 490,20 370,380 280,380" fill="url(#glareSweep2)" />
+
+  
+  <rect x="20" y="32" width="6" height="24" rx="2" fill="#0F172A" />
+  <rect x="32" y="20" width="24" height="6" rx="2" fill="#0F172A" />
+  <rect x="574" y="32" width="6" height="24" rx="2" fill="#0F172A" />
+  <rect x="544" y="20" width="24" height="6" rx="2" fill="#0F172A" />
+  <rect x="20" y="344" width="6" height="24" rx="2" fill="#0F172A" />
+  <rect x="32" y="374" width="24" height="6" rx="2" fill="#0F172A" />
+  <rect x="574" y="344" width="6" height="24" rx="2" fill="#0F172A" />
+  <rect x="544" y="374" width="24" height="6" rx="2" fill="#0F172A" />
+
+  
+  <circle cx="22" cy="22" r="12" fill="url(#cornerGlint)" />
+  <circle cx="578" cy="378" r="14" fill="url(#cornerGlint)" />
+
+  
+  <g transform="translate(340, 28)">
+    <rect width="220" height="22" rx="11" fill="rgba(15, 23, 42, 0.88)" stroke="#38BDF8" stroke-width="1.2" />
+    <text x="110" y="11" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="7.5" font-weight="700" fill="#E0F2FE" text-anchor="middle" dominant-baseline="central" letter-spacing="0.5">3.2mm TEMPERED GLASS • 94.5% TX</text>
+  </g>
+</svg>

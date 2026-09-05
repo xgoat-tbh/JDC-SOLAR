@@ -1,0 +1,146 @@
+﻿const fs = require('fs');
+const path = require('path');
+
+const css = @tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url('/assets/fonts/outfit-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url('/assets/fonts/plus-jakarta-sans-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+:root {
+  --color-bg-base: #F8FAFC;
+  --color-bg-alt: #EDF2F7;
+  --color-bg-surface: #FFFFFF;
+  --color-bg-surface-elevated: #FFFFFF;
+  --color-bg-surface-sunken: #F1F5F9;
+  --color-text-primary: #1E293B;
+  --color-text-headings: #0F172A;
+  --color-text-secondary: #475569;
+  --color-text-muted: #64748B;
+  --header-bg: rgba(255, 255, 255, 0.85);
+  --header-bg-scrolled: rgba(255, 255, 255, 0.92);
+  --header-border: #E2E8F0;
+  --nav-link-color: #334155;
+}
+
+[data-theme=dark] {
+  --color-bg-base: #0B132B;
+  --color-bg-alt: #111C3D;
+  --color-bg-surface: #15224A;
+  --color-bg-surface-elevated: #1F2E58;
+  --color-bg-surface-sunken: #0D1630;
+  --color-text-primary: #F1F5F9;
+  --color-text-headings: #FFFFFF;
+  --color-text-secondary: #CBD5E1;
+  --color-text-muted: #94A3B8;
+  --header-bg: rgba(11, 19, 43, 0.85);
+  --header-bg-scrolled: rgba(11, 19, 43, 0.92);
+  --header-border: rgba(255, 255, 255, 0.12);
+  --nav-link-color: #F1F5F9;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    color: var(--color-text-primary);
+    background-color: var(--color-bg-base);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', 'Plus Jakarta Sans', system-ui, sans-serif;
+    color: var(--color-text-headings);
+  }
+}
+
+@layer components {
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 0.875rem;
+    border-radius: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    background-color: #FD8127;
+    background-image: linear-gradient(135deg, #FD8127, #EA580C);
+    color: #FFFFFF !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(253, 129, 39, 0.35);
+    background-image: linear-gradient(135deg, #FB923C, #EA580C);
+  }
+  
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 0.875rem;
+    border-radius: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    background-color: var(--color-bg-surface);
+    border: 1px solid var(--header-border);
+    color: var(--color-text-headings);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+  .btn-secondary:hover {
+    transform: translateY(-2px);
+    border-color: #FD8127;
+    color: #FD8127;
+    background-color: var(--color-bg-alt);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+
+  .btn-glass {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 0.875rem;
+    border-radius: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    background-color: rgba(255, 255, 255, 0.12);
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
+    color: #FFFFFF !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+  .btn-glass:hover {
+    transform: translateY(-2px);
+    background-color: rgba(255, 255, 255, 0.22);
+    border-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  }
+}
+;
+
+fs.writeFileSync(path.join('src', 'styles', 'global.css'), css, 'utf8');
+console.log('src/styles/global.css created successfully');

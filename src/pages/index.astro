@@ -1,0 +1,1214 @@
+---
+// src/pages/index.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const homeSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["LocalBusiness", "SolarEnergyCompany", "ProfessionalService"],
+      "@id": "https://jdcsolar.com/#organization",
+      "name": "JDC Solar",
+      "legalName": "Jagatdhan Commodities Pvt. Ltd.",
+      "url": "https://jdcsolar.com/",
+      "logo": "https://jdcsolar.com/assets/brand/logo-mark.png",
+      "telephone": "+91-9288381112",
+      "email": "sales@jdcsolar.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Phase 2, Adityapur Industrial Area",
+        "addressLocality": "Jamshedpur",
+        "addressRegion": "Jharkhand",
+        "postalCode": "832109",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 22.7842,
+        "longitude": 86.1685
+      },
+      "priceRange": "₹₹ - ₹₹₹₹",
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "09:00",
+        "closes": "19:00"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://jdcsolar.com/#website",
+      "url": "https://jdcsolar.com/",
+      "name": "JDC Solar",
+      "description": "Turnkey rooftop solar EPC and PM Surya Ghar subsidy experts in Jharkhand.",
+      "publisher": { "@id": "https://jdcsolar.com/#organization" }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title="Solar Company in Jharkhand | Rooftop Solar EPC & Subsidy | JDC Solar"
+  description="JDC Solar is Jharkhand's premier solar EPC company. Turnkey residential rooftop solar with ₹78,000 PM Surya Ghar subsidy and commercial solar power plants."
+  canonical="https://jdcsolar.com/"
+  activeNav="home"
+  schema={homeSchema}
+>
+
+    
+    <section class="hero" aria-label="Hero Introduction">
+      <picture class="hero__bg-picture" aria-hidden="true">
+        <source media="(max-width: 767px)" srcset="/assets/images/hero/hero-cinematic-bg-mobile.jpg" type="image/jpeg">
+        <img src="/assets/images/hero/hero-cinematic-bg.jpg" alt="" class="hero__bg-img" width="1920" height="1080" fetchpriority="high" loading="eager" decoding="sync">
+      </picture>
+      <canvas id="hero-solar-canvas" class="hero__solar-canvas" aria-hidden="true"></canvas>
+      <div class="container hero-grid">
+        
+        <div class="hero__content">
+          <h1 class="display-title hero__title">
+            Power Your Home &amp; Business with<br class="hero-title-break"> High-Efficiency Solar Energy
+          </h1>
+          <p class="lead hero__lead">
+            Turnkey rooftop solar engineering for residential villas, manufacturing plants, and commercial complexes across Eastern India. Slash your electricity bills by up to 90% with ₹78,000 PM Surya Ghar central subsidy.
+          </p>
+          <div class="hero__actions">
+            <button type="button" class="btn btn--primary btn--lg" data-modal-open="survey-modal" data-magnetic>
+              Book Free Rooftop Survey →
+            </button>
+            <a href="#calculator" class="btn btn--secondary btn--lg hero-btn-glass">
+              Calculate Savings
+            </a>
+          </div>
+          <div class="hero__trust-points">
+            <div class="hero__trust-item">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-shield"></use></svg>
+              <span>25-Year Performance Warranty</span>
+            </div>
+            <div class="hero__trust-item">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+              <span>Direct JBVNL/TSUISL Net-Metering</span>
+            </div>
+            <div class="hero__trust-item">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-leaf"></use></svg>
+              <span>₹78k PM Surya Ghar Subsidy</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <div class="kinetic-ticker" aria-label="Live Solar Statistics & Approvals">
+      <div class="kinetic-ticker__track">
+        <div class="kinetic-ticker__item"><svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-sun"></use></svg><span>500+ Commissioned Rooftop Installations Across Eastern India</span><span class="ticker-dot"></span></div>
+        <div class="kinetic-ticker__item"><svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-shield"></use></svg><span>₹78,000 Direct DBT Central Subsidy Under PM Surya Ghar</span><span class="ticker-dot"></span></div>
+        <div class="kinetic-ticker__item"><svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg><span>25-Year Linear Performance Warranty on Tier-1 Monocrystalline Modules</span><span class="ticker-dot"></span></div>
+        <div class="kinetic-ticker__item"><svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-factory"></use></svg><span>High-Tension (HT) 11kV/33kV Net-Metering Specialists</span><span class="ticker-dot"></span></div>
+        <div class="kinetic-ticker__item"><svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-leaf"></use></svg><span>25,000+ Tons CO₂ Carbon Offset Achieved</span><span class="ticker-dot"></span></div>
+        <div class="kinetic-ticker__item"><svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-verified"></use></svg><span>Approved Channel Partner for MNRE & JBVNL Net-Metering</span><span class="ticker-dot"></span></div>
+        
+        
+        <div class="kinetic-ticker__item"><svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-sun"></use></svg><span>500+ Commissioned Rooftop Installations Across Eastern India</span><span class="ticker-dot"></span></div>
+        <div class="kinetic-ticker__item"><svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-shield"></use></svg><span>₹78,000 Direct DBT Central Subsidy Under PM Surya Ghar</span><span class="ticker-dot"></span></div>
+        <div class="kinetic-ticker__item"><svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg><span>25-Year Linear Performance Warranty on Tier-1 Monocrystalline Modules</span><span class="ticker-dot"></span></div>
+        <div class="kinetic-ticker__item"><svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-factory"></use></svg><span>High-Tension (HT) 11kV/33kV Net-Metering Specialists</span><span class="ticker-dot"></span></div>
+        <div class="kinetic-ticker__item"><svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-leaf"></use></svg><span>25,000+ Tons CO₂ Carbon Offset Achieved</span><span class="ticker-dot"></span></div>
+        <div class="kinetic-ticker__item"><svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-verified"></use></svg><span>Approved Channel Partner for MNRE & JBVNL Net-Metering</span><span class="ticker-dot"></span></div>
+      </div>
+    </div>
+
+    
+    <section class="section section--compact stats-bar-wrapper" aria-label="Company Milestone Statistics">
+      <div class="container">
+        <div class="grid grid--4col" data-reveal="stagger">
+          <div class="card-stat">
+            <div class="card-stat__value">
+              <span data-counter="500" data-counter-suffix="+">500+</span>
+            </div>
+            <div class="card-stat__label">Solar Projects Completed</div>
+            <div class="card-stat__subtext">Across residential, commercial & industrial sectors</div>
+          </div>
+          <div class="card-stat">
+            <div class="card-stat__value">
+              <span data-counter="25" data-counter-suffix="+ MW">25+ MW</span>
+            </div>
+            <div class="card-stat__label">Capacity Installed</div>
+            <div class="card-stat__subtext">Clean power actively generating in Eastern India</div>
+          </div>
+          <div class="card-stat">
+            <div class="card-stat__value">
+              <span data-counter="90" data-counter-suffix="%">90%</span>
+            </div>
+            <div class="card-stat__label">Average Bill Reduction</div>
+            <div class="card-stat__subtext">Maximum return on rooftop investment</div>
+          </div>
+          <div class="card-stat">
+            <div class="card-stat__value">
+              <span data-counter="25000" data-counter-suffix="+">25,000+</span>
+            </div>
+            <div class="card-stat__label">Tons CO₂ Offset</div>
+            <div class="card-stat__subtext">Equivalent to 580,000+ mature trees planted</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="section bg-tech-grid" aria-label="Our Solar Services">
+      <div class="container">
+        <div class="section-header" data-reveal="fade-up">
+          <div class="section-tag section-tag--accent">Custom Solar Solutions</div>
+          <h2>Engineered for Every Energy Need</h2>
+          <p class="lead">From residential homes claiming government subsidies to high-capacity industrial manufacturing complexes.</p>
+        </div>
+
+        <div class="grid grid--3col" data-reveal="stagger">
+          
+          <div class="card card-service card--interactive" data-tilt>
+            <div class="card-service__icon-wrap">
+              <svg class="icon" style="width: 28px; height: 28px;" aria-hidden="true">
+                <use href="/assets/icons/sprite.svg#icon-home"></use>
+              </svg>
+            </div>
+            <h3 class="card-service__title">Residential Rooftop Solar</h3>
+            <p class="card-service__description">High-efficiency rooftop solar for independent homes and villas with up to ₹78,000 PM Surya Ghar direct central subsidy.</p>
+            <ul class="card-service__features">
+              <li class="card-service__feature-item">
+                <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+                <span>Up to ₹78,000 PM Surya Ghar Subsidy</span>
+              </li>
+              <li class="card-service__feature-item">
+                <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+                <span>Direct JBVNL / TSUISL Net-Metering</span>
+              </li>
+              <li class="card-service__feature-item">
+                <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+                <span>Tier-1 DCR Monocrystalline Panels</span>
+              </li>
+            </ul>
+            <div class="card-service__footer">
+              <a href="/services/residential-solar/" class="btn btn--primary btn--block">Explore Residential Solar →</a>
+            </div>
+          </div>
+
+          
+          <div class="card card-service card--interactive" data-tilt>
+            <div class="card-service__icon-wrap">
+              <svg class="icon" style="width: 28px; height: 28px;" aria-hidden="true">
+                <use href="/assets/icons/sprite.svg#icon-factory"></use>
+              </svg>
+            </div>
+            <h3 class="card-service__title">Commercial & Industrial Solar</h3>
+            <p class="card-service__description">High-capacity rooftop installations designed to slash peak demand tariffs for factories, manufacturing units, and commercial plazas.</p>
+            <ul class="card-service__features">
+              <li class="card-service__feature-item">
+                <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+                <span>Section 32 Accelerated Depreciation (40% Tax Shield)</span>
+              </li>
+              <li class="card-service__feature-item">
+                <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+                <span>High Tension (HT) 11kV/33kV Net-Metering</span>
+              </li>
+              <li class="card-service__feature-item">
+                <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+                <span>CAPEX and OPEX / RESCO Models</span>
+              </li>
+            </ul>
+            <div class="card-service__footer">
+              <a href="/services/commercial-solar/" class="btn btn--primary btn--block">Explore Commercial Solar →</a>
+            </div>
+          </div>
+
+          
+          <div class="card card-service card--interactive" data-tilt>
+            <div class="card-service__icon-wrap">
+              <svg class="icon" style="width: 28px; height: 28px;" aria-hidden="true">
+                <use href="/assets/icons/sprite.svg#icon-hospital"></use>
+              </svg>
+            </div>
+            <h3 class="card-service__title">Institutional Solar Solutions</h3>
+            <p class="card-service__description">Uninterrupted, reliable solar energy solutions designed for hospitals, diagnostic centers, schools, and university campuses.</p>
+            <ul class="card-service__features">
+              <li class="card-service__feature-item">
+                <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+                <span>24/7 Power Security with DG Synchronization</span>
+              </li>
+              <li class="card-service__feature-item">
+                <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+                <span>Silent, Zero-Emission Green Campus Status</span>
+              </li>
+              <li class="card-service__feature-item">
+                <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+                <span>Custom Medical Circuit Load Priority</span>
+              </li>
+            </ul>
+            <div class="card-service__footer">
+              <a href="/services/institutional-solar/" class="btn btn--primary btn--block">Explore Institutional Solar →</a>
+            </div>
+          </div>
+
+          
+          <div class="card card-service card--interactive" data-tilt>
+            <div class="card-service__icon-wrap">
+              <svg class="icon" style="width: 28px; height: 28px;" aria-hidden="true">
+                <use href="/assets/icons/sprite.svg#icon-shield"></use>
+              </svg>
+            </div>
+            <h3 class="card-service__title">Government & PSU Solar EPC</h3>
+            <p class="card-service__description">Turnkey EPC execution and tender compliance for public sector undertakings, administrative offices, and municipal buildings.</p>
+            <ul class="card-service__features">
+              <li class="card-service__feature-item">
+                <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+                <span>100% Tender & DCR Compliance</span>
+              </li>
+              <li class="card-service__feature-item">
+                <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+                <span>State Nodal Liaisoning (JREDA, BREDA, WBREDA)</span>
+              </li>
+              <li class="card-service__feature-item">
+                <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+                <span>ISO Certified Electrical Safety Standards</span>
+              </li>
+            </ul>
+            <div class="card-service__footer">
+              <a href="/services/government-solar/" class="btn btn--primary btn--block">Explore Government Solar →</a>
+            </div>
+          </div>
+
+          
+          <div class="card card-service card--interactive" data-tilt>
+            <div class="card-service__icon-wrap">
+              <svg class="icon" style="width: 28px; height: 28px;" aria-hidden="true">
+                <use href="/assets/icons/sprite.svg#icon-lightbulb"></use>
+              </svg>
+            </div>
+            <h3 class="card-service__title">Solar Street Lighting Systems</h3>
+            <p class="card-service__description">Standalone outdoor solar street lights with intelligent dusk-to-dawn controllers and high-density lithium battery storage.</p>
+            <ul class="card-service__features">
+              <li class="card-service__feature-item">
+                <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+                <span>Automatic Dusk-to-Dawn Optical Operation</span>
+              </li>
+              <li class="card-service__feature-item">
+                <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+                <span>Long-Life LiFePO4 Lithium Battery Storage</span>
+              </li>
+              <li class="card-service__feature-item">
+                <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+                <span>Hot-Dip Galvanized Anti-Corrosion Poles</span>
+              </li>
+            </ul>
+            <div class="card-service__footer">
+              <a href="/services/street-lights/" class="btn btn--primary btn--block">Explore Street Lights →</a>
+            </div>
+          </div>
+
+          
+          <div class="card card-service card--interactive" data-tilt>
+            <div class="card-service__icon-wrap">
+              <svg class="icon" style="width: 28px; height: 28px;" aria-hidden="true">
+                <use href="/assets/icons/sprite.svg#icon-solar-panel"></use>
+              </svg>
+            </div>
+            <h3 class="card-service__title">Utility-Scale Solar Parks</h3>
+            <p class="card-service__description">Ground-mounted megawatt solar power plants with high-voltage grid transmission, land development, and substation commissioning.</p>
+            <ul class="card-service__features">
+              <li class="card-service__feature-item">
+                <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+                <span>Comprehensive PVsyst Yield Simulations</span>
+              </li>
+              <li class="card-service__feature-item">
+                <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+                <span>33kV / 132kV Grid Evacuation & Switchyard</span>
+              </li>
+              <li class="card-service__feature-item">
+                <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+                <span>Full SCADA Cloud Telemetry & Diagnostics</span>
+              </li>
+            </ul>
+            <div class="card-service__footer">
+              <a href="/services/solar-parks/" class="btn btn--primary btn--block">Explore Solar Parks →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <div class="parallax-divider parallax-divider--panels" role="img" aria-label="High-efficiency monocrystalline solar panels glistening in sunlight">
+      <div class="parallax-divider__text">Tier-1 Solar Engineering • 25-Year Performance Guarantee</div>
+    </div>
+
+    
+    <section class="section section--alt" aria-label="Why Choose JDC Solar">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag section-tag--accent">THE JDC ENGINEERING ADVANTAGE</div>
+          <h2>Why Eastern India Trusts JDC Solar</h2>
+          <p class="lead">Backed by the industrial heritage of Jagatdhan Commodities Pvt. Ltd. with end-to-end EPC accountability.</p>
+        </div>
+
+        <div class="grid grid--4col" data-reveal="stagger">
+          <div class="why-jdc-card card-tilt" data-tilt data-magnetic-anchor>
+            <div class="why-jdc-card__icon">
+              <svg class="icon" style="width: 24px; height: 24px;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-shield"></use></svg>
+            </div>
+            <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">Turnkey EPC Accountability</h3>
+            <p class="text-small text-muted">We handle every phase in-house: 3D shadow analysis, structural civil engineering, electrical net-metering, and subsidy disbursal.</p>
+          </div>
+
+          <div class="why-jdc-card card-tilt" data-tilt data-magnetic-anchor>
+            <div class="why-jdc-card__icon">
+              <svg class="icon" style="width: 24px; height: 24px;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-solar-panel"></use></svg>
+            </div>
+            <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">Tier-1 DCR Modules</h3>
+            <p class="text-small text-muted">We install exclusively ALMM & DCR certified monocrystalline solar panels with 25-year linear performance warranties.</p>
+          </div>
+
+          <div class="why-jdc-card card-tilt" data-tilt data-magnetic-anchor>
+            <div class="why-jdc-card__icon">
+              <svg class="icon" style="width: 24px; height: 24px;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-location"></use></svg>
+            </div>
+            <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">Regional Engineering HQ</h3>
+            <p class="text-small text-muted">Physical headquarters at Adityapur Industrial Area, Jamshedpur ensures a rapid 2-hour technical support response across Jharkhand.</p>
+          </div>
+
+          <div class="why-jdc-card card-tilt" data-tilt data-magnetic-anchor>
+            <div class="why-jdc-card__icon">
+              <svg class="icon" style="width: 24px; height: 24px;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+            </div>
+            <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">DISCOM Liaisoning</h3>
+            <p class="text-small text-muted">Direct liaisoning with JBVNL, TSUISL, and state nodal agencies for fast bidirectional net-meter testing and commissioning.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section id="calculator" class="section solar-calculator-section" aria-label="Solar Savings Calculator">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-overline">INSTANT FEASIBILITY CALCULATOR</span>
+          <h2>Calculate Your Solar Sizing, Subsidy & Returns</h2>
+          <p class="lead">Get an instant mathematical estimate based on your DISCOM electricity tariff and PM Surya Ghar central subsidy.</p>
+        </div>
+
+        <div class="solar-calculator-ui" data-magnetic-anchor>
+          <div class="grid grid--2col">
+            
+            <div>
+              <h3 style="margin-bottom: 0.5rem;">Your Consumption Details</h3>
+              <p class="text-small text-muted" style="margin-bottom: 1.5rem;">Select your state, property category, and monthly electricity units.</p>
+
+              <div class="form-group">
+                <label class="form-label" for="calc-state">State / Electricity Board</label>
+                <select id="calc-state" class="form-select">
+                  <option value="Jharkhand" selected>Jharkhand (JBVNL / TSUISL)</option>
+                  <option value="Bihar">Bihar (NBPDCL / SBPDCL)</option>
+                  <option value="West Bengal">West Bengal (WBSEDCL / CESC)</option>
+                  <option value="Odisha">Odisha (TPCODL / TPNODL)</option>
+                  <option value="Uttar Pradesh">Uttar Pradesh (UPPCL)</option>
+                  <option value="Maharashtra">Maharashtra (MSEDCL / Tata)</option>
+                  <option value="Other States">Other States (National Benchmark)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Property Category</label>
+                <div class="radio-tile-group">
+                  <label class="radio-tile">
+                    <input type="radio" name="calc_service_type" value="residential" checked>
+                    <span class="radio-tile__label">
+                      <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-home"></use></svg>
+                      Residential
+                    </span>
+                  </label>
+                  <label class="radio-tile">
+                    <input type="radio" name="calc_service_type" value="commercial">
+                    <span class="radio-tile__label">
+                      <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-building"></use></svg>
+                      Commercial
+                    </span>
+                  </label>
+                  <label class="radio-tile">
+                    <input type="radio" name="calc_service_type" value="industrial">
+                    <span class="radio-tile__label">
+                      <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-lightning"></use></svg>
+                      Industrial
+                    </span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="calc-units">Monthly Electricity Units (kWh)</label>
+                <input type="number" id="calc-units" class="form-control" value="360" min="50" max="10000" step="10">
+                <span class="form-help-text">Tip: 360 kWh is typical for a 3-bedroom home with 1-2 air conditioners.</span>
+              </div>
+            </div>
+
+            
+            <div class="card--neomorph-raised">
+              <div>
+                <div class="calc-summary-header">
+                  <div>
+                    <span class="badge badge--accent" style="margin-bottom: 0.25rem;">RECOMMENDED SIZE</span>
+                    <div style="font-size: 0.85rem; font-weight: 600; color: var(--color-text-secondary);">Optimal Solar Capacity</div>
+                  </div>
+                  <span id="out-system-size" class="metric-tile__value--primary" style="font-size: clamp(1.75rem, 5vw, 2.5rem); font-weight: 800; line-height: 1; white-space: nowrap;">3.0 <small class="metric-unit" style="font-size: 1.1rem; color: var(--color-brand-accent-text, #C25E00);">kWp</small></span>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1rem;">
+                  <div class="metric-tile--neomorph">
+                    <div class="metric-tile__label">Gross Turnkey Cost</div>
+                    <div id="out-gross-cost" class="metric-tile__value">₹ 1,65,000</div>
+                  </div>
+                  <div class="metric-tile--neomorph metric-tile--highlight">
+                    <div class="metric-tile__label">PM Surya Ghar Subsidy</div>
+                    <div id="out-subsidy" class="metric-tile__value metric-tile__value--success">₹ 78,000</div>
+                  </div>
+                  <div class="metric-tile--neomorph">
+                    <div class="metric-tile__label">Net Investment</div>
+                    <div id="out-net-cost" class="metric-tile__value metric-tile__value--primary">₹ 87,000</div>
+                  </div>
+                  <div class="metric-tile--neomorph metric-tile--highlight">
+                    <div class="metric-tile__label">Annual Bill Savings</div>
+                    <div id="out-annual-savings" class="metric-tile__value metric-tile__value--success">₹ 28,470 <small class="metric-unit">/ yr</small></div>
+                  </div>
+                  <div class="metric-tile--neomorph">
+                    <div class="metric-tile__label">Rooftop Area Needed</div>
+                    <div id="out-area" class="metric-tile__value">~300 <small class="metric-unit">sq.ft</small></div>
+                  </div>
+                  <div class="metric-tile--neomorph">
+                    <div class="metric-tile__label">Estimated Payback</div>
+                    <div id="out-payback" class="metric-tile__value">3.1 <small class="metric-unit">Years</small></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="calc-actions-grid">
+                <div class="calc-actions-secondary">
+                  <a id="calc-whatsapp-quote" href="#" class="btn btn--whatsapp btn--md" target="_blank" rel="noopener noreferrer">
+                    <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-whatsapp"></use></svg>
+                    Share on WhatsApp
+                  </a>
+                  <button type="button" id="btn-download-proposal" class="btn btn--secondary btn--md">
+                    <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-document"></use></svg>
+                    Download PDF
+                  </button>
+                </div>
+                <button type="button" class="btn btn--primary btn--md" data-modal-open="survey-modal">
+                  Book Free Site Survey →
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <div class="parallax-divider parallax-divider--worker" role="img" aria-label="Solar installation technician working on rooftop at sunrise">
+      <div class="parallax-divider__text">Certified MNRE & JBVNL Specialists • Zero-Leakage Rooftop Mounting</div>
+    </div>
+
+    
+    <section class="section section--alt featured-projects-section" id="featured-projects-section" aria-label="Featured Solar Projects Interactive Showcase">
+      <div class="container">
+        <div class="featured-gallery-header">
+          <div class="section-header" data-reveal="fade-up">
+            <span class="section-overline">DYNAMIC PROJECT GALLERY</span>
+            <h2>Featured Solar EPC Installations</h2>
+            <p class="lead">Swipe, drag, or use the arrows to explore verified solar power plants across Eastern India.</p>
+          </div>
+          <div class="featured-gallery-nav" aria-label="Project Gallery Navigation">
+            <button type="button" class="gallery-nav-btn gallery-nav-btn--prev" aria-label="Previous Project" title="Previous Project">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-chevron-left"></use></svg>
+            </button>
+            <button type="button" class="gallery-nav-btn gallery-nav-btn--next" aria-label="Next Project" title="Next Project">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-chevron-right"></use></svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="single-project-carousel project-carousel-stage" data-project-carousel aria-roledescription="carousel" tabindex="0">
+          <div class="single-project-carousel__track project-carousel-track">
+            
+            <!-- Card 1 -->
+            <article class="featured-project-card is-active" aria-roledescription="slide" aria-label="1 of 5">
+              <div class="featured-project-card__media">
+                <img src="/assets/images/projects/project-adityapur-250kw.jpg" alt="250 kWp Industrial Rooftop Solar in Adityapur Jamshedpur" width="720" height="480" loading="lazy">
+                <div class="featured-project-card__badge">
+                  <span class="section-tag">Industrial Solar</span>
+                </div>
+              </div>
+              <div class="featured-project-card__content">
+                <div class="featured-project-card__location">
+                  <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-location"></use></svg>
+                  <span>Adityapur Industrial Area, Jamshedpur</span>
+                </div>
+                <h3 class="featured-project-card__title">Heavy Engineering &amp; Auto Ancillary</h3>
+                <p class="featured-project-card__desc">Custom engineered high-yield captive solar array synchronized with industrial manufacturing load and DISCOM net-metering.</p>
+                <div class="featured-project-card__stats">
+                  <div class="featured-stat-box">
+                    <div class="featured-stat-box__val">250 kWp</div>
+                    <div class="featured-stat-box__lbl">System Size</div>
+                  </div>
+                  <div class="featured-stat-box">
+                    <div class="featured-stat-box__val">₹ 28.5 L</div>
+                    <div class="featured-stat-box__lbl">Annual Savings</div>
+                  </div>
+                  <div class="featured-stat-box">
+                    <div class="featured-stat-box__val">3.2 Yrs</div>
+                    <div class="featured-stat-box__lbl">Payback Period</div>
+                  </div>
+                </div>
+                <div class="featured-project-card__footer">
+                  <span class="featured-project-card__tag">Payback: 3.2 Years</span>
+                  <a href="/projects/#project-adityapur-250kw-industrial-solar" class="btn btn--primary btn--sm">View Case Study →</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="featured-project-card" aria-roledescription="slide" aria-label="2 of 5" aria-hidden="true" inert>
+              <div class="featured-project-card__media">
+                <img src="/assets/images/projects/project-bistupur-50kw.jpg" alt="50 kWp Hospital Rooftop Solar in Bistupur Jamshedpur" width="720" height="480" loading="lazy">
+                <div class="featured-project-card__badge">
+                  <span class="section-tag">Institutional Solar</span>
+                </div>
+              </div>
+              <div class="featured-project-card__content">
+                <div class="featured-project-card__location">
+                  <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-location"></use></svg>
+                  <span>Bistupur, Jamshedpur</span>
+                </div>
+                <h3 class="featured-project-card__title">Multi-Speciality Hospital &amp; Diagnostics</h3>
+                <p class="featured-project-card__desc">Uninterrupted solar power with automated diesel generator synchronization for critical healthcare diagnostic machinery.</p>
+                <div class="featured-project-card__stats">
+                  <div class="featured-stat-box">
+                    <div class="featured-stat-box__val">50 kWp</div>
+                    <div class="featured-stat-box__lbl">System Size</div>
+                  </div>
+                  <div class="featured-stat-box">
+                    <div class="featured-stat-box__val">₹ 5.7 L</div>
+                    <div class="featured-stat-box__lbl">Annual Savings</div>
+                  </div>
+                  <div class="featured-stat-box">
+                    <div class="featured-stat-box__val">Active</div>
+                    <div class="featured-stat-box__lbl">DG Synchronization</div>
+                  </div>
+                </div>
+                <div class="featured-project-card__footer">
+                  <span class="featured-project-card__tag">DG-Sync Active</span>
+                  <a href="/projects/#project-bistupur-50kw-hospital-solar" class="btn btn--primary btn--sm" tabindex="-1">View Case Study →</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="featured-project-card" aria-roledescription="slide" aria-label="3 of 5" aria-hidden="true" inert>
+              <div class="featured-project-card__media">
+                <img src="/assets/images/projects/project-sakchi-villa.jpg" alt="5 kWp Residential Rooftop Solar in Morabadi Ranchi" width="720" height="480" loading="lazy">
+                <div class="featured-project-card__badge">
+                  <span class="section-tag">Residential Solar</span>
+                </div>
+              </div>
+              <div class="featured-project-card__content">
+                <div class="featured-project-card__location">
+                  <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-location"></use></svg>
+                  <span>Morabadi, Ranchi</span>
+                </div>
+                <h3 class="featured-project-card__title">Independent Luxury Villa</h3>
+                <p class="featured-project-card__desc">Premium rooftop solar installation reducing domestic power bills by 90% with ₹78,000 PM Surya Ghar direct central subsidy.</p>
+                <div class="featured-project-card__stats">
+                  <div class="featured-stat-box">
+                    <div class="featured-stat-box__val">5.0 kWp</div>
+                    <div class="featured-stat-box__lbl">System Size</div>
+                  </div>
+                  <div class="featured-stat-box">
+                    <div class="featured-stat-box__val">₹ 48,000</div>
+                    <div class="featured-stat-box__lbl">Annual Savings</div>
+                  </div>
+                  <div class="featured-stat-box">
+                    <div class="featured-stat-box__val">₹78,000</div>
+                    <div class="featured-stat-box__lbl">Govt Subsidy</div>
+                  </div>
+                </div>
+                <div class="featured-project-card__footer">
+                  <span class="featured-project-card__tag">₹78k Disbursed</span>
+                  <a href="/projects/#project-ranchi-5kw-residential-villa" class="btn btn--primary btn--sm" tabindex="-1">View Case Study →</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 4 -->
+            <article class="featured-project-card" aria-roledescription="slide" aria-label="4 of 5" aria-hidden="true" inert>
+              <div class="featured-project-card__media">
+                <img src="/assets/images/hero/cta-solar-farm.jpg" alt="1.0 MW Utility Ground Mount Solar in Bokaro" width="720" height="480" loading="lazy">
+                <div class="featured-project-card__badge">
+                  <span class="section-tag">Utility Solar Park</span>
+                </div>
+              </div>
+              <div class="featured-project-card__content">
+                <div class="featured-project-card__location">
+                  <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-location"></use></svg>
+                  <span>Bokaro Industrial Corridor</span>
+                </div>
+                <h3 class="featured-project-card__title">1.0 MWp Ground-Mounted Solar Park</h3>
+                <p class="featured-project-card__desc">High-tension utility scale solar installation with 33kV dedicated substation export, SCADA monitoring, and turnkey transmission infrastructure.</p>
+                <div class="featured-project-card__stats">
+                  <div class="featured-stat-box">
+                    <div class="featured-stat-box__val">1.0 MWp</div>
+                    <div class="featured-stat-box__lbl">System Size</div>
+                  </div>
+                  <div class="featured-stat-box">
+                    <div class="featured-stat-box__val">1.46M kWh</div>
+                    <div class="featured-stat-box__lbl">Annual Yield</div>
+                  </div>
+                  <div class="featured-stat-box">
+                    <div class="featured-stat-box__val">33 kV</div>
+                    <div class="featured-stat-box__lbl">Grid Export</div>
+                  </div>
+                </div>
+                <div class="featured-project-card__footer">
+                  <span class="featured-project-card__tag">33kV Grid Export</span>
+                  <a href="/projects/#project-bokaro-1mw-utility-solar-park" class="btn btn--primary btn--sm" tabindex="-1">View Case Study →</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 5 -->
+            <article class="featured-project-card" aria-roledescription="slide" aria-label="5 of 5" aria-hidden="true" inert>
+              <div class="featured-project-card__media">
+                <img src="/assets/images/projects/project-sakchi-plaza.jpg" alt="100 kW Commercial Plaza Solar in Sakchi Jamshedpur" width="720" height="480" loading="lazy">
+                <div class="featured-project-card__badge">
+                  <span class="section-tag">Commercial Solar</span>
+                </div>
+              </div>
+              <div class="featured-project-card__content">
+                <div class="featured-project-card__location">
+                  <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-location"></use></svg>
+                  <span>Sakchi Commercial Hub</span>
+                </div>
+                <h3 class="featured-project-card__title">Commercial Plaza &amp; Retail Complex</h3>
+                <p class="featured-project-card__desc">Turnkey rooftop solar installation maximizing commercial ROI with 40% accelerated depreciation tax write-off in Year 1.</p>
+                <div class="featured-project-card__stats">
+                  <div class="featured-stat-box">
+                    <div class="featured-stat-box__val">100 kWp</div>
+                    <div class="featured-stat-box__lbl">System Size</div>
+                  </div>
+                  <div class="featured-stat-box">
+                    <div class="featured-stat-box__val">₹ 11.4 L</div>
+                    <div class="featured-stat-box__lbl">Annual Savings</div>
+                  </div>
+                  <div class="featured-stat-box">
+                    <div class="featured-stat-box__val">40%</div>
+                    <div class="featured-stat-box__lbl">Tax Benefit</div>
+                  </div>
+                </div>
+                <div class="featured-project-card__footer">
+                  <span class="featured-project-card__tag">40% Tax Benefit</span>
+                  <a href="/projects/#project-sakchi-100kw-commercial-plaza" class="btn btn--primary btn--sm" tabindex="-1">View Case Study →</a>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+        <div style="margin-top: 2rem; text-align: center;">
+          <a href="/projects/" class="btn btn--ghost btn--md" tabindex="-1">Explore All 50+ Commissioned Projects →</a>
+        </div>
+      </div>
+    </section>
+
+    
+    <section id="rooftop-slider" class="section before-after-section" aria-label="Rooftop Solar Transformation Before and After">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-overline">ROOFTOP TRANSFORMATION</span>
+          <h2>Slide to See the Solar EPC Difference</h2>
+          <p class="lead">Drag the slider horizontally to see how JDC Solar converts idle rooftop real estate into a high-yield captive clean power plant.</p>
+        </div>
+
+        <div class="before-after-wrapper" data-before-after data-magnetic-anchor>
+          
+          <div class="before-after-container">
+            
+            <div class="before-after__layer before-after__layer--before">
+              <img src="/assets/images/hero/rooftop-before.jpg" alt="Bare concrete rooftop before solar installation" width="1080" height="540" loading="lazy">
+            </div>
+
+            
+            <div class="before-after__layer before-after__layer--after">
+              <img src="/assets/images/hero/rooftop-after.jpg" alt="Completed Tier-1 Monocrystalline Solar Installation on the exact same rooftop" width="1080" height="540" loading="lazy">
+            </div>
+
+            
+            <span class="before-after__label before-after__label--before">BEFORE</span>
+            <span class="before-after__label before-after__label--after">AFTER</span>
+
+            
+            <div class="before-after__handle">
+              <button type="button" class="before-after__handle-button" aria-label="Drag slider to compare before and after solar installation">
+                <span class="before-after__handle-arrows">
+                  <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-chevron-down"></use></svg>
+                  <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-chevron-down"></use></svg>
+                </span>
+              </button>
+            </div>
+          </div>
+
+          
+          <div class="before-after-footer">
+            <div class="before-after-footer__stat">
+              <span class="before-after-footer__stat-val">₹28,470/yr</span>
+              <span class="before-after-footer__stat-lbl">Savings</span>
+            </div>
+            <div class="before-after-footer__divider"></div>
+            <div class="before-after-footer__stat">
+              <span class="before-after-footer__stat-val">25 Years</span>
+              <span class="before-after-footer__stat-lbl">Warranty</span>
+            </div>
+            <div class="before-after-footer__divider"></div>
+            <div class="before-after-footer__stat">
+              <span class="before-after-footer__stat-val">3.1 Yrs</span>
+              <span class="before-after-footer__stat-lbl">Payback</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section id="process" class="section process-roadmap" aria-label="Our Turnkey Process">
+      <div class="container">
+        <div class="section-header text-center" data-reveal="fade-up">
+          <span class="section-overline">TURNKEY 4-STEP EXECUTION</span>
+          <h2>From Rooftop Inspection to Free Solar Power</h2>
+          <p class="lead">We manage the complete engineering and administrative cycle with zero friction for you.</p>
+        </div>
+
+        <div class="timeline-process" data-circuit-roadmap>
+          <div class="timeline-step">
+            <div class="timeline-step__number">01</div>
+            <div class="timeline-step__connector" aria-hidden="true">
+              <div class="timeline-step__connector-beam"></div>
+            </div>
+            <div class="timeline-step__content" data-tilt>
+              <div class="timeline-step__header">
+                <h3 class="timeline-step__title">Free Site Survey & Shadow Analysis</h3>
+                <span class="timeline-step__badge">Day 1 • On-Site</span>
+              </div>
+              <p class="timeline-step__desc">Our certified engineers inspect your roof orientation, structural strength, shadow profile via 3D mapping, and audit your historical power bills.</p>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-step__number">02</div>
+            <div class="timeline-step__connector" aria-hidden="true">
+              <div class="timeline-step__connector-beam"></div>
+            </div>
+            <div class="timeline-step__content" data-tilt>
+              <div class="timeline-step__header">
+                <h3 class="timeline-step__title">Engineering Design & Subsidy Filing</h3>
+                <span class="timeline-step__badge">Days 2–4 • Approvals</span>
+              </div>
+              <p class="timeline-step__desc">We prepare 3D PVsyst yield simulations, submit your PM Surya Ghar subsidy application on the National Portal, and secure DISCOM approvals.</p>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-step__number">03</div>
+            <div class="timeline-step__connector" aria-hidden="true">
+              <div class="timeline-step__connector-beam"></div>
+            </div>
+            <div class="timeline-step__content" data-tilt>
+              <div class="timeline-step__header">
+                <h3 class="timeline-step__title">Precision Mechanical & Electrical Installation</h3>
+                <span class="timeline-step__badge">Days 5–7 • Installation</span>
+              </div>
+              <p class="timeline-step__desc">Certified technicians mount Tier-1 DCR monocrystalline panels, string inverters, and multi-stage surge protection with zero roof leakage risk.</p>
+            </div>
+          </div>
+
+          <div class="timeline-step">
+            <div class="timeline-step__number">04</div>
+            <div class="timeline-step__content" data-tilt>
+              <div class="timeline-step__header">
+                <h3 class="timeline-step__title">Bidirectional Net-Metering & Subsidy Disbursal</h3>
+                <span class="timeline-step__badge">Commissioned • ₹78k DBT</span>
+              </div>
+              <p class="timeline-step__desc">JBVNL / TSUISL commissions the bidirectional net-meter, solar power starts rolling your meter backwards, and your ₹78,000 subsidy is credited via DBT.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="section" aria-label="Tier-1 Solar Engineering Architecture" id="engineering">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-overline">TIER-1 HARDWARE RIGOR</span>
+          <h2>Anatomy of a High-Yield Solar Module</h2>
+          <p class="lead">Explore the 5 microscopic and structural layers of our ALMM-listed monocrystalline modules engineered for 25+ years of peak generation.</p>
+        </div>
+
+        <div class="exploded-module-wrapper" data-exploded-module data-magnetic-anchor>
+          <div class="exploded-module-grid">
+            
+            <div class="exploded-viewport">
+              <div class="exploded-scene">
+                
+                <div id="layer-glass" class="exploded-layer exploded-layer--glass" title="3.2mm Solar Tempered Glass"></div>
+                
+                <div id="layer-coating" class="exploded-layer exploded-layer--coating" title="Nano Anti-Reflective Coating"></div>
+                
+                <div id="layer-cells" class="exploded-layer exploded-layer--cells" title="M10 Monocrystalline Cells"></div>
+                
+                <div id="layer-eva" class="exploded-layer exploded-layer--eva" title="Moisture Barrier EVA Sheet"></div>
+                
+                <div id="layer-frame" class="exploded-layer exploded-layer--frame" title="Aerospace-Grade Aluminum Frame"></div>
+              </div>
+            </div>
+
+            
+            <div>
+              <div class="exploded-specs-list">
+                <div class="exploded-spec-card is-active" data-layer-target="layer-glass">
+                  <div class="exploded-spec-card__num">01</div>
+                  <div>
+                    <div class="exploded-spec-card__title">3.2mm Low-Iron Tempered Glass</div>
+                    <div class="exploded-spec-card__desc">94.5% optical transmittance with hail-impact resistance rating up to 25mm ice pellets at 82 km/h.</div>
+                  </div>
+                </div>
+
+                <div class="exploded-spec-card" data-layer-target="layer-coating">
+                  <div class="exploded-spec-card__num">02</div>
+                  <div>
+                    <div class="exploded-spec-card__title">Nano Anti-Reflective (AR) Coating</div>
+                    <div class="exploded-spec-card__desc">Reduces sunlight bounce-off and maximizes photon capture during early morning and late evening low-angle light.</div>
+                  </div>
+                </div>
+
+                <div class="exploded-spec-card" data-layer-target="layer-cells">
+                  <div class="exploded-spec-card__num">03</div>
+                  <div>
+                    <div class="exploded-spec-card__title">M10 Tier-1 Monocrystalline Cells (16BB)</div>
+                    <div class="exploded-spec-card__desc">Ultra-pure silicon with 16 busbar ribbons minimizing resistance loss and delivering 22.4% cell efficiency.</div>
+                  </div>
+                </div>
+
+                <div class="exploded-spec-card" data-layer-target="layer-eva">
+                  <div class="exploded-spec-card__num">04</div>
+                  <div>
+                    <div class="exploded-spec-card__title">Dual-Layer Cross-Linked EVA Encapsulant</div>
+                    <div class="exploded-spec-card__desc">Hermetic sealing preventing moisture penetration, PID degradation, and corrosion in Eastern India's monsoon climate.</div>
+                  </div>
+                </div>
+
+                <div class="exploded-spec-card" data-layer-target="layer-frame">
+                  <div class="exploded-spec-card__num">05</div>
+                  <div>
+                    <div class="exploded-spec-card__title">Anodized Aerospace-Grade Aluminum Frame</div>
+                    <div class="exploded-spec-card__desc">Corrosion-proof 35mm structural frame engineered to withstand 5400 Pa snow load and 2400 Pa cyclone wind shear.</div>
+                  </div>
+                </div>
+              </div>
+
+              
+              <div class="exploded-controls">
+                <span class="exploded-controls__label">Explode 3D Layers</span>
+                <div class="exploded-slider-track" id="exploded-slider-track" role="slider" tabindex="0" aria-label="Explode 3D solar layers separation" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+                  <div class="exploded-slider-fill" id="exploded-slider-fill"></div>
+                  <div class="exploded-slider-thumb" id="exploded-slider-thumb" style="left: 50%;"></div>
+                </div>
+                <span id="exploded-separation-val" class="exploded-controls__val">50%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="section section--alt" aria-label="PM Surya Ghar Subsidy Information">
+      <div class="container">
+        <div class="subsidy-highlight-card" data-magnetic-anchor>
+          <div class="grid grid--2col" style="align-items: center;">
+            <div>
+              <span class="badge badge--success" style="margin-bottom: 0.75rem;">CENTRAL GOVERNMENT SCHEME</span>
+              <h2 style="font-size: 2rem; margin-bottom: 1rem;">PM Surya Ghar: Muft Bijli Yojana</h2>
+              <p style="font-size: 1.05rem; line-height: 1.6; margin-bottom: 1.5rem;">
+                Receive up to ₹78,000 direct financial assistance credited to your bank account for installing rooftop solar. JDC Solar is an approved EPC partner managing 100% of the portal paperwork and JBVNL approval.
+              </p>
+              <div class="flex gap-md" style="flex-wrap: wrap;">
+                <a href="/pm-surya-ghar/" class="btn btn--primary btn--lg">Read Complete Subsidy Guide →</a>
+                <button type="button" class="btn btn--secondary btn--lg" data-modal-open="survey-modal">Apply via JDC Solar</button>
+              </div>
+            </div>
+
+            
+            <div>
+              <div class="subsidy-slab-pill">
+                <div>
+                  <div class="subsidy-slab-pill__kw">1 kW System</div>
+                  <span class="text-small text-muted">Suitable for small homes (120 units/mo)</span>
+                </div>
+                <div class="subsidy-slab-pill__amount">₹ 30,000</div>
+              </div>
+
+              <div class="subsidy-slab-pill">
+                <div>
+                  <div class="subsidy-slab-pill__kw">2 kW System</div>
+                  <span class="text-small text-muted">Ideal for 2-BHK homes (240 units/mo)</span>
+                </div>
+                <div class="subsidy-slab-pill__amount">₹ 60,000</div>
+              </div>
+
+              <div class="subsidy-slab-pill subsidy-slab-pill--popular">
+                <div>
+                  <div class="subsidy-slab-pill__kw">3 kW to 10 kW System (Most Popular)</div>
+                  <span class="text-small text-muted">Maximized central financial assistance</span>
+                </div>
+                <div class="subsidy-slab-pill__amount">₹ 78,000</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="section" aria-label="Customer Reviews" id="testimonials">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag section-tag--accent">Client Experiences</div>
+          <h2>Trusted by Homeowners & Industrial Leaders</h2>
+          <p class="lead">Read real feedback from clients powered by JDC Solar installations in Jharkhand.</p>
+        </div>
+
+        <div class="grid grid--3col" data-reveal="stagger">
+          
+          <div class="card-testimonial" data-tilt data-magnetic-anchor>
+            <svg class="icon card-testimonial__quote-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-quote"></use></svg>
+            <div class="card-testimonial__rating" role="img" aria-label="5 out of 5 stars rating">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-star-filled"></use></svg>
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-star-filled"></use></svg>
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-star-filled"></use></svg>
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-star-filled"></use></svg>
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-star-filled"></use></svg>
+            </div>
+            <p class="card-testimonial__quote">"JDC Solar managed our complete PM Surya Ghar subsidy application and net-metering without any hassle. Our monthly electricity bill dropped from ₹4,500 to less than ₹500. Highly professional engineering team!"</p>
+            <div class="card-testimonial__author">
+              <div class="card-testimonial__avatar">RS</div>
+              <div>
+                <div class="card-testimonial__name">Rajesh K. Sharma</div>
+                <div class="card-testimonial__meta">Homeowner, Bistupur Jamshedpur (5 kWp)</div>
+                <div class="card-testimonial__verified"><svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-verified"></use></svg> Verified Homeowner</div>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="card-testimonial" data-tilt data-magnetic-anchor>
+            <svg class="icon card-testimonial__quote-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-quote"></use></svg>
+            <div class="card-testimonial__rating" role="img" aria-label="5 out of 5 stars rating">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-star-filled"></use></svg>
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-star-filled"></use></svg>
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-star-filled"></use></svg>
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-star-filled"></use></svg>
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-star-filled"></use></svg>
+            </div>
+            <p class="card-testimonial__quote">"We installed a 250 kWp system on our plant shed. JDC Solar finished execution within 20 days with zero disruption to our manufacturing shifts. The Section 32 tax benefit and bill savings made the payback under 3.5 years."</p>
+            <div class="card-testimonial__author">
+              <div class="card-testimonial__avatar">AV</div>
+              <div>
+                <div class="card-testimonial__name">Anand K. Verma</div>
+                <div class="card-testimonial__meta">MD, Auto Ancillary Unit, Adityapur (250 kWp)</div>
+                <div class="card-testimonial__verified"><svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-verified"></use></svg> Verified Industrial Client</div>
+              </div>
+            </div>
+          </div>
+
+          
+          <div class="card-testimonial" data-tilt data-magnetic-anchor>
+            <svg class="icon card-testimonial__quote-icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-quote"></use></svg>
+            <div class="card-testimonial__rating" role="img" aria-label="5 out of 5 stars rating">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-star-filled"></use></svg>
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-star-filled"></use></svg>
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-star-filled"></use></svg>
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-star-filled"></use></svg>
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-star-filled"></use></svg>
+            </div>
+            <p class="card-testimonial__quote">"Power continuity and clean energy were essential for our MRI and CT scan equipment. JDC Solar designed a DG-synchronized plant that slashed our diesel consumption drastically."</p>
+            <div class="card-testimonial__author">
+              <div class="card-testimonial__avatar">SM</div>
+              <div>
+                <div class="card-testimonial__name">Dr. S. Mukherjee</div>
+                <div class="card-testimonial__meta">Medical Director, Ranchi (25 kWp)</div>
+                <div class="card-testimonial__verified"><svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-verified"></use></svg> Verified Healthcare Client</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="section section--compact section--alt" aria-label="Technology Partners">
+      <div class="container text-center" style="margin-bottom: 1rem;">
+        <span class="badge badge--outline">TIER-1 OEM & TECHNOLOGY PARTNERS</span>
+      </div>
+      <div class="brand-ribbon">
+        <div class="brand-ribbon__track">
+          <div class="brand-ribbon__item" tabindex="0">
+            <span class="brand-ribbon__text">WAAREE SOLAR</span>
+            <img class="brand-ribbon__logo" src="/assets/images/partners/waaree.png" alt="Waaree Solar Official Logo" width="160" height="42" loading="eager" decoding="sync">
+          </div>
+          <div class="brand-ribbon__item" tabindex="0">
+            <span class="brand-ribbon__text">TATA POWER SOLAR</span>
+            <img class="brand-ribbon__logo" src="/assets/images/partners/tata-power.png" alt="Tata Power Solar Official Logo" width="160" height="42" loading="eager" decoding="sync">
+          </div>
+          <div class="brand-ribbon__item" tabindex="0">
+            <span class="brand-ribbon__text">ADANI SOLAR</span>
+            <img class="brand-ribbon__logo" src="/assets/images/partners/adani-solar.svg" alt="Adani Solar Official Logo" width="160" height="42" loading="eager" decoding="sync">
+          </div>
+          <div class="brand-ribbon__item" tabindex="0">
+            <span class="brand-ribbon__text">KHETAN SOLAR</span>
+            <img class="brand-ribbon__logo" src="/assets/images/partners/khetan.svg" alt="Khetan Solar Official Logo" width="160" height="42" loading="eager" decoding="sync">
+          </div>
+          <div class="brand-ribbon__item" tabindex="0">
+            <span class="brand-ribbon__text">HAVELLS SOLAR</span>
+            <img class="brand-ribbon__logo" src="/assets/images/partners/havells.png" alt="Havells Solar Official Logo" width="160" height="42" loading="eager" decoding="sync">
+          </div>
+          <div class="brand-ribbon__item" tabindex="0">
+            <span class="brand-ribbon__text">SUNGROW POWER</span>
+            <img class="brand-ribbon__logo" src="/assets/images/partners/sungrow.png" alt="Sungrow Power Official Logo" width="160" height="42" loading="eager" decoding="sync">
+          </div>
+
+          <!-- Clone for seamless marquee loop -->
+          <div class="brand-ribbon__item" tabindex="0">
+            <span class="brand-ribbon__text">WAAREE SOLAR</span>
+            <img class="brand-ribbon__logo" src="/assets/images/partners/waaree.png" alt="Waaree Solar Official Logo" width="160" height="42" loading="eager" decoding="sync">
+          </div>
+          <div class="brand-ribbon__item" tabindex="0">
+            <span class="brand-ribbon__text">TATA POWER SOLAR</span>
+            <img class="brand-ribbon__logo" src="/assets/images/partners/tata-power.png" alt="Tata Power Solar Official Logo" width="160" height="42" loading="eager" decoding="sync">
+          </div>
+          <div class="brand-ribbon__item" tabindex="0">
+            <span class="brand-ribbon__text">ADANI SOLAR</span>
+            <img class="brand-ribbon__logo" src="/assets/images/partners/adani-solar.svg" alt="Adani Solar Official Logo" width="160" height="42" loading="eager" decoding="sync">
+          </div>
+          <div class="brand-ribbon__item" tabindex="0">
+            <span class="brand-ribbon__text">KHETAN SOLAR</span>
+            <img class="brand-ribbon__logo" src="/assets/images/partners/khetan.svg" alt="Khetan Solar Official Logo" width="160" height="42" loading="eager" decoding="sync">
+          </div>
+          <div class="brand-ribbon__item" tabindex="0">
+            <span class="brand-ribbon__text">HAVELLS SOLAR</span>
+            <img class="brand-ribbon__logo" src="/assets/images/partners/havells.png" alt="Havells Solar Official Logo" width="160" height="42" loading="eager" decoding="sync">
+          </div>
+          <div class="brand-ribbon__item" tabindex="0">
+            <span class="brand-ribbon__text">SUNGROW POWER</span>
+            <img class="brand-ribbon__logo" src="/assets/images/partners/sungrow.png" alt="Sungrow Power Official Logo" width="160" height="42" loading="eager" decoding="sync">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="section" aria-label="Frequently Asked Questions">
+      <div class="container container--medium">
+        <div class="section-header">
+          <div class="section-tag section-tag--accent">Frequently Asked Questions</div>
+          <h2>Solar Rooftop & Subsidy FAQs</h2>
+          <p class="lead">Clear, transparent answers to help you make an informed clean energy investment.</p>
+        </div>
+
+        <div class="accordion-group" data-single-expand="true">
+          <details class="accordion-item" open>
+            <summary class="accordion-summary">
+              <span>What is the subsidy amount under PM Surya Ghar Muft Bijli Yojana?</span>
+              <span class="accordion-summary__icon" aria-hidden="true">
+                <svg class="icon"><use href="/assets/icons/sprite.svg#icon-chevron-down"></use></svg>
+              </span>
+            </summary>
+            <div class="accordion-content">
+              <p>Under the Central Government's PM Surya Ghar scheme, residential homeowners receive a fixed financial subsidy of ₹30,000 for a 1 kW system, ₹60,000 for a 2 kW system, and ₹78,000 for systems of 3 kW or higher capacity. The subsidy amount is credited directly into your bank account via DBT following JBVNL net-meter commissioning.</p>
+            </div>
+          </details>
+
+          <details class="accordion-item">
+            <summary class="accordion-summary">
+              <span>How does grid-connected net-metering work in Jharkhand?</span>
+              <span class="accordion-summary__icon" aria-hidden="true">
+                <svg class="icon"><use href="/assets/icons/sprite.svg#icon-chevron-down"></use></svg>
+              </span>
+            </summary>
+            <div class="accordion-content">
+              <p>A bidirectional net-meter records solar electricity exported to the grid when your panels produce surplus energy during the day, and records grid power consumed at night. You are billed only for the net difference, reducing your monthly electricity bill by up to 90%.</p>
+            </div>
+          </details>
+
+          <details class="accordion-item">
+            <summary class="accordion-summary">
+              <span>How much rooftop space is required for a solar installation?</span>
+              <span class="accordion-summary__icon" aria-hidden="true">
+                <svg class="icon"><use href="/assets/icons/sprite.svg#icon-chevron-down"></use></svg>
+              </span>
+            </summary>
+            <div class="accordion-content">
+              <p>Each 1 kWp of solar panel capacity requires approximately 100 square feet (9.3 sq.m) of shadow-free rooftop space. For example, a 3 kW residential rooftop installation requires roughly 300 sq.ft of area.</p>
+            </div>
+          </details>
+
+          <details class="accordion-item">
+            <summary class="accordion-summary">
+              <span>What is the expected lifespan and warranty of the system?</span>
+              <span class="accordion-summary__icon" aria-hidden="true">
+                <svg class="icon"><use href="/assets/icons/sprite.svg#icon-chevron-down"></use></svg>
+              </span>
+            </summary>
+            <div class="accordion-content">
+              <p>Tier-1 monocrystalline solar panels have an operational lifespan of 25 to 30 years and come with a 25-year linear performance warranty guaranteeing >= 80% output efficiency at Year 25. String inverters carry 5 to 10-year manufacturer warranties.</p>
+            </div>
+          </details>
+
+          <details class="accordion-item">
+            <summary class="accordion-summary">
+              <span>Will solar panels work during power cuts or cloudy days?</span>
+              <span class="accordion-summary__icon" aria-hidden="true">
+                <svg class="icon"><use href="/assets/icons/sprite.svg#icon-chevron-down"></use></svg>
+              </span>
+            </summary>
+            <div class="accordion-content">
+              <p>On cloudy days, panels continue generating roughly 25% to 40% of their rated output via diffuse light. For power cuts, standard on-grid systems shut off for grid safety (anti-islanding), while hybrid systems with battery storage or DG synchronization maintain continuous power.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="cta-banner--cinematic" aria-label="Call to Action Banner">
+      <div class="container">
+        <div class="section-tag section-tag--accent">Get Started Today</div>
+        <h2 class="cta-banner__title">Ready to Cut Your Electricity Bill by 90%?</h2>
+        <p class="cta-banner__description">
+          Schedule a free rooftop site inspection with JDC Solar's certified engineers. We prepare your custom 3D shadow report and handle 100% of government subsidy approvals.
+        </p>
+        <div class="cta-banner__actions">
+          <button type="button" class="btn btn--primary btn--lg" data-modal-open="survey-modal">
+            Book Free Rooftop Survey →
+          </button>
+          <a href="https://wa.me/919288381112" class="btn btn--whatsapp btn--lg" target="_blank" rel="noopener noreferrer">
+            <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-whatsapp"></use></svg>
+            Chat on WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+</BaseLayout>

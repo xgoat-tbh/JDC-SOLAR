@@ -1,0 +1,105 @@
+.brand-ribbon {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding: var(--space-xl) 0;
+  mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+}
+
+.brand-ribbon__track {
+  display: flex;
+  width: max-content;
+  gap: clamp(3rem, 6vw, 5.5rem);
+  animation: ribbonMarquee 32s linear infinite;
+  align-items: center;
+}
+
+.brand-ribbon__track:hover {
+  animation-play-state: paused;
+}
+
+.brand-ribbon__item {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: clamp(120px, 35vw, 190px);
+  height: 64px;
+  padding: 0 10px;
+  background: transparent;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: transform var(--duration-fast) ease;
+}
+
+.brand-ribbon__item:hover {
+  transform: translateY(-2px) scale(1.06);
+}
+
+.brand-ribbon__text {
+  display: none;
+}
+
+.brand-ribbon__logo {
+  max-height: 52px;
+  width: auto;
+  max-width: 190px;
+  height: 48px;
+  object-fit: contain;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  opacity: 0.92;
+  transition: opacity 0.2s ease, filter 0.2s ease, transform 0.2s ease;
+}
+
+.brand-ribbon__item:hover .brand-ribbon__logo {
+  opacity: 1;
+}
+
+[data-theme="dark"] .brand-ribbon__logo {
+  filter: brightness(1.1);
+}
+
+@keyframes ribbonMarquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (max-width: 600px) {
+  .brand-ribbon {
+    mask-image: none !important;
+    -webkit-mask-image: none !important;
+    padding: var(--space-lg) 0;
+  }
+
+  .brand-ribbon__track {
+    gap: 1.5rem;
+  }
+
+  .brand-ribbon__item {
+    min-width: 130px;
+    height: 52px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 6px 14px;
+  }
+
+  .brand-ribbon__logo {
+    max-height: 38px;
+    max-width: 120px;
+    height: 36px;
+    opacity: 1 !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-ribbon__track {
+    animation: none !important;
+    overflow-x: auto;
+  }
+}

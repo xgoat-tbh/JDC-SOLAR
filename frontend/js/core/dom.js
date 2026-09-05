@@ -1,37 +1,16 @@
-/**
- * JDC SOLAR 2.0 - DOM UTILITIES
- * Defensive, lightweight helpers for querying, creating, and manipulating DOM nodes
- */
-
-/**
- * Defensive querySelector wrapper
- * @param {string} selector 
- * @param {ParentNode} scope 
- * @returns {Element|null}
- */
 export function qs(selector, scope = document) {
+  if (!scope || typeof scope.querySelector !== 'function') return null;
   return scope.querySelector(selector);
 }
 
-/**
- * Defensive querySelectorAll wrapper returning standard Array
- * @param {string} selector 
- * @param {ParentNode} scope 
- * @returns {Element[]}
- */
 export function qsa(selector, scope = document) {
+  if (!scope || typeof scope.querySelectorAll !== 'function') return [];
   return Array.from(scope.querySelectorAll(selector));
 }
 
-// Aliases for convenience
 export const $ = qs;
 export const $$ = qsa;
 
-/**
- * Sanitize string to prevent XSS injection
- * @param {string} str 
- * @returns {string}
- */
 export function sanitizeHTML(str) {
   if (typeof str !== 'string') return '';
   return str
@@ -42,13 +21,6 @@ export function sanitizeHTML(str) {
     .replace(/'/g, '&#039;');
 }
 
-/**
- * Create a DOM element with attributes and optional children
- * @param {string} tag 
- * @param {Object} attrs 
- * @param {Array<string|Node>} children 
- * @returns {HTMLElement}
- */
 export function createElement(tag, attrs = {}, children = []) {
   const el = document.createElement(tag);
   
@@ -75,11 +47,6 @@ export function createElement(tag, attrs = {}, children = []) {
   return el;
 }
 
-/**
- * Set multiple attributes on an element
- * @param {Element} el 
- * @param {Object} attrs 
- */
 export function setAttributes(el, attrs = {}) {
   if (!el) return;
   Object.entries(attrs).forEach(([key, val]) => {

@@ -1,0 +1,125 @@
+---
+// src/pages/services/industrial-solar/index.astro
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const industrialSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://jdcsolar.com/services/industrial-solar/#service",
+      "name": "Industrial Rooftop Solar EPC Solutions",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "JDC Solar",
+        "telephone": "+91-9288381112"
+      },
+      "serviceType": "Industrial Solar EPC",
+      "areaServed": {
+        "@type": "State",
+        "name": "Jharkhand"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://jdcsolar.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://jdcsolar.com/services/" },
+        { "@type": "ListItem", "position": 3, "name": "Industrial Solar", "item": "https://jdcsolar.com/services/industrial-solar/" }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title="Industrial Rooftop Solar in Jharkhand (50kW to 2MW+) | JDC Solar"
+  description="Industrial solar EPC solutions for factories and heavy engineering units in Adityapur, Jamshedpur, Ranchi. HT 11kV/33kV evacuation & 40% tax shield by JDC Solar."
+  canonical="https://jdcsolar.com/services/industrial-solar/"
+  activeNav="services"
+  schema={industrialSchema}
+>
+  <section class="page-hero page-hero--services" aria-label="Industrial High-Capacity Solar">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumbs">
+        <ol class="breadcrumb__list">
+          <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">Home</a></li>
+          <li class="breadcrumb__separator" aria-hidden="true">/</li>
+          <li class="breadcrumb__item"><a href="/services/" class="breadcrumb__link">Services</a></li>
+          <li class="breadcrumb__separator" aria-hidden="true">/</li>
+          <li class="breadcrumb__item" aria-current="page">Industrial Solar</li>
+        </ol>
+      </nav>
+
+      <div class="page-hero__badge">
+        <div class="section-tag section-tag--accent">Industrial High-Capacity Solar</div>
+      </div>
+      <h1 class="display-title page-hero__title">
+        Industrial Solar Power Plants (50 kWp to 2 MW+)
+      </h1>
+      <p class="lead page-hero__lead">
+        High-capacity rooftop and ground-mounted solar engineered for heavy manufacturing, automotive ancillaries, steel fabrication, and rolling mills in Eastern India.
+      </p>
+      <div class="page-hero__chips">
+        <div class="page-hero__chip">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+          <span>Heavy Engineering &amp; Shed Mounts</span>
+        </div>
+        <div class="page-hero__chip">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+          <span>CAPEX &amp; RESCO OPEX Models</span>
+        </div>
+        <div class="page-hero__chip">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+          <span>High-Demand Peak Tariffs Shield</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-overline">HEAVY ENGINEERING RIGOR</span>
+        <h2>Engineered for Industrial Sheds &amp; High-Tension Grids</h2>
+        <p class="lead">Built to withstand heavy vibration, high wind loads, and severe industrial environments.</p>
+      </div>
+
+      <div class="grid grid--3col">
+        <div class="card">
+          <h3 style="color: var(--color-text-headings); margin-bottom: 0.5rem;">1. Non-Penetrative Rail Clamping</h3>
+          <p class="text-small text-muted">Specialized aluminum standing-seam and trapezoidal sheet clamps ensure 100% zero-roof-penetration and zero water leakage risk.</p>
+        </div>
+        <div class="card">
+          <h3 style="color: var(--color-text-headings); margin-bottom: 0.5rem;">2. 11kV / 33kV HT Evacuation</h3>
+          <p class="text-small text-muted">Complete electrical design compliance with JBVNL/TSUISL for High Tension net-metering, step-up transformers, and vacuum circuit breakers (VCBs).</p>
+        </div>
+        <div class="card">
+          <h3 style="color: var(--color-text-headings); margin-bottom: 0.5rem;">3. Harmonics &amp; Power Quality</h3>
+          <p class="text-small text-muted">Active power factor compensation, harmonics suppression filters, and DG synchronization controllers for seamless factory operation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--compact">
+    <div class="container">
+      <div class="cta-banner">
+        <div class="cta-banner__content">
+          <span class="section-overline">INDUSTRIAL SITE ASSESSMENT</span>
+          <h2 class="cta-banner__title">Schedule a Plant Inspection in Adityapur / Ranchi</h2>
+          <p class="cta-banner__description">
+            Our senior industrial EPC engineering team will conduct an on-site structural load and power quality audit.
+          </p>
+          <div class="cta-banner__actions">
+            <button type="button" class="btn btn--primary btn--lg" data-modal-open="survey-modal">Book Free Plant Survey →</button>
+            <a href="https://wa.me/919288381112" class="btn btn--whatsapp btn--lg" target="_blank" rel="noopener noreferrer">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-whatsapp"></use></svg>
+              WhatsApp Industrial Lead
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,73 @@
+/* ── High-End SaaS Card Cursor Spotlight Glow ── */
+.card,
+.card-project,
+.why-jdc-card,
+.process-step,
+.metric-tile,
+.modal-stat-card,
+.spec-card,
+.timeline-step__content,
+.has-spotlight {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Spotlight glow aura overlay */
+.card::before,
+.card-project::before,
+.why-jdc-card::before,
+.process-step::before,
+.metric-tile::before,
+.modal-stat-card::before,
+.spec-card::before,
+.timeline-step__content::before,
+.has-spotlight::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: var(--mouse-opacity, 0);
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  background: radial-gradient(
+    380px circle at var(--mouse-x, -999px) var(--mouse-y, -999px),
+    rgba(253, 129, 39, 0.12),
+    transparent 65%
+  );
+  z-index: 1;
+}
+
+[data-theme="dark"] .card::before,
+[data-theme="dark"] .card-project::before,
+[data-theme="dark"] .why-jdc-card::before,
+[data-theme="dark"] .process-step::before,
+[data-theme="dark"] .metric-tile::before,
+[data-theme="dark"] .modal-stat-card::before,
+[data-theme="dark"] .spec-card::before,
+[data-theme="dark"] .timeline-step__content::before,
+[data-theme="dark"] .has-spotlight::before {
+  background: radial-gradient(
+    420px circle at var(--mouse-x, -999px) var(--mouse-y, -999px),
+    rgba(253, 129, 39, 0.2),
+    transparent 60%
+  );
+}
+
+/* Ensure interactive card contents remain safely above the spotlight layer */
+.card > *,
+.card-project > *,
+.why-jdc-card > *,
+.process-step > *,
+.metric-tile > *,
+.modal-stat-card > *,
+.spec-card > *,
+.timeline-step__content > *,
+.has-spotlight > * {
+  position: relative;
+  z-index: 2;
+}
+
+.card-project__media-wrap {
+  z-index: 2;
+}
+

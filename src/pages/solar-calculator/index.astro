@@ -1,0 +1,372 @@
+---
+// src/pages/solar-calculator/index.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const calcSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "JDC Solar Savings Calculator",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "All",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "INR"
+  }
+};
+---
+
+<BaseLayout
+  title="Solar Savings & Subsidy Calculator Jharkhand | Rooftop Solar ROI | JDC Solar"
+  description="Estimate your rooftop solar system capacity, PM Surya Ghar subsidy, annual electricity savings, and payback period with JDC Solar's instant calculator."
+  canonical="https://jdcsolar.com/solar-calculator/"
+  activeNav="calculator"
+  schema={calcSchema}
+>
+
+    
+    <section class="page-hero page-hero--calculator" aria-label="Instant Financial Sizing">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumbs">
+          <ol class="breadcrumb__list">
+          <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">Home</a></li>
+          <li class="breadcrumb__separator" aria-hidden="true">/</li>
+          <li class="breadcrumb__item" aria-current="page">Solar Calculator</li>
+        </ol>
+        </nav>
+
+        <div class="page-hero__badge">
+          <div class="badge--saas-pulse">
+            <span class="badge-pulse-dot"><span class="badge-pulse-dot__ping"></span><span class="badge-pulse-dot__core"></span></span>
+            <span>Instant Financial Sizing</span>
+          </div>
+        </div>
+        <h1 class="display-title page-hero__title">
+          Solar Savings, Sizing & PM Surya Ghar Subsidy Calculator
+        </h1>
+        <p class="lead page-hero__lead">
+          Estimate your recommended system capacity, central government subsidy, rooftop space requirements, and 25-year financial savings based on your DISCOM electricity tariff.
+        </p>
+        <div class="page-hero__chips">
+          <div class="page-hero__chip">
+            <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+            <span>16 State DISCOM Tariffs</span>
+          </div>
+          <div class="page-hero__chip">
+            <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+            <span>PM Surya Ghar Subsidy Deduction</span>
+          </div>
+          <div class="page-hero__chip">
+            <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+            <span>25-Year ROI Forecast</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="section section--alt" style="padding-top: 2rem;">
+      <div class="container">
+        
+        <div class="solar-calculator-ui">
+          <div class="grid grid--2col">
+            
+            
+            <div>
+              <h2 style="font-size: 1.4rem; margin-bottom: 0.5rem;">1. Enter Your Power Consumption</h2>
+              <p class="text-small text-muted" style="margin-bottom: 1.5rem;">Select your state, property category, and monthly electricity units from your latest power bill.</p>
+
+              <div class="form-group">
+                <label class="form-label" for="calc-state">State / Electricity Board</label>
+                <select id="calc-state" class="form-select">
+                  <option value="Jharkhand" selected>Jharkhand (JBVNL / TSUISL)</option>
+                  <option value="Bihar">Bihar (NBPDCL / SBPDCL)</option>
+                  <option value="West Bengal">West Bengal (WBSEDCL / CESC)</option>
+                  <option value="Odisha">Odisha (TPCODL / TPNODL)</option>
+                  <option value="Uttar Pradesh">Uttar Pradesh (UPPCL)</option>
+                  <option value="Delhi">Delhi (BSES / TPDDL)</option>
+                  <option value="Maharashtra">Maharashtra (MSEDCL / Tata)</option>
+                  <option value="Rajasthan">Rajasthan (JVVNL / AVVNL)</option>
+                  <option value="Gujarat">Gujarat (DGVCL / PGVCL)</option>
+                  <option value="Karnataka">Karnataka (BESCOM)</option>
+                  <option value="Tamil Nadu">Tamil Nadu (TANGEDCO)</option>
+                  <option value="Telangana">Telangana (TSSPDCL)</option>
+                  <option value="Andhra Pradesh">Andhra Pradesh (APEPDCL)</option>
+                  <option value="Chhattisgarh">Chhattisgarh (CSPDCL)</option>
+                  <option value="Assam">Assam (APDCL)</option>
+                  <option value="Other States">Other States (National Benchmark)</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Property Category</label>
+                <div class="radio-tile-group">
+                  <label class="radio-tile">
+                    <input type="radio" name="calc_service_type" value="residential" checked>
+                    <span class="radio-tile__label">
+                      <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-home"></use></svg>
+                      Residential
+                    </span>
+                  </label>
+                  <label class="radio-tile">
+                    <input type="radio" name="calc_service_type" value="commercial">
+                    <span class="radio-tile__label">
+                      <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-building"></use></svg>
+                      Commercial
+                    </span>
+                  </label>
+                  <label class="radio-tile">
+                    <input type="radio" name="calc_service_type" value="industrial">
+                    <span class="radio-tile__label">
+                      <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-lightning"></use></svg>
+                      Industrial
+                    </span>
+                  </label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="calc-units">Monthly Electricity Units (kWh)</label>
+                <input type="number" id="calc-units" class="form-control" value="360" min="50" max="100000" step="10">
+                <span class="form-help-text">Tip: Check the "Units Consumed" column on your JBVNL bill. 360 kWh is typical for a 3-BHK home.</span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="calc-bill">Or Monthly Bill Amount (₹) <span class="text-muted">(Optional)</span></label>
+                <input type="number" id="calc-bill" class="form-control" placeholder="e.g. 2500" min="0" max="1000000" step="100">
+              </div>
+            </div>
+
+            
+            <div class="card--neomorph-raised" aria-live="polite" aria-atomic="true">
+              <div>
+                <div class="calc-summary-header">
+                  <div>
+                    <span class="badge badge--accent" style="margin-bottom: 0.25rem;">RECOMMENDED SIZE</span>
+                    <div style="font-size: 0.85rem; font-weight: 600; color: var(--color-text-secondary);">Optimal Solar Capacity</div>
+                  </div>
+                  <span id="out-system-size" class="metric-tile__value--primary" style="font-size: clamp(1.75rem, 5vw, 2.5rem); font-weight: 800; line-height: 1; white-space: nowrap;">3.0 <small class="metric-unit" style="font-size: 1.1rem; color: var(--color-brand-accent-text, #C25E00);">kWp</small></span>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1.25rem;">
+                  <div class="metric-tile--neomorph">
+                    <div class="metric-tile__label">Gross Turnkey Cost</div>
+                    <div id="out-gross-cost" class="metric-tile__value">₹ 1,65,000</div>
+                  </div>
+                  <div class="metric-tile--neomorph metric-tile--highlight">
+                    <div class="metric-tile__label">PM Surya Ghar Subsidy</div>
+                    <div id="out-subsidy" class="metric-tile__value metric-tile__value--success">₹ 78,000</div>
+                  </div>
+                  <div class="metric-tile--neomorph">
+                    <div class="metric-tile__label">Net Outflow Cost</div>
+                    <div id="out-net-cost" class="metric-tile__value metric-tile__value--primary">₹ 87,000</div>
+                  </div>
+                  <div class="metric-tile--neomorph metric-tile--highlight">
+                    <div class="metric-tile__label">Annual Bill Savings</div>
+                    <div id="out-annual-savings" class="metric-tile__value metric-tile__value--success">₹ 28,470 <small class="metric-unit">/ yr</small></div>
+                  </div>
+                  <div class="metric-tile--neomorph">
+                    <div class="metric-tile__label">Rooftop Area Needed</div>
+                    <div id="out-area" class="metric-tile__value">~300 <small class="metric-unit">sq.ft</small></div>
+                  </div>
+                  <div class="metric-tile--neomorph">
+                    <div class="metric-tile__label">Estimated Payback</div>
+                    <div id="out-payback" class="metric-tile__value">3.1 <small class="metric-unit">Years</small></div>
+                  </div>
+                  <div class="metric-tile--neomorph">
+                    <div class="metric-tile__label">Annual Clean Power</div>
+                    <div id="out-generation" class="metric-tile__value">~4,380 <small class="metric-unit">kWh/yr</small></div>
+                  </div>
+                  <div class="metric-tile--neomorph">
+                    <div class="metric-tile__label">CO₂ Avoided</div>
+                    <div id="out-co2" class="metric-tile__value">3.6 <small class="metric-unit">Tons/yr</small></div>
+                  </div>
+                </div>
+              </div>
+
+              
+              <div class="calc-actions-grid">
+                <div class="calc-actions-secondary">
+                  <a id="calc-whatsapp-quote" href="#" class="btn btn--whatsapp btn--md" target="_blank" rel="noopener noreferrer">
+                    <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-whatsapp"></use></svg>
+                    Share on WhatsApp
+                  </a>
+                  <button type="button" id="btn-download-proposal" class="btn btn--secondary btn--md">
+                    <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-document"></use></svg>
+                    Download PDF
+                  </button>
+                </div>
+                <button type="button" class="btn btn--primary btn--md" data-modal-open="survey-modal">
+                  Book Free Site Survey →
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+        
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag section-tag--accent">CALCULATION TRANSPARENCY</div>
+          <h2>How We Calculate Your Solar Sizing & Returns</h2>
+          <p class="lead">Our mathematical estimation engine is built on deterministic engineering standards.</p>
+        </div>
+
+        <div class="grid grid--3col">
+          <div class="card">
+            <h3 style="color: var(--color-text-headings); margin-bottom: 0.5rem;">1. Solar Yield Factor</h3>
+            <p class="text-small text-muted">Eastern India receives an average of 4.0 Peak Sun Hours (PSH) per day, producing 120 kWh of electricity per kilowatt-peak capacity per month.</p>
+          </div>
+          <div class="card">
+            <h3 style="color: var(--color-text-headings); margin-bottom: 0.5rem;">2. Subsidy Architecture</h3>
+            <p class="text-small text-muted">Residential systems receive official Central Government PM Surya Ghar subsidies (₹30,000 for 1kW, ₹60,000 for 2kW, capped at ₹78,000 for 3kW+).</p>
+          </div>
+          <div class="card">
+            <h3 style="color: var(--color-text-headings); margin-bottom: 0.5rem;">3. Payback & Degradation</h3>
+            <p class="text-small text-muted">Payback is calculated as Net Capital Outflow divided by Annual Bill Savings, modeling 25-year Tier-1 panel linear degradation at 0.7% annually.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="section section--alt">
+      <div class="container container--medium">
+        <div class="section-header">
+          <span class="section-overline">STATE DISCOM TARIFFS</span>
+          <h2>Electricity Board Tariff Reference Matrix</h2>
+          <p class="lead">Baseline domestic and commercial power tariffs used in financial yield calculations.</p>
+        </div>
+        <div class="tariff-table-wrap">
+          <table class="tariff-table">
+            <thead>
+              <tr>
+                <th>State / DISCOM</th>
+                <th>Domestic</th>
+                <th>Commercial</th>
+                <th>Net-Metering</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="tariff-table__highlight">
+                <td data-label="State / DISCOM"><strong>Jharkhand</strong> <span class="tariff-table__sub">JBVNL / TSUISL</span></td>
+                <td data-label="Domestic">₹ 6.50</td>
+                <td data-label="Commercial">₹ 8.50</td>
+                <td data-label="Net-Metering"><span class="tariff-table__status tariff-table__status--active">Active (Bidirectional)</span></td>
+              </tr>
+              <tr>
+                <td data-label="State / DISCOM"><strong>Bihar</strong> <span class="tariff-table__sub">NBPDCL / SBPDCL</span></td>
+                <td data-label="Domestic">₹ 7.00</td>
+                <td data-label="Commercial">₹ 8.80</td>
+                <td data-label="Net-Metering"><span class="tariff-table__status tariff-table__status--active">Active</span></td>
+              </tr>
+              <tr>
+                <td data-label="State / DISCOM"><strong>West Bengal</strong> <span class="tariff-table__sub">WBSEDCL / CESC</span></td>
+                <td data-label="Domestic">₹ 7.20</td>
+                <td data-label="Commercial">₹ 9.20</td>
+                <td data-label="Net-Metering"><span class="tariff-table__status tariff-table__status--active">Active</span></td>
+              </tr>
+              <tr>
+                <td data-label="State / DISCOM"><strong>Odisha</strong> <span class="tariff-table__sub">TPCODL / TPNODL</span></td>
+                <td data-label="Domestic">₹ 6.00</td>
+                <td data-label="Commercial">₹ 8.00</td>
+                <td data-label="Net-Metering"><span class="tariff-table__status tariff-table__status--active">Active</span></td>
+              </tr>
+              <tr>
+                <td data-label="State / DISCOM"><strong>Uttar Pradesh</strong> <span class="tariff-table__sub">UPPCL</span></td>
+                <td data-label="Domestic">₹ 7.00</td>
+                <td data-label="Commercial">₹ 9.00</td>
+                <td data-label="Net-Metering"><span class="tariff-table__status tariff-table__status--active">Active</span></td>
+              </tr>
+              <tr>
+                <td data-label="State / DISCOM"><strong>Maharashtra</strong> <span class="tariff-table__sub">MSEDCL / Tata</span></td>
+                <td data-label="Domestic">₹ 8.50</td>
+                <td data-label="Commercial">₹ 11.50</td>
+                <td data-label="Net-Metering"><span class="tariff-table__status tariff-table__status--active">Active</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="section">
+      <div class="container container--medium">
+        <div class="section-header">
+          <span class="section-overline">FREQUENTLY ASKED QUESTIONS</span>
+          <h2>Solar Sizing & Subsidy FAQs</h2>
+        </div>
+
+        <div class="accordion-group" data-single-expand="true">
+          <details class="accordion-item" open>
+            <summary class="accordion-summary">
+              <span>How accurate is this solar calculator estimate?</span>
+              <span class="accordion-summary__icon" aria-hidden="true"><svg class="icon"><use href="/assets/icons/sprite.svg#icon-chevron-down"></use></svg></span>
+            </summary>
+            <div class="accordion-content">
+              <p>This calculator uses official MNRE solar insolation benchmarks (4.0 kWh/kWp/day in Eastern India) and actual JBVNL tariff schedules. Exact physical sizing, panel layout, and shading analysis will be verified during JDC Solar's free on-site roof inspection.</p>
+            </div>
+          </details>
+
+          <details class="accordion-item">
+            <summary class="accordion-summary">
+              <span>How is the ₹78,000 PM Surya Ghar subsidy received?</span>
+              <span class="accordion-summary__icon" aria-hidden="true"><svg class="icon"><use href="/assets/icons/sprite.svg#icon-chevron-down"></use></svg></span>
+            </summary>
+            <div class="accordion-content">
+              <p>The central subsidy is credited directly into your linked bank account via Direct Benefit Transfer (DBT) within 30 days of JBVNL bidirectional net-meter commissioning. JDC Solar handles 100% of the National Portal registration and paperwork.</p>
+            </div>
+          </details>
+
+          <details class="accordion-item">
+            <summary class="accordion-summary">
+              <span>How much rooftop space do I need for a 3 kW or 5 kW system?</span>
+              <span class="accordion-summary__icon" aria-hidden="true"><svg class="icon"><use href="/assets/icons/sprite.svg#icon-chevron-down"></use></svg></span>
+            </summary>
+            <div class="accordion-content">
+              <p>Each 1 kWp of solar capacity requires approximately 100 square feet (9.3 sq.m) of shadow-free rooftop space. A 3 kW home system requires roughly 300 sq.ft, while a 5 kW system needs about 500 sq.ft.</p>
+            </div>
+          </details>
+
+          <details class="accordion-item">
+            <summary class="accordion-summary">
+              <span>Can commercial enterprises claim the PM Surya Ghar subsidy?</span>
+              <span class="accordion-summary__icon" aria-hidden="true"><svg class="icon"><use href="/assets/icons/sprite.svg#icon-chevron-down"></use></svg></span>
+            </summary>
+            <div class="accordion-content">
+              <p>Commercial and industrial installations do not receive direct PM Surya Ghar DBT subsidies. Instead, businesses can claim Section 32 Accelerated Depreciation (40% Year 1 tax shield), which delivers even larger financial returns for corporate tax-paying entities.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="section section--compact section--alt">
+      <div class="container">
+        <div class="cta-banner">
+          <div class="cta-banner__content">
+            <span class="section-overline">VALIDATE WITH CERTIFIED ENGINEERS</span>
+            <h2 class="cta-banner__title">Ready to Verify Your Solar Savings On-Site?</h2>
+            <p class="cta-banner__description">
+              Book a zero-obligation rooftop site survey with JDC Solar's certified engineers in Adityapur. We prepare an exact 3D shadow report and custom financial proposal.
+            </p>
+            <div class="cta-banner__actions">
+              <button type="button" class="btn btn--primary btn--lg" data-modal-open="survey-modal">Book Free Site Survey →</button>
+              <a href="https://wa.me/919288381112" class="btn btn--whatsapp btn--lg" target="_blank" rel="noopener noreferrer">
+                <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-whatsapp"></use></svg>
+                Chat on WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+</BaseLayout>

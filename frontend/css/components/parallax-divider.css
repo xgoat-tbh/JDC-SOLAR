@@ -1,8 +1,3 @@
-/**
- * JDC SOLAR 2.0 - CINEMATIC PARALLAX IMAGE DIVIDERS
- * Full-width fixed-background photographic strips between content sections
- */
-
 .parallax-divider {
   position: relative;
   width: 100%;
@@ -14,59 +9,78 @@
   overflow: hidden;
 }
 
-/* Dark gradient overlay for atmosphere */
 .parallax-divider::before {
   content: '';
   position: absolute;
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(11, 20, 38, 0.45) 0%,
-    rgba(15, 23, 42, 0.25) 50%,
-    rgba(11, 20, 38, 0.45) 100%
+    rgba(11, 20, 38, 0.55) 0%,
+    rgba(15, 23, 42, 0.35) 50%,
+    rgba(11, 20, 38, 0.55) 100%
   );
   pointer-events: none;
 }
 
-/* Optional centered text in divider */
 .parallax-divider__text {
   position: relative;
   z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   height: 100%;
-  color: rgba(255, 255, 255, 0.9);
+  width: 100%;
+  max-width: var(--container-max-width, 1200px);
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 5vw, 3rem);
+  box-sizing: border-box;
+  color: #FFFFFF;
   font-family: var(--font-family-heading);
-  font-size: clamp(1rem, 1.5vw, 1.25rem);
-  font-weight: 600;
-  letter-spacing: 0.15em;
+  font-size: clamp(0.95rem, 1.8vw, 1.35rem);
+  font-weight: 700;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.85);
+  line-height: 1.4;
 }
 
-/* Specific divider images */
-.parallax-divider--panels {
-  background-image: url('/assets/images/hero/divider-solar-panels.jpg');
+.parallax-divider.is-inview.parallax-divider--panels {
+  background-image: url('/assets/images/hero/divider-solar-panels-mobile.jpg');
 }
 
-.parallax-divider--worker {
-  background-image: url('/assets/images/hero/divider-worker-silhouette.jpg');
+.parallax-divider.is-inview.parallax-divider--worker {
+  background-image: url('/assets/images/hero/divider-worker-silhouette-mobile.jpg');
 }
 
-.parallax-divider--farm {
-  background-image: url('/assets/images/hero/cta-solar-farm.jpg');
+.parallax-divider.is-inview.parallax-divider--farm {
+  background-image: url('/assets/images/hero/cta-solar-farm-mobile.jpg');
 }
 
-/* Mobile: disable fixed attachment (iOS doesn't support it) */
-@media (max-width: 767px) {
-  .parallax-divider {
-    background-attachment: scroll;
-    height: 150px;
+@media (min-width: 768px) {
+  .parallax-divider.is-inview.parallax-divider--panels {
+    background-image: url('/assets/images/hero/divider-solar-panels.jpg');
+  }
+
+  .parallax-divider.is-inview.parallax-divider--worker {
+    background-image: url('/assets/images/hero/divider-worker-silhouette.jpg');
+  }
+
+  .parallax-divider.is-inview.parallax-divider--farm {
+    background-image: url('/assets/images/hero/cta-solar-farm.jpg');
   }
 }
 
-/* Reduced motion: remove parallax */
+
+
+@media (max-width: 767px) {
+  .parallax-divider {
+    min-height: 180px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .parallax-divider {
     background-attachment: scroll;

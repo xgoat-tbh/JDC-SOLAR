@@ -1,0 +1,207 @@
+---
+// src/pages/services/solar-parks/index.astro
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const solarParksSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://jdcsolar.com/services/solar-parks/#service",
+      "name": "Utility Solar Parks EPC Solutions",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "JDC Solar",
+        "telephone": "+91-9288381112"
+      },
+      "serviceType": "Utility Solar Power Plant EPC",
+      "areaServed": {
+        "@type": "State",
+        "name": "Jharkhand"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://jdcsolar.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://jdcsolar.com/services/" },
+        { "@type": "ListItem", "position": 3, "name": "Utility Solar Parks", "item": "https://jdcsolar.com/services/solar-parks/" }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title="Utility-Scale Solar Parks in Jharkhand (1MW to 50MW+) | JDC Solar"
+  description="Ground-mounted utility solar park EPC in Jharkhand, Bihar & Odisha. Topographic survey, 33kV/132kV transmission substation, and central SCADA telemetry."
+  canonical="https://jdcsolar.com/services/solar-parks/"
+  activeNav="services"
+  schema={solarParksSchema}
+>
+  <section class="page-hero page-hero--projects" aria-label="Utility-Scale Solar Parks">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumbs">
+        <ol class="breadcrumb__list">
+          <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">Home</a></li>
+          <li class="breadcrumb__separator" aria-hidden="true">/</li>
+          <li class="breadcrumb__item"><a href="/services/" class="breadcrumb__link">Services</a></li>
+          <li class="breadcrumb__separator" aria-hidden="true">/</li>
+          <li class="breadcrumb__item" aria-current="page">Utility Solar Parks</li>
+        </ol>
+      </nav>
+
+      <div class="page-hero__badge">
+        <div class="section-tag section-tag--accent">Utility-Scale Solar Parks</div>
+      </div>
+      <h1 class="display-title page-hero__title">
+        Utility-Scale Solar Parks Development (1 MWp to 50 MW+)
+      </h1>
+      <p class="lead page-hero__lead">
+        Comprehensive ground-mounted utility solar EPC: land topographic surveys, civil development, 33kV/132kV grid substation transmission, and centralized SCADA telemetry.
+      </p>
+      <div class="page-hero__chips">
+        <div class="page-hero__chip">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+          <span>Ground-Mounted MW Power Plants</span>
+        </div>
+        <div class="page-hero__chip">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+          <span>33kV/132kV Grid Evacuation</span>
+        </div>
+        <div class="page-hero__chip">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+          <span>Full SCADA Cloud Telemetry</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag section-tag--accent">MEGAWATT INFRASTRUCTURE</div>
+        <h2>Utility Engineering &amp; Transmission Capacity</h2>
+      </div>
+
+      <div class="grid grid--3col">
+        <!-- Card 1: Land Development & Topography -->
+        <div class="card card-telemetry-spec" data-spec-card>
+          <div class="card-telemetry-spec__top">
+            <div class="card-telemetry-spec__icon-box">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-terrain"></use></svg>
+            </div>
+            <div class="card-telemetry-spec__status-tag">
+              <span>TERRAIN AUDITED</span>
+            </div>
+          </div>
+          <h3 class="card-telemetry-spec__title">Land Development &amp; Topography</h3>
+          <p class="card-telemetry-spec__desc">Complete site grading, soil resistivity testing, flood-risk hydrologic studies, and pile-foundation ramming for ground mount arrays (~4 acres per MW).</p>
+          <div class="card-telemetry-spec__metric">
+            <span class="card-telemetry-spec__metric-val">~4 Acres</span>
+            <span class="card-telemetry-spec__metric-lbl">Footprint Per MW</span>
+          </div>
+          <button type="button" class="card-telemetry-spec__toggle-btn" aria-expanded="false">
+            <span>View Technical Specs</span>
+            <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-chevron-down"></use></svg>
+          </button>
+          <div class="card-telemetry-spec__drawer">
+            <div class="card-telemetry-spec__drawer-inner">
+              <ul class="spec-detail-list">
+                <li><strong>Foundations</strong><span>Hydraulic Rammed Post</span></li>
+                <li><strong>Drainage</strong><span>100-Year Flood Designed</span></li>
+                <li><strong>Tilt Angle</strong><span>Seasonal Optimized Track</span></li>
+                <li><strong>Corrosion</strong><span>Hot-Dip Galv C4/C5 Class</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: 33kV / 132kV Substation EPC -->
+        <div class="card card-telemetry-spec" data-spec-card>
+          <div class="card-telemetry-spec__top">
+            <div class="card-telemetry-spec__icon-box">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-zap"></use></svg>
+            </div>
+            <div class="card-telemetry-spec__status-tag">
+              <span>CEA COMPLIANT</span>
+            </div>
+          </div>
+          <h3 class="card-telemetry-spec__title">33kV / 132kV Substation EPC</h3>
+          <p class="card-telemetry-spec__desc">Turnkey high-voltage switchyard construction, power transformer step-up, transmission line right-of-way (ROW), and state grid synchronization.</p>
+          <div class="card-telemetry-spec__metric">
+            <span class="card-telemetry-spec__metric-val">132 kV</span>
+            <span class="card-telemetry-spec__metric-lbl">High Voltage Grid Tie</span>
+          </div>
+          <button type="button" class="card-telemetry-spec__toggle-btn" aria-expanded="false">
+            <span>View Technical Specs</span>
+            <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-chevron-down"></use></svg>
+          </button>
+          <div class="card-telemetry-spec__drawer">
+            <div class="card-telemetry-spec__drawer-inner">
+              <ul class="spec-detail-list">
+                <li><strong>Step-Up</strong><span>33kV to 132kV Switchyard</span></li>
+                <li><strong>Isolator</strong><span>Motorized Dual Earth Bay</span></li>
+                <li><strong>Grid Code</strong><span>CEA Connectivity Norms</span></li>
+                <li><strong>Metering</strong><span>ABT Compliant 0.2s Class</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Central SCADA Telemetry -->
+        <div class="card card-telemetry-spec" data-spec-card>
+          <div class="card-telemetry-spec__top">
+            <div class="card-telemetry-spec__icon-box">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-activity"></use></svg>
+            </div>
+            <div class="card-telemetry-spec__status-tag">
+              <span>IEC 60870 FEED</span>
+            </div>
+          </div>
+          <h3 class="card-telemetry-spec__title">Central SCADA Telemetry</h3>
+          <p class="card-telemetry-spec__desc">Utility-grade SCADA telemetry conforming to CEA standards with real-time weather stations, pyranometers, inverter control, and state SLDC reporting.</p>
+          <div class="card-telemetry-spec__metric">
+            <span class="card-telemetry-spec__metric-val">Real-Time</span>
+            <span class="card-telemetry-spec__metric-lbl">SLDC State Telemetry</span>
+          </div>
+          <button type="button" class="card-telemetry-spec__toggle-btn" aria-expanded="false">
+            <span>View Technical Specs</span>
+            <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-chevron-down"></use></svg>
+          </button>
+          <div class="card-telemetry-spec__drawer">
+            <div class="card-telemetry-spec__drawer-inner">
+              <ul class="spec-detail-list">
+                <li><strong>Sensors</strong><span>Class-A Pyranometers</span></li>
+                <li><strong>Inverter I/O</strong><span>String Level Telemetry</span></li>
+                <li><strong>Protocol</strong><span>IEC 60870-5-104 &amp; OPC</span></li>
+                <li><strong>SLDC Sync</strong><span>State Load Dispatch Link</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--compact">
+    <div class="container">
+      <div class="cta-banner">
+        <div class="cta-banner__content">
+          <span class="section-overline">UTILITY SOLAR CONSULTATION</span>
+          <h2 class="cta-banner__title">Planning a Megawatt Ground-Mounted Solar Park?</h2>
+          <p class="cta-banner__description">
+            Connect with JDC Solar's utility power plant engineers for comprehensive PVsyst yield simulations and grid evacuation feasibility.
+          </p>
+          <div class="cta-banner__actions">
+            <button type="button" class="btn btn--primary btn--lg" data-modal-open="survey-modal">Initiate Solar Park Discussion →</button>
+            <a href="https://wa.me/919288381112" class="btn btn--whatsapp btn--lg" target="_blank" rel="noopener noreferrer">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-whatsapp"></use></svg>
+              Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

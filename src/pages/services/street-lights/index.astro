@@ -1,0 +1,207 @@
+---
+// src/pages/services/street-lights/index.astro
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const streetLightsSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://jdcsolar.com/services/street-lights/#service",
+      "name": "Solar Street Lighting Systems",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "JDC Solar",
+        "telephone": "+91-9288381112"
+      },
+      "serviceType": "Solar Street Lighting Installation",
+      "areaServed": {
+        "@type": "State",
+        "name": "Jharkhand"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://jdcsolar.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://jdcsolar.com/services/" },
+        { "@type": "ListItem", "position": 3, "name": "Solar Street Lights", "item": "https://jdcsolar.com/services/street-lights/" }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title="All-in-One Solar Street Lights Jharkhand | LiFePO4 Battery | JDC Solar"
+  description="Commercial & municipal solar street lighting in Jharkhand. Integrated all-in-one & two-in-one luminaires with LiFePO4 batteries and dusk-to-dawn sensors."
+  canonical="https://jdcsolar.com/services/street-lights/"
+  activeNav="services"
+  schema={streetLightsSchema}
+>
+  <section class="page-hero page-hero--services" aria-label="Solar Street Lighting Systems">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumbs">
+        <ol class="breadcrumb__list">
+          <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">Home</a></li>
+          <li class="breadcrumb__separator" aria-hidden="true">/</li>
+          <li class="breadcrumb__item"><a href="/services/" class="breadcrumb__link">Services</a></li>
+          <li class="breadcrumb__separator" aria-hidden="true">/</li>
+          <li class="breadcrumb__item" aria-current="page">Solar Street Lighting</li>
+        </ol>
+      </nav>
+
+      <div class="page-hero__badge">
+        <div class="section-tag section-tag--accent">Solar Street Lighting Systems</div>
+      </div>
+      <h1 class="display-title page-hero__title">
+        Solar Street Lighting Systems
+      </h1>
+      <p class="lead page-hero__lead">
+        Intelligent, standalone solar street lighting with automatic dusk-to-dawn optical sensors, long-life LiFePO4 lithium batteries, and hot-dip galvanized poles for roads, factories, and residential townships.
+      </p>
+      <div class="page-hero__chips">
+        <div class="page-hero__chip">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+          <span>Dusk-to-Dawn Intelligent Operation</span>
+        </div>
+        <div class="page-hero__chip">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+          <span>LiFePO4 Lithium Storage</span>
+        </div>
+        <div class="page-hero__chip">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+          <span>Hot-Dip Galvanized Poles</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-overline">ROBUST OUTDOOR ENGINEERING</span>
+        <h2>Autonomous Solar Illumination</h2>
+      </div>
+
+      <div class="grid grid--3col">
+        <!-- Card 1: All-in-One Integrated Design -->
+        <div class="card card-telemetry-spec" data-spec-card>
+          <div class="card-telemetry-spec__top">
+            <div class="card-telemetry-spec__icon-box">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-lightbulb"></use></svg>
+            </div>
+            <div class="card-telemetry-spec__status-tag">
+              <span>IP65 WEATHERPROOF</span>
+            </div>
+          </div>
+          <h3 class="card-telemetry-spec__title">All-in-One Integrated Design</h3>
+          <p class="card-telemetry-spec__desc">Compact luminaire integrating mono solar panel, MPPT charge controller, motion sensor, and lithium battery inside a weatherproof IP65 aluminum casing.</p>
+          <div class="card-telemetry-spec__metric">
+            <span class="card-telemetry-spec__metric-val">IP65</span>
+            <span class="card-telemetry-spec__metric-lbl">Die-Cast Enclosure</span>
+          </div>
+          <button type="button" class="card-telemetry-spec__toggle-btn" aria-expanded="false">
+            <span>View Technical Specs</span>
+            <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-chevron-down"></use></svg>
+          </button>
+          <div class="card-telemetry-spec__drawer">
+            <div class="card-telemetry-spec__drawer-inner">
+              <ul class="spec-detail-list">
+                <li><strong>LED Chip</strong><span>Bridgelux / Philips Lumileds</span></li>
+                <li><strong>Efficacy</strong><span>160 lm/W Output</span></li>
+                <li><strong>Optics</strong><span>Batwing Street Lens</span></li>
+                <li><strong>Housing</strong><span>Anti-Corrosion Powdercoat</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: LiFePO4 Lithium Battery -->
+        <div class="card card-telemetry-spec" data-spec-card>
+          <div class="card-telemetry-spec__top">
+            <div class="card-telemetry-spec__icon-box">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-shield"></use></svg>
+            </div>
+            <div class="card-telemetry-spec__status-tag">
+              <span>THERMAL STABLE</span>
+            </div>
+          </div>
+          <h3 class="card-telemetry-spec__title">LiFePO4 Lithium Battery</h3>
+          <p class="card-telemetry-spec__desc">High-density Lithium Ferro-Phosphate (LiFePO4) battery chemistry provides over 2,000 charge-discharge cycles with exceptional heat resistance.</p>
+          <div class="card-telemetry-spec__metric">
+            <span class="card-telemetry-spec__metric-val">2,000+</span>
+            <span class="card-telemetry-spec__metric-lbl">Lifespan Deep Cycles</span>
+          </div>
+          <button type="button" class="card-telemetry-spec__toggle-btn" aria-expanded="false">
+            <span>View Technical Specs</span>
+            <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-chevron-down"></use></svg>
+          </button>
+          <div class="card-telemetry-spec__drawer">
+            <div class="card-telemetry-spec__drawer-inner">
+              <ul class="spec-detail-list">
+                <li><strong>Chemistry</strong><span>Lithium Iron Phosphate</span></li>
+                <li><strong>Temp Range</strong><span>-10°C to +60°C Rating</span></li>
+                <li><strong>BMS</strong><span>Smart Balancing Protection</span></li>
+                <li><strong>Autonomy</strong><span>3 Rainy Days Backup</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Smart Dusk-to-Dawn Automation -->
+        <div class="card card-telemetry-spec" data-spec-card>
+          <div class="card-telemetry-spec__top">
+            <div class="card-telemetry-spec__icon-box">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-clock"></use></svg>
+            </div>
+            <div class="card-telemetry-spec__status-tag">
+              <span>PIR SENSING</span>
+            </div>
+          </div>
+          <h3 class="card-telemetry-spec__title">Smart Dusk-to-Dawn Automation</h3>
+          <p class="card-telemetry-spec__desc">Automated optical sensing activates lighting at sunset and turns off at sunrise, with intelligent dimming to preserve battery during cloudy weather.</p>
+          <div class="card-telemetry-spec__metric">
+            <span class="card-telemetry-spec__metric-val">100%</span>
+            <span class="card-telemetry-spec__metric-lbl">Automated Optical Control</span>
+          </div>
+          <button type="button" class="card-telemetry-spec__toggle-btn" aria-expanded="false">
+            <span>View Technical Specs</span>
+            <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-chevron-down"></use></svg>
+          </button>
+          <div class="card-telemetry-spec__drawer">
+            <div class="card-telemetry-spec__drawer-inner">
+              <ul class="spec-detail-list">
+                <li><strong>Sensing</strong><span>PIR Microwave Detection</span></li>
+                <li><strong>Profiles</strong><span>4-Stage Intelligent Dimming</span></li>
+                <li><strong>Switching</strong><span>Optical Dusk Activation</span></li>
+                <li><strong>Maintenance</strong><span>Zero Wiring Infrastructure</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--compact">
+    <div class="container">
+      <div class="cta-banner">
+        <div class="cta-banner__content">
+          <span class="section-overline">BULK &amp; TOWNSHIP SUPPLY</span>
+          <h2 class="cta-banner__title">Get a Commercial Lighting Quotation</h2>
+          <p class="cta-banner__description">
+            Contact JDC Solar for turnkey pole supply, installation, and municipal lighting solutions across Jharkhand.
+          </p>
+          <div class="cta-banner__actions">
+            <button type="button" class="btn btn--primary btn--lg" data-modal-open="survey-modal">Request Lighting Quotation →</button>
+            <a href="https://wa.me/919288381112" class="btn btn--whatsapp btn--lg" target="_blank" rel="noopener noreferrer">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-whatsapp"></use></svg>
+              Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

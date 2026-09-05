@@ -1,0 +1,204 @@
+---
+// src/pages/services/government-solar/index.astro
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const govSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://jdcsolar.com/services/government-solar/#service",
+      "name": "Government & PSU Solar EPC Solutions",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "JDC Solar",
+        "telephone": "+91-9288381112"
+      },
+      "serviceType": "Government Solar Tenders",
+      "areaServed": {
+        "@type": "State",
+        "name": "Jharkhand"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://jdcsolar.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://jdcsolar.com/services/" },
+        { "@type": "ListItem", "position": 3, "name": "Government Solar", "item": "https://jdcsolar.com/services/government-solar/" }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title="Government & PSU Solar EPC Tenders in Jharkhand | JDC Solar"
+  description="MNRE channel partner executing government, PSU & state nodal agency solar tenders in Jharkhand. 100% DCR compliance, JREDA liaisoning & turnkey EPC execution."
+  canonical="https://jdcsolar.com/services/government-solar/"
+  activeNav="services"
+  schema={govSchema}
+>
+  <section class="page-hero page-hero--about" aria-label="Government & PSU Solar EPC">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumbs">
+        <ol class="breadcrumb__list">
+          <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">Home</a></li>
+          <li class="breadcrumb__separator" aria-hidden="true">/</li>
+          <li class="breadcrumb__item"><a href="/services/" class="breadcrumb__link">Services</a></li>
+          <li class="breadcrumb__separator" aria-hidden="true">/</li>
+          <li class="breadcrumb__item" aria-current="page">Government &amp; Tender EPC</li>
+        </ol>
+      </nav>
+
+      <div class="page-hero__badge">
+        <div class="section-tag section-tag--accent">Government &amp; PSU Solar EPC</div>
+      </div>
+      <h1 class="display-title page-hero__title">
+        Government &amp; PSU Solar EPC Solutions
+      </h1>
+      <p class="lead page-hero__lead">
+        Strict tender compliance, 100% Domestic Content Requirement (DCR) solar modules, and end-to-end liaisoning with state nodal agencies across Eastern India.
+      </p>
+      <div class="page-hero__chips">
+        <div class="page-hero__chip">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+          <span>100% ALMM &amp; DCR Compliance</span>
+        </div>
+        <div class="page-hero__chip">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+          <span>JREDA / BREDA Liaisoning</span>
+        </div>
+        <div class="page-hero__chip">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+          <span>ISO Certified Standards</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag section-tag--accent">REGULATORY RIGOR</div>
+        <h2>Tender Compliance &amp; State Nodal Liaisoning</h2>
+      </div>
+
+      <div class="grid grid--3col">
+        <!-- Card 1: 100% DCR & ALMM Compliance -->
+        <div class="card card-telemetry-spec" data-spec-card>
+          <div class="card-telemetry-spec__top">
+            <div class="card-telemetry-spec__icon-box">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-shield"></use></svg>
+            </div>
+            <div class="card-telemetry-spec__status-tag">
+              <span>MNRE MANDATE APPROVED</span>
+            </div>
+          </div>
+          <h3 class="card-telemetry-spec__title">100% DCR &amp; ALMM Compliance</h3>
+          <p class="card-telemetry-spec__desc">All panels, wafers, and inverters strictly sourced from Ministry of New &amp; Renewable Energy (MNRE) Approved List of Models and Manufacturers (ALMM).</p>
+          <div class="card-telemetry-spec__metric">
+            <span class="card-telemetry-spec__metric-val">100%</span>
+            <span class="card-telemetry-spec__metric-lbl">DCR Content Certified</span>
+          </div>
+          <button type="button" class="card-telemetry-spec__toggle-btn" aria-expanded="false">
+            <span>View Technical Specs</span>
+            <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-chevron-down"></use></svg>
+          </button>
+          <div class="card-telemetry-spec__drawer">
+            <div class="card-telemetry-spec__drawer-inner">
+              <ul class="spec-detail-list">
+                <li><strong>Module Standard</strong><span>ALMM Category-I Listed</span></li>
+                <li><strong>Cells</strong><span>Domestic Content Mandated</span></li>
+                <li><strong>Testing</strong><span>BIS / IEC 61215 Certified</span></li>
+                <li><strong>Audit Trail</strong><span>Serial RFID Manufacturer Tag</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: State Nodal Agency Approvals -->
+        <div class="card card-telemetry-spec" data-spec-card>
+          <div class="card-telemetry-spec__top">
+            <div class="card-telemetry-spec__icon-box">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-government"></use></svg>
+            </div>
+            <div class="card-telemetry-spec__status-tag">
+              <span>FAST-TRACK SANCTION</span>
+            </div>
+          </div>
+          <h3 class="card-telemetry-spec__title">JREDA &amp; Discom Approvals</h3>
+          <p class="card-telemetry-spec__desc">End-to-end statutory approvals and liaisoning with JREDA (Jharkhand), JBVNL, BREDA (Bihar), and Eastern discoms for subsidy sanctions and grid sync.</p>
+          <div class="card-telemetry-spec__metric">
+            <span class="card-telemetry-spec__metric-val">&lt; 30 Days</span>
+            <span class="card-telemetry-spec__metric-lbl">CEIG &amp; Net-Meter Clearance</span>
+          </div>
+          <button type="button" class="card-telemetry-spec__toggle-btn" aria-expanded="false">
+            <span>View Technical Specs</span>
+            <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-chevron-down"></use></svg>
+          </button>
+          <div class="card-telemetry-spec__drawer">
+            <div class="card-telemetry-spec__drawer-inner">
+              <ul class="spec-detail-list">
+                <li><strong>Statutory Body</strong><span>JREDA / JBVNL / BREDA</span></li>
+                <li><strong>Inspection</strong><span>A-Grade CEIG Inspectorate</span></li>
+                <li><strong>Metering</strong><span>Bi-Directional 0.2s DLMS</span></li>
+                <li><strong>PPA Terms</strong><span>Standard Interconnection</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Comprehensive O&M Guarantees -->
+        <div class="card card-telemetry-spec" data-spec-card>
+          <div class="card-telemetry-spec__top">
+            <div class="card-telemetry-spec__icon-box">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-tools"></use></svg>
+            </div>
+            <div class="card-telemetry-spec__status-tag">
+              <span>5-YEAR CMC MANDATE</span>
+            </div>
+          </div>
+          <h3 class="card-telemetry-spec__title">Turnkey O&amp;M &amp; Warranties</h3>
+          <p class="card-telemetry-spec__desc">Comprehensive Maintenance Contracts (CMC) exceeding tender uptime requirements with scheduled thermographic scanning and 25-year linear degradation cover.</p>
+          <div class="card-telemetry-spec__metric">
+            <span class="card-telemetry-spec__metric-val">99.2%</span>
+            <span class="card-telemetry-spec__metric-lbl">Contracted Plant Uptime</span>
+          </div>
+          <button type="button" class="card-telemetry-spec__toggle-btn" aria-expanded="false">
+            <span>View Technical Specs</span>
+            <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-chevron-down"></use></svg>
+          </button>
+          <div class="card-telemetry-spec__drawer">
+            <div class="card-telemetry-spec__drawer-inner">
+              <ul class="spec-detail-list">
+                <li><strong>CMC Scope</strong><span>5-Year Comprehensive EPC</span></li>
+                <li><strong>Response SLA</strong><span>&lt; 24 Hours Breakdown Fix</span></li>
+                <li><strong>Degradation</strong><span>&lt; 0.55%/Yr Linear Cover</span></li>
+                <li><strong>Telemetry</strong><span>Cloud Remote SCADA Logging</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--compact">
+    <div class="container">
+      <div class="cta-banner">
+        <div class="cta-banner__content">
+          <span class="section-overline">GOVERNMENT PROCUREMENT</span>
+          <h2 class="cta-banner__title">Submit an Official RFP or Tender Requirement</h2>
+          <p class="cta-banner__description">
+            Our dedicated government procurement engineering cell will review your tender documentation and provide a compliant technical bid.
+          </p>
+          <div class="cta-banner__actions">
+            <button type="button" class="btn btn--primary btn--lg" data-modal-open="survey-modal">Submit RFP / Inquiry →</button>
+            <a href="mailto:sales@jdcsolar.com" class="btn btn--secondary btn--lg">Email Tender Documents</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,14 +1,11 @@
-/**
- * JDC SOLAR 2.0 - 4-COLUMN CORPORATE FOOTER
- * Authoritative dark footer with verified NAP, services list, quick links, and legal notice
- */
-
 .footer {
   background-color: var(--color-brand-primary-dark);
-  color: var(--color-text-inverse-body);
+  color: #E2E8F0;
   padding-top: var(--space-4xl);
   padding-bottom: var(--space-xl);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 1;
 }
 
 .footer-grid {
@@ -21,22 +18,57 @@
 @media (min-width: 768px) {
   .footer-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-2xl);
   }
 }
 
 @media (min-width: 1024px) {
   .footer-grid {
-    grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+    grid-template-columns: 1.4fr 1fr 1fr 1.3fr;
+    gap: var(--space-2xl);
   }
 }
 
+/* ── Footer Brand & Logo ── */
+.footer__brand {
+  display: inline-block;
+  margin-bottom: 0.85rem;
+  text-decoration: none;
+}
+
+.footer__brand img,
+.footer__logo-img {
+  width: 140px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.footer__brand-text,
+.footer p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #CBD5E1 !important;
+  margin-bottom: 1.25rem;
+}
+
+.footer span[style*="color"],
+.footer__brand-text span,
+.footer [style*="color: var(--color-brand-accent-text"] {
+  color: #FD8127 !important;
+}
+
+/* ── Column Titles ── */
 .footer__column-title {
-  font-size: var(--font-size-body);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-text-inverse-headings);
+  font-family: var(--font-family-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #FFFFFF !important;
   margin-bottom: var(--space-lg);
   position: relative;
   padding-bottom: var(--space-xs);
+  letter-spacing: 0.01em;
 }
 
 .footer__column-title::after {
@@ -45,10 +77,12 @@
   bottom: 0;
   left: 0;
   width: 32px;
-  height: 2px;
+  height: 2.5px;
   background-color: var(--color-brand-accent);
+  border-radius: 2px;
 }
 
+/* ── Footer Links ── */
 .footer__links-list {
   list-style: none;
   padding: 0;
@@ -60,77 +94,227 @@
 }
 
 .footer__link {
-  color: var(--color-text-inverse-muted);
+  color: #CBD5E1 !important;
   font-size: var(--font-size-body-sm);
   transition: color var(--duration-fast) ease, transform var(--duration-fast) ease;
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  text-decoration: none;
 }
 
 .footer__link:hover {
-  color: var(--color-brand-accent);
-  transform: translateX(2px);
+  color: var(--color-brand-accent) !important;
+  transform: translateX(3px);
 }
 
-/* Contact Info Column */
+/* ── Regional Offices & Contact Details ── */
 .footer-contact {
   display: flex;
   flex-direction: column;
-  gap: var(--space-sm);
+  gap: 0.75rem;
+}
+
+.footer-branch-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.footer-branch-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: #E2E8F0 !important;
+}
+
+.footer-branch-item .icon {
+  width: 18px;
+  height: 18px;
+  color: var(--color-brand-accent) !important;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.footer-branch-item strong {
+  color: #FFFFFF !important;
+  font-weight: 700;
 }
 
 .footer-contact__item {
   display: flex;
-  align-items: flex-start;
-  gap: var(--space-xs);
-  font-size: var(--font-size-body-sm);
-  color: var(--color-text-inverse-muted);
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  color: #FFFFFF !important;
 }
 
 .footer-contact__item .icon {
-  color: var(--color-brand-accent);
-  margin-top: 3px;
+  width: 18px;
+  height: 18px;
+  color: var(--color-brand-accent) !important;
+  flex-shrink: 0;
 }
 
 .footer-contact__item a {
-  color: var(--color-text-inverse-body);
+  color: #FFFFFF !important;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .footer-contact__item a:hover {
-  color: var(--color-brand-accent);
+  color: var(--color-brand-accent) !important;
+  text-decoration: underline;
 }
 
-/* Sub-Footer & Copyright */
+/* ── Sub-Footer ── */
 .sub-footer {
   padding-top: var(--space-xl);
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   display: flex;
   flex-direction: column;
-  gap: var(--space-md);
+  gap: var(--space-sm);
   align-items: center;
   text-align: center;
   font-size: var(--font-size-caption);
-  color: var(--color-text-inverse-muted);
+  color: #94A3B8 !important;
 }
 
 @media (min-width: 768px) {
   .sub-footer {
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+    gap: var(--space-md);
     text-align: left;
   }
 }
 
 .sub-footer__legal-links {
-  display: flex;
-  gap: var(--space-lg);
+  display: inline-flex;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .sub-footer__legal-links {
+    position: relative;
+    padding-left: var(--space-md);
+  }
+
+  .sub-footer__legal-links::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #94A3B8;
+    opacity: 0.5;
+  }
 }
 
 .sub-footer__legal-links a {
-  color: var(--color-text-inverse-muted);
+  color: #CBD5E1 !important;
+  transition: color 0.2s ease;
+  text-decoration: none;
 }
 
 .sub-footer__legal-links a:hover {
-  color: #FFFFFF;
+  color: #FFFFFF !important;
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   MOBILE RESPONSIVENESS (< 768px)
+   Balances brand logo, centers column titles and links, optimizes touch
+   ========================================================================== */
+@media (max-width: 767px) {
+  .footer {
+    text-align: center;
+    padding-top: var(--space-3xl);
+  }
+
+  .footer-grid {
+    text-align: center;
+    gap: 2.5rem;
+  }
+
+  .footer__brand {
+    display: inline-flex !important;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto 0.75rem auto !important;
+  }
+
+  .footer__brand img,
+  .footer__logo-img {
+    width: 105px !important;
+    max-width: 105px !important;
+    height: auto;
+    margin: 0 auto !important;
+  }
+
+  .footer__brand-text,
+  .footer p {
+    text-align: center;
+    max-width: 330px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .footer .badge,
+  .footer .badge--accent {
+    display: inline-flex;
+    margin: 0 auto;
+  }
+
+  .footer__column-title {
+    text-align: center;
+  }
+
+  .footer__column-title::after {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+
+  .footer__links-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer__link {
+    justify-content: center;
+    padding: 6px 12px;
+    min-height: 38px;
+  }
+
+  .footer-contact {
+    align-items: center;
+  }
+
+  .footer-branch-list {
+    align-items: center;
+    width: 100%;
+  }
+
+  .footer-branch-item {
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+  }
+
+  .footer-contact__item {
+    justify-content: center;
+    min-height: 42px;
+  }
+
+  .sub-footer {
+    justify-content: center;
+    text-align: center;
+  }
 }

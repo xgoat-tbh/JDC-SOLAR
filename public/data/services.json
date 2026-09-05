@@ -1,0 +1,106 @@
+{
+  "services": [
+    {
+      "id": "residential-solar",
+      "slug": "residential-solar",
+      "title": "Residential Rooftop Solar",
+      "shortDescription": "High-efficiency rooftop solar systems for independent homes and villas with up to ₹78,000 PM Surya Ghar subsidy.",
+      "capacityRange": "1 kWp to 10 kWp",
+      "targetAudience": "Homeowners, Villa Owners, Housing Societies (RWAs)",
+      "subsidyEligible": true,
+      "warrantyYears": 25,
+      "roiYears": "2.5 to 3.5 Years",
+      "keyFeatures": [
+        "Up to ₹78,000 PM Surya Ghar Central Subsidy",
+        "Direct Net-Metering with State Electricity Board (JBVNL/TSUISL)",
+        "Tier-1 DCR Monocrystalline Solar Panels",
+        "Zero-hassle documentation and bank subsidy credit"
+      ]
+    },
+    {
+      "id": "commercial-solar",
+      "slug": "commercial-solar",
+      "title": "Commercial & Industrial Rooftop Solar",
+      "shortDescription": "High-capacity solar installations designed to slash peak demand tariffs for factories, manufacturing units, and commercial plazas.",
+      "capacityRange": "20 kWp to 1 MW+",
+      "targetAudience": "Factory Owners, Industrial Manufacturers, Commercial Complexes, Warehouses",
+      "subsidyEligible": false,
+      "warrantyYears": 25,
+      "roiYears": "3.0 to 4.5 Years",
+      "keyFeatures": [
+        "CAPEX (Direct Ownership) and OPEX / RESCO models",
+        "Section 32 Accelerated Depreciation (40% Tax Benefit)",
+        "High Tension (HT) 11kV/33kV Net-Metering Compliance",
+        "Heavy-duty wind-load structural engineering"
+      ]
+    },
+    {
+      "id": "institutional-solar",
+      "slug": "institutional-solar",
+      "title": "Health & Educational Institution Solar",
+      "shortDescription": "Uninterrupted, reliable solar energy solutions designed for hospitals, diagnostic centers, schools, colleges, and university campuses.",
+      "capacityRange": "10 kWp to 250 kWp",
+      "targetAudience": "Hospitals, Medical Colleges, Schools, Universities, Charitable Trusts",
+      "subsidyEligible": false,
+      "warrantyYears": 25,
+      "roiYears": "3.5 to 4.5 Years",
+      "keyFeatures": [
+        "24/7 Power Security with DG synchronization",
+        "Silent, zero-emission green campus credentials",
+        "Custom load analysis and critical medical circuit priority",
+        "Dedicated preventive maintenance contracts"
+      ]
+    },
+    {
+      "id": "government-solar",
+      "slug": "government-solar",
+      "title": "Government & PSU Solar Solutions",
+      "shortDescription": "Turnkey EPC execution and tender compliance for public sector undertakings, administrative offices, and municipal buildings.",
+      "capacityRange": "25 kWp to 2 MW+",
+      "targetAudience": "Public Sector Enterprises, Municipal Corporations, Government Departments",
+      "subsidyEligible": false,
+      "warrantyYears": 25,
+      "roiYears": "3.0 to 4.0 Years",
+      "keyFeatures": [
+        "100% Tender and Domestic Content Requirement (DCR) Compliance",
+        "State nodal agency liaisoning (JREDA, BREDA, WBREDA)",
+        "Turnkey execution from civil foundation to grid synchronization",
+        "Strict adherence to ISO quality and electrical safety norms"
+      ]
+    },
+    {
+      "id": "street-lights",
+      "slug": "street-lights",
+      "title": "Solar Street Lighting Systems",
+      "shortDescription": "Standalone and centralized outdoor solar street lights with intelligent dusk-to-dawn controllers and lithium battery storage.",
+      "capacityRange": "15W to 120W LED Luminaires",
+      "targetAudience": "Township Developers, Industrial Parks, Municipalities, Rural Roads",
+      "subsidyEligible": false,
+      "warrantyYears": 5,
+      "roiYears": "1.5 to 2.5 Years",
+      "keyFeatures": [
+        "Automatic Dusk-to-Dawn Optical Sensor Operation",
+        "High-energy density Lithium Ferro-Phosphate (LiFePO4) battery",
+        "Hot-dip galvanized anti-corrosion octagonal poles",
+        "IP66 weatherproof luminaire housing"
+      ]
+    },
+    {
+      "id": "solar-parks",
+      "slug": "solar-parks",
+      "title": "Utility-Scale Solar Parks",
+      "shortDescription": "Ground-mounted megawatt solar power plants with high-voltage grid transmission, land development, and substation commissioning.",
+      "capacityRange": "1 MWp to 50 MW+",
+      "targetAudience": "Independent Power Producers (IPPs), Corporate Groups, Energy Investors",
+      "subsidyEligible": false,
+      "warrantyYears": 25,
+      "roiYears": "4.0 to 5.5 Years",
+      "keyFeatures": [
+        "Comprehensive topographical and solar yield (PVsyst) simulations",
+        "High-voltage 33kV/132kV grid switchyard and evacuation setup",
+        "Bifacial solar module integration with single-axis tracking options",
+        "Full SCADA cloud telemetry and remote string diagnostics"
+      ]
+    }
+  ]
+}

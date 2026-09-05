@@ -1,0 +1,52 @@
+---
+// src/components/common/MobileDrawer.astro
+interface Props {
+  activeNav?: string;
+}
+
+const { activeNav = 'home' } = Astro.props;
+---
+<div class="drawer-overlay" aria-hidden="true"></div>
+<div id="mobile-drawer" class="drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+  <div class="drawer__header">
+    <div class="flex gap-xs" style="align-items: center;">
+      <img src="/assets/brand/logo-mark.png" alt="JDC Solar Logo" style="width: 32px; height: 32px; object-fit: contain;">
+      <span style="font-size: 1.3rem; font-weight: 800; color: var(--color-text-headings);">JDC <span style="color: var(--color-brand-accent-text, #C25E00);">SOLAR</span></span>
+    </div>
+    <div class="flex gap-xs" style="align-items: center;">
+      <button type="button" class="theme-toggle-btn" aria-label="Switch to light mode" title="Switch to light mode">
+        <svg class="icon icon-sun" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-sun"></use></svg>
+        <svg class="icon icon-moon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-moon"></use></svg>
+      </button>
+      <button type="button" class="drawer__close-btn" data-drawer-close aria-label="Close Navigation Menu">
+        <svg class="icon" style="width: 24px; height: 24px;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-close"></use></svg>
+      </button>
+    </div>
+  </div>
+  <div class="drawer__body">
+    <ul class="drawer__nav-list" role="list">
+      <li class="drawer__nav-item"><a href="/" class="drawer__nav-link">Home</a></li>
+      <li class="drawer__nav-item"><a href="/about/" class="drawer__nav-link">About Us</a></li>
+      <li class="drawer__nav-item">
+        <a href="/services/" class="drawer__nav-link">Services</a>
+        <ul class="drawer__sub-nav" role="list">
+          <li><a href="/services/residential-solar/" class="drawer__sub-link">Residential Solar</a></li>
+          <li><a href="/services/commercial-solar/" class="drawer__sub-link">Commercial Solar</a></li>
+          <li><a href="/services/institutional-solar/" class="drawer__sub-link">Institutional Solar</a></li>
+          <li><a href="/services/government-solar/" class="drawer__sub-link">Government Tenders</a></li>
+          <li><a href="/services/street-lights/" class="drawer__sub-link">Solar Street Lights</a></li>
+          <li><a href="/services/solar-parks/" class="drawer__sub-link">Solar Parks</a></li>
+        </ul>
+      </li>
+      <li class="drawer__nav-item"><a href="/projects/" class="drawer__nav-link">Projects</a></li>
+      <li class="drawer__nav-item"><a href="/pm-surya-ghar/" class="drawer__nav-link">PM Surya Ghar Subsidy</a></li>
+      <li class="drawer__nav-item"><a href="/solar-calculator/" class="drawer__nav-link">Solar Calculator</a></li>
+      <li class="drawer__nav-item"><a href="/resources/" class="drawer__nav-link">Resources</a></li>
+      <li class="drawer__nav-item"><a href="/contact/" class="drawer__nav-link">Contact Us</a></li>
+    </ul>
+  </div>
+  <div class="drawer__footer">
+    <button type="button" class="btn btn--primary btn--block" data-modal-open="survey-modal">Book Free Site Survey</button>
+    <a href="tel:+919288381112" class="btn btn--secondary btn--block"><svg class="icon" style="margin-right: 6px;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-phone"></use></svg> Call +91 92883 81112</a>
+  </div>
+</div>

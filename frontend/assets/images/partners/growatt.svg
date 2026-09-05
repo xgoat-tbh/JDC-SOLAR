@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="200" height="60">
+  
+  <g transform="translate(10, 12)">
+    <circle cx="18" cy="18" r="16" fill="#10B981"/>
+    
+    <path d="M8 18 Q13 10 18 18 T28 18" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+  
+  <text x="56" y="32" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="20" font-weight="900" fill="#FFFFFF" letter-spacing="1">Growatt</text>
+  <text x="56" y="47" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="10" font-weight="700" fill="#34D399" letter-spacing="2.5">INVERTERS</text>
+</svg>

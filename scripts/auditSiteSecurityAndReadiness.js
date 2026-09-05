@@ -32,7 +32,6 @@ function check(title, condition, errorMsg, isWarning = false) {
   }
 }
 
-// 1. Collect all HTML files
 function getFiles(dir, ext = '.html', list = []) {
   const items = fs.readdirSync(dir);
   for (const item of items) {
@@ -59,7 +58,7 @@ htmlFiles.forEach(file => {
   const content = fs.readFileSync(file, 'utf8');
   const relPath = path.relative(frontendDir, file);
 
-  // Check internal href links (ignoring SVG icon sprite references, anchors, schemes)
+  
   let match;
   while ((match = hrefRegex.exec(content)) !== null) {
     const url = match[1];
@@ -98,7 +97,7 @@ htmlFiles.forEach(file => {
     }
   }
 
-  // Check src assets
+  
   while ((match = srcRegex.exec(content)) !== null) {
     const src = match[1];
     if (src.startsWith('data:') || src.startsWith('http://') || src.startsWith('https://')) continue;
@@ -119,7 +118,6 @@ htmlFiles.forEach(file => {
 check('Zero Broken Internal Page Links', brokenInternalLinks.length === 0, `Found ${brokenInternalLinks.length} broken links: ${JSON.stringify(brokenInternalLinks)}`);
 check('Zero Missing Media & Script Assets', missingAssets.length === 0, `Found ${missingAssets.length} missing src assets: ${JSON.stringify(missingAssets)}`);
 
-// 2. Security Header & .htaccess Audit
 console.log('\n--- 2. AUDITING APACHE .HTACCESS SECURITY DIRECTIVES ---');
 const htaccessPath = path.join(frontendDir, '.htaccess');
 const htaccessExists = fs.existsSync(htaccessPath);
@@ -139,7 +137,6 @@ if (htaccessExists) {
   check('Custom 404 ErrorDocument routing active', htContent.includes('ErrorDocument 404 /404.html'), 'Missing 404 routing');
 }
 
-// 3. Form Security & Anti-Spam Honeypot Audit
 console.log('\n--- 3. AUDITING FORM SECURITY & LEAD CAPTURE ---');
 const configPath = path.join(frontendDir, 'js', 'config.js');
 const formHandlerPath = path.join(frontendDir, 'js', 'components', 'formHandler.js');
@@ -156,7 +153,6 @@ if (fs.existsSync(formHandlerPath)) {
   check('Instant WhatsApp redirect with encoded lead payload active', fhContent.includes('encodeURIComponent') && fhContent.includes('whatsappNumber'), 'Missing WhatsApp URL builder');
 }
 
-// 4. SVG Sprite & Vector Icon Audit
 console.log('\n--- 4. AUDITING SVG SPRITE & ICON INTEGRITY ---');
 const spritePath = path.join(frontendDir, 'assets', 'icons', 'sprite.svg');
 check('sprite.svg exists', fs.existsSync(spritePath), 'sprite.svg missing');
@@ -174,7 +170,6 @@ if (fs.existsSync(spritePath)) {
   });
 }
 
-// 5. Robots.txt & Sitemap.xml Audit
 console.log('\n--- 5. AUDITING ROBOTS.TXT & SITEMAP.XML ---');
 const robotsPath = path.join(frontendDir, 'robots.txt');
 const sitemapPath = path.join(frontendDir, 'sitemap.xml');
@@ -196,7 +191,6 @@ if (fs.existsSync(sitemapPath)) {
   check('sitemap.xml contains pm-surya-ghar', smContent.includes('<loc>https://jdcsolar.com/pm-surya-ghar/</loc>'), 'pm-surya-ghar missing from sitemap');
 }
 
-// 6. Production Build Integrity Check
 console.log('\n--- 6. AUDITING DIST PRODUCTION BUILD ARTIFACTS ---');
 const distDir = path.join(rootDir, 'dist');
 check('dist directory exists', fs.existsSync(distDir), 'dist folder missing - run npm run build');

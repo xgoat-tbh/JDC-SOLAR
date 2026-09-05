@@ -1,0 +1,126 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+a, button, input, select, textarea, label, [role="button"], [tabindex], .btn, .radio-tile, .custom-select-trigger {
+  -webkit-tap-highlight-color: transparent !important;
+  -webkit-touch-callout: none;
+}
+
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  scroll-behavior: smooth;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* Lenis Single Root Smooth Scrolling Invariants */
+html.lenis, html.lenis-smooth {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+  overflow-y: visible;
+  position: relative;
+  line-height: var(--line-height-body, 1.65);
+  font-family: var(--font-family-body, system-ui, sans-serif);
+  font-size: var(--font-size-body, 1rem);
+  color: var(--color-text-primary, #1E293B);
+  background-color: var(--color-bg-base, #FFFFFF);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  padding-left: env(safe-area-inset-left, 0px);
+  padding-right: env(safe-area-inset-right, 0px);
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+input, button, textarea, select {
+  font: inherit;
+  color: inherit;
+  border: none;
+  background: none;
+}
+
+ul[role='list'], ol[role='list'] {
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+  font-family: var(--font-family-heading, system-ui, sans-serif);
+  color: var(--color-text-headings, #0F172A);
+  font-weight: var(--font-weight-bold, 700);
+}
+
+p, li, figcaption {
+  text-wrap: pretty;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand-accent, #FD8127);
+  outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+p, li, a, span, address, td, th {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}

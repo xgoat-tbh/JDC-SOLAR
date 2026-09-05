@@ -24,13 +24,14 @@
 
   <!-- Theme & Favicon -->
   <meta name="theme-color" content="#1B3766">
+  <link rel="dns-prefetch" href="https://formspree.io">
+  <link rel="dns-prefetch" href="https://wa.me">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/brand/favicon-32x32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/brand/apple-touch-icon.png">
 
-    <!-- Professional SaaS Typography (Plus Jakarta Sans + Inter) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Local Font Preloads -->
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/plus-jakarta-sans-latin.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/outfit-latin.woff2" crossorigin>
   
   <!-- Stylesheets -->
   <link rel="stylesheet" href="/css/main.css">
@@ -67,18 +68,18 @@
   <div class="header-topbar hide-on-mobile">
     <div class="container flex flex--between">
       <div class="header-topbar__trust-badge">
-        <svg class="icon" style="width: 14px; height: 14px; color: var(--color-brand-accent);" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-sun"></use></svg>
+        <svg class="icon" style="width: 14px; height: 14px; color: var(--color-brand-accent-text, #C25E00);" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-sun"></use></svg>
         <span>A Jagatdhan Commodities Pvt. Ltd. Company</span>
         <span>•</span>
         <span>Jharkhand's Premier Solar EPC Partner</span>
       </div>
       <div class="flex gap-md">
-        <a href="tel:+919234611112" style="display: inline-flex; align-items: center; gap: 6px;">
-          <svg class="icon" style="width: 14px; height: 14px; color: var(--color-brand-accent);" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-phone"></use></svg>
-          <span>+91 92346 11112</span>
+        <a href="tel:+919288381112" style="display: inline-flex; align-items: center; gap: 6px;">
+          <svg class="icon" style="width: 14px; height: 14px; color: var(--color-brand-accent-text, #C25E00);" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-phone"></use></svg>
+          <span>+91 92883 81112</span>
         </a>
         <a href="mailto:sales@jdcsolar.com" style="display: inline-flex; align-items: center; gap: 6px;">
-          <svg class="icon" style="width: 14px; height: 14px; color: var(--color-brand-accent);" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-email"></use></svg>
+          <svg class="icon" style="width: 14px; height: 14px; color: var(--color-brand-accent-text, #C25E00);" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-email"></use></svg>
           <span>sales@jdcsolar.com</span>
         </a>
       </div>
@@ -89,7 +90,7 @@
   <header class="header" role="banner">
     <div class="container header-main">
       <a href="/" class="header__brand" aria-label="JDC Solar Homepage">
-        <svg class="icon" style="width: 28px; height: 28px; color: var(--color-brand-accent);" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-sun"></use></svg>
+        <img src="/assets/brand/logo-mark.png" alt="JDC Solar" class="header__logo-img" width="40" height="40">
         <div>
           <div class="header__logo-text">JDC <span>SOLAR</span></div>
           <span class="header__logo-tag">Engineering • EPC • Subsidies</span>
@@ -120,11 +121,16 @@
           <li class="nav-desktop__item"><a href="/projects/" class="nav-desktop__link" aria-current="page">Projects</a></li>
           <li class="nav-desktop__item"><a href="/pm-surya-ghar/" class="nav-desktop__link">PM Surya Ghar</a></li>
           <li class="nav-desktop__item"><a href="/solar-calculator/" class="nav-desktop__link">Calculator</a></li>
+          <li class="nav-desktop__item"><a href="/resources/" class="nav-desktop__link">Resources</a></li>
           <li class="nav-desktop__item"><a href="/contact/" class="nav-desktop__link">Contact</a></li>
         </ul>
       </nav>
 
-      <div class="header__actions">
+      <div class="header__actions flex gap-xs" style="align-items: center;">
+        <button type="button" class="theme-toggle-btn" aria-label="Switch to light mode" title="Switch to light mode">
+          <svg class="icon icon-sun" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-sun"></use></svg>
+          <svg class="icon icon-moon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-moon"></use></svg>
+        </button>
         <button type="button" class="btn btn--primary hide-on-mobile" data-modal-open="survey-modal">Book Free Survey</button>
         <button type="button" class="header__toggle-btn" aria-label="Open Navigation Menu" aria-expanded="false" aria-controls="mobile-drawer">
           <svg class="icon" style="width: 24px; height: 24px;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-menu"></use></svg>
@@ -135,12 +141,21 @@
 
   <!-- Mobile Drawer -->
   <div class="drawer-overlay" aria-hidden="true"></div>
-  <aside id="mobile-drawer" class="drawer" aria-label="Mobile Navigation" aria-modal="true" role="dialog">
+  <div id="mobile-drawer" class="drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
     <div class="drawer__header">
-      <strong style="color: var(--color-brand-primary); font-size: 1.25rem;">JDC SOLAR</strong>
-      <button type="button" class="drawer__close-btn" aria-label="Close Navigation Menu">
-        <svg class="icon" style="width: 24px; height: 24px;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-close"></use></svg>
-      </button>
+      <a href="/" class="flex gap-xs" style="align-items: center; text-decoration: none;" aria-label="JDC Solar Homepage">
+        <img src="/assets/brand/logo-mark.png" alt="JDC Solar Logo" style="width: 32px; height: 32px; object-fit: contain;">
+        <span style="font-size: 1.3rem; font-weight: 800; color: var(--color-text-headings);">JDC <span style="color: var(--color-brand-accent-text, #C25E00);">SOLAR</span></span>
+      </a>
+      <div class="flex gap-xs" style="align-items: center;">
+        <button type="button" class="theme-toggle-btn" aria-label="Switch to light mode" title="Switch to light mode">
+          <svg class="icon icon-sun" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-sun"></use></svg>
+          <svg class="icon icon-moon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-moon"></use></svg>
+        </button>
+        <button type="button" class="drawer__close-btn" data-drawer-close aria-label="Close Navigation Menu">
+          <svg class="icon" style="width: 24px; height: 24px;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-close"></use></svg>
+        </button>
+      </div>
     </div>
     <div class="drawer__body">
       <ul class="drawer__nav-list" role="list">
@@ -160,14 +175,15 @@
         <li class="drawer__nav-item"><a href="/projects/" class="drawer__nav-link" aria-current="page">Projects</a></li>
         <li class="drawer__nav-item"><a href="/pm-surya-ghar/" class="drawer__nav-link">PM Surya Ghar Subsidy</a></li>
         <li class="drawer__nav-item"><a href="/solar-calculator/" class="drawer__nav-link">Solar Calculator</a></li>
+        <li class="drawer__nav-item"><a href="/resources/" class="drawer__nav-link">Resources</a></li>
         <li class="drawer__nav-item"><a href="/contact/" class="drawer__nav-link">Contact Us</a></li>
       </ul>
     </div>
     <div class="drawer__footer">
       <button type="button" class="btn btn--primary btn--block" data-modal-open="survey-modal">Book Free Site Survey</button>
-      <a href="tel:+919234611112" class="btn btn--secondary btn--block"><svg class="icon" style="margin-right: 6px;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-phone"></use></svg> Call +91 92346 11112</a>
+      <a href="tel:+919288381112" class="btn btn--secondary btn--block"><svg class="icon" style="margin-right: 6px;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-phone"></use></svg> Call +91 92883 81112</a>
     </div>
-  </aside>
+  </div>
 
   <!-- Main Content Landmark -->
   <main id="main-content" role="main">
@@ -239,9 +255,7 @@
           <article class="card-project" data-category="commercial" data-project-slug="adityapur-250kw-industrial-solar">
             <div class="card-project__media-wrap">
               <img src="/assets/images/projects/project-adityapur-250kw.jpg" alt="Adityapur 250 kWp Industrial Rooftop Solar Power Plant" class="card-project__image" loading="lazy" width="600" height="400">
-              <div class="card-project__badge-overlay">
-                <div class="badge--saas-pulse"><span class="badge-pulse-dot"><span class="badge-pulse-dot__ping"></span><span class="badge-pulse-dot__core"></span></span><span>Industrial Solar</span></div>
-              </div>
+              <span class="card-project__category-tag">Industrial Solar</span>
             </div>
             <div class="card-project__body">
               <div class="card-project__location">
@@ -270,9 +284,7 @@
           <article class="card-project" data-category="institutional" data-project-slug="bistupur-50kw-hospital-solar">
             <div class="card-project__media-wrap">
               <img src="/assets/images/projects/project-bistupur-50kw.jpg" alt="Bistupur 50 kWp Hospital & Healthcare Campus Solar Plant" class="card-project__image" loading="lazy" width="600" height="400">
-              <div class="card-project__badge-overlay">
-                <span class="badge badge--primary">Institutional Solar</span>
-              </div>
+              <span class="card-project__category-tag">Institutional Solar</span>
             </div>
             <div class="card-project__body">
               <div class="card-project__location">
@@ -301,9 +313,7 @@
           <article class="card-project" data-category="residential" data-project-slug="ranchi-5kw-residential-villa">
             <div class="card-project__media-wrap">
               <img src="/assets/images/projects/project-sakchi-villa.jpg" alt="Residential Villa 5 kWp Hybrid Rooftop Solar" class="card-project__image" loading="lazy" width="600" height="400">
-              <div class="card-project__badge-overlay">
-                <div class="badge--saas-pulse"><span class="badge-pulse-dot"><span class="badge-pulse-dot__ping"></span><span class="badge-pulse-dot__core"></span></span><span>Residential Solar</span></div>
-              </div>
+              <span class="card-project__category-tag">Residential Solar</span>
             </div>
             <div class="card-project__body">
               <div class="card-project__location">
@@ -332,9 +342,7 @@
           <article class="card-project" data-category="commercial" data-project-slug="sakchi-100kw-commercial-plaza">
             <div class="card-project__media-wrap">
               <img src="/assets/images/projects/project-sakchi-plaza.jpg" alt="Sakchi 100 kWp Commercial Plaza & Retail Complex" class="card-project__image" loading="lazy" width="600" height="400">
-              <div class="card-project__badge-overlay">
-                <span class="badge badge--primary">Commercial Solar</span>
-              </div>
+              <span class="card-project__category-tag">Commercial Solar</span>
             </div>
             <div class="card-project__body">
               <div class="card-project__location">
@@ -363,9 +371,7 @@
           <article class="card-project" data-category="commercial" data-project-slug="dhanbad-150kw-cold-storage">
             <div class="card-project__media-wrap">
               <img src="/assets/images/projects/project-dhanbad-storage.jpg" alt="Dhanbad 150 kWp Cold Storage & Logistics Rooftop Solar" class="card-project__image" loading="lazy" width="600" height="400">
-              <div class="card-project__badge-overlay">
-                <div class="badge--saas-pulse"><span class="badge-pulse-dot"><span class="badge-pulse-dot__ping"></span><span class="badge-pulse-dot__core"></span></span><span>Industrial Solar</span></div>
-              </div>
+              <span class="card-project__category-tag">Industrial Solar</span>
             </div>
             <div class="card-project__body">
               <div class="card-project__location">
@@ -394,9 +400,7 @@
           <article class="card-project" data-category="solar-parks" data-project-slug="bokaro-1mw-utility-solar-park">
             <div class="card-project__media-wrap">
               <img src="/assets/images/projects/project-bokaro-park.jpg" alt="Bokaro 1.0 MWp Ground-Mounted Utility Solar Power Station" class="card-project__image" loading="lazy" width="600" height="400">
-              <div class="card-project__badge-overlay">
-                <span class="badge badge--success">Utility Solar Park</span>
-              </div>
+              <span class="card-project__category-tag">Utility Solar Park</span>
             </div>
             <div class="card-project__body">
               <div class="card-project__location">
@@ -425,9 +429,7 @@
           <article class="card-project" data-category="street-lights" data-project-slug="jamshedpur-township-street-lights">
             <div class="card-project__media-wrap">
               <img src="/assets/images/projects/project-jamshedpur-lights.jpg" alt="Kadma & Mango 120 Units Solar Street Lighting" class="card-project__image" loading="lazy" width="600" height="400">
-              <div class="card-project__badge-overlay">
-                <span class="badge badge--outline">Street Lighting</span>
-              </div>
+              <span class="card-project__category-tag">Street Lighting</span>
             </div>
             <div class="card-project__body">
               <div class="card-project__location">
@@ -456,9 +458,7 @@
           <article class="card-project" data-category="government" data-project-slug="ranchi-administrative-government-solar">
             <div class="card-project__media-wrap">
               <img src="/assets/images/projects/project-ranchi-gov.jpg" alt="Ranchi 75 kWp Government Administrative Complex Solar Plant" class="card-project__image" loading="lazy" width="600" height="400">
-              <div class="card-project__badge-overlay">
-                <span class="badge badge--primary">Government Solar</span>
-              </div>
+              <span class="card-project__category-tag">Government Solar</span>
             </div>
             <div class="card-project__body">
               <div class="card-project__location">
@@ -487,7 +487,7 @@
 
         <!-- Accessible Empty State -->
         <div id="projects-empty-state" class="empty-state hidden" style="background: var(--color-bg-surface); border: 1px dashed var(--color-border-default); border-radius: var(--radius-xl); padding: var(--space-2xl); text-align: center; margin-top: 1.5rem;">
-          <svg class="icon" style="width: 48px; height: 48px; color: var(--color-brand-accent); margin-bottom: 1rem;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-solar-panel"></use></svg>
+          <svg class="icon" style="width: 48px; height: 48px; color: var(--color-brand-accent-text, #C25E00); margin-bottom: 1rem;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-solar-panel"></use></svg>
           <h2 style="font-size: 1.35rem; margin-bottom: 0.5rem;">No Projects Found for This Category</h2>
           <p class="text-small text-muted" style="max-width: 450px; margin: 0 auto 1.5rem auto;">We have delivered over 500+ customized solar installations across Eastern India. Try selecting another category or view all projects.</p>
           <button type="button" id="reset-project-filters" class="btn btn--secondary">Reset All Filters</button>
@@ -521,10 +521,10 @@
   </main>
 
   <!-- Reusable Accessible Case Study Detail Modal Dialog -->
-  <dialog id="case-study-modal" class="modal-dialog" style="max-width: 680px;" aria-labelledby="case-study-title">
+  <dialog id="case-study-modal" class="modal-dialog modal-dialog--wide" aria-labelledby="case-study-title">
     <div class="modal-dialog__header">
       <div>
-        <span id="case-study-badge" class="badge badge--accent" style="margin-bottom: 0.25rem;">Case Study</span>
+        <span id="case-study-badge" class="modal-category-tag">Case Study</span>
         <h2 id="case-study-title" class="modal-dialog__title" style="font-size: 1.35rem;">Project Case Study</h2>
         <div style="font-size: 0.85rem; color: var(--color-text-muted); display: flex; align-items: center; gap: 4px; margin-top: 4px;">
           <svg class="icon" style="width: 14px; height: 14px;"><use href="/assets/icons/sprite.svg#icon-location"></use></svg>
@@ -536,53 +536,58 @@
       </button>
     </div>
     <div class="modal-dialog__body">
-      <p id="case-study-desc" style="font-size: 0.95rem; line-height: 1.6; color: var(--color-text-secondary); margin-bottom: 1.5rem;">
-        Detailed technical overview of the solar installation.
-      </p>
+      <div class="modal-case-study-grid">
+        <!-- Column 1: Description and 4-Card Key Performance Metrics -->
+        <div class="modal-case-study-main">
+          <p id="case-study-desc" class="modal-case-study-desc">
+            Detailed technical overview of the solar installation.
+          </p>
 
-      <!-- Key Performance Metric Pills Grid -->
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1.5rem;">
-        <div style="background: var(--color-bg-alt); padding: 0.75rem 1rem; border-radius: var(--radius-md); border: 1px solid var(--color-border-subtle);">
-          <span class="text-small text-muted" style="display: block;">Installed Capacity</span>
-          <strong id="case-study-capacity" style="font-size: 1.15rem; color: var(--color-brand-primary);">250 kWp</strong>
+          <div class="modal-stat-grid">
+            <div class="modal-stat-card">
+              <span class="modal-stat-lbl">Installed Capacity</span>
+              <strong id="case-study-capacity" class="modal-stat-val modal-stat-val--capacity">250 kWp</strong>
+            </div>
+            <div class="modal-stat-card">
+              <span class="modal-stat-lbl">Annual Savings</span>
+              <strong id="case-study-savings" class="modal-stat-val modal-stat-val--savings">₹ 28.5 Lakhs / yr</strong>
+            </div>
+            <div class="modal-stat-card">
+              <span class="modal-stat-lbl">Monthly Generation</span>
+              <strong id="case-study-generation" class="modal-stat-val modal-stat-val--generation">~30,000 kWh</strong>
+            </div>
+            <div class="modal-stat-card">
+              <span class="modal-stat-lbl">Estimated Payback</span>
+              <strong id="case-study-payback" class="modal-stat-val modal-stat-val--payback">3.2 Years</strong>
+            </div>
+          </div>
         </div>
-        <div style="background: var(--color-bg-alt); padding: 0.75rem 1rem; border-radius: var(--radius-md); border: 1px solid var(--color-border-subtle);">
-          <span class="text-small text-muted" style="display: block;">Annual Savings</span>
-          <strong id="case-study-savings" style="font-size: 1.15rem; color: var(--color-status-success);">₹ 28.5 Lakhs / yr</strong>
-        </div>
-        <div style="background: var(--color-bg-alt); padding: 0.75rem 1rem; border-radius: var(--radius-md); border: 1px solid var(--color-border-subtle);">
-          <span class="text-small text-muted" style="display: block;">Monthly Generation</span>
-          <strong id="case-study-generation" style="font-size: 1.05rem;">~30,000 kWh</strong>
-        </div>
-        <div style="background: var(--color-bg-alt); padding: 0.75rem 1rem; border-radius: var(--radius-md); border: 1px solid var(--color-border-subtle);">
-          <span class="text-small text-muted" style="display: block;">Estimated Payback</span>
-          <strong id="case-study-payback" style="font-size: 1.05rem;">3.2 Years</strong>
-        </div>
-      </div>
 
-      <!-- Technical Equipment Specifications Table -->
-      <h3 style="font-size: 1.05rem; margin-bottom: 0.5rem;">Technical Equipment & Grid Specs</h3>
-      <table style="width: 100%; font-size: 0.88rem; margin-bottom: 1.5rem; border: 1px solid var(--color-border-subtle); border-radius: var(--radius-md); overflow: hidden;">
-        <tbody>
-          <tr style="border-bottom: 1px solid var(--color-border-subtle); background: var(--color-bg-surface-sunken);">
-            <td style="padding: 0.5rem 0.75rem; font-weight: 700; width: 35%;">Solar Panels</td>
-            <td id="case-study-panels" style="padding: 0.5rem 0.75rem;">Waaree 540W Mono PERC</td>
-          </tr>
-          <tr style="border-bottom: 1px solid var(--color-border-subtle);">
-            <td style="padding: 0.5rem 0.75rem; font-weight: 700;">Inverters</td>
-            <td id="case-study-inverters" style="padding: 0.5rem 0.75rem;">Growatt 50kW String Inverters</td>
-          </tr>
-          <tr>
-            <td style="padding: 0.5rem 0.75rem; font-weight: 700;">Grid Connection</td>
-            <td id="case-study-grid" style="padding: 0.5rem 0.75rem;">High Tension (HT) 11kV Net-Metering</td>
-          </tr>
-        </tbody>
-      </table>
+        <!-- Column 2: Technical Equipment Specs Table and Action Triggers -->
+        <div class="modal-case-study-sidebar">
+          <h3 class="modal-case-study-sidebar-title">Technical Equipment &amp; Grid Specs</h3>
+          <table class="modal-spec-table">
+            <tbody>
+              <tr>
+                <td class="modal-spec-label">Solar Panels</td>
+                <td id="case-study-panels" class="modal-spec-value">Waaree 540W Mono PERC</td>
+              </tr>
+              <tr>
+                <td class="modal-spec-label">Inverters</td>
+                <td id="case-study-inverters" class="modal-spec-value">Growatt 50kW String Inverters</td>
+              </tr>
+              <tr>
+                <td class="modal-spec-label">Grid Connection</td>
+                <td id="case-study-grid" class="modal-spec-value">High Tension (HT) 11kV Net-Metering</td>
+              </tr>
+            </tbody>
+          </table>
 
-      <!-- Modal Action Triggers -->
-      <div class="flex gap-sm" style="flex-wrap: wrap;">
-        <a id="case-study-service-link" href="/services/commercial-solar/" class="btn btn--secondary" style="flex-grow: 1;">Explore Related Service →</a>
-        <button type="button" class="btn btn--primary" data-modal-open="survey-modal" style="flex-grow: 1;">Book Free Site Survey</button>
+          <div class="modal-actions">
+            <a id="case-study-service-link" href="/services/commercial-solar/" class="btn btn--secondary btn--sm">Explore Related Service →</a>
+            <button type="button" class="btn btn--primary btn--sm" data-modal-open="survey-modal">Book Free Site Survey</button>
+          </div>
+        </div>
       </div>
     </div>
   </dialog>
@@ -592,7 +597,7 @@
     <div class="container">
       <div class="footer-grid">
         <div>
-          <div style="font-size: 1.5rem; font-weight: 800; color: #FFFFFF; margin-bottom: 0.75rem;">JDC <span style="color: var(--color-brand-accent);">SOLAR</span></div>
+          <div style="font-size: 1.5rem; font-weight: 800; color: #FFFFFF; margin-bottom: 0.75rem;">JDC <span style="color: #FD8127;">SOLAR</span></div>
           <p style="font-size: 0.9rem; line-height: 1.6; color: var(--color-text-inverse-muted); margin-bottom: 1.5rem;">A Jagatdhan Commodities Pvt. Ltd. Company. Engineering high-performance rooftop solar across Eastern India.</p>
           <div class="badge badge--accent">Verified MNRE Channel Partner</div>
         </div>
@@ -621,7 +626,7 @@
           <h3 class="footer__column-title">Headquarters</h3>
           <div class="footer-contact">
             <div class="footer-contact__item"><svg class="icon"><use href="/assets/icons/sprite.svg#icon-location"></use></svg><span>A-21, 2nd Phase, Industrial Area, Adityapur, Jamshedpur, Jharkhand 832109</span></div>
-            <div class="footer-contact__item"><svg class="icon"><use href="/assets/icons/sprite.svg#icon-phone"></use></svg><a href="tel:+919234611112">+91 92346 11112</a></div>
+            <div class="footer-contact__item"><svg class="icon"><use href="/assets/icons/sprite.svg#icon-phone"></use></svg><a href="tel:+919288381112">+91 92883 81112</a></div>
             <div class="footer-contact__item"><svg class="icon"><use href="/assets/icons/sprite.svg#icon-whatsapp"></use></svg><a href="https://wa.me/919288381112" target="_blank" rel="noopener noreferrer">+91 92883 81112 (WhatsApp)</a></div>
             <div class="footer-contact__item"><svg class="icon"><use href="/assets/icons/sprite.svg#icon-email"></use></svg><a href="mailto:sales@jdcsolar.com">sales@jdcsolar.com</a></div>
           </div>
@@ -636,7 +641,7 @@
 
   <!-- Sticky Mobile Action Bar -->
   <aside class="mobile-action-bar" aria-label="Quick Mobile Actions">
-    <a href="tel:+919234611112" class="mobile-action-bar__tile mobile-action-bar__tile--call"><svg class="icon"><use href="/assets/icons/sprite.svg#icon-phone"></use></svg><span>Call Us</span></a>
+    <a href="tel:+919288381112" class="mobile-action-bar__tile mobile-action-bar__tile--call"><svg class="icon"><use href="/assets/icons/sprite.svg#icon-phone"></use></svg><span>Call Us</span></a>
     <a href="https://wa.me/919288381112" class="mobile-action-bar__tile mobile-action-bar__tile--whatsapp" target="_blank" rel="noopener noreferrer"><svg class="icon"><use href="/assets/icons/sprite.svg#icon-whatsapp"></use></svg><span>WhatsApp</span></a>
     <a href="/solar-calculator/" class="mobile-action-bar__tile mobile-action-bar__tile--calc"><svg class="icon"><use href="/assets/icons/sprite.svg#icon-calculator"></use></svg><span>Calculate</span></a>
   </aside>

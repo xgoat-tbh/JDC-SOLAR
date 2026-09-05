@@ -1,0 +1,329 @@
+---
+// src/pages/services/index.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const servicesSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Turnkey Solar EPC Services | JDC Solar",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "JDC Solar"
+  },
+  "serviceType": "Solar Energy Engineering, Procurement, and Construction",
+  "areaServed": "Eastern India"
+};
+---
+
+<BaseLayout
+  title="Solar EPC Services in Jharkhand | Turnkey Solar Power Solutions | JDC Solar"
+  description="Comprehensive solar EPC services: residential rooftop solar, commercial & industrial power plants, institutional solar, government tenders, street lighting, and solar parks."
+  canonical="https://jdcsolar.com/services/"
+  activeNav="services"
+  schema={servicesSchema}
+>
+  <section class="page-hero page-hero--services" aria-label="Comprehensive Solar Solutions">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumbs">
+        <ol class="breadcrumb__list">
+          <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">Home</a></li>
+          <li class="breadcrumb__separator" aria-hidden="true">/</li>
+          <li class="breadcrumb__item" aria-current="page">Services</li>
+        </ol>
+      </nav>
+
+      <div class="page-hero__badge">
+        <div class="section-tag section-tag--accent">Comprehensive Solar Solutions</div>
+      </div>
+      <h1 class="display-title page-hero__title">
+        End-to-End Solar Engineering, Procurement &amp; Construction
+      </h1>
+      <p class="lead page-hero__lead">
+        From residential rooftop systems backed by ₹78,000 central subsidies to multi-megawatt industrial solar power plants across Eastern India.
+      </p>
+      <div class="page-hero__chips">
+        <div class="page-hero__chip">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+          <span>Residential, C&amp;I &amp; Utility Parks</span>
+        </div>
+        <div class="page-hero__chip">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+          <span>Tier-1 DCR Monocrystalline Panels</span>
+        </div>
+        <div class="page-hero__chip">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+          <span>25-Year Performance Warranty</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 Main Solar Services Grid -->
+  <section class="section bg-tech-grid">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-overline">CUSTOM SOLAR SOLUTIONS</span>
+        <h2>Engineered for Every Energy Requirement</h2>
+        <p class="lead">Select your sector to view detailed engineering specifications, financial payback models, and case studies.</p>
+      </div>
+
+      <div class="grid grid--3col">
+        <!-- Residential -->
+        <div class="card card-service card--interactive">
+          <div class="card-service__icon-wrap">
+            <svg class="icon" style="width: 28px; height: 28px;" aria-hidden="true">
+              <use href="/assets/icons/sprite.svg#icon-home"></use>
+            </svg>
+          </div>
+          <h3 class="card-service__title">Residential Rooftop Solar</h3>
+          <p class="card-service__description">High-efficiency rooftop solar for independent homes and villas with up to ₹78,000 PM Surya Ghar direct central subsidy.</p>
+          <ul class="card-service__features">
+            <li class="card-service__feature-item">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+              <span>Up to ₹78,000 PM Surya Ghar Subsidy</span>
+            </li>
+            <li class="card-service__feature-item">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+              <span>Direct JBVNL / TSUISL Net-Metering</span>
+            </li>
+            <li class="card-service__feature-item">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+              <span>Tier-1 DCR Monocrystalline Panels</span>
+            </li>
+          </ul>
+          <div class="card-service__footer">
+            <a href="/services/residential-solar/" class="btn btn--primary btn--block">Explore Residential Solar →</a>
+          </div>
+        </div>
+
+        <!-- Commercial & Industrial -->
+        <div class="card card-service card--interactive">
+          <div class="card-service__icon-wrap">
+            <svg class="icon" style="width: 28px; height: 28px;" aria-hidden="true">
+              <use href="/assets/icons/sprite.svg#icon-factory"></use>
+            </svg>
+          </div>
+          <h3 class="card-service__title">Commercial &amp; Industrial Solar</h3>
+          <p class="card-service__description">High-capacity rooftop installations designed to slash peak demand tariffs for factories, manufacturing units, and commercial plazas.</p>
+          <ul class="card-service__features">
+            <li class="card-service__feature-item">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+              <span>Section 32 Accelerated Depreciation (40% Tax Shield)</span>
+            </li>
+            <li class="card-service__feature-item">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+              <span>High Tension (HT) 11kV/33kV Net-Metering</span>
+            </li>
+            <li class="card-service__feature-item">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+              <span>CAPEX and OPEX / RESCO Models</span>
+            </li>
+          </ul>
+          <div class="card-service__footer">
+            <a href="/services/commercial-solar/" class="btn btn--primary btn--block">Explore Commercial Solar →</a>
+          </div>
+        </div>
+
+        <!-- Institutional -->
+        <div class="card card-service card--interactive">
+          <div class="card-service__icon-wrap">
+            <svg class="icon" style="width: 28px; height: 28px;" aria-hidden="true">
+              <use href="/assets/icons/sprite.svg#icon-hospital"></use>
+            </svg>
+          </div>
+          <h3 class="card-service__title">Institutional Solar Solutions</h3>
+          <p class="card-service__description">Uninterrupted, reliable solar energy solutions designed for hospitals, diagnostic centers, schools, and university campuses.</p>
+          <ul class="card-service__features">
+            <li class="card-service__feature-item">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+              <span>24/7 Power Security with DG Synchronization</span>
+            </li>
+            <li class="card-service__feature-item">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+              <span>Silent, Zero-Emission Green Campus Status</span>
+            </li>
+            <li class="card-service__feature-item">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+              <span>Custom Medical Circuit Load Priority</span>
+            </li>
+          </ul>
+          <div class="card-service__footer">
+            <a href="/services/institutional-solar/" class="btn btn--primary btn--block">Explore Institutional Solar →</a>
+          </div>
+        </div>
+
+        <!-- Government & PSU -->
+        <div class="card card-service card--interactive">
+          <div class="card-service__icon-wrap">
+            <svg class="icon" style="width: 28px; height: 28px;" aria-hidden="true">
+              <use href="/assets/icons/sprite.svg#icon-shield"></use>
+            </svg>
+          </div>
+          <h3 class="card-service__title">Government &amp; PSU Solar EPC</h3>
+          <p class="card-service__description">Turnkey EPC execution and tender compliance for public sector undertakings, administrative offices, and municipal buildings.</p>
+          <ul class="card-service__features">
+            <li class="card-service__feature-item">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+              <span>100% Tender &amp; DCR Compliance</span>
+            </li>
+            <li class="card-service__feature-item">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+              <span>State Nodal Liaisoning (JREDA, BREDA, WBREDA)</span>
+            </li>
+            <li class="card-service__feature-item">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+              <span>ISO Certified Electrical Safety Standards</span>
+            </li>
+          </ul>
+          <div class="card-service__footer">
+            <a href="/services/government-solar/" class="btn btn--primary btn--block">Explore Government Solar →</a>
+          </div>
+        </div>
+
+        <!-- Street Lights -->
+        <div class="card card-service card--interactive">
+          <div class="card-service__icon-wrap">
+            <svg class="icon" style="width: 28px; height: 28px;" aria-hidden="true">
+              <use href="/assets/icons/sprite.svg#icon-lightbulb"></use>
+            </svg>
+          </div>
+          <h3 class="card-service__title">Solar Street Lighting Systems</h3>
+          <p class="card-service__description">Standalone outdoor solar street lights with intelligent dusk-to-dawn controllers and high-density lithium battery storage.</p>
+          <ul class="card-service__features">
+            <li class="card-service__feature-item">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+              <span>Automatic Dusk-to-Dawn Optical Operation</span>
+            </li>
+            <li class="card-service__feature-item">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+              <span>Long-Life LiFePO4 Lithium Battery Storage</span>
+            </li>
+            <li class="card-service__feature-item">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+              <span>Hot-Dip Galvanized Anti-Corrosion Poles</span>
+            </li>
+          </ul>
+          <div class="card-service__footer">
+            <a href="/services/street-lights/" class="btn btn--primary btn--block">Explore Street Lights →</a>
+          </div>
+        </div>
+
+        <!-- Solar Parks -->
+        <div class="card card-service card--interactive">
+          <div class="card-service__icon-wrap">
+            <svg class="icon" style="width: 28px; height: 28px;" aria-hidden="true">
+              <use href="/assets/icons/sprite.svg#icon-solar-panel"></use>
+            </svg>
+          </div>
+          <h3 class="card-service__title">Utility-Scale Solar Parks</h3>
+          <p class="card-service__description">Ground-mounted megawatt solar power plants with high-voltage grid transmission, land development, and substation commissioning.</p>
+          <ul class="card-service__features">
+            <li class="card-service__feature-item">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+              <span>Comprehensive PVsyst Yield Simulations</span>
+            </li>
+            <li class="card-service__feature-item">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+              <span>33kV / 132kV Grid Evacuation &amp; Switchyard</span>
+            </li>
+            <li class="card-service__feature-item">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+              <span>Full SCADA Cloud Telemetry &amp; Diagnostics</span>
+            </li>
+          </ul>
+          <div class="card-service__footer">
+            <a href="/services/solar-parks/" class="btn btn--primary btn--block">Explore Solar Parks →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Telemetry & Engineering Rigor -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-overline">EPC OPERATIONAL STANDARD</span>
+        <h2>Lifelong Performance &amp; Operations Support</h2>
+        <p class="lead">Every JDC Solar installation is backed by physical engineering teams and digital telemetry.</p>
+      </div>
+
+      <div class="grid grid--3col">
+        <div class="card card-telemetry-spec">
+          <div class="card-telemetry-spec__top">
+            <div class="card-telemetry-spec__icon-box">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-activity"></use></svg>
+            </div>
+            <div class="card-telemetry-spec__status-tag">
+              <span>CLOUD LINKED</span>
+            </div>
+          </div>
+          <h3 class="card-telemetry-spec__title">Cloud Telemetry &amp; Monitoring</h3>
+          <p class="card-telemetry-spec__desc">Continuous IoT performance tracking measuring daily generation, string output, and irradiance efficiency with instant fault alerts.</p>
+          <div class="card-telemetry-spec__metric">
+            <span class="card-telemetry-spec__metric-val">24/7</span>
+            <span class="card-telemetry-spec__metric-lbl">IoT Cloud Telemetry</span>
+          </div>
+        </div>
+
+        <div class="card card-telemetry-spec">
+          <div class="card-telemetry-spec__top">
+            <div class="card-telemetry-spec__icon-box">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-tools"></use></svg>
+            </div>
+            <div class="card-telemetry-spec__status-tag">
+              <span>SCHEDULED AUDIT</span>
+            </div>
+          </div>
+          <h3 class="card-telemetry-spec__title">Preventive Maintenance</h3>
+          <p class="card-telemetry-spec__desc">Scheduled thermographic infrared panel scanning, torque check of structural clamps, and DC/AC inverter servicing.</p>
+          <div class="card-telemetry-spec__metric">
+            <span class="card-telemetry-spec__metric-val">IR Scan</span>
+            <span class="card-telemetry-spec__metric-lbl">Hotspot Prevention</span>
+          </div>
+        </div>
+
+        <div class="card card-telemetry-spec">
+          <div class="card-telemetry-spec__top">
+            <div class="card-telemetry-spec__icon-box">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-clock"></use></svg>
+            </div>
+            <div class="card-telemetry-spec__status-tag">
+              <span>HQ ON-SITE TEAM</span>
+            </div>
+          </div>
+          <h3 class="card-telemetry-spec__title">Rapid On-Site Response</h3>
+          <p class="card-telemetry-spec__desc">Dedicated engineering teams based at Adityapur HQ guarantee rapid 24–48hr on-site troubleshooting across Jharkhand.</p>
+          <div class="card-telemetry-spec__metric">
+            <span class="card-telemetry-spec__metric-val">&lt; 24 Hrs</span>
+            <span class="card-telemetry-spec__metric-lbl">Guaranteed Response SLA</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="section section--compact section--alt">
+    <div class="container">
+      <div class="cta-banner is-inview">
+        <div class="cta-banner__content">
+          <span class="section-overline">GET A CUSTOM EPC PROPOSAL</span>
+          <h2 class="cta-banner__title">Ready to Power Your Facility with Solar?</h2>
+          <p class="cta-banner__description">
+            Schedule a comprehensive rooftop feasibility study with JDC Solar's certified engineers.
+          </p>
+          <div class="cta-banner__actions">
+            <button type="button" class="btn btn--primary btn--lg" data-modal-open="survey-modal">
+              Book Free Rooftop Survey →
+            </button>
+            <a href="https://wa.me/919288381112" class="btn btn--whatsapp btn--lg" target="_blank" rel="noopener noreferrer">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-whatsapp"></use></svg>
+              Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

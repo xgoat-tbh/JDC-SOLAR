@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-theme="light">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <!-- Primary SEO Metadata -->
+  
   <title>Solar Savings & Subsidy Calculator for India | JDC Solar</title>
   <meta name="description" content="Calculate your solar system sizing, ₹78,000 PM Surya Ghar subsidy, annual electricity bill savings, and payback period with JDC Solar's instant calculator.">
   <meta name="keywords" content="solar calculator India, solar subsidy calculator Jharkhand, PM Surya Ghar calculator, solar panel cost calculator, rooftop solar savings Ranchi">
@@ -13,7 +13,7 @@
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <link rel="canonical" href="https://jdcsolar.com/solar-calculator/">
 
-  <!-- OpenGraph Social Metadata -->
+  
   <meta property="og:locale" content="en_IN">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Solar Savings & Subsidy Calculator for India | JDC Solar">
@@ -22,20 +22,18 @@
   <meta property="og:site_name" content="JDC Solar">
   <meta property="og:image" content="https://jdcsolar.com/assets/images/brand/og-preview.jpg">
 
-  <!-- Theme & Favicon -->
+  
   <meta name="theme-color" content="#1B3766">
+  <link rel="dns-prefetch" href="https://formspree.io">
+  <link rel="dns-prefetch" href="https://wa.me">
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/brand/favicon-32x32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/brand/apple-touch-icon.png">
-
-    <!-- Professional SaaS Typography (Plus Jakarta Sans + Inter) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  
-  <!-- Stylesheets -->
+  <link rel="manifest" href="/manifest.json">
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/plus-jakarta-sans-latin.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/outfit-latin.woff2" crossorigin>
   <link rel="stylesheet" href="/css/main.css">
 
-  <!-- Schema.org JSON-LD Structured Data -->
+  
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -62,43 +60,43 @@
 </head>
 <body data-page="calculator">
 
-  <!-- Accessible Skip Link -->
+  
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- Top Trust Micro-Bar -->
+  
   <div class="header-topbar hide-on-mobile">
     <div class="container flex flex--between">
       <div class="header-topbar__trust-badge">
-        <svg class="icon" style="width: 14px; height: 14px; color: var(--color-brand-accent);" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-sun"></use></svg>
+        <svg class="icon" style="width: 14px; height: 14px; color: var(--color-brand-accent-text, #C25E00);" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-sun"></use></svg>
         <span>A Jagatdhan Commodities Pvt. Ltd. Company</span>
         <span>•</span>
         <span>Jharkhand's Premier Solar EPC Partner</span>
       </div>
       <div class="flex gap-md">
-        <a href="tel:+919234611112" style="display: inline-flex; align-items: center; gap: 6px;">
-          <svg class="icon" style="width: 14px; height: 14px; color: var(--color-brand-accent);" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-phone"></use></svg>
-          <span>+91 92346 11112</span>
+        <a href="tel:+919288381112" style="display: inline-flex; align-items: center; gap: 6px;">
+          <svg class="icon" style="width: 14px; height: 14px; color: var(--color-brand-accent-text, #C25E00);" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-phone"></use></svg>
+          <span>+91 92883 81112</span>
         </a>
         <a href="mailto:sales@jdcsolar.com" style="display: inline-flex; align-items: center; gap: 6px;">
-          <svg class="icon" style="width: 14px; height: 14px; color: var(--color-brand-accent);" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-email"></use></svg>
+          <svg class="icon" style="width: 14px; height: 14px; color: var(--color-brand-accent-text, #C25E00);" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-email"></use></svg>
           <span>sales@jdcsolar.com</span>
         </a>
       </div>
     </div>
   </div>
 
-  <!-- Global Sticky Header -->
+  
   <header class="header" role="banner">
     <div class="container header-main">
       <a href="/" class="header__brand" aria-label="JDC Solar Homepage">
-        <svg class="icon" style="width: 28px; height: 28px; color: var(--color-brand-accent);" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-sun"></use></svg>
+        <img src="/assets/brand/logo-mark.png" alt="JDC Solar" class="header__logo-img" width="40" height="40">
         <div>
           <div class="header__logo-text">JDC <span>SOLAR</span></div>
           <span class="header__logo-tag">Engineering • EPC • Subsidies</span>
         </div>
       </a>
 
-      <!-- Desktop Navigation -->
+      
       <nav class="header__nav" aria-label="Main Navigation">
         <ul class="nav-desktop" role="list">
           <li class="nav-desktop__item"><a href="/" class="nav-desktop__link">Home</a></li>
@@ -122,11 +120,16 @@
           <li class="nav-desktop__item"><a href="/projects/" class="nav-desktop__link">Projects</a></li>
           <li class="nav-desktop__item"><a href="/pm-surya-ghar/" class="nav-desktop__link">PM Surya Ghar</a></li>
           <li class="nav-desktop__item"><a href="/solar-calculator/" class="nav-desktop__link" aria-current="page">Calculator</a></li>
+          <li class="nav-desktop__item"><a href="/resources/" class="nav-desktop__link">Resources</a></li>
           <li class="nav-desktop__item"><a href="/contact/" class="nav-desktop__link">Contact</a></li>
         </ul>
       </nav>
 
-      <div class="header__actions">
+      <div class="header__actions flex gap-xs" style="align-items: center;">
+        <button type="button" class="theme-toggle-btn" aria-label="Switch to light mode" title="Switch to light mode">
+          <svg class="icon icon-sun" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-sun"></use></svg>
+          <svg class="icon icon-moon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-moon"></use></svg>
+        </button>
         <button type="button" class="btn btn--primary hide-on-mobile" data-modal-open="survey-modal">Book Free Survey</button>
         <button type="button" class="header__toggle-btn" aria-label="Open Navigation Menu" aria-expanded="false" aria-controls="mobile-drawer">
           <svg class="icon" style="width: 24px; height: 24px;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-menu"></use></svg>
@@ -135,14 +138,23 @@
     </div>
   </header>
 
-  <!-- Mobile Drawer -->
+  
   <div class="drawer-overlay" aria-hidden="true"></div>
-  <aside id="mobile-drawer" class="drawer" aria-label="Mobile Navigation" aria-modal="true" role="dialog">
+  <div id="mobile-drawer" class="drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
     <div class="drawer__header">
-      <strong style="color: var(--color-brand-primary); font-size: 1.25rem;">JDC SOLAR</strong>
-      <button type="button" class="drawer__close-btn" aria-label="Close Navigation Menu">
-        <svg class="icon" style="width: 24px; height: 24px;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-close"></use></svg>
-      </button>
+      <div class="flex gap-xs" style="align-items: center;">
+        <img src="/assets/brand/logo-mark.png" alt="JDC Solar Logo" style="width: 32px; height: 32px; object-fit: contain;">
+        <span style="font-size: 1.3rem; font-weight: 800; color: var(--color-text-headings);">JDC <span style="color: var(--color-brand-accent-text, #C25E00);">SOLAR</span></span>
+      </div>
+      <div class="flex gap-xs" style="align-items: center;">
+        <button type="button" class="theme-toggle-btn" aria-label="Switch to light mode" title="Switch to light mode">
+          <svg class="icon icon-sun" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-sun"></use></svg>
+          <svg class="icon icon-moon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-moon"></use></svg>
+        </button>
+        <button type="button" class="drawer__close-btn" data-drawer-close aria-label="Close Navigation Menu">
+          <svg class="icon" style="width: 24px; height: 24px;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-close"></use></svg>
+        </button>
+      </div>
     </div>
     <div class="drawer__body">
       <ul class="drawer__nav-list" role="list">
@@ -162,19 +174,20 @@
         <li class="drawer__nav-item"><a href="/projects/" class="drawer__nav-link">Projects</a></li>
         <li class="drawer__nav-item"><a href="/pm-surya-ghar/" class="drawer__nav-link">PM Surya Ghar Subsidy</a></li>
         <li class="drawer__nav-item"><a href="/solar-calculator/" class="drawer__nav-link" aria-current="page">Solar Calculator</a></li>
+        <li class="drawer__nav-item"><a href="/resources/" class="drawer__nav-link">Resources</a></li>
         <li class="drawer__nav-item"><a href="/contact/" class="drawer__nav-link">Contact Us</a></li>
       </ul>
     </div>
     <div class="drawer__footer">
       <button type="button" class="btn btn--primary btn--block" data-modal-open="survey-modal">Book Free Site Survey</button>
-      <a href="tel:+919234611112" class="btn btn--secondary btn--block"><svg class="icon" style="margin-right: 6px;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-phone"></use></svg> Call +91 92346 11112</a>
+      <a href="tel:+919288381112" class="btn btn--secondary btn--block"><svg class="icon" style="margin-right: 6px;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-phone"></use></svg> Call +91 92883 81112</a>
     </div>
-  </aside>
+  </div>
 
-  <!-- Main Content Landmark -->
+  
   <main id="main-content" role="main">
 
-    <!-- Section 1: Cinematic Subpage Hero Banner -->
+    
     <section class="page-hero page-hero--calculator" aria-label="Instant Financial Sizing">
       <div class="container">
         <nav class="breadcrumb" aria-label="Breadcrumbs">
@@ -214,14 +227,14 @@
       </div>
     </section>
 
-    <!-- Section 2: Interactive 2-Column Calculator Dashboard -->
+    
     <section class="section section--alt" style="padding-top: 2rem;">
       <div class="container">
         
-        <div class="solar-calculator-ui" style="background: var(--color-bg-surface); border: 1px solid var(--color-border-default); border-radius: var(--radius-xl); padding: var(--space-2xl); box-shadow: var(--shadow-md);">
+        <div class="solar-calculator-ui">
           <div class="grid grid--2col">
             
-            <!-- Left Column: User Inputs -->
+            
             <div>
               <h2 style="font-size: 1.4rem; margin-bottom: 0.5rem;">1. Enter Your Power Consumption</h2>
               <p class="text-small text-muted" style="margin-bottom: 1.5rem;">Select your state, property category, and monthly electricity units from your latest power bill.</p>
@@ -253,16 +266,23 @@
                 <div class="radio-tile-group">
                   <label class="radio-tile">
                     <input type="radio" name="calc_service_type" value="residential" checked>
-                    <span class="radio-tile__label" style="display: flex; align-items: center; gap: 8px;">
-                      <svg class="icon" style="width: 18px; height: 18px; color: var(--color-brand-accent);" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-home"></use></svg>
+                    <span class="radio-tile__label">
+                      <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-home"></use></svg>
                       Residential
                     </span>
                   </label>
                   <label class="radio-tile">
                     <input type="radio" name="calc_service_type" value="commercial">
-                    <span class="radio-tile__label" style="display: flex; align-items: center; gap: 8px;">
-                      <svg class="icon" style="width: 18px; height: 18px; color: var(--color-brand-primary);" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-building"></use></svg>
+                    <span class="radio-tile__label">
+                      <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-building"></use></svg>
                       Commercial
+                    </span>
+                  </label>
+                  <label class="radio-tile">
+                    <input type="radio" name="calc_service_type" value="industrial">
+                    <span class="radio-tile__label">
+                      <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-lightning"></use></svg>
+                      Industrial
                     </span>
                   </label>
                 </div>
@@ -280,57 +300,66 @@
               </div>
             </div>
 
-            <!-- Right Column: System Estimate Breakdown -->
-            <div class="card--neomorph-raised" style="padding: var(--space-xl); display: flex; flex-direction: column; justify-content: space-between; gap: 1.5rem;">
+            
+            <div class="card--neomorph-raised" aria-live="polite" aria-atomic="true">
               <div>
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem;">
-                  <div class="badge--saas-pulse"><span class="badge-pulse-dot"><span class="badge-pulse-dot__ping"></span><span class="badge-pulse-dot__core"></span></span><span>SYSTEM ESTIMATE</span></div>
-                  <span id="out-system-size" class="metric-tile__value--primary" style="font-size: 2.25rem; font-weight: 800; line-height: 1;">3.0 kWp</span>
+                <div class="calc-summary-header">
+                  <div>
+                    <span class="badge badge--accent" style="margin-bottom: 0.25rem;">RECOMMENDED SIZE</span>
+                    <div style="font-size: 0.85rem; font-weight: 600; color: var(--color-text-secondary);">Optimal Solar Capacity</div>
+                  </div>
+                  <span id="out-system-size" class="metric-tile__value--primary" style="font-size: clamp(1.75rem, 5vw, 2.5rem); font-weight: 800; line-height: 1; white-space: nowrap;">3.0 <small class="metric-unit" style="font-size: 1.1rem; color: var(--color-brand-accent-text, #9A3412);">kWp</small></span>
                 </div>
                 
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; margin-bottom: 1.25rem;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-bottom: 1.25rem;">
                   <div class="metric-tile--neomorph">
                     <div class="metric-tile__label">Gross Turnkey Cost</div>
                     <div id="out-gross-cost" class="metric-tile__value">₹ 1,65,000</div>
                   </div>
-                  <div class="metric-tile--neomorph" style="border-color: rgba(16, 185, 129, 0.4); background: #F0FDF4;">
-                    <div class="metric-tile__label" style="color: #059669;">PM Surya Ghar Subsidy</div>
+                  <div class="metric-tile--neomorph metric-tile--highlight">
+                    <div class="metric-tile__label">PM Surya Ghar Subsidy</div>
                     <div id="out-subsidy" class="metric-tile__value metric-tile__value--success">₹ 78,000</div>
                   </div>
                   <div class="metric-tile--neomorph">
                     <div class="metric-tile__label">Net Outflow Cost</div>
                     <div id="out-net-cost" class="metric-tile__value metric-tile__value--primary">₹ 87,000</div>
                   </div>
-                  <div class="metric-tile--neomorph" style="background: #F0FDF4;">
-                    <div class="metric-tile__label" style="color: #059669;">Annual Bill Savings</div>
-                    <div id="out-annual-savings" class="metric-tile__value metric-tile__value--success">₹ 28,470 / yr</div>
+                  <div class="metric-tile--neomorph metric-tile--highlight">
+                    <div class="metric-tile__label">Annual Bill Savings</div>
+                    <div id="out-annual-savings" class="metric-tile__value metric-tile__value--success">₹ 28,470 <small class="metric-unit">/ yr</small></div>
                   </div>
                   <div class="metric-tile--neomorph">
                     <div class="metric-tile__label">Rooftop Area Needed</div>
-                    <div id="out-area" class="metric-tile__value" style="font-size: 1.05rem;">~300 sq.ft</div>
+                    <div id="out-area" class="metric-tile__value">~300 <small class="metric-unit">sq.ft</small></div>
                   </div>
                   <div class="metric-tile--neomorph">
                     <div class="metric-tile__label">Estimated Payback</div>
-                    <div id="out-payback" class="metric-tile__value" style="font-size: 1.05rem;">3.1 Years</div>
+                    <div id="out-payback" class="metric-tile__value">3.1 <small class="metric-unit">Years</small></div>
                   </div>
                   <div class="metric-tile--neomorph">
                     <div class="metric-tile__label">Annual Clean Power</div>
-                    <div id="out-generation" class="metric-tile__value" style="font-size: 1.05rem;">~4,380 kWh / yr</div>
+                    <div id="out-generation" class="metric-tile__value">~4,380 <small class="metric-unit">kWh/yr</small></div>
                   </div>
                   <div class="metric-tile--neomorph">
                     <div class="metric-tile__label">CO₂ Avoided</div>
-                    <div id="out-co2" class="metric-tile__value" style="font-size: 1.05rem;">3.6 Tons / yr</div>
+                    <div id="out-co2" class="metric-tile__value">3.6 <small class="metric-unit">Tons/yr</small></div>
                   </div>
                 </div>
               </div>
 
-              <!-- Quick Quote & Survey Actions -->
-              <div class="flex gap-sm" style="flex-wrap: wrap;">
-                <a id="calc-whatsapp-quote" href="#" class="btn btn--whatsapp btn--lg" target="_blank" rel="noopener noreferrer" style="flex-grow: 1;">
-                  <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-whatsapp"></use></svg>
-                  Share Quote on WhatsApp
-                </a>
-                <button type="button" class="btn btn--primary btn--lg" data-modal-open="survey-modal" style="flex-grow: 1;">
+              
+              <div class="calc-actions-grid">
+                <div class="calc-actions-secondary">
+                  <a id="calc-whatsapp-quote" href="#" class="btn btn--whatsapp btn--md" target="_blank" rel="noopener noreferrer">
+                    <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-whatsapp"></use></svg>
+                    Share on WhatsApp
+                  </a>
+                  <button type="button" id="btn-download-proposal" class="btn btn--secondary btn--md">
+                    <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-document"></use></svg>
+                    Download PDF
+                  </button>
+                </div>
+                <button type="button" class="btn btn--primary btn--md" data-modal-open="survey-modal">
                   Book Free Site Survey →
                 </button>
               </div>
@@ -342,87 +371,86 @@
       </div>
     </section>
 
-    <!-- Section 3: Engineering Sizing Methodology & Transparency -->
+        
     <section class="section">
       <div class="container">
         <div class="section-header">
-          <div class="badge--saas-pulse"><span class="badge-pulse-dot"><span class="badge-pulse-dot__ping"></span><span class="badge-pulse-dot__core"></span></span><span>CALCULATION TRANSPARENCY</span></div>
+          <div class="section-tag section-tag--accent">CALCULATION TRANSPARENCY</div>
           <h2>How We Calculate Your Solar Sizing & Returns</h2>
           <p class="lead">Our mathematical estimation engine is built on deterministic engineering standards.</p>
         </div>
 
         <div class="grid grid--3col">
           <div class="card">
-            <h3 style="color: var(--color-brand-primary); margin-bottom: 0.5rem;">1. Solar Yield Factor</h3>
+            <h3 style="color: var(--color-text-headings); margin-bottom: 0.5rem;">1. Solar Yield Factor</h3>
             <p class="text-small text-muted">Eastern India receives an average of 4.0 Peak Sun Hours (PSH) per day, producing 120 kWh of electricity per kilowatt-peak capacity per month.</p>
           </div>
           <div class="card">
-            <h3 style="color: var(--color-brand-primary); margin-bottom: 0.5rem;">2. Subsidy Architecture</h3>
+            <h3 style="color: var(--color-text-headings); margin-bottom: 0.5rem;">2. Subsidy Architecture</h3>
             <p class="text-small text-muted">Residential systems receive official Central Government PM Surya Ghar subsidies (₹30,000 for 1kW, ₹60,000 for 2kW, capped at ₹78,000 for 3kW+).</p>
           </div>
           <div class="card">
-            <h3 style="color: var(--color-brand-primary); margin-bottom: 0.5rem;">3. Payback & Degradation</h3>
+            <h3 style="color: var(--color-text-headings); margin-bottom: 0.5rem;">3. Payback & Degradation</h3>
             <p class="text-small text-muted">Payback is calculated as Net Capital Outflow divided by Annual Bill Savings, modeling 25-year Tier-1 panel linear degradation at 0.7% annually.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Section 4: State Tariff Benchmark Table -->
+    
     <section class="section section--alt">
       <div class="container container--medium">
         <div class="section-header">
-          <span class="badge badge--primary">STATE DISCOM TARIFFS</span>
+          <span class="section-overline">STATE DISCOM TARIFFS</span>
           <h2>Electricity Board Tariff Reference Matrix</h2>
           <p class="lead">Baseline domestic and commercial power tariffs used in financial yield calculations.</p>
         </div>
-
-        <div style="background: var(--color-bg-surface); border: 1px solid var(--color-border-default); border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-md);">
-          <table>
+        <div class="tariff-table-wrap">
+          <table class="tariff-table">
             <thead>
-              <tr style="background: var(--color-bg-surface-sunken); text-align: left;">
-                <th style="padding: 1rem; font-size: 0.9rem; font-weight: 700;">State / Distribution Utility</th>
-                <th style="padding: 1rem; font-size: 0.9rem; font-weight: 700;">Domestic Tariff (₹/kWh)</th>
-                <th style="padding: 1rem; font-size: 0.9rem; font-weight: 700;">Commercial Tariff (₹/kWh)</th>
-                <th style="padding: 1rem; font-size: 0.9rem; font-weight: 700;">Net-Metering Scheme</th>
+              <tr>
+                <th>State / DISCOM</th>
+                <th>Domestic</th>
+                <th>Commercial</th>
+                <th>Net-Metering</th>
               </tr>
             </thead>
             <tbody>
-              <tr style="background: #F0FDF4; font-weight: 600;">
-                <td style="padding: 1rem; color: #15803D;">Jharkhand (JBVNL / TSUISL)</td>
-                <td style="padding: 1rem;">₹ 6.50 / unit</td>
-                <td style="padding: 1rem;">₹ 8.50 / unit</td>
-                <td style="padding: 1rem;">Active (Bidirectional)</td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--color-border-subtle);">
-                <td style="padding: 1rem;">Bihar (NBPDCL / SBPDCL)</td>
-                <td style="padding: 1rem;">₹ 7.00 / unit</td>
-                <td style="padding: 1rem;">₹ 8.80 / unit</td>
-                <td style="padding: 1rem;">Active</td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--color-border-subtle);">
-                <td style="padding: 1rem;">West Bengal (WBSEDCL / CESC)</td>
-                <td style="padding: 1rem;">₹ 7.20 / unit</td>
-                <td style="padding: 1rem;">₹ 9.20 / unit</td>
-                <td style="padding: 1rem;">Active</td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--color-border-subtle);">
-                <td style="padding: 1rem;">Odisha (TPCODL / TPNODL)</td>
-                <td style="padding: 1rem;">₹ 6.00 / unit</td>
-                <td style="padding: 1rem;">₹ 8.00 / unit</td>
-                <td style="padding: 1rem;">Active</td>
-              </tr>
-              <tr style="border-bottom: 1px solid var(--color-border-subtle);">
-                <td style="padding: 1rem;">Uttar Pradesh (UPPCL)</td>
-                <td style="padding: 1rem;">₹ 7.00 / unit</td>
-                <td style="padding: 1rem;">₹ 9.00 / unit</td>
-                <td style="padding: 1rem;">Active</td>
+              <tr class="tariff-table__highlight">
+                <td data-label="State / DISCOM"><strong>Jharkhand</strong> <span class="tariff-table__sub">JBVNL / TSUISL</span></td>
+                <td data-label="Domestic">₹ 6.50</td>
+                <td data-label="Commercial">₹ 8.50</td>
+                <td data-label="Net-Metering"><span class="tariff-table__status tariff-table__status--active">Active (Bidirectional)</span></td>
               </tr>
               <tr>
-                <td style="padding: 1rem;">Maharashtra (MSEDCL / Tata)</td>
-                <td style="padding: 1rem;">₹ 8.50 / unit</td>
-                <td style="padding: 1rem;">₹ 11.50 / unit</td>
-                <td style="padding: 1rem;">Active</td>
+                <td data-label="State / DISCOM"><strong>Bihar</strong> <span class="tariff-table__sub">NBPDCL / SBPDCL</span></td>
+                <td data-label="Domestic">₹ 7.00</td>
+                <td data-label="Commercial">₹ 8.80</td>
+                <td data-label="Net-Metering"><span class="tariff-table__status tariff-table__status--active">Active</span></td>
+              </tr>
+              <tr>
+                <td data-label="State / DISCOM"><strong>West Bengal</strong> <span class="tariff-table__sub">WBSEDCL / CESC</span></td>
+                <td data-label="Domestic">₹ 7.20</td>
+                <td data-label="Commercial">₹ 9.20</td>
+                <td data-label="Net-Metering"><span class="tariff-table__status tariff-table__status--active">Active</span></td>
+              </tr>
+              <tr>
+                <td data-label="State / DISCOM"><strong>Odisha</strong> <span class="tariff-table__sub">TPCODL / TPNODL</span></td>
+                <td data-label="Domestic">₹ 6.00</td>
+                <td data-label="Commercial">₹ 8.00</td>
+                <td data-label="Net-Metering"><span class="tariff-table__status tariff-table__status--active">Active</span></td>
+              </tr>
+              <tr>
+                <td data-label="State / DISCOM"><strong>Uttar Pradesh</strong> <span class="tariff-table__sub">UPPCL</span></td>
+                <td data-label="Domestic">₹ 7.00</td>
+                <td data-label="Commercial">₹ 9.00</td>
+                <td data-label="Net-Metering"><span class="tariff-table__status tariff-table__status--active">Active</span></td>
+              </tr>
+              <tr>
+                <td data-label="State / DISCOM"><strong>Maharashtra</strong> <span class="tariff-table__sub">MSEDCL / Tata</span></td>
+                <td data-label="Domestic">₹ 8.50</td>
+                <td data-label="Commercial">₹ 11.50</td>
+                <td data-label="Net-Metering"><span class="tariff-table__status tariff-table__status--active">Active</span></td>
               </tr>
             </tbody>
           </table>
@@ -430,11 +458,11 @@
       </div>
     </section>
 
-    <!-- Section 5: Calculator FAQs Accordion -->
+    
     <section class="section">
       <div class="container container--medium">
         <div class="section-header">
-          <span class="badge badge--primary">FREQUENTLY ASKED QUESTIONS</span>
+          <span class="section-overline">FREQUENTLY ASKED QUESTIONS</span>
           <h2>Solar Sizing & Subsidy FAQs</h2>
         </div>
 
@@ -482,12 +510,12 @@
       </div>
     </section>
 
-    <!-- Section 6: Pre-Footer CTA -->
+    
     <section class="section section--compact section--alt">
       <div class="container">
         <div class="cta-banner">
           <div class="cta-banner__content">
-            <span class="badge badge--accent" style="margin-bottom: 1rem;">VALIDATE WITH CERTIFIED ENGINEERS</span>
+            <span class="section-overline">VALIDATE WITH CERTIFIED ENGINEERS</span>
             <h2 class="cta-banner__title">Ready to Verify Your Solar Savings On-Site?</h2>
             <p class="cta-banner__description">
               Book a zero-obligation rooftop site survey with JDC Solar's certified engineers in Adityapur. We prepare an exact 3D shadow report and custom financial proposal.
@@ -506,12 +534,14 @@
 
   </main>
 
-  <!-- Global Footer -->
+  
   <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer-grid">
         <div>
-          <div style="font-size: 1.5rem; font-weight: 800; color: #FFFFFF; margin-bottom: 0.75rem;">JDC <span style="color: var(--color-brand-accent);">SOLAR</span></div>
+          <a href="/" class="footer__brand" aria-label="JDC Solar Homepage" style="display: inline-block; margin-bottom: 0.75rem;">
+            <img src="/assets/brand/logo-full-brand.png" alt="JDC Solar - A Jagatdhan Commodities Pvt. Ltd. Company" width="180" height="180" class="footer__logo-img">
+          </a>
           <p style="font-size: 0.9rem; line-height: 1.6; color: var(--color-text-inverse-muted); margin-bottom: 1.5rem;">A Jagatdhan Commodities Pvt. Ltd. Company. Engineering high-performance rooftop solar across Eastern India.</p>
           <div class="badge badge--accent">Verified MNRE Channel Partner</div>
         </div>
@@ -536,31 +566,54 @@
             <li class="footer__link-item"><a href="/contact/" class="footer__link">Contact Us</a></li>
           </ul>
         </div>
-        <div>
-          <h3 class="footer__column-title">Headquarters</h3>
+                <div>
+          <h3 class="footer__column-title">Regional Offices</h3>
           <div class="footer-contact">
-            <div class="footer-contact__item"><svg class="icon"><use href="/assets/icons/sprite.svg#icon-location"></use></svg><span>A-21, 2nd Phase, Industrial Area, Adityapur, Jamshedpur, Jharkhand 832109</span></div>
-            <div class="footer-contact__item"><svg class="icon"><use href="/assets/icons/sprite.svg#icon-phone"></use></svg><a href="tel:+919234611112">+91 92346 11112</a></div>
-            <div class="footer-contact__item"><svg class="icon"><use href="/assets/icons/sprite.svg#icon-whatsapp"></use></svg><a href="https://wa.me/919288381112" target="_blank" rel="noopener noreferrer">+91 92883 81112 (WhatsApp)</a></div>
-            <div class="footer-contact__item"><svg class="icon"><use href="/assets/icons/sprite.svg#icon-email"></use></svg><a href="mailto:sales@jdcsolar.com">sales@jdcsolar.com</a></div>
+            <div class="footer-branch-list">
+              <div class="footer-branch-item">
+                <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-location"></use></svg>
+                <div><strong>Jharkhand (HQ):</strong> Adityapur, Jamshedpur – 832109</div>
+              </div>
+              <div class="footer-branch-item">
+                <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-location"></use></svg>
+                <div><strong>West Bengal:</strong> Baghajatin Colony, Kolkata – 700092</div>
+              </div>
+              <div class="footer-branch-item">
+                <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-location"></use></svg>
+                <div><strong>Odisha:</strong> Naharakanta, Bhubaneswar – 752101</div>
+              </div>
+            </div>
+            <div class="footer-contact__item">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-phone"></use></svg>
+              <a href="tel:+919288381112">+91 92883 81112</a>
+            </div>
+            <div class="footer-contact__item">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-whatsapp"></use></svg>
+              <a href="https://wa.me/919288381112" target="_blank" rel="noopener noreferrer">+91 92883 81112 (WhatsApp)</a>
+            </div>
+            <div class="footer-contact__item">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-email"></use></svg>
+              <a href="mailto:sales@jdcsolar.com">sales@jdcsolar.com</a>
+            </div>
           </div>
+        </div>
         </div>
       </div>
       <div class="sub-footer">
         <div>© 2026 JDC Solar. A Jagatdhan Commodities Pvt. Ltd. Company. All rights reserved.</div>
-        <div class="sub-footer__legal-links"><a href="/privacy-policy/">Privacy Policy</a><span>•</span><a href="/contact/">Site Survey</a></div>
+        <div class="sub-footer__legal-links"><a href="/privacy-policy/">Privacy Policy</a></div>
       </div>
     </div>
   </footer>
 
-  <!-- Sticky Mobile Action Bar -->
+  
   <aside class="mobile-action-bar" aria-label="Quick Mobile Actions">
-    <a href="tel:+919234611112" class="mobile-action-bar__tile mobile-action-bar__tile--call"><svg class="icon"><use href="/assets/icons/sprite.svg#icon-phone"></use></svg><span>Call Us</span></a>
+    <a href="tel:+919288381112" class="mobile-action-bar__tile mobile-action-bar__tile--call"><svg class="icon"><use href="/assets/icons/sprite.svg#icon-phone"></use></svg><span>Call Us</span></a>
     <a href="https://wa.me/919288381112" class="mobile-action-bar__tile mobile-action-bar__tile--whatsapp" target="_blank" rel="noopener noreferrer"><svg class="icon"><use href="/assets/icons/sprite.svg#icon-whatsapp"></use></svg><span>WhatsApp</span></a>
     <a href="/solar-calculator/" class="mobile-action-bar__tile mobile-action-bar__tile--calc"><svg class="icon"><use href="/assets/icons/sprite.svg#icon-calculator"></use></svg><span>Calculate</span></a>
   </aside>
 
-  <!-- Reusable Accessible Modal Dialog -->
+  
   <dialog id="survey-modal" class="modal-dialog" aria-labelledby="survey-modal-title">
     <div class="modal-dialog__header">
       <h2 id="survey-modal-title" class="modal-dialog__title">Book Free Rooftop Survey</h2>
@@ -590,7 +643,7 @@
     </div>
   </dialog>
 
-  <!-- Application Bootstrap Module -->
+  
   <script type="module" src="/js/main.js"></script>
 </body>
 </html>

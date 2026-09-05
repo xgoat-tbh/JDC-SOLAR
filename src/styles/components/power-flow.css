@@ -1,0 +1,158 @@
+.power-flow-card {
+  box-sizing: border-box;
+  background: var(--color-bg-surface);
+  border: 1.5px solid var(--color-border-default);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-2xl) var(--space-xl);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.power-flow-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.power-flow-mode-selector {
+  display: inline-flex;
+  background: var(--color-bg-surface-sunken);
+  padding: 4px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--color-border-subtle);
+  margin-top: 1rem;
+  gap: 4px;
+}
+
+.power-flow-mode-btn {
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-text-secondary);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  gap: 6px;
+  transition: all var(--duration-fast) ease;
+}
+
+.power-flow-mode-btn:hover {
+  color: var(--color-brand-accent);
+}
+
+.power-flow-mode-btn.is-active {
+  background: var(--color-brand-accent);
+  color: #FFFFFF;
+  box-shadow: var(--shadow-sm);
+}
+
+.power-flow-diagram {
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
+  display: block;
+}
+
+.flow-wire {
+  stroke-dasharray: 8, 8;
+  animation: flowParticle 1s linear infinite;
+}
+
+.flow-wire--reverse {
+  animation: flowParticleReverse 1s linear infinite;
+}
+
+@keyframes flowParticle {
+  from { stroke-dashoffset: 32; }
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes flowParticleReverse {
+  from { stroke-dashoffset: 0; }
+  to { stroke-dashoffset: 32; }
+}
+
+.power-flow-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+@media (max-width: 767px) {
+  .power-flow-metrics {
+    grid-template-columns: 1fr;
+  }
+}
+
+.power-flow-metric-card {
+  background: var(--color-bg-surface-sunken);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 1rem;
+  text-align: center;
+  transition: border-color var(--duration-fast) ease;
+}
+
+.power-flow-metric-card:hover {
+  border-color: var(--color-brand-accent);
+}
+
+.power-flow-metric-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+  margin-bottom: 4px;
+}
+
+.power-flow-metric-val {
+  font-family: var(--font-family-heading);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--color-brand-primary);
+  line-height: 1;
+}
+
+[data-theme="dark"] .power-flow-metric-val {
+  color: #FFFFFF;
+}
+
+.power-flow-metric-status {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #10B981;
+  margin-top: 4px;
+}
+
+@media (max-width: 600px) {
+  .power-flow-card {
+    padding: var(--space-lg) var(--space-md);
+    border-radius: var(--radius-xl);
+  }
+
+  .power-flow-mode-selector {
+    display: flex;
+    width: 100%;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    border-radius: var(--radius-lg);
+  }
+
+  .power-flow-mode-btn {
+    flex: 1 0 auto;
+    font-size: 0.76rem;
+    padding: 6px 10px;
+    white-space: nowrap;
+  }
+}

@@ -1,8 +1,3 @@
-/**
- * JDC SOLAR 2.0 - GLOBAL NAVIGATION CONTROLLER
- * Handles sticky header states, desktop dropdown accessibility, mobile drawer toggle, and focus management
- */
-
 import { qs, qsa } from '../core/dom.js';
 import { throttle } from '../core/events.js';
 
@@ -37,23 +32,49 @@ export class NavigationController {
     }, 100);
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
+    if (typeof requestAnimationFrame === 'function') {
+      requestAnimationFrame(() => {
+        if (window.scrollY > 20) this.header.classList.add('header--scrolled');
+      });
+    }
   }
 
   initMobileDrawer() {
-    if (!this.drawerToggle || !this.drawer) return;
+    this.drawer = this.drawer || qs('.drawer');
+    this.drawerToggle = this.drawerToggle || qs('.header__toggle-btn, [data-drawer-trigger]');
+    this.drawerOverlay = this.drawerOverlay || qs('.drawer-overlay');
 
-    this.drawerToggle.addEventListener('click', () => this.openDrawer());
+    if (!this.drawer) return;
 
-    if (this.drawerClose) {
-      this.drawerClose.addEventListener('click', () => this.closeDrawer());
+    if (this.drawerToggle) {
+      this.drawerToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (this.isDrawerOpen) {
+          this.closeDrawer();
+        } else {
+          this.openDrawer();
+        }
+      });
     }
 
-    if (this.drawerOverlay) {
-      this.drawerOverlay.addEventListener('click', () => this.closeDrawer());
-    }
+    // Delegated close listeners for any [data-drawer-close] or .drawer__close-btn
+    document.addEventListener('click', (e) => {
+      if (e.target && e.target.closest && e.target.closest('[data-drawer-close], .drawer__close-btn')) {
+        e.preventDefault();
+        this.closeDrawer();
+        return;
+      }
+      if (this.isDrawerOpen && e.target && e.target.closest && e.target.closest('.drawer-overlay')) {
+        e.preventDefault();
+        this.closeDrawer();
+        return;
+      }
+      // Auto-close drawer when any navigation link inside drawer is clicked
+      if (this.isDrawerOpen && e.target && e.target.closest && e.target.closest('.drawer a')) {
+        this.closeDrawer();
+      }
+    });
 
-    // Dismiss drawer on Escape key
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && this.isDrawerOpen) {
         this.closeDrawer();
@@ -68,11 +89,12 @@ export class NavigationController {
 
     this.drawer.classList.add('is-active');
     if (this.drawerOverlay) this.drawerOverlay.classList.add('is-active');
+    if (this.drawerToggle) this.drawerToggle.setAttribute('aria-expanded', 'true');
     document.body.style.overflow = 'hidden';
 
-    // Focus close button
-    if (this.drawerClose) {
-      this.drawerClose.focus();
+    const closeBtn = qs('.drawer__close-btn, [data-drawer-close]', this.drawer);
+    if (closeBtn) {
+      closeBtn.focus();
     }
   }
 
@@ -82,26 +104,27 @@ export class NavigationController {
 
     this.drawer.classList.remove('is-active');
     if (this.drawerOverlay) this.drawerOverlay.classList.remove('is-active');
+    if (this.drawerToggle) this.drawerToggle.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
 
-    // Restore focus to toggle button
     if (this.previousFocusedElement && typeof this.previousFocusedElement.focus === 'function') {
       this.previousFocusedElement.focus();
     }
   }
 
   initDesktopDropdowns() {
-    const dropdownItems = qsa('.nav-desktop__item:has(.nav-desktop__dropdown)');
+    const items = qsa('.nav-desktop__item');
     
-    dropdownItems.forEach(item => {
-      const link = qs('.nav-desktop__link', item);
+    items.forEach(item => {
       const dropdown = qs('.nav-desktop__dropdown', item);
-      if (!link || !dropdown) return;
+      if (!dropdown) return;
+      const link = qs('.nav-desktop__link', item);
+      if (!link) return;
 
       link.setAttribute('aria-haspopup', 'true');
       link.setAttribute('aria-expanded', 'false');
 
-      // Expand / collapse on focus and hover
+      
       item.addEventListener('mouseenter', () => link.setAttribute('aria-expanded', 'true'));
       item.addEventListener('mouseleave', () => link.setAttribute('aria-expanded', 'false'));
       item.addEventListener('focusin', () => link.setAttribute('aria-expanded', 'true'));

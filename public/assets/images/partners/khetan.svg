@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 75" width="220" height="75">
+  <!-- Large Red Orbit Ring tilted at -32 deg -->
+  <g transform="translate(110, 30)">
+    <ellipse cx="0" cy="0" rx="38" ry="18" fill="none" stroke="#D32F2F" stroke-width="5" transform="rotate(-32)"/>
+    <!-- Bold Deep Blue K -->
+    <text x="0" y="16" font-family="'Plus Jakarta Sans', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="48" font-weight="900" fill="#1A237E" text-anchor="middle">K</text>
+  </g>
+  
+  <!-- "Khetan®" prominent brand text -->
+  <g transform="translate(110, 71)">
+    <text x="-4" y="0" font-family="'Plus Jakarta Sans', 'Segoe UI', system-ui, -apple-system, sans-serif" font-size="22" font-weight="900" text-anchor="middle">
+      <tspan fill="#D32F2F">K</tspan><tspan fill="#1A237E">hetan</tspan><tspan fill="#1A237E" font-size="13" dy="-8">®</tspan>
+    </text>
+  </g>
+</svg>

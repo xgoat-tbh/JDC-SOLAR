@@ -26,7 +26,7 @@ htmlFiles.forEach(file => {
   let content = fs.readFileSync(file, 'utf8');
   let original = content;
 
-  // 1. Clean document checklist emojis in pm-surya-ghar
+  
   content = content.replace(
     /<div style="font-size: 1\.75rem;">📄<\/div>/g,
     `<div style="width: 44px; height: 44px; border-radius: var(--radius-lg); background: rgba(253, 129, 39, 0.1); border: 1px solid rgba(253, 129, 39, 0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg class="icon" style="width: 22px; height: 22px; color: var(--color-brand-accent);" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-document"></use></svg></div>`
@@ -47,7 +47,7 @@ htmlFiles.forEach(file => {
     `<div style="width: 44px; height: 44px; border-radius: var(--radius-lg); background: rgba(253, 129, 39, 0.1); border: 1px solid rgba(253, 129, 39, 0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg class="icon" style="width: 22px; height: 22px; color: var(--color-brand-accent);" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-home"></use></svg></div>`
   );
 
-  // 2. Clean 📌, 🌐 in pm-surya-ghar
+  
   content = content.replace(
     /<strong>📌 Official Sizing Rule:<\/strong>/g,
     `<strong><svg class="icon" style="width: 15px; height: 15px; color: var(--color-brand-accent); vertical-align: -2px; margin-right: 4px;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-info"></use></svg>Official Sizing Rule:</strong>`
@@ -68,13 +68,13 @@ htmlFiles.forEach(file => {
     `<svg class="icon" style="width: 15px; height: 15px; color: var(--color-brand-accent); margin-right: 4px;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-globe"></use></svg> Jharkhand Bijli Vitran Nigam Ltd (JBVNL)`
   );
 
-  // 3. Clean commercial solar ✔ bullets
+  
   content = content.replace(
     /<li>✔\s*<strong>/g,
     `<li><svg class="icon" style="width: 14px; height: 14px; color: var(--color-status-success); margin-right: 6px; flex-shrink: 0;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg><strong>`
   );
 
-  // 4. Clean residential solar ⚡, 📐, 💰, 🛡️ bullets
+  
   content = content.replace(
     /<li>⚡\s*<strong>Monthly Generation:<\/strong>/g,
     `<li><svg class="icon" style="width: 14px; height: 14px; color: var(--color-brand-accent); margin-right: 6px;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-lightning"></use></svg><strong>Monthly Generation:</strong>`
@@ -95,7 +95,7 @@ htmlFiles.forEach(file => {
     `<li><svg class="icon" style="width: 14px; height: 14px; color: var(--color-brand-accent); margin-right: 6px;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-shield"></use></svg><strong>PM Surya Ghar Subsidy:</strong>`
   );
 
-  // 5. Clean components-preview.html emojis
+  
   content = content.replace(/☀️ A Jagatdhan/g, `A Jagatdhan`);
   content = content.replace(/📞\s*\+91/g, `+91`);
   content = content.replace(/✉️\s*info@/g, `info@`);

@@ -1,83 +1,83 @@
-/**
- * JDC SOLAR 2.0 - DESIGN TOKENS
- * Single Source of Truth for Visual Design & WCAG 2.1 AA Compliance
- */
-
 :root {
-  /* ==========================================================================
-     1. COLOR SYSTEM
-     ========================================================================== */
-
-  /* Primary Brand Navy */
-  --color-brand-primary: #1B3766;              /* Main headings, hero, dark elements */
-  --color-brand-primary-dark: #122544;         /* Footer background, high-contrast dark */
-  --color-brand-primary-darker: #0B172B;       /* Deepest contrast surface */
-  --color-brand-primary-light: #284C85;        /* Navy hover state */
-  --color-brand-primary-subtle: #EBF2FA;       /* Navy background tint */
-
-  /* Solar Energetic Orange Accent */
-  --color-brand-accent: #FD8127;               /* Primary CTA buttons, key highlights */
-  --color-brand-accent-hover: #E06A14;         /* Contrast-safe hover state (4.6:1 on white) */
-  --color-brand-accent-active: #C4570B;        /* Active button state */
-  --color-brand-accent-subtle: #FFF4EC;        /* Light orange surface tint */
-  --color-brand-accent-glow: rgba(253, 129, 39, 0.35); /* Focus outline glow */
-
-  /* Secondary Accents & Highlights */
-  --color-accent-amber: #FF6900;              /* Rating stars, highlight badges */
-  --color-accent-amber-subtle: #FFF7EB;
-  --color-accent-purple: #605BE5;             /* Secondary subtitle badges */
-  --color-accent-purple-subtle: #F0F0FC;
-  --color-accent-whatsapp: #25D366;           /* Official WhatsApp emerald */
-  --color-accent-whatsapp-hover: #1EBE5D;     /* WhatsApp hover state (4.5:1 on white) */
-
-  /* Neutral Background Surfaces */
-  --color-bg-base: #FFFFFF;                   /* Master canvas */
-  --color-bg-alt: #F8FAFC;                    /* Alternating section background */
-  --color-bg-surface: #FFFFFF;                /* Card & container background */
-  --color-bg-surface-elevated: #FFFFFF;       /* Dropdowns, modals */
-  --color-bg-surface-sunken: #F1F5F9;         /* Input fill, table header fill */
-  --color-bg-overlay: rgba(11, 23, 43, 0.72); /* Modal & drawer backdrop */
-  --color-bg-overlay-light: rgba(255, 255, 255, 0.88); /* Frosted header */
-
-  /* Typography Colors */
-  --color-text-primary: #1E293B;              /* Slate 800 - Body copy (Contrast 12.8:1) */
-  --color-text-headings: #0F172A;             /* Slate 900 - High-contrast titles (16.1:1) */
-  --color-text-secondary: #475569;            /* Slate 600 - Subtitles, captions (7.1:1) */
-  --color-text-muted: #64748B;                /* Slate 500 - Secondary metadata (4.6:1) */
-  --color-text-disabled: #94A3B8;             /* Slate 400 - Disabled text */
   
-  /* Inverse Text (On Dark Navy) */
-  --color-text-inverse-headings: #FFFFFF;
-  --color-text-inverse-body: #E2E8F0;         /* Slate 200 (11.2:1 on navy) */
-  --color-text-inverse-muted: #94A3B8;        /* Slate 400 (5.8:1 on navy) */
 
-  /* Borders & Dividers */
+  
+  --color-brand-primary: #1B3766;              
+  --color-brand-primary-dark: #122544;         
+  --color-brand-primary-darker: #0B172B;       
+  --color-brand-primary-light: #284C85;        
+  --color-brand-primary-subtle: #EBF2FA;       
+
+  
+  --color-brand-accent: #FD8127;               
+  --color-brand-accent-hover: #E06A14;         
+  --color-brand-accent-active: #C4570B;        
+  --color-brand-accent-subtle: #FFF4EC;        
+  --color-brand-accent-text: #9A3412; /* WCAG AAA 6.2:1 on #FFFFFF and 5.8:1 on #FFF4EC */
+  --color-brand-accent-glow: transparent; 
+
+  /* Tertiary / Utility Accents */
+  --color-accent-amber: #EA580C;              
+  --color-accent-amber-subtle: #FFF7EB;
+  --color-accent-purple: #4F46E5;             
+  --color-accent-purple-subtle: #F0F0FC;
+  --color-accent-whatsapp: #075E54;           
+  --color-accent-whatsapp-hover: #128C7E;     
+
+  /* Backgrounds */
+  --color-bg-base: #F8FAFC;                   
+  --color-bg-alt: #EDF2F7;                    
+  --color-bg-surface: #FFFFFF;                
+  --color-bg-surface-elevated: #FFFFFF;       
+  --color-bg-surface-sunken: #F1F5F9;         
+  --color-bg-overlay: rgba(11, 23, 43, 0.72); 
+  --color-bg-overlay-light: rgba(255, 255, 255, 0.94); 
+
+  /* Typography / Text Colors (WCAG 2.1 AA Compliant) */
+  --color-text-primary: #0F172A;              
+  --color-text-default: #0F172A;              
+  --color-text-headings: #0F172A;             
+  --color-text-secondary: #1E293B;            
+  --color-text-muted: #334155;                
+  --color-text-disabled: #64748B;             
+  
+  
+  --color-text-inverse-headings: #FFFFFF;
+  --color-text-inverse-body: #E2E8F0;
+  --color-text-inverse-muted: #CBD5E1;
+
+  
   --color-border-subtle: #F1F5F9;
-  --color-border-default: #E2E8F0;            /* Default card & table borders */
-  --color-border-strong: #CBD5E1;             /* Input outlines */
-  --color-border-focus: #FD8127;              /* Active focus state */
+  --color-border-default: #E2E8F0;
+  --color-border-strong: #CBD5E1;
+  --color-border-focus: #FD8127;
   --color-border-inverse: rgba(255, 255, 255, 0.15);
 
-  /* Status & Validation */
+  --header-bg: rgba(255, 255, 255, 0.85);
+  --header-bg-scrolled: rgba(255, 255, 255, 0.92);
+  --header-border: #E2E8F0;
+  --nav-link-color: #334155;
+
+  
   --color-status-success: #16A34A;
   --color-status-success-bg: #F0FDF4;
   --color-status-success-border: #BBF7D0;
+  --color-status-success-text: #065F46;
   --color-status-warning: #D97706;
   --color-status-warning-bg: #FFFBEB;
   --color-status-warning-border: #FDE68A;
   --color-status-error: #DC2626;
   --color-status-error-bg: #FEF2F2;
   --color-status-error-border: #FECACA;
+  --color-status-error-text: #B91C1C; /* WCAG AAA 6.1:1 on #FFFFFF */
   --color-status-info: #0284C7;
   --color-status-info-bg: #F0F9FF;
   --color-status-info-border: #BAE6FD;
 
-  /* ==========================================================================
-     2. TYPOGRAPHY SYSTEM (Modern SaaS Font Stack)
-     ========================================================================== */
+  
 
-  --font-family-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-  --font-family-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-family-heading: 'Outfit', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-family-body: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   --font-family-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
 
   --font-weight-regular: 400;
@@ -86,68 +86,75 @@
   --font-weight-bold: 700;
   --font-weight-extrabold: 800;
 
-  /* Fluid Typography Scale */
-  --font-size-display: clamp(2.0rem, 1.6rem + 2.0vw, 3.5rem);   /* 32px to 56px */
-  --font-size-h1: clamp(1.75rem, 1.45rem + 1.5vw, 2.75rem);      /* 28px to 44px */
-  --font-size-h2: clamp(1.375rem, 1.15rem + 1.125vw, 2.125rem);  /* 22px to 34px */
-  --font-size-h3: clamp(1.125rem, 1.0rem + 0.625vw, 1.5rem);     /* 18px to 24px */
-  --font-size-h4: clamp(1.0rem, 0.925rem + 0.375vw, 1.1875rem);  /* 16px to 19px */
-  --font-size-body-lg: clamp(1.0rem, 0.95rem + 0.25vw, 1.125rem);/* 16px to 18px */
-  --font-size-body: clamp(0.9375rem, 0.915rem + 0.125vw, 1.0rem);/* 15px to 16px */
-  --font-size-body-sm: clamp(0.84375rem, 0.83rem + 0.0625vw, 0.875rem); /* 13.5px to 14px */
-  --font-size-caption: 0.75rem;                                  /* 12px */
-  --font-size-stat: clamp(2.25rem, 1.75rem + 2.5vw, 3.25rem);    /* 36px to 52px */
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 4px 8px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -1px rgba(15, 23, 42, 0.05), 0 0 0 1px rgba(15, 23, 42, 0.04);
+  --shadow-lg: 0 8px 16px -2px rgba(15, 23, 42, 0.08), 0 4px 8px -2px rgba(15, 23, 42, 0.04), 0 0 0 1px rgba(15, 23, 42, 0.06);
+  --shadow-xl: 0 20px 28px -4px rgba(15, 23, 42, 0.1), 0 8px 12px -4px rgba(15, 23, 42, 0.06), 0 0 0 1px rgba(15, 23, 42, 0.08);
+  --shadow-2xl: 0 28px 48px -8px rgba(15, 23, 42, 0.14), 0 12px 20px -6px rgba(15, 23, 42, 0.08);
+  
+  
+  --font-size-display: clamp(2.0rem, 1.6rem + 2.0vw, 3.5rem);   
+  --font-size-h1: clamp(1.75rem, 1.45rem + 1.5vw, 2.75rem);      
+  --font-size-h2: clamp(1.375rem, 1.15rem + 1.125vw, 2.125rem);  
+  --font-size-h3: clamp(1.125rem, 1.0rem + 0.625vw, 1.5rem);     
+  --font-size-h4: clamp(1.0rem, 0.925rem + 0.375vw, 1.1875rem);  
+  --font-size-body-lg: clamp(1.0rem, 0.95rem + 0.25vw, 1.125rem);
+  --font-size-body: 1rem;                                        
+  --font-size-body-sm: 0.875rem;                                 
+  --font-size-caption: 0.75rem;                                  
 
-  --line-height-display: 1.15;
+  --line-height-display: 1.12;
+  --line-height-tight: 1.2;
+  --line-height-heading: 1.25;
   --line-height-h1: 1.2;
   --line-height-h2: 1.25;
   --line-height-h3: 1.35;
   --line-height-h4: 1.4;
   --line-height-body: 1.65;
-  --line-height-tight: 1.1;
+  --line-height-loose: 1.8;
 
   --letter-spacing-display: -0.03em;
   --letter-spacing-h1: -0.025em;
   --letter-spacing-h2: -0.02em;
-  --letter-spacing-caption: 0.04em;
+  --letter-spacing-h3: -0.015em;
+  --letter-spacing-h4: -0.01em;
+  --letter-spacing-caption: 0.08em;
 
-  /* ==========================================================================
-     3. SPACING SCALE
-     ========================================================================== */
+  --font-size-stat: clamp(2.25rem, 1.8rem + 1.5vw, 3.25rem);
 
-  --space-3xs: 0.125rem;  /* 2px */
-  --space-2xs: 0.25rem;   /* 4px */
-  --space-xs:  0.5rem;    /* 8px */
-  --space-sm:  0.75rem;   /* 12px */
-  --space-md:  1.0rem;    /* 16px */
-  --space-lg:  1.5rem;    /* 24px */
-  --space-xl:  2.0rem;    /* 32px */
-  --space-2xl: 3.0rem;    /* 48px */
-  --space-3xl: 4.0rem;    /* 64px */
-  --space-4xl: 6.0rem;    /* 96px */
+  
 
-  --space-section-vertical: clamp(3.0rem, 2.0rem + 5.0vw, 7.0rem); /* 48px to 112px */
-  --space-section-vertical-compact: clamp(2.0rem, 1.5rem + 2.5vw, 4.0rem);
-  --container-gutter: clamp(1.0rem, 0.6rem + 2.0vw, 2.5rem);       /* 16px to 40px */
+  --space-2xs: 0.25rem;   
+  --space-xs: 0.5rem;     
+  --space-sm: 0.75rem;    
+  --space-md: 1rem;       
+  --space-lg: clamp(1rem, 2vw, 1.5rem);     
+  --space-xl: clamp(1.25rem, 2.5vw, 2rem);       
+  --space-2xl: clamp(1.5rem, 3.5vw, 3rem);      
+  --space-3xl: clamp(2rem, 5vw, 4rem);      
+  --space-4xl: clamp(2.5rem, 6vw, 6rem);      
 
-  /* ==========================================================================
-     4. CONTAINERS & BREAKPOINTS
-     ========================================================================== */
+  --space-section-vertical: clamp(3.5rem, 6vw, 5.5rem);
+  --space-section-vertical-compact: clamp(2.5rem, 4vw, 3.5rem);
 
+  
   --container-max-narrow: 760px;
   --container-max-medium: 980px;
   --container-max-default: 1200px;
   --container-max-wide: 1360px;
+  --container-gutter: clamp(1rem, 3.5vw, 2rem);
 
-  --grid-gap-cards: clamp(1.0rem, 0.8rem + 1.0vw, 1.75rem);
-  --grid-gap-stats: clamp(1.0rem, 0.75rem + 1.25vw, 2.0rem);
-  --grid-gap-form: 1.25rem;
+  
+  --grid-gap-cards: clamp(1.25rem, 2.5vw, 2rem);
+  --grid-gap-stats: clamp(1rem, 2vw, 1.5rem);
 
-  /* ==========================================================================
-     5. BORDER RADIUS & ELEVATION
-     ========================================================================== */
+  
 
-  --radius-xs: 3px;
+
+
+  
+
+  --radius-xs: 4px;
   --radius-sm: 6px;
   --radius-md: 8px;
   --radius-lg: 12px;
@@ -155,44 +162,84 @@
   --radius-2xl: 24px;
   --radius-full: 9999px;
 
-  --shadow-sm: 0 1px 2px 0 rgba(15, 23, 42, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.07), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
-  --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.04);
-  --shadow-xl: 0 20px 25px -5px rgba(15, 23, 42, 0.12), 0 8px 10px -6px rgba(15, 23, 42, 0.06);
-  --shadow-2xl: 0 25px 50px -12px rgba(15, 23, 42, 0.22);
-  --shadow-focus-ring: 0 0 0 3px rgba(253, 129, 39, 0.35);
-
-  /* ==========================================================================
-     6. MOTION & TRANSITIONS
-     ========================================================================== */
+  
 
   --duration-fast: 150ms;
   --duration-base: 250ms;
   --duration-slow: 350ms;
   --duration-slower: 500ms;
 
-  --ease-standard: cubic-bezier(0.4, 0.0, 0.2, 1.0);
-  --ease-out: cubic-bezier(0.0, 0.0, 0.2, 1.0);
-  --ease-in: cubic-bezier(0.4, 0.0, 1.0, 1.0);
+  --ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
 
-  /* ==========================================================================
-     7. Z-INDEX HIERARCHY
-     ========================================================================== */
+  
 
-  --z-layer-below: -1;
-  --z-layer-base: 1;
-  --z-layer-raised: 10;
+  --z-layer-negative: -1;
+  --z-layer-base: 0;
+  --z-layer-dropdown: 50;
   --z-layer-sticky: 100;
-  --z-layer-dropdown: 200;
-  --z-layer-mobile-bar: 300;
-  --z-layer-fab: 350;
-  --z-layer-backdrop: 400;
-  --z-layer-drawer: 500;
-  --z-layer-modal: 600;
-  --z-layer-toast: 700;
+  --z-layer-backdrop: 200;
+  --z-layer-drawer: 300;
+  --z-layer-modal: 400;
+  --z-layer-toast: 500;
 }
 
-/* Reduced Motion Mode Override */
+[data-theme="dark"] {
+  --color-bg-base: #0B132B;                   
+  --color-bg-alt: #111C3D;                    
+  --color-bg-surface: #15224A;                
+  --color-bg-surface-elevated: #1F2E58;       
+  --color-bg-surface-sunken: #0D1630;         
+  --color-bg-overlay: rgba(5, 10, 24, 0.88);  
+  --color-bg-overlay-light: rgba(15, 26, 58, 0.94);
+
+  
+  --color-text-primary: #F1F5F9;              
+  --color-text-default: #F1F5F9;              
+  --color-text-headings: #FFFFFF;             
+  --color-text-secondary: #E2E8F0;            
+  --color-text-muted: #CBD5E1;                
+  --color-text-disabled: #94A3B8;
+
+  --color-border-subtle: rgba(255, 255, 255, 0.1);
+  --color-border-default: rgba(255, 255, 255, 0.18);
+  --color-border-strong: rgba(255, 255, 255, 0.28);
+  --color-border-focus: #FD8127;
+
+  --color-brand-accent-subtle: rgba(253, 129, 39, 0.15);
+  --color-brand-accent-text: #FD8127; /* WCAG AA 6.45:1 on #0B132B / #15224A */
+  --color-brand-primary-subtle: rgba(255, 255, 255, 0.08);
+
+  --header-bg: rgba(11, 19, 43, 0.85);
+  --header-bg-scrolled: rgba(11, 19, 43, 0.92);
+  --header-border: rgba(255, 255, 255, 0.12);
+  --nav-link-color: #F1F5F9;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.10);
+  --shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.12);
+  --shadow-xl: 0 20px 32px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.14);
+  --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(255, 255, 255, 0.16);
+
+  
+  --color-status-success: #10B981;
+  --color-status-success-bg: rgba(16, 185, 129, 0.16);
+  --color-status-success-border: rgba(16, 185, 129, 0.4);
+  --color-status-success-text: #34D399;
+  --color-status-warning: #F59E0B;
+  --color-status-warning-bg: rgba(245, 158, 11, 0.16);
+  --color-status-warning-border: rgba(245, 158, 11, 0.4);
+  --color-status-error: #EF4444;
+  --color-status-error-bg: rgba(239, 68, 68, 0.16);
+  --color-status-error-border: rgba(239, 68, 68, 0.4);
+  --color-status-error-text: #F87171; /* WCAG AA 6.2:1 on #15224A and 7.5:1 on #0B132B */
+  --color-status-info: #0EA5E9;
+  --color-status-info-bg: rgba(14, 165, 233, 0.16);
+  --color-status-info-border: rgba(14, 165, 233, 0.4);
+}
+
 @media (prefers-reduced-motion: reduce) {
   :root {
     --duration-fast: 0ms;

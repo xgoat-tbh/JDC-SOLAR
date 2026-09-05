@@ -1,0 +1,167 @@
+.regional-offices-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+  margin-top: var(--space-xl);
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .regional-offices-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .regional-office-card:nth-child(3):last-child {
+    grid-column: 1 / -1;
+    max-width: 560px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .regional-offices-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-xl);
+  }
+}
+
+.regional-office-card {
+  box-sizing: border-box;
+  background-color: var(--color-bg-surface);
+  border: 1.5px solid var(--color-border-default);
+  border-radius: var(--radius-xl);
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--duration-fast) ease,
+              border-color var(--duration-fast) ease,
+              box-shadow var(--duration-fast) ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.regional-office-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-brand-accent);
+  box-shadow: var(--shadow-md);
+}
+
+.regional-office-card__badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 8px;
+  border-radius: var(--radius-full);
+  background: var(--color-bg-surface-sunken);
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border-subtle);
+}
+
+.regional-office-card--hq .regional-office-card__badge {
+  background: rgba(253, 129, 39, 0.12);
+  color: var(--color-brand-accent);
+  border-color: rgba(253, 129, 39, 0.3);
+}
+
+.regional-office-card__header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: var(--space-md);
+}
+
+.regional-office-card__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-lg);
+  background: rgba(253, 129, 39, 0.1);
+  border: 1px solid rgba(253, 129, 39, 0.25);
+  color: var(--color-brand-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.regional-office-card__icon .icon {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+.regional-office-card__state {
+  font-size: 1.15rem;
+  font-weight: 800;
+  font-family: var(--font-family-heading);
+  color: var(--color-text-headings);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0;
+  position: relative;
+  display: inline-block;
+}
+
+.regional-office-card__state::after {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 2.5px;
+  background: var(--color-brand-accent);
+  border-radius: 2px;
+  margin-top: 4px;
+}
+
+.regional-office-card__address {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-md);
+  flex-grow: 1;
+}
+
+.regional-office-card__coverage {
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  line-height: 1.45;
+  background: var(--color-bg-surface-sunken);
+  padding: 8px 12px;
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-md);
+  border: 1px solid var(--color-border-subtle);
+}
+
+.regional-office-card__actions {
+  margin-top: auto;
+  padding-top: var(--space-sm);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.regional-office-card__link {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-brand-accent);
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  gap: 6px;
+  text-decoration: none;
+  transition: transform var(--duration-fast) ease;
+}
+
+.regional-office-card__link:hover {
+  transform: translateX(3px);
+  text-decoration: underline;
+}
+
+.regional-office-card__link .icon {
+  width: 14px;
+  height: 14px;
+}

@@ -1,0 +1,299 @@
+---
+// src/pages/resources/index.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const resourcesSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://jdcsolar.com/resources/#webpage",
+      "url": "https://jdcsolar.com/resources/",
+      "name": "Solar Resources & Knowledge Hub | JDC Solar",
+      "description": "Comprehensive collection of technical solar guides, maintenance standards, and commercial financial insights.",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://jdcsolar.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Resources", "item": "https://jdcsolar.com/resources/" }
+        ]
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title="Solar Resources, Technical Guides & FAQs | JDC Solar"
+  description="Explore expert solar guides, net-metering explanations, PM Surya Ghar subsidy manuals, maintenance checklists, and commercial tax benefit insights from JDC Solar."
+  canonical="https://jdcsolar.com/resources/"
+  activeNav="resources"
+  schema={resourcesSchema}
+>
+
+    
+    <section class="page-hero page-hero--resources" aria-label="Solar Knowledge Hub">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumbs">
+          <ol class="breadcrumb__list">
+          <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">Home</a></li>
+          <li class="breadcrumb__separator" aria-hidden="true">/</li>
+          <li class="breadcrumb__item" aria-current="page">Resources</li>
+        </ol>
+        </nav>
+
+        <div class="page-hero__badge">
+          <div class="section-tag section-tag--accent">Solar Knowledge Hub</div>
+        </div>
+        <h1 class="display-title page-hero__title">
+          Solar Resources, Technical Guides & Knowledge Base
+        </h1>
+        <p class="lead page-hero__lead">
+          Demystifying rooftop solar engineering, net-metering economics, PM Surya Ghar subsidies, and plant maintenance for property owners in Eastern India.
+        </p>
+        <div class="page-hero__chips">
+          <div class="page-hero__chip">
+            <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+            <span>Technical EPC Guides</span>
+          </div>
+          <div class="page-hero__chip">
+            <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+            <span>Government Policy Updates</span>
+          </div>
+          <div class="page-hero__chip">
+            <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+            <span>Downloadable PDF Checklists</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="section section--alt" style="padding-top: 2rem;">
+      <div class="container">
+        
+        <div style="background: var(--color-bg-surface); border: 1px solid var(--color-border-default); border-radius: var(--radius-xl); padding: var(--space-xl); margin-bottom: 2rem; box-shadow: var(--shadow-sm);">
+          <div class="grid grid--2col" style="align-items: center; gap: 1.5rem;">
+            <div>
+              <label class="form-label" for="resource-search-input">Search Guides & Technical Topics</label>
+              <input type="text" id="resource-search-input" class="form-control" placeholder="e.g. Net-metering, cleaning, tax depreciation, subsidy...">
+            </div>
+            <div>
+              <label class="form-label">Filter by Topic</label>
+              <div class="flex gap-xs" style="flex-wrap: wrap;" role="group" aria-label="Filter Resources by Category">
+                <button type="button" class="filter-pill resource-filter-pill filter-pill--active" data-filter="all" aria-pressed="true">All Resources</button>
+                <button type="button" class="filter-pill resource-filter-pill" data-filter="basics" aria-pressed="false">Solar Basics</button>
+                <button type="button" class="filter-pill resource-filter-pill" data-filter="maintenance" aria-pressed="false">Maintenance & O&M</button>
+                <button type="button" class="filter-pill resource-filter-pill" data-filter="commercial" aria-pressed="false">Commercial & Tax</button>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top: 1rem; display: flex; justify-content: flex-end;">
+            <span id="resource-count-badge" class="badge badge--outline" aria-live="polite">3 Guides</span>
+          </div>
+        </div>
+
+        
+        <div id="resources-grid" class="grid grid--3col">
+          
+          
+          <article class="card card-resource" data-category="basics" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <span class="badge badge--primary">Solar Basics</span>
+                <span class="text-small text-muted">5 min read</span>
+              </div>
+              <h2 class="card-resource__title" style="font-size: 1.25rem; margin-bottom: 0.75rem;">
+                <a href="/resources/how-solar-rooftop-works/" style="color: var(--color-brand-accent-text, #C25E00);">How Rooftop Solar Works: Net-Metering, Inverters & Grid Synchronization</a>
+              </h2>
+              <p class="card-resource__summary text-small text-muted" style="line-height: 1.6; margin-bottom: 1.5rem;">
+                Understand how photovoltaic cells convert sunlight into DC electricity, how inverters synchronize with the grid, and how bidirectional net-meters reduce power bills.
+              </p>
+            </div>
+            <div>
+              <a href="/resources/how-solar-rooftop-works/" class="btn btn--secondary btn--block btn--sm">Read Complete Guide →</a>
+            </div>
+          </article>
+
+          
+          <article class="card card-resource" data-category="maintenance" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <div class="section-tag section-tag--accent">Maintenance & O&M</div>
+                <span class="text-small text-muted">6 min read</span>
+              </div>
+              <h2 class="card-resource__title" style="font-size: 1.25rem; margin-bottom: 0.75rem;">
+                <a href="/resources/solar-maintenance-guide/" style="color: var(--color-brand-accent-text, #C25E00);">Solar Panel Maintenance & Cleaning: Preventive Care for Maximum Generation</a>
+              </h2>
+              <p class="card-resource__summary text-small text-muted" style="line-height: 1.6; margin-bottom: 1.5rem;">
+                Learn recommended cleaning cycles, water quality standards, thermal hotspot inspection, and inverter health monitoring to safeguard your 25-year solar investment.
+              </p>
+            </div>
+            <div>
+              <a href="/resources/solar-maintenance-guide/" class="btn btn--secondary btn--block btn--sm">Read Complete Guide →</a>
+            </div>
+          </article>
+
+          
+          <article class="card card-resource" data-category="commercial" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <span class="badge badge--success">Commercial & Tax</span>
+                <span class="text-small text-muted">7 min read</span>
+              </div>
+              <h2 class="card-resource__title" style="font-size: 1.25rem; margin-bottom: 0.75rem;">
+                <a href="/resources/commercial-solar-tax-benefits/" style="color: var(--color-brand-accent-text, #C25E00);">Section 32 Accelerated Depreciation: 40% Year-1 Tax Shield for Businesses</a>
+              </h2>
+              <p class="card-resource__summary text-small text-muted" style="line-height: 1.6; margin-bottom: 1.5rem;">
+                A comprehensive financial guide on how Indian corporate and commercial entities can claim 40% accelerated depreciation to write off solar capital costs in Year 1.
+              </p>
+            </div>
+            <div>
+              <a href="/resources/commercial-solar-tax-benefits/" class="btn btn--secondary btn--block btn--sm">Read Complete Guide →</a>
+            </div>
+          </article>
+
+        </div>
+
+        
+        <div id="resources-empty-state" class="empty-state hidden" style="background: var(--color-bg-surface); border: 1px dashed var(--color-border-default); border-radius: var(--radius-xl); padding: var(--space-2xl); text-align: center; margin-top: 1.5rem;">
+          <h2 style="font-size: 1.35rem; margin-bottom: 0.5rem;">No Guides Match Your Search</h2>
+          <p class="text-small text-muted" style="max-width: 450px; margin: 0 auto 1.5rem auto;">Try clearing your search query or selecting another category.</p>
+          <button type="button" id="reset-resource-filters" class="btn btn--secondary">Reset All Filters</button>
+        </div>
+
+      </div>
+    </section>
+
+    
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag section-tag--accent">TECHNICAL DOWNLOADS</div>
+          <h2>Downloadable Solar Guides & Checklists</h2>
+          <p class="lead">Free engineering documentation and subsidy compliance materials.</p>
+        </div>
+
+        <div class="grid grid--2col">
+          <div class="card" style="display: flex; justify-content: space-between; align-items: center; gap: 1.5rem;">
+            <div>
+              <span class="badge badge--outline" style="margin-bottom: 0.5rem;">PDF Document • 2.4 MB</span>
+              <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">JDC Solar Corporate Capability Deck</h3>
+              <p class="text-small text-muted">Comprehensive engineering portfolio, EPC credentials, Tier-1 component certifications, and client case studies.</p>
+            </div>
+            <div>
+              <a href="/assets/docs/jdc-solar-company-brochure.pdf" class="btn btn--primary btn--sm" download>Download PDF ↓</a>
+            </div>
+          </div>
+
+          <div class="card" style="display: flex; justify-content: space-between; align-items: center; gap: 1.5rem;">
+            <div>
+              <span class="badge badge--outline" style="margin-bottom: 0.5rem;">PDF Document • 1.1 MB</span>
+              <h3 style="font-size: 1.15rem; margin-bottom: 0.5rem;">PM Surya Ghar Registration Checklist</h3>
+              <p class="text-small text-muted">Official step-by-step document guide and consumer number verification checklist for claiming up to ₹78,000 central subsidy.</p>
+            </div>
+            <div>
+              <a href="/assets/docs/pm-surya-ghar-checklist.pdf" class="btn btn--primary btn--sm" download>Download PDF ↓</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="section section--alt">
+      <div class="container container--medium">
+        <div class="section-header">
+          <span class="section-overline">FREQUENTLY ASKED QUESTIONS</span>
+          <h2>Solar Knowledge Base & FAQs</h2>
+        </div>
+
+        <div class="accordion-group" data-single-expand="true">
+          
+          <details class="accordion-item" open>
+            <summary class="accordion-summary">
+              <span>Is my rooftop suitable for solar panel installation?</span>
+              <span class="accordion-summary__icon" aria-hidden="true"><svg class="icon"><use href="/assets/icons/sprite.svg#icon-chevron-down"></use></svg></span>
+            </summary>
+            <div class="accordion-content">
+              <p>Most RCC concrete, tin shed, or industrial curved roofs with unobstructed access and south/south-west exposure are suitable. Each 1 kW capacity requires approximately 100 sq.ft of shadow-free rooftop area. JDC Solar conducts a complimentary 3D shadow analysis to confirm structural integrity.</p>
+            </div>
+          </details>
+
+          <details class="accordion-item">
+            <summary class="accordion-summary">
+              <span>What is the expected lifespan and warranty of a solar power plant?</span>
+              <span class="accordion-summary__icon" aria-hidden="true"><svg class="icon"><use href="/assets/icons/sprite.svg#icon-chevron-down"></use></svg></span>
+            </summary>
+            <div class="accordion-content">
+              <p>Tier-1 Mono PERC and TOPCon solar modules carry a 25-to-30-year linear power output warranty (guaranteeing at least 80–85% efficiency at Year 25). Solar grid-tie inverters generally carry a 5-to-10-year OEM warranty and have an operational lifespan of 10–15 years.</p>
+            </div>
+          </details>
+
+          <details class="accordion-item">
+            <summary class="accordion-summary">
+              <span>How much subsidy is available under PM Surya Ghar Yojana?</span>
+              <span class="accordion-summary__icon" aria-hidden="true"><svg class="icon"><use href="/assets/icons/sprite.svg#icon-chevron-down"></use></svg></span>
+            </summary>
+            <div class="accordion-content">
+              <p>Under the PM Surya Ghar: Muft Bijli Yojana, individual residential homeowners receive ₹30,000 for 1 kW, ₹60,000 for 2 kW, and a maximum capped central subsidy of ₹78,000 for systems 3 kW or larger. The subsidy is deposited directly into the consumer's bank account via DBT.</p>
+            </div>
+          </details>
+
+          <details class="accordion-item">
+            <summary class="accordion-summary">
+              <span>What is bidirectional net-metering and how does it adjust electricity bills?</span>
+              <span class="accordion-summary__icon" aria-hidden="true"><svg class="icon"><use href="/assets/icons/sprite.svg#icon-chevron-down"></use></svg></span>
+            </summary>
+            <div class="accordion-content">
+              <p>A bidirectional net-meter measures both electricity imported from the DISCOM grid and surplus solar power exported into the grid. At the end of each billing cycle, you only pay for 'Net Units' (Import minus Export). Surplus units are credited forward into subsequent billing cycles.</p>
+            </div>
+          </details>
+
+          <details class="accordion-item">
+            <summary class="accordion-summary">
+              <span>Can commercial enterprises and factories claim tax depreciation on solar?</span>
+              <span class="accordion-summary__icon" aria-hidden="true"><svg class="icon"><use href="/assets/icons/sprite.svg#icon-chevron-down"></use></svg></span>
+            </summary>
+            <div class="accordion-content">
+              <p>Yes. Under Section 32 of the Indian Income Tax Act, commercial and industrial enterprises can claim 40% Accelerated Depreciation in Year 1 on solar energy equipment, allowing businesses to significantly lower their taxable profits and shorten ROI to 3–4 years.</p>
+            </div>
+          </details>
+
+          <details class="accordion-item">
+            <summary class="accordion-summary">
+              <span>Does an on-grid solar system work during a grid power outage?</span>
+              <span class="accordion-summary__icon" aria-hidden="true"><svg class="icon"><use href="/assets/icons/sprite.svg#icon-chevron-down"></use></svg></span>
+            </summary>
+            <div class="accordion-content">
+              <p>Standard on-grid solar inverters feature built-in anti-islanding safety protection that automatically shuts down power generation during a grid blackout to protect utility linesmen working on the grid. If uninterrupted power during blackouts is required, a Hybrid Solar System with lithium battery storage or DG-synchronization controller is recommended.</p>
+            </div>
+          </details>
+
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="section section--compact">
+      <div class="container">
+        <div class="cta-banner">
+          <div class="cta-banner__content">
+            <span class="section-overline">GET EXPERT GUIDANCE</span>
+            <h2 class="cta-banner__title">Have Technical Questions About Solar for Your Property?</h2>
+            <p class="cta-banner__description">
+              Talk directly with JDC Solar's certified electrical engineers in Adityapur for free technical advice, shadow assessment, and custom ROI modeling.
+            </p>
+            <div class="cta-banner__actions">
+              <button type="button" class="btn btn--primary btn--lg" data-modal-open="survey-modal">Book Free Site Survey →</button>
+              <a href="https://wa.me/919288381112" class="btn btn--whatsapp btn--lg" target="_blank" rel="noopener noreferrer">
+                <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-whatsapp"></use></svg>
+                Chat on WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+</BaseLayout>

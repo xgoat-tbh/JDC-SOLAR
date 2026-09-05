@@ -1,0 +1,213 @@
+---
+// src/pages/services/residential-solar/index.astro
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const residentialSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Residential Rooftop Solar Installation | JDC Solar",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "JDC Solar"
+  },
+  "serviceType": "Residential Solar EPC",
+  "areaServed": "Jharkhand"
+};
+---
+
+<BaseLayout
+  title="Residential Rooftop Solar Jharkhand | PM Surya Ghar ₹78k Subsidy | JDC Solar"
+  description="High-efficiency rooftop solar for independent homes and villas in Jharkhand. Claim up to ₹78,000 PM Surya Ghar subsidy with JBVNL bidirectional net-metering."
+  canonical="https://jdcsolar.com/services/residential-solar/"
+  activeNav="services"
+  schema={residentialSchema}
+>
+  <section class="page-hero page-hero--surya-ghar" aria-label="Residential Rooftop Solar">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumbs">
+        <ol class="breadcrumb__list">
+          <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">Home</a></li>
+          <li class="breadcrumb__separator" aria-hidden="true">/</li>
+          <li class="breadcrumb__item"><a href="/services/" class="breadcrumb__link">Services</a></li>
+          <li class="breadcrumb__separator" aria-hidden="true">/</li>
+          <li class="breadcrumb__item" aria-current="page">Residential Rooftop Solar</li>
+        </ol>
+      </nav>
+
+      <div class="page-hero__badge">
+        <div class="section-tag section-tag--accent">Residential Rooftop Solar</div>
+      </div>
+      <h1 class="display-title page-hero__title">
+        Residential Rooftop Solar &amp; PM Surya Ghar Subsidy
+      </h1>
+      <p class="lead page-hero__lead">
+        Transform your home roof into a power plant. Eliminate 90% of your monthly electricity bill with ₹78,000 direct central government subsidy and seamless JBVNL net-metering.
+      </p>
+      <div class="page-hero__chips">
+        <div class="page-hero__chip">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+          <span>₹78,000 PM Surya Ghar Subsidy</span>
+        </div>
+        <div class="page-hero__chip">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+          <span>Direct JBVNL Net-Metering</span>
+        </div>
+        <div class="page-hero__chip">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+          <span>Up to 90% Bill Reduction</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Subsidy Slabs Table -->
+  <section class="section section--alt">
+    <div class="container container--medium">
+      <div class="section-header">
+        <span class="section-overline">CENTRAL FINANCIAL ASSISTANCE</span>
+        <h2>PM Surya Ghar: Muft Bijli Yojana Slabs</h2>
+        <p class="lead">Fixed subsidy amounts credited directly to your bank account via DBT.</p>
+      </div>
+
+      <div class="tariff-table-wrap">
+        <table class="tariff-table">
+          <thead>
+            <tr>
+              <th>System Capacity</th>
+              <th>Avg. Monthly Generation</th>
+              <th>Central Subsidy</th>
+              <th>Ideal Property</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="System Capacity"><strong>1 kWp System</strong></td>
+              <td data-label="Avg. Generation">~120 Units (kWh)</td>
+              <td data-label="Central Subsidy" style="font-weight: 700; color: var(--color-status-success);">₹ 30,000</td>
+              <td data-label="Ideal Property">1 BHK / Small Homes</td>
+            </tr>
+            <tr>
+              <td data-label="System Capacity"><strong>2 kWp System</strong></td>
+              <td data-label="Avg. Generation">~240 Units (kWh)</td>
+              <td data-label="Central Subsidy" style="font-weight: 700; color: var(--color-status-success);">₹ 60,000</td>
+              <td data-label="Ideal Property">2-3 BHK Homes</td>
+            </tr>
+            <tr class="tariff-table__highlight">
+              <td data-label="System Capacity">
+                <strong>3 kWp to 10 kWp</strong>
+                <span class="tariff-table__sub">Sweet Spot</span>
+              </td>
+              <td data-label="Avg. Generation">~360 - 1,200 Units</td>
+              <td data-label="Central Subsidy" style="font-weight: 800; color: var(--color-status-success); font-size: 1.1rem;">₹ 78,000 (Max Cap)</td>
+              <td data-label="Ideal Property">Independent Villas</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Configurations -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-overline">SYSTEM CONFIGURATIONS</span>
+        <h2>Engineered for Long-Term Household Efficiency</h2>
+        <p class="lead">Built with Tier-1 DCR monocrystalline modules and high-reliability string inverters.</p>
+      </div>
+
+      <div class="grid grid--3col">
+        <div class="card">
+          <span class="badge badge--outline" style="margin-bottom: 0.5rem;">ENTRY TIER</span>
+          <h3 style="color: var(--color-text-headings); margin-bottom: 0.5rem;">2 kWp Home Solar</h3>
+          <ul style="list-style: none; padding: 0; margin-bottom: 1.5rem; font-size: 0.9rem; line-height: 1.8;">
+            <li><svg class="icon" style="width: 14px; height: 14px; color: var(--color-brand-accent-text, #C25E00); margin-right: 6px;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-lightning"></use></svg><strong>Monthly Generation:</strong> ~240 kWh units</li>
+            <li><svg class="icon" style="width: 14px; height: 14px; color: var(--color-brand-accent-text, #C25E00); margin-right: 6px;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-ruler"></use></svg><strong>Roof Area Required:</strong> ~200 sq.ft</li>
+            <li><svg class="icon" style="width: 14px; height: 14px; color: var(--color-brand-accent-text, #C25E00); margin-right: 6px;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-currency-inr"></use></svg><strong>Annual Bill Savings:</strong> ~₹ 18,500 / yr</li>
+            <li><svg class="icon" style="width: 14px; height: 14px; color: var(--color-brand-accent-text, #C25E00); margin-right: 6px;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-shield"></use></svg><strong>PM Surya Ghar Subsidy:</strong> ₹ 60,000</li>
+          </ul>
+          <button type="button" class="btn btn--primary btn--block" data-modal-open="survey-modal">Select 2 kW Plan</button>
+        </div>
+
+        <div class="card" style="border: 2px solid var(--color-brand-accent); box-shadow: var(--shadow-lg);">
+          <span class="badge badge--accent" style="margin-bottom: 0.5rem;">MOST POPULAR</span>
+          <h3 style="color: var(--color-text-headings); margin-bottom: 0.5rem;">3 kWp Villa Solar</h3>
+          <ul style="list-style: none; padding: 0; margin-bottom: 1.5rem; font-size: 0.9rem; line-height: 1.8;">
+            <li><svg class="icon" style="width: 14px; height: 14px; color: var(--color-brand-accent-text, #C25E00); margin-right: 6px;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-lightning"></use></svg><strong>Monthly Generation:</strong> ~360 kWh units</li>
+            <li><svg class="icon" style="width: 14px; height: 14px; color: var(--color-brand-accent-text, #C25E00); margin-right: 6px;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-ruler"></use></svg><strong>Roof Area Required:</strong> ~300 sq.ft</li>
+            <li><svg class="icon" style="width: 14px; height: 14px; color: var(--color-brand-accent-text, #C25E00); margin-right: 6px;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-currency-inr"></use></svg><strong>Annual Bill Savings:</strong> ~₹ 28,500 / yr</li>
+            <li><svg class="icon" style="width: 14px; height: 14px; color: var(--color-brand-accent-text, #C25E00); margin-right: 6px;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-shield"></use></svg><strong>PM Surya Ghar Subsidy:</strong> ₹ 78,000 (Max)</li>
+          </ul>
+          <button type="button" class="btn btn--primary btn--block" data-modal-open="survey-modal">Select 3 kW Plan</button>
+        </div>
+
+        <div class="card">
+          <span class="badge badge--outline" style="margin-bottom: 0.5rem;">HIGH CAPACITY</span>
+          <h3 style="color: var(--color-text-headings); margin-bottom: 0.5rem;">5 kWp Hybrid Solar</h3>
+          <ul style="list-style: none; padding: 0; margin-bottom: 1.5rem; font-size: 0.9rem; line-height: 1.8;">
+            <li><svg class="icon" style="width: 14px; height: 14px; color: var(--color-brand-accent-text, #C25E00); margin-right: 6px;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-lightning"></use></svg><strong>Monthly Generation:</strong> ~600 kWh units</li>
+            <li><svg class="icon" style="width: 14px; height: 14px; color: var(--color-brand-accent-text, #C25E00); margin-right: 6px;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-ruler"></use></svg><strong>Roof Area Required:</strong> ~500 sq.ft</li>
+            <li><svg class="icon" style="width: 14px; height: 14px; color: var(--color-brand-accent-text, #C25E00); margin-right: 6px;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-currency-inr"></use></svg><strong>Annual Bill Savings:</strong> ~₹ 48,000 / yr</li>
+            <li><svg class="icon" style="width: 14px; height: 14px; color: var(--color-brand-accent-text, #C25E00); margin-right: 6px;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-shield"></use></svg><strong>PM Surya Ghar Subsidy:</strong> ₹ 78,000</li>
+          </ul>
+          <button type="button" class="btn btn--primary btn--block" data-modal-open="survey-modal">Select 5 kW Plan</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag section-tag--accent">ZERO HASSLE PROCESS</div>
+        <h2>How JDC Manages Your Solar Subsidy &amp; Installation</h2>
+      </div>
+
+      <div class="grid grid--4col">
+        <div class="card card-process">
+          <div class="card-process__number">01</div>
+          <h3 class="card-process__title">Free Survey</h3>
+          <p class="card-process__desc">Technical roof shadow audit and electrical sanction load inspection.</p>
+        </div>
+        <div class="card card-process">
+          <div class="card-process__number">02</div>
+          <h3 class="card-process__title">Portal Registration</h3>
+          <p class="card-process__desc">We register your connection on the National PM Surya Ghar Portal.</p>
+        </div>
+        <div class="card card-process">
+          <div class="card-process__number">03</div>
+          <h3 class="card-process__title">Installation</h3>
+          <p class="card-process__desc">Certified technicians mount Tier-1 panels with non-penetrative roof clamps.</p>
+        </div>
+        <div class="card card-process">
+          <div class="card-process__number">04</div>
+          <h3 class="card-process__title">Net-Meter &amp; Credit</h3>
+          <p class="card-process__desc">JBVNL net-meter is commissioned, and ₹78,000 subsidy is credited to your bank.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="section section--compact">
+    <div class="container">
+      <div class="cta-banner is-inview">
+        <div class="cta-banner__content">
+          <span class="section-overline">ZERO UPFRONT SURVEY COST</span>
+          <h2 class="cta-banner__title">Ready to Cut Your Household Power Bill?</h2>
+          <p class="cta-banner__description">
+            Schedule a free rooftop site inspection with our residential solar team. Zero obligation, instant feasibility report.
+          </p>
+          <div class="cta-banner__actions">
+            <button type="button" class="btn btn--primary btn--lg" data-modal-open="survey-modal">Book Free Site Survey →</button>
+            <a href="https://wa.me/919288381112" class="btn btn--whatsapp btn--lg" target="_blank" rel="noopener noreferrer">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-whatsapp"></use></svg>
+              Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

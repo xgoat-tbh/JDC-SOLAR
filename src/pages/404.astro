@@ -1,0 +1,44 @@
+---
+// src/pages/404.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Page Not Found (404) | JDC Solar"
+  description="The page you requested could not be found. Return to JDC Solar homepage or explore our solar services and savings calculator."
+  canonical="https://jdcsolar.com/404"
+>
+  <section class="min-h-[70vh] flex items-center justify-center text-center px-4 py-16">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-7xl sm:text-9xl font-extrabold font-heading text-transparent bg-clip-text bg-gradient-to-r from-brand-accent via-orange-500 to-amber-400 mb-4">
+        404
+      </div>
+      <h1 class="text-2xl sm:text-4xl font-bold font-heading text-slate-900 dark:text-white mb-3">
+        Solar Circuit Disconnected: Page Not Found
+      </h1>
+      <p class="text-slate-600 dark:text-slate-300 max-w-xl mx-auto mb-8">
+        The page or asset you are looking for has moved or does not exist. Choose where you would like to go next:
+      </p>
+
+      <div class="grid grid--3col gap-4 text-left">
+        <a href="/" class="card p-6 flex flex-col gap-2 hover:border-brand-accent transition-all">
+          <svg class="w-8 h-8 text-brand-accent" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-home"></use></svg>
+          <h2 class="font-heading font-bold text-lg text-slate-900 dark:text-white">Homepage</h2>
+          <p class="text-sm text-slate-500 dark:text-slate-400">Explore our turnkey solar EPC capabilities and project portfolio.</p>
+        </a>
+
+        <a href="/solar-calculator/" class="card p-6 flex flex-col gap-2 hover:border-brand-accent transition-all">
+          <svg class="w-8 h-8 text-brand-accent" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-calculator"></use></svg>
+          <h2 class="font-heading font-bold text-lg text-slate-900 dark:text-white">Solar Calculator</h2>
+          <p class="text-sm text-slate-500 dark:text-slate-400">Estimate your monthly bill savings and system payback in 30 seconds.</p>
+        </a>
+
+        <a href="/pm-surya-ghar/" class="card p-6 flex flex-col gap-2 hover:border-brand-accent transition-all">
+          <svg class="w-8 h-8 text-brand-accent" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-sun"></use></svg>
+          <h2 class="font-heading font-bold text-lg text-slate-900 dark:text-white">PM Surya Ghar</h2>
+          <p class="text-sm text-slate-500 dark:text-slate-400">Check eligibility and claim up to ₹78,000 direct central subsidy.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

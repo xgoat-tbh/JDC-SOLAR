@@ -1,0 +1,178 @@
+---
+// src/pages/resources/solar-maintenance-guide/index.astro
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const maintenanceSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://jdcsolar.com/resources/solar-maintenance-guide/#article",
+      "headline": "Solar Panel Maintenance & Cleaning: Preventive Care for Maximum Generation",
+      "description": "Certified EPC solar plant maintenance manual covering water quality standards (TDS < 150 ppm), thermal hotspot drone audits, and quarterly maintenance checklists.",
+      "image": "https://jdcsolar.com/assets/images/banners/banner-resources.jpg",
+      "datePublished": "2026-08-10T08:00:00+05:30",
+      "dateModified": "2026-08-10T08:00:00+05:30",
+      "author": {
+        "@type": "Organization",
+        "name": "JDC Solar Operations & Maintenance Cell"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "JDC Solar",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://jdcsolar.com/assets/brand/logo-mark.png"
+        }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://jdcsolar.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Resources", "item": "https://jdcsolar.com/resources/" },
+        { "@type": "ListItem", "position": 3, "name": "Maintenance Guide", "item": "https://jdcsolar.com/resources/solar-maintenance-guide/" }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title="Solar Panel Maintenance & Cleaning Guide | O&M Standards | JDC Solar"
+  description="Certified EPC solar maintenance guide for Jharkhand. Module cleaning standards, TDS water quality, thermal hotspot inspection, and quarterly O&M schedule."
+  canonical="https://jdcsolar.com/resources/solar-maintenance-guide/"
+  activeNav="resources"
+  schema={maintenanceSchema}
+>
+  <section class="page-hero page-hero--resources" aria-label="O&M Technical Manual">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumbs">
+        <ol class="breadcrumb__list">
+          <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">Home</a></li>
+          <li class="breadcrumb__separator" aria-hidden="true">/</li>
+          <li class="breadcrumb__item"><a href="/resources/" class="breadcrumb__link">Resources</a></li>
+          <li class="breadcrumb__separator" aria-hidden="true">/</li>
+          <li class="breadcrumb__item" aria-current="page">Maintenance Guide</li>
+        </ol>
+      </nav>
+
+      <div class="page-hero__badge">
+        <div class="section-tag section-tag--accent">O&amp;M Technical Manual</div>
+      </div>
+      <h1 class="display-title page-hero__title">
+        Solar Panel Maintenance &amp; Cleaning: Preventive Care for Maximum Generation
+      </h1>
+      <p class="lead page-hero__lead">
+        Industrial dust, seasonal soot, and hard water scaling can degrade solar plant yields by 15% to 30%. Follow our certified EPC maintenance protocols to ensure your 25-year performance warranty remains fully intact.
+      </p>
+      <div class="page-hero__chips">
+        <div class="page-hero__chip">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+          <span>Cleaning SOPs &amp; Water Quality</span>
+        </div>
+        <div class="page-hero__chip">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+          <span>Thermal Hotspot Detection</span>
+        </div>
+        <div class="page-hero__chip">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+          <span>Quarterly O&amp;M Checklist</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--medium">
+      <article class="card card--neomorph" style="padding: var(--space-2xl); margin-bottom: var(--space-2xl);">
+        <span class="section-overline">CLEANING PROTOCOL</span>
+        <h2 style="font-size: 1.6rem; color: var(--color-text-headings); margin-bottom: 1rem;">1. Solar Module Cleaning Standards &amp; Water Quality</h2>
+        <p style="line-height: 1.8; color: var(--color-text-default); margin-bottom: 1.25rem;">
+          In industrial corridors like Adityapur, Bistupur, and Dhanbad, fine airborne particulates settle on solar glass. Routine cleaning ensures maximum light transmittance through anti-reflective coatings.
+        </p>
+        <div class="grid grid--2col gap-md" style="margin-top: 1.5rem;">
+          <div style="background: var(--color-bg-surface-sunken); padding: 1.25rem; border-radius: var(--radius-lg); border-left: 4px solid var(--color-brand-accent);">
+            <strong style="color: var(--color-text-headings); display: block; margin-bottom: 4px;">Water Quality Benchmark:</strong>
+            <p class="text-small text-muted" style="margin-top: 0.5rem;">Use water with <strong>TDS &lt; 150 ppm</strong> and pH 6.5–7.5. Never use hard borewell water without filtration, as mineral scaling creates permanent calcium carbonate crusting on glass.</p>
+          </div>
+          <div style="background: var(--color-bg-surface-sunken); padding: 1.25rem; border-radius: var(--radius-lg); border-left: 4px solid var(--color-status-success);">
+            <strong style="color: var(--color-text-headings); display: block; margin-bottom: 4px;">Optimal Cleaning Time:</strong>
+            <p class="text-small text-muted" style="margin-top: 0.5rem;">Clean panels only during early morning (06:00–08:30) or late evening. Washing hot panels during peak midday sun causes thermal shock and micro-cracks in tempered glass.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="card card--neomorph" style="padding: var(--space-2xl); margin-bottom: var(--space-2xl);">
+        <span class="section-overline">DIAGNOSTICS &amp; SAFETY</span>
+        <h2 style="font-size: 1.6rem; color: var(--color-text-headings); margin-bottom: 1rem;">2. Thermal Hotspot Inspection &amp; Drone Thermography</h2>
+        <p style="line-height: 1.8; color: var(--color-text-default); margin-bottom: 1.25rem;">
+          Localised shading from bird droppings, dry leaves, or damaged bypass diodes causes shaded cells to act as electrical resistors rather than generators. These cells overheat, reaching temperatures up to 150°C, risking delamination or localized fires.
+        </p>
+        <p style="line-height: 1.8; color: var(--color-text-default);">
+          JDC Solar deploys calibrated FLIR thermal imaging cameras during annual preventive maintenance audits to detect invisible hotspots and module bypass diode failures before they degrade string output.
+        </p>
+      </article>
+
+      <article class="card card--neomorph" style="padding: var(--space-2xl); margin-bottom: var(--space-2xl);">
+        <span class="section-overline">O&amp;M SCHEDULE</span>
+        <h2 style="font-size: 1.6rem; color: var(--color-text-headings); margin-bottom: 1rem;">3. Recommended Preventive Maintenance Schedule</h2>
+        
+        <div class="table-responsive" style="margin-top: 1rem;">
+          <table>
+            <thead>
+              <tr>
+                <th>Frequency</th>
+                <th>Maintenance Action Item</th>
+                <th>Target Component</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="font-weight: 600; color: var(--color-brand-accent-text, #C25E00);">Bi-Weekly (15 Days)</td>
+                <td>Soft de-mineralized water wash using micro-fiber squeegees</td>
+                <td>Solar PV Module Surface</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 600; color: var(--color-brand-accent-text, #C25E00);">Monthly</td>
+                <td>Check cloud telemetry app, log daily kWh output vs. theoretical model</td>
+                <td>Inverter SCADA App / Portal</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 600; color: var(--color-brand-accent-text, #C25E00);">Quarterly</td>
+                <td>Inspect AC/DC disconnect isolators, check SPD surge status indicators</td>
+                <td>AJB / ACDB / DCDB Junction Boxes</td>
+              </tr>
+              <tr>
+                <td style="font-weight: 600; color: var(--color-brand-accent-text, #C25E00);">Annually</td>
+                <td>Measure earthing pit resistance (&lt; 5 Ohms), re-torque module mounting clamps</td>
+                <td>Galvanized Structure &amp; Earthing Array</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section section--compact section--alt">
+    <div class="container">
+      <div class="cta-banner">
+        <div class="cta-banner__content">
+          <span class="section-overline">ANNUAL MAINTENANCE CONTRACTS</span>
+          <h2 class="cta-banner__title">Need Professional Solar O&amp;M or Revamping Support?</h2>
+          <p class="cta-banner__description">
+            JDC Solar offers comprehensive Annual Maintenance Contracts (AMC) across Jamshedpur, Ranchi, Dhanbad, and Bokaro with guaranteed 24-hour breakdown response times.
+          </p>
+          <div class="cta-banner__actions">
+            <button type="button" class="btn btn--primary btn--lg" data-modal-open="survey-modal">Inquire for O&amp;M AMC Support →</button>
+            <a href="https://wa.me/919288381112" class="btn btn--whatsapp btn--lg" target="_blank" rel="noopener noreferrer">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-whatsapp"></use></svg>
+              Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

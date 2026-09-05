@@ -43,10 +43,10 @@ htmlFiles.forEach(file => {
   let content = fs.readFileSync(file, 'utf8');
   let original = content;
 
-  // Replace old services link with chevron
+  
   content = content.replace(/<a href="\/services\/" class="nav-desktop__link">[\s\S]*?<\/a>/g, targetServicesLink);
 
-  // Replace old dropdown menu with clean vector icon dropdown
+  
   content = content.replace(/<ul class="nav-desktop__dropdown" role="list">[\s\S]*?<\/ul>/g, targetDropdown);
 
   if (content !== original) {

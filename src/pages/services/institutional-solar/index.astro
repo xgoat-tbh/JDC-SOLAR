@@ -1,0 +1,207 @@
+---
+// src/pages/services/institutional-solar/index.astro
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const institutionalSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://jdcsolar.com/services/institutional-solar/#service",
+      "name": "Institutional Solar EPC Solutions",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "JDC Solar",
+        "telephone": "+91-9288381112"
+      },
+      "serviceType": "Institutional Solar Power Plants",
+      "areaServed": {
+        "@type": "State",
+        "name": "Jharkhand"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://jdcsolar.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://jdcsolar.com/services/" },
+        { "@type": "ListItem", "position": 3, "name": "Institutional Solar", "item": "https://jdcsolar.com/services/institutional-solar/" }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title="Institutional Solar for Hospitals & Colleges in Jharkhand | JDC Solar"
+  description="Turnkey solar power plants for schools, colleges, universities, and hospitals across Jharkhand. DG synchronization, clean power backup & NAAC green campus points."
+  canonical="https://jdcsolar.com/services/institutional-solar/"
+  activeNav="services"
+  schema={institutionalSchema}
+>
+  <section class="page-hero page-hero--services" aria-label="Institutional Solar Solutions">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumbs">
+        <ol class="breadcrumb__list">
+          <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">Home</a></li>
+          <li class="breadcrumb__separator" aria-hidden="true">/</li>
+          <li class="breadcrumb__item"><a href="/services/" class="breadcrumb__link">Services</a></li>
+          <li class="breadcrumb__separator" aria-hidden="true">/</li>
+          <li class="breadcrumb__item" aria-current="page">Institutional Solar</li>
+        </ol>
+      </nav>
+
+      <div class="page-hero__badge">
+        <div class="section-tag section-tag--accent">Institutional Solar Solutions</div>
+      </div>
+      <h1 class="display-title page-hero__title">
+        Institutional Solar Solutions (Hospitals, Colleges &amp; Schools)
+      </h1>
+      <p class="lead page-hero__lead">
+        Reliable 24/7 solar energy designed for medical diagnostic facilities, multi-speciality hospitals, university campuses, and schools with DG synchronization.
+      </p>
+      <div class="page-hero__chips">
+        <div class="page-hero__chip">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+          <span>DG Synchronization &amp; Zero Downtime</span>
+        </div>
+        <div class="page-hero__chip">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+          <span>Hospitals, Clinics &amp; Universities</span>
+        </div>
+        <div class="page-hero__chip">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+          <span>Green Campus Certification</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag section-tag--accent">UNINTERRUPTED RELIABILITY</div>
+        <h2>Engineered for Zero Downtime &amp; Critical Loads</h2>
+      </div>
+
+      <div class="grid grid--3col">
+        <!-- Card 1: DG Synchronization & Zero Export -->
+        <div class="card card-telemetry-spec" data-spec-card>
+          <div class="card-telemetry-spec__top">
+            <div class="card-telemetry-spec__icon-box">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-zap"></use></svg>
+            </div>
+            <div class="card-telemetry-spec__status-tag">
+              <span>REVERSE POWER PROT</span>
+            </div>
+          </div>
+          <h3 class="card-telemetry-spec__title">DG Synchronization &amp; Zero Export</h3>
+          <p class="card-telemetry-spec__desc">Intelligent reverse power relay protection syncs solar generation seamlessly with on-site diesel generators, eliminating fuel wastage during grid outages.</p>
+          <div class="card-telemetry-spec__metric">
+            <span class="card-telemetry-spec__metric-val">40–60%</span>
+            <span class="card-telemetry-spec__metric-lbl">Diesel Cost Reduction</span>
+          </div>
+          <button type="button" class="card-telemetry-spec__toggle-btn" aria-expanded="false">
+            <span>View Technical Specs</span>
+            <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-chevron-down"></use></svg>
+          </button>
+          <div class="card-telemetry-spec__drawer">
+            <div class="card-telemetry-spec__drawer-inner">
+              <ul class="spec-detail-list">
+                <li><strong>Response Time</strong><span>&lt; 20ms Fast Cut</span></li>
+                <li><strong>Controller</strong><span>DeepSea / ComAp Grid-Tie</span></li>
+                <li><strong>Fuel Savings</strong><span>Direct Displacement</span></li>
+                <li><strong>Protection</strong><span>Zero Reverse Current to DG</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Medical Priority Circuits -->
+        <div class="card card-telemetry-spec" data-spec-card>
+          <div class="card-telemetry-spec__top">
+            <div class="card-telemetry-spec__icon-box">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-hospital"></use></svg>
+            </div>
+            <div class="card-telemetry-spec__status-tag">
+              <span>ICU BACKUP GRADE</span>
+            </div>
+          </div>
+          <h3 class="card-telemetry-spec__title">Critical Healthcare Continuity</h3>
+          <p class="card-telemetry-spec__desc">Dedicated clean, surge-protected power architectures designed for diagnostic imaging (MRI/CT), emergency trauma units, and surgical suites.</p>
+          <div class="card-telemetry-spec__metric">
+            <span class="card-telemetry-spec__metric-val">0 ms</span>
+            <span class="card-telemetry-spec__metric-lbl">Switchover Transient</span>
+          </div>
+          <button type="button" class="card-telemetry-spec__toggle-btn" aria-expanded="false">
+            <span>View Technical Specs</span>
+            <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-chevron-down"></use></svg>
+          </button>
+          <div class="card-telemetry-spec__drawer">
+            <div class="card-telemetry-spec__drawer-inner">
+              <ul class="spec-detail-list">
+                <li><strong>Power Quality</strong><span>THD &lt; 2% Pure Sine</span></li>
+                <li><strong>Isolation</strong><span>Class-H Galvanic Isolated</span></li>
+                <li><strong>Harmonics</strong><span>IEEE 519 Compliant</span></li>
+                <li><strong>Uptime SLA</strong><span>99.99% Criticality</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Green Campus Accreditation -->
+        <div class="card card-telemetry-spec" data-spec-card>
+          <div class="card-telemetry-spec__top">
+            <div class="card-telemetry-spec__icon-box">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-award"></use></svg>
+            </div>
+            <div class="card-telemetry-spec__status-tag">
+              <span>NAAC TIER-A CREDITS</span>
+            </div>
+          </div>
+          <h3 class="card-telemetry-spec__title">Green Campus &amp; University ESG</h3>
+          <p class="card-telemetry-spec__desc">Turnkey rooftop and ground-mount arrays enabling educational campuses to secure top-tier NAAC Criterion VII credits while slashing operational tariffs.</p>
+          <div class="card-telemetry-spec__metric">
+            <span class="card-telemetry-spec__metric-val">Level 1</span>
+            <span class="card-telemetry-spec__metric-lbl">Green Campus Score</span>
+          </div>
+          <button type="button" class="card-telemetry-spec__toggle-btn" aria-expanded="false">
+            <span>View Technical Specs</span>
+            <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-chevron-down"></use></svg>
+          </button>
+          <div class="card-telemetry-spec__drawer">
+            <div class="card-telemetry-spec__drawer-inner">
+              <ul class="spec-detail-list">
+                <li><strong>NAAC Benefit</strong><span>Criterion VII.1.2 Points</span></li>
+                <li><strong>Cost Offset</strong><span>Up to 80% Campus Tariff</span></li>
+                <li><strong>Student Lab</strong><span>Live Telemetry Portal</span></li>
+                <li><strong>Carbon Offset</strong><span>~1.2 MT CO₂ / kW/Yr</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--compact">
+    <div class="container">
+      <div class="cta-banner">
+        <div class="cta-banner__content">
+          <span class="section-overline">SCHEDULE CAMPUS SURVEY</span>
+          <h2 class="cta-banner__title">Ready to Solarize Your Healthcare or Educational Campus?</h2>
+          <p class="cta-banner__description">
+            Contact our institutional engineering team for an on-site feasibility study and custom financial ROI model.
+          </p>
+          <div class="cta-banner__actions">
+            <button type="button" class="btn btn--primary btn--lg" data-modal-open="survey-modal">Book Campus Feasibility Survey →</button>
+            <a href="https://wa.me/919288381112" class="btn btn--whatsapp btn--lg" target="_blank" rel="noopener noreferrer">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-whatsapp"></use></svg>
+              Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

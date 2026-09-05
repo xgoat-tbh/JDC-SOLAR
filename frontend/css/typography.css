@@ -1,17 +1,10 @@
-/**
- * JDC SOLAR 2.0 - TYPOGRAPHY & FONT SYSTEM
- */
-
-/* ==========================================================================
-   HEADING HIERARCHY
-   ========================================================================== */
-
 .display-title {
   font-size: var(--font-size-display);
   line-height: var(--line-height-display);
   letter-spacing: var(--letter-spacing-display);
   font-weight: var(--font-weight-extrabold);
   color: var(--color-text-headings);
+  text-wrap: balance;
 }
 
 h1, .h1 {
@@ -21,6 +14,7 @@ h1, .h1 {
   font-weight: var(--font-weight-bold);
   color: var(--color-text-headings);
   margin-bottom: var(--space-md);
+  text-wrap: balance;
 }
 
 h2, .h2 {
@@ -30,31 +24,32 @@ h2, .h2 {
   font-weight: var(--font-weight-bold);
   color: var(--color-text-headings);
   margin-bottom: var(--space-sm);
+  text-wrap: balance;
 }
 
 h3, .h3 {
   font-size: var(--font-size-h3);
   line-height: var(--line-height-h3);
+  letter-spacing: var(--letter-spacing-h3);
   font-weight: var(--font-weight-semibold);
   color: var(--color-text-headings);
   margin-bottom: var(--space-xs);
+  text-wrap: balance;
 }
 
 h4, .h4 {
   font-size: var(--font-size-h4);
   line-height: var(--line-height-h4);
+  letter-spacing: var(--letter-spacing-h4);
   font-weight: var(--font-weight-semibold);
   color: var(--color-text-headings);
 }
-
-/* ==========================================================================
-   BODY & PARAGRAPH STYLES
-   ========================================================================== */
 
 .lead, .body-lg {
   font-size: var(--font-size-body-lg);
   line-height: 1.6;
   color: var(--color-text-secondary);
+  text-wrap: pretty;
 }
 
 p {
@@ -62,6 +57,7 @@ p {
   line-height: var(--line-height-body);
   color: var(--color-text-primary);
   margin-bottom: var(--space-md);
+  text-wrap: pretty;
 }
 
 p:last-child {
@@ -77,10 +73,6 @@ p:last-child {
 .text-muted {
   color: var(--color-text-muted);
 }
-
-/* ==========================================================================
-   TAGS, BADGES & OVERLINES
-   ========================================================================== */
 
 .section-tag, .badge {
   display: inline-flex;
@@ -99,17 +91,39 @@ p:last-child {
 
 .badge--accent {
   background-color: var(--color-brand-accent-subtle);
-  color: var(--color-brand-accent-hover);
+  color: var(--color-brand-accent-text) !important;
+  font-weight: 700;
+}
+
+.section-tag--accent {
+  background-color: var(--color-brand-accent-subtle);
+  color: var(--color-brand-accent-text) !important;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
 }
 
 .badge--success {
   background-color: var(--color-status-success-bg);
-  color: var(--color-status-success);
+  color: var(--color-status-success-text) !important;
+  font-weight: 700;
 }
 
-/* ==========================================================================
-   STAT & MILESTONE DIGITS
-   ========================================================================== */
+.stat-number,
+.card-stat__value,
+.subsidy-slab-pill__amount,
+.hero-telemetry__watts,
+.hero-telemetry__stat-num,
+.horizontal-project-card__stat-val,
+.before-after-footer__stat-val,
+.metric-tile__value,
+.tariff-cell--number,
+.highlight-val {
+  font-feature-settings: 'tnum' 1, 'cv01' 1;
+  letter-spacing: -0.02em;
+}
 
 .stat-number {
   font-family: var(--font-family-heading);
@@ -120,5 +134,5 @@ p:last-child {
 }
 
 .stat-number .stat-suffix {
-  color: var(--color-brand-accent);
+  color: var(--color-brand-accent-text);
 }

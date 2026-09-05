@@ -1,0 +1,472 @@
+/* ==========================================================================
+   JDC SOLAR 2.0 - RESPONSIVE ARCHITECTURE & CONSOLIDATED POLISH
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. GLOBAL DEFENSIVE OVERFLOW & ANTI-CLIPPING RULES
+   -------------------------------------------------------------------------- */
+.card-stat__value,
+.subsidy-slab-pill__amount,
+.hero-telemetry__watts,
+.hero-telemetry__stat-num,
+.before-after-footer__stat-val {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+.card,
+.card-service,
+.why-jdc-card,
+.card-testimonial,
+.card-stat {
+  min-width: 0;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* --------------------------------------------------------------------------
+   2. LARGE DESKTOP, ULTRAWIDE & 4K DISPLAYS (1200px - 2560px+)
+   Guarantees zero edge-drift and balanced optical centering
+   -------------------------------------------------------------------------- */
+@media (min-width: 1200px) {
+  .horizontal-project-card {
+    flex: 0 0 calc((100% - 3rem) / 3);
+    width: calc((100% - 3rem) / 3);
+  }
+}
+
+@media (min-width: 1440px) {
+  .container {
+    max-width: var(--container-max-wide, 1360px);
+  }
+}
+
+@media (min-width: 1536px) {
+  .hero-grid {
+    max-width: 1040px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. TABLETS & INTERMEDIATE VIEWPORTS (<= 1024px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .carousel-nav-btn {
+    display: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. TABLETS & BELOW (<= 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .section-header h2 {
+    font-size: clamp(1.35rem, 1.1rem + 0.75vw, 1.75rem);
+  }
+
+  .section-header .lead {
+    font-size: 0.95rem;
+  }
+
+  .grid--4col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .project-carousel-track .card-project {
+    flex: 0 0 75vw;
+    min-width: 260px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   5. MOBILE VIEWPORTS (<= 600px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 600px) {
+  .section {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .section-header {
+    margin-bottom: var(--space-xl);
+  }
+
+  .hero {
+    min-height: 65vh;
+  }
+
+  .hero__actions,
+  .cta-banner__actions,
+  .page-hero__actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero__actions > .btn,
+  .cta-banner__actions > .btn,
+  .page-hero__actions > .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .grid--4col,
+  .grid--3col {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .section-overline {
+    font-size: 0.65rem;
+  }
+
+  .section-overline::before {
+    width: 18px;
+  }
+
+  .badge {
+    font-size: 0.65rem;
+    padding: 3px 8px;
+  }
+
+  .solar-calculator-ui,
+  .card--neomorph-raised {
+    padding: 1rem 0.85rem;
+  }
+
+  .solar-calculator-ui .flex.gap-sm,
+  .card--neomorph-raised .flex.gap-sm {
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+  }
+
+  .solar-calculator-ui .btn,
+  .card--neomorph-raised .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   6. COMPACT MOBILE (<= 480px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  .container {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .grid--2col {
+    grid-template-columns: 1fr;
+  }
+
+  .hero__title {
+    font-size: 1.65rem;
+  }
+
+  .hero__lead {
+    font-size: 0.92rem;
+  }
+
+  .card,
+  .why-jdc-card,
+  .card-service {
+    padding: var(--space-md);
+  }
+
+  .card-stat {
+    padding: var(--space-md);
+  }
+
+  .card-stat__value {
+    font-size: clamp(1.6rem, 6vw, 2rem);
+  }
+
+  .subsidy-slab-pill {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .page-hero__title {
+    font-size: 1.5rem;
+  }
+
+  .project-carousel-track .card-project {
+    flex: 0 0 82vw;
+    min-width: 250px;
+  }
+
+  .cta-banner {
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  .cta-banner__title {
+    font-size: clamp(1.2rem, 1rem + 1.5vw, 1.6rem);
+  }
+
+  .cta-banner__description {
+    font-size: 0.88rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   7. SMALL / ULTRA-COMPACT MOBILE (<= 360px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 360px) {
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  h1, .h1 { font-size: 1.3rem; }
+  h2, .h2 { font-size: 1.15rem; }
+  h3, .h3 { font-size: 0.95rem; }
+
+  .lead, .body-lg { font-size: 0.85rem; }
+  p { font-size: 0.88rem; }
+
+  .section {
+    padding-top: 1.75rem;
+    padding-bottom: 1.75rem;
+  }
+
+  .section--compact {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .section-header {
+    margin-bottom: var(--space-md);
+  }
+
+  .badge, .section-tag, .section-overline {
+    font-size: 0.6rem;
+    letter-spacing: 0.05em;
+  }
+
+  .section-overline::before {
+    width: 14px;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 1.5rem 0;
+  }
+
+  .hero__title {
+    font-size: 1.35rem;
+    line-height: 1.2;
+  }
+
+  .hero__lead {
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+
+  .hero__trust-points {
+    gap: 8px;
+  }
+
+  .hero__trust-item {
+    font-size: 0.68rem;
+  }
+
+  .card, .card-service, .why-jdc-card, .card-testimonial {
+    padding: var(--space-sm);
+    border-radius: var(--radius-md);
+  }
+
+  .card-stat {
+    padding: var(--space-sm);
+  }
+
+  .card-stat__value {
+    font-size: 1.4rem;
+  }
+
+  .card-stat__label {
+    font-size: 0.78rem;
+  }
+
+  .card-stat__subtext {
+    font-size: 0.68rem;
+  }
+
+  .subsidy-slab-pill {
+    padding: 8px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .subsidy-slab-pill__amount {
+    font-size: 0.95rem;
+  }
+
+  .subsidy-slab-pill__kw {
+    font-size: 0.82rem;
+  }
+
+  .subsidy-highlight-card {
+    padding: var(--space-md);
+  }
+
+  .page-hero {
+    padding: 1.5rem 0;
+  }
+
+  .page-hero__title {
+    font-size: 1.2rem;
+  }
+
+  .page-hero__lead {
+    font-size: 0.82rem;
+  }
+
+  .page-hero__chips {
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .page-hero__chip {
+    font-size: 0.65rem;
+    padding: 3px 8px;
+  }
+
+  .accordion-summary {
+    font-size: 0.85rem;
+    padding: 8px 10px;
+  }
+
+  .accordion-content {
+    font-size: 0.82rem;
+    padding: 8px 10px;
+  }
+
+  .card-testimonial__quote {
+    font-size: 0.85rem;
+  }
+
+  .card-testimonial__quote-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .card-testimonial__avatar {
+    width: 32px;
+    height: 32px;
+    font-size: 0.7rem;
+  }
+
+  .project-carousel-track .card-project {
+    flex: 0 0 88vw;
+    min-width: 220px;
+  }
+
+  .footer-contact__item {
+    font-size: 0.78rem;
+  }
+
+  .form-input, .form-select, .form-textarea {
+    font-size: 0.88rem;
+    padding: 8px 10px;
+  }
+
+  .form-label {
+    font-size: 0.78rem;
+  }
+
+  .solar-calculator-ui,
+  .card--neomorph-raised {
+    padding: 8px 6px;
+    border-radius: var(--radius-md);
+    gap: 0.85rem;
+  }
+
+  .radio-tile-group {
+    grid-template-columns: 1fr !important;
+    gap: 4px;
+  }
+
+  .radio-tile {
+    padding: 6px 10px;
+    min-height: 38px;
+    border-radius: var(--radius-md);
+  }
+
+  .radio-tile__label {
+    font-size: 0.8rem;
+    gap: 8px;
+  }
+
+  .calc-summary-header {
+    padding: 6px 8px;
+    border-radius: var(--radius-md);
+    margin-bottom: 0.65rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .metric-tile--neomorph {
+    padding: 5px 6px;
+    border-radius: var(--radius-sm);
+  }
+
+  .metric-tile__label {
+    font-size: 0.6rem;
+    margin-bottom: 2px;
+  }
+
+  .metric-tile__value {
+    font-size: 0.88rem;
+  }
+
+  .solar-calculator-ui .btn,
+  .card--neomorph-raised .btn {
+    min-height: 40px;
+    padding: 8px 12px;
+    font-size: 0.78rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   8. DISPLAY & VISIBILITY UTILITIES
+   -------------------------------------------------------------------------- */
+@media (max-width: 600px) {
+  .hide-on-mobile {
+    display: none !important;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1023px) {
+  .hide-on-tablet {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hide-on-desktop {
+    display: none !important;
+  }
+}

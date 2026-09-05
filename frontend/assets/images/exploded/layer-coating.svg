@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%" fill="none">
+  <defs>
+    
+    <linearGradient id="arHoloGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F0FF" stop-opacity="0.5" />
+      <stop offset="25%" stop-color="#38BDF8" stop-opacity="0.35" />
+      <stop offset="50%" stop-color="#818CF8" stop-opacity="0.45" />
+      <stop offset="75%" stop-color="#C084FC" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#00F0FF" stop-opacity="0.55" />
+    </linearGradient>
+
+    
+    <linearGradient id="arBorderGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F0FF" stop-opacity="0.95" />
+      <stop offset="50%" stop-color="#A855F7" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#00F0FF" stop-opacity="0.95" />
+    </linearGradient>
+
+    
+    <pattern id="nanoHexGridDistinct" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M12 0 L24 6 L24 18 L12 24 L0 18 L0 6 Z" fill="none" stroke="#00F0FF" stroke-width="0.75" stroke-opacity="0.4" />
+      <circle cx="12" cy="12" r="1.5" fill="#00F0FF" fill-opacity="0.6" />
+    </pattern>
+
+    
+    <linearGradient id="waveInterference" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F0FF" stop-opacity="0.3" />
+      <stop offset="35%" stop-color="#A855F7" stop-opacity="0.35" />
+      <stop offset="70%" stop-color="#38BDF8" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#00F0FF" stop-opacity="0.4" />
+    </linearGradient>
+  </defs>
+
+  
+  <rect x="20" y="20" width="560" height="360" rx="8" fill="url(#arHoloGradient)" stroke="url(#arBorderGlow)" stroke-width="2" />
+
+  
+  <rect x="20" y="20" width="560" height="360" rx="8" fill="url(#nanoHexGridDistinct)" />
+
+  
+  <polygon points="60,20 220,20 400,380 240,380" fill="url(#waveInterference)" />
+  <polygon points="320,20 440,20 560,380 440,380" fill="url(#waveInterference)" opacity="0.8" />
+
+  
+  <g transform="translate(320, 28)">
+    <rect width="240" height="22" rx="11" fill="rgba(15, 23, 42, 0.92)" stroke="#00F0FF" stroke-width="1.2" />
+    <text x="120" y="11" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="7.5" font-weight="700" fill="#00F0FF" text-anchor="middle" dominant-baseline="central" letter-spacing="0.5">NANO AR COATING • λ 110nm • &lt;0.5% REFL</text>
+  </g>
+</svg>

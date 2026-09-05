@@ -1,12 +1,41 @@
 # ==============================================================================
-# JDC SOLAR 2.0 - PRODUCTION APACHE / HOSTINGER HARDENED CONFIGURATION
+# JDC SOLAR 2.0 - PRODUCTION HOSTINGER / APACHE OPTIMIZED CONFIGURATION
 # ==============================================================================
 
-# Disable Directory Browsing
-Options -Indexes
+# 1. Directory Index
+DirectoryIndex index.html index.php
 
-# Block Access to Hidden & Sensitive Files (.git, .env, *.bak, *.sql, package.json)
-<FilesMatch "(^\.|\.env|package\.json|package-lock\.json|\.bak|\.sql|\.log|\.md)$">
+# 2. Prevent Directory Listing Safely
+<IfModule mod_autoindex.c>
+  Options -Indexes
+</IfModule>
+
+# 3. Ensure Modern MIME Types
+<IfModule mod_mime.c>
+  AddType text/html .html
+  AddType text/css .css
+  AddType application/javascript .js
+  AddType application/json .json
+  AddType image/webp .webp
+  AddType image/avif .avif
+  AddType image/svg+xml .svg .svgz
+  AddType font/woff2 .woff2
+  AddType font/woff .woff
+  AddType text/plain .txt
+  AddType text/markdown .md
+  AddType application/manifest+json .webmanifest manifest.json
+</IfModule>
+
+# 3b. Agentic Browsing & AI Discovery (llms.txt)
+<Files "llms.txt">
+  <IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*"
+    Header set Content-Type "text/plain; charset=utf-8"
+  </IfModule>
+</Files>
+
+# 4. Block Access to Hidden & Sensitive Files (.git, .env, *.bak, *.sql, package.json)
+<FilesMatch "(^\.|\.env|package\.json|package-lock\.json|\.bak|\.sql|\.log|\.md|\.py|\.sh)$">
   <IfModule mod_authz_core.c>
     Require all denied
   </IfModule>
@@ -16,34 +45,59 @@ Options -Indexes
   </IfModule>
 </FilesMatch>
 
-# Enable Rewrite Engine
+# 5. Block Direct Web Access to Monorepo Development Directories (if present)
+<IfModule mod_alias.c>
+  RedirectMatch 404 ^/(research|tests|docs|scripts|scratch)/
+</IfModule>
+
+# 6. Rewrite Engine Rules
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
 
-  # 1. Enforce HTTPS
+  # Enforce HTTPS (compatible with direct SSL & Hostinger/Cloudflare reverse proxies)
   RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-  # 2. Enforce Non-WWW Canonical Domain
+  # Enforce Non-WWW (strip www.)
   RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
   RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
 
-  # 3. Legacy 301 Permanent Redirects
-  RewriteRule ^project/?$ /projects/ [L,R=301]
-  RewriteRule ^detail-service/?$ /services/ [L,R=301]
-  RewriteRule ^elementor-9/?$ / [L,R=301]
-  RewriteRule ^team/?$ /about/ [L,R=301]
+  # Transparent WebP fallback: serve .webp if a .jpg/.jpeg is requested and .webp exists
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{DOCUMENT_ROOT}/$1.webp -f
+  RewriteRule ^(.*)\.(?:jpe?g)$ /$1.webp [L,T=image/webp]
 
-  # 4. Clean Trailing Slash Normalization for Directories
+  # Legacy 301 Permanent Redirects
+  RewriteRule ^about-us/?$ /about/ [L,R=301]
+  RewriteRule ^contact-us/?$ /contact/ [L,R=301]
+  RewriteRule ^project/?$ /projects/ [L,R=301]
+  RewriteRule ^our-projects/?$ /projects/ [L,R=301]
+  RewriteRule ^calculator/?$ /solar-calculator/ [L,R=301]
+  RewriteRule ^detail-service/?$ /services/ [L,R=301]
+  RewriteRule ^team/?$ /about/ [L,R=301]
+  RewriteRule ^elementor-9/?$ / [L,R=301]
+  RewriteRule ^residential-solar/?$ /services/residential-solar/ [L,R=301]
+  RewriteRule ^commercial-solar/?$ /services/commercial-solar/ [L,R=301]
+  RewriteRule ^industrial-solar/?$ /services/industrial-solar/ [L,R=301]
+  RewriteRule ^solar-water-pump/?$ /services/ [L,R=301]
+  RewriteRule ^faqs?/?$ /resources/ [L,R=301]
+
+  # Strip Legacy WordPress Query Strings
+  RewriteCond %{QUERY_STRING} ^wpr_templates= [NC]
+  RewriteRule ^(.*)$ /? [L,R=301]
+
+  # Clean Trailing Slash Normalization for Directories
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteRule ^(.*[^/])$ /$1/ [L,R=301]
 </IfModule>
 
-# Custom Error Documents
+# 7. Custom Error Documents
 ErrorDocument 404 /404.html
+ErrorDocument 500 /404.html
 
-# Production Security Headers
+# 8. Production Security Headers
 <IfModule mod_headers.c>
   # Clickjacking Protection
   Header set X-Frame-Options "SAMEORIGIN"
@@ -57,19 +111,28 @@ ErrorDocument 404 /404.html
   # Permissions Policy
   Header set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
   
-  # HTTP Strict Transport Security (1 Year)
-  Header set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  # HTTP Strict Transport Security (1 Year with Preload)
+  Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
   
-  # Content Security Policy (Self-contained assets, Google Fonts, WhatsApp links)
-  Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://wa.me https://formspree.io; frame-ancestors 'self';"
+  # Unset PHP/Server Signature Exposure
+  Header unset X-Powered-By
+  
+  # Content Security Policy (Self-hosted fonts, WhatsApp, Formspree)
+  Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: https:; connect-src 'self' https://wa.me https://api.whatsapp.com https://formspree.io https://*.formspree.io; frame-ancestors 'self';"
 </IfModule>
 
-# Browser Caching & Expiration
+# 9. Browser Caching & Expiration
 <IfModule mod_expires.c>
   ExpiresActive On
-  ExpiresDefault "access plus 1 month"
+  ExpiresDefault "access plus 0 seconds"
 
-  # Images & SVG
+  # HTML, XML & Dynamic JSON: Never cache, always fetch latest version
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType application/xhtml+xml "access plus 0 seconds"
+  ExpiresByType application/json "access plus 0 seconds"
+  ExpiresByType application/manifest+json "access plus 1 week"
+
+  # Images & Media - 1 year (static assets with unique paths)
   ExpiresByType image/webp "access plus 1 year"
   ExpiresByType image/avif "access plus 1 year"
   ExpiresByType image/png "access plus 1 year"
@@ -77,15 +140,61 @@ ErrorDocument 404 /404.html
   ExpiresByType image/svg+xml "access plus 1 year"
   ExpiresByType image/x-icon "access plus 1 year"
 
-  # Stylesheets & Scripts
-  ExpiresByType text/css "access plus 1 month"
-  ExpiresByType application/javascript "access plus 1 month"
-
-  # Fonts
+  # Fonts - 1 year immutable
   ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType font/woff "access plus 1 year"
+
+  # Stylesheets & Scripts - Revalidate so updates deploy immediately
+  ExpiresByType text/css "access plus 0 seconds"
+  ExpiresByType application/javascript "access plus 0 seconds"
 </IfModule>
 
-# Gzip / Deflate Compression
+# 10. Cache-Control Headers
+<IfModule mod_headers.c>
+  # Fonts (completely immutable)
+  <FilesMatch "\.(woff2|woff)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  # Images & Media
+  <FilesMatch "\.(png|jpg|jpeg|webp|avif|svg|ico)$">
+    Header set Cache-Control "public, max-age=31536000, stale-while-revalidate=86400"
+  </FilesMatch>
+
+  # CSS & JS: Browser revalidates with server on every session (ETag 304 check)
+  <FilesMatch "\.(css|js)$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+
+  # Web App Manifest & LLM Specifications (Cache for 1 week with stale-while-revalidate)
+  <FilesMatch "(manifest\.json|llms\.txt)$">
+    Header set Cache-Control "public, max-age=604800, stale-while-revalidate=86400"
+  </FilesMatch>
+
+  # HTML & Directory Index Pages: NEVER cache on client, browser disk, or intermediate proxies
+  <FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "no-cache, no-store, must-revalidate, max-age=0, s-maxage=0"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </FilesMatch>
+
+  # Prevent Hostinger / LiteSpeed Edge Proxy Caching on Root & Directory Routes
+  <If "%{REQUEST_URI} =~ m#(/$|\.html$)#">
+    Header set Cache-Control "no-cache, no-store, must-revalidate, max-age=0, s-maxage=0"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+    Header set X-LiteSpeed-Cache-Control "no-cache"
+  </If>
+
+  # Proper content negotiation
+  Header append Vary Accept-Encoding
+</IfModule>
+
+# 11. Brotli & Gzip Compression
+<IfModule mod_brotli.c>
+  AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/xml text/css application/javascript application/json image/svg+xml
+</IfModule>
+
 <IfModule mod_deflate.c>
-  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript application/json image/svg+xml
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript application/json image/svg+xml font/ttf font/otf font/eot
 </IfModule>

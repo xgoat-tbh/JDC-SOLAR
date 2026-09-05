@@ -1,0 +1,336 @@
+---
+// src/pages/about/index.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const aboutSchema = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "About JDC Solar",
+  "url": "https://jdcsolar.com/about/",
+  "mainEntity": {
+    "@type": "Organization",
+    "name": "JDC Solar",
+    "parentOrganization": {
+      "@type": "Organization",
+      "name": "Jagatdhan Commodities Pvt. Ltd."
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "A-21 2nd Phase, Industrial Area, Adityapur",
+      "addressLocality": "Jamshedpur",
+      "addressRegion": "Jharkhand",
+      "postalCode": "832109",
+      "addressCountry": "IN"
+    }
+  }
+};
+---
+
+<BaseLayout
+  title="About JDC Solar | Solar EPC Company in Jharkhand & Eastern India"
+  description="Learn about JDC Solar, a clean energy venture of Jagatdhan Commodities Pvt. Ltd. Engineering excellence, Tier-1 hardware, and 500+ commissioned projects."
+  canonical="https://jdcsolar.com/about/"
+  activeNav="about"
+  schema={aboutSchema}
+>
+  <!-- Page Hero -->
+  <section class="page-hero page-hero--about" aria-label="About JDC Solar Introduction">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumbs">
+        <ol class="breadcrumb__list">
+          <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">Home</a></li>
+          <li class="breadcrumb__separator" aria-hidden="true">/</li>
+          <li class="breadcrumb__item" aria-current="page">About Us</li>
+        </ol>
+      </nav>
+
+      <div class="page-hero__badge">
+        <div class="section-tag section-tag--accent">About JDC Solar</div>
+      </div>
+      <h1 class="display-title page-hero__title">
+        Powering a Sustainable Future with Smart Solar Solutions
+      </h1>
+      <p class="lead page-hero__lead">
+        JDC Solar is a professional solar Engineering, Procurement, and Construction (EPC) company committed to delivering reliable, high-performance solar power plants for residential, commercial, industrial, and government clients across India.
+      </p>
+      <div class="page-hero__chips">
+        <div class="page-hero__chip">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-shield"></use></svg>
+          <span>Jagatdhan Group Lineage</span>
+        </div>
+        <div class="page-hero__chip">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-location"></use></svg>
+          <span>Adityapur HQ, Jamshedpur</span>
+        </div>
+        <div class="page-hero__chip">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+          <span>500+ Commissioned Projects</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Corporate Heritage -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="grid grid--2col" style="align-items: center;">
+        <div>
+          <span class="section-overline">CORPORATE HERITAGE</span>
+          <h2 style="margin-top: 0.5rem; margin-bottom: 1rem;">Engineering Excellence Rooted in Industrial Trust</h2>
+          <p>
+            As a dedicated clean energy venture of <strong>Jagatdhan Commodities Pvt. Ltd.</strong>, JDC Solar operates from its engineering headquarters in the Adityapur Industrial Area, Jamshedpur. We specialize in end-to-end solar solutions—from initial shadow analysis and electrical design to net-metering approvals, structural installation, and long-term operations & maintenance.
+          </p>
+          <p>
+            We empower homeowners to eliminate their electricity bills through the PM Surya Ghar Muft Bijli Yojana, while enabling industrial manufacturers and commercial establishments to achieve substantial operational savings and 40% Section 32 tax depreciation benefits.
+          </p>
+        </div>
+        <div style="background: var(--color-bg-surface); border: 1px solid var(--color-border-default); border-radius: var(--radius-xl); padding: var(--space-xl); box-shadow: var(--shadow-md);">
+          <h3 style="font-size: 1.2rem; color: var(--color-text-headings); margin-bottom: 1rem;">Headquarters & Operational Hub</h3>
+          <div style="display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.95rem;">
+            <div style="display: flex; gap: 0.5rem;">
+              <span style="font-weight: 700; min-width: 110px;">Entity:</span>
+              <span>Jagatdhan Commodities Pvt. Ltd. (JDC Solar)</span>
+            </div>
+            <div style="display: flex; gap: 0.5rem;">
+              <span style="font-weight: 700; min-width: 110px;">Location:</span>
+              <span>A-21 2nd Phase, Industrial Area, Adityapur, Jamshedpur, Jharkhand 832109</span>
+            </div>
+            <div style="display: flex; gap: 0.5rem;">
+              <span style="font-weight: 700; min-width: 110px;">Primary Hub:</span>
+              <span>Jharkhand, Bihar, West Bengal, Odisha</span>
+            </div>
+            <div style="display: flex; gap: 0.5rem;">
+              <span style="font-weight: 700; min-width: 110px;">Accreditation:</span>
+              <span>MNRE Approved Channel Partner • Authorized Adani Solar & Khetan Partner</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission & Vision -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid--2col">
+        <div class="card" style="border-top: 4px solid var(--color-brand-accent);">
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+            <div style="width: 44px; height: 44px; border-radius: var(--radius-md); background: rgba(253, 129, 39, 0.15); color: var(--color-brand-accent-text, #C25E00); display: flex; align-items: center; justify-content: center;">
+              <svg class="icon" style="width: 24px; height: 24px;"><use href="/assets/icons/sprite.svg#icon-sun"></use></svg>
+            </div>
+            <h2 style="font-size: 1.4rem; margin: 0;">Our Mission</h2>
+          </div>
+          <p style="color: var(--color-text-secondary); line-height: 1.65;">
+            To deliver reliable, high-quality solar energy solutions that help homes, businesses, and industries reduce energy costs while supporting a cleaner and more sustainable future across Eastern India.
+          </p>
+        </div>
+
+        <div class="card card--vision" style="border-top: 4px solid #10B981;">
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+            <div style="width: 44px; height: 44px; border-radius: var(--radius-md); background: rgba(16, 185, 129, 0.15); color: #10B981; display: flex; align-items: center; justify-content: center;">
+              <svg class="icon" style="width: 24px; height: 24px;"><use href="/assets/icons/sprite.svg#icon-leaf"></use></svg>
+            </div>
+            <h2 style="font-size: 1.4rem; margin: 0; color: #10B981;">Our Vision</h2>
+          </div>
+          <p style="color: var(--color-text-secondary); line-height: 1.65;">
+            To become Eastern India's most trusted solar energy partner, recognized for engineering rigor, transparent financial returns, and long-term asset value driving clean energy adoption.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Values -->
+  <section class="section section--compact section--alt">
+    <div class="container">
+      <div class="grid grid--4col">
+        <div class="card card-telemetry-spec">
+          <div class="card-telemetry-spec__top">
+            <div class="card-telemetry-spec__icon-box">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-shield"></use></svg>
+            </div>
+            <div class="card-telemetry-spec__status-tag">
+              <span class="status-pulse-dot"></span>
+              <span>CORE PILLAR</span>
+            </div>
+          </div>
+          <h3 class="card-telemetry-spec__title">Integrity &amp; Transparency</h3>
+          <p class="card-telemetry-spec__desc">Honest communication, clear all-inclusive pricing, and transparent engineering processes at every project stage.</p>
+          <div class="card-telemetry-spec__metric">
+            <span class="card-telemetry-spec__metric-val">100%</span>
+            <span class="card-telemetry-spec__metric-lbl">Transparent EPC</span>
+          </div>
+        </div>
+
+        <div class="card card-telemetry-spec">
+          <div class="card-telemetry-spec__top">
+            <div class="card-telemetry-spec__icon-box">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-award"></use></svg>
+            </div>
+            <div class="card-telemetry-spec__status-tag">
+              <span class="status-pulse-dot"></span>
+              <span>TIER-1 EXCLUSIVE</span>
+            </div>
+          </div>
+          <h3 class="card-telemetry-spec__title">Quality &amp; Reliability</h3>
+          <p class="card-telemetry-spec__desc">We install exclusively Tier-1 monocrystalline panels, top-rated inverters, and proven engineering practices for 25-year longevity.</p>
+          <div class="card-telemetry-spec__metric">
+            <span class="card-telemetry-spec__metric-val">25 Yrs</span>
+            <span class="card-telemetry-spec__metric-lbl">Design Lifespan</span>
+          </div>
+        </div>
+
+        <div class="card card-telemetry-spec">
+          <div class="card-telemetry-spec__top">
+            <div class="card-telemetry-spec__icon-box">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-home"></use></svg>
+            </div>
+            <div class="card-telemetry-spec__status-tag">
+              <span class="status-pulse-dot"></span>
+              <span>LOAD OPTIMIZED</span>
+            </div>
+          </div>
+          <h3 class="card-telemetry-spec__title">Customer-Centricity</h3>
+          <p class="card-telemetry-spec__desc">Every solar solution is custom-sized to real load profiles, maximizing net financial return and lifetime satisfaction.</p>
+          <div class="card-telemetry-spec__metric">
+            <span class="card-telemetry-spec__metric-val">Custom</span>
+            <span class="card-telemetry-spec__metric-lbl">Load Profiling</span>
+          </div>
+        </div>
+
+        <div class="card card-telemetry-spec">
+          <div class="card-telemetry-spec__top">
+            <div class="card-telemetry-spec__icon-box">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+            </div>
+            <div class="card-telemetry-spec__status-tag">
+              <span class="status-pulse-dot"></span>
+              <span>SAFETY FIRST</span>
+            </div>
+          </div>
+          <h3 class="card-telemetry-spec__title">Safety &amp; Responsibility</h3>
+          <p class="card-telemetry-spec__desc">Strict electrical safety standards, structural wind-load designs (IS 875), and responsible environmental practices.</p>
+          <div class="card-telemetry-spec__metric">
+            <span class="card-telemetry-spec__metric-val">Zero</span>
+            <span class="card-telemetry-spec__metric-lbl">Safety Compromise</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Regional Presence -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-overline">REGIONAL PRESENCE</span>
+        <h2>Our Offices Across Eastern India</h2>
+        <p class="lead">Serving residential, commercial, and industrial clients with physical engineering hubs in 3 states.</p>
+      </div>
+
+      <div class="regional-offices-grid">
+        <div class="regional-office-card regional-office-card--hq">
+          <span class="regional-office-card__badge">Corporate HQ</span>
+          <div class="regional-office-card__header">
+            <div class="regional-office-card__icon">
+              <svg class="icon"><use href="/assets/icons/sprite.svg#icon-location"></use></svg>
+            </div>
+            <div>
+              <h3 class="regional-office-card__state">Jharkhand</h3>
+            </div>
+          </div>
+          <p class="regional-office-card__address">
+            <strong>JDC Solar Engineering Headquarters</strong><br>
+            A-21 2nd Phase, Industrial Area, Adityapur, Jamshedpur, Jharkhand 832109
+          </p>
+          <div class="regional-office-card__coverage">
+            <strong>Coverage:</strong> Jamshedpur, Ranchi, Dhanbad, Bokaro & State-wide EPC
+          </div>
+          <div class="regional-office-card__actions">
+            <a href="https://maps.google.com/?q=A-21+2nd+Phase+Industrial+Area+Adityapur+Jamshedpur+Jharkhand+832109" target="_blank" rel="noopener noreferrer" class="regional-office-card__link">
+              <span>Get Directions</span>
+              <svg class="icon"><use href="/assets/icons/sprite.svg#icon-arrow-right"></use></svg>
+            </a>
+            <a href="tel:+919288381112" class="btn btn--secondary btn--sm">Call Office</a>
+          </div>
+        </div>
+
+        <div class="regional-office-card">
+          <span class="regional-office-card__badge">Regional Branch</span>
+          <div class="regional-office-card__header">
+            <div class="regional-office-card__icon">
+              <svg class="icon"><use href="/assets/icons/sprite.svg#icon-location"></use></svg>
+            </div>
+            <div>
+              <h3 class="regional-office-card__state">West Bengal</h3>
+            </div>
+          </div>
+          <p class="regional-office-card__address">
+            <strong>Kolkata Branch Office</strong><br>
+            A/52/1, Baghajatin Colony, Near I Block More, Kolkata, West Bengal 700092
+          </p>
+          <div class="regional-office-card__coverage">
+            <strong>Coverage:</strong> Greater Kolkata, Howrah, Durgapur, Asansol & South Bengal
+          </div>
+          <div class="regional-office-card__actions">
+            <a href="https://maps.google.com/?q=A/52/1+Baghajatin+Colony+Near+I+Block+More+Kolkata+700092" target="_blank" rel="noopener noreferrer" class="regional-office-card__link">
+              <span>Get Directions</span>
+              <svg class="icon"><use href="/assets/icons/sprite.svg#icon-arrow-right"></use></svg>
+            </a>
+            <a href="tel:+919288381112" class="btn btn--secondary btn--sm">Call Office</a>
+          </div>
+        </div>
+
+        <div class="regional-office-card">
+          <span class="regional-office-card__badge">Regional Branch</span>
+          <div class="regional-office-card__header">
+            <div class="regional-office-card__icon">
+              <svg class="icon"><use href="/assets/icons/sprite.svg#icon-location"></use></svg>
+            </div>
+            <div>
+              <h3 class="regional-office-card__state">Odisha</h3>
+            </div>
+          </div>
+          <p class="regional-office-card__address">
+            <strong>Bhubaneswar Branch Office</strong><br>
+            New Capital Bhubaneswar, Near Siv Temple, Naharakanta, Khordha, Bhubaneswar, Odisha 752101
+          </p>
+          <div class="regional-office-card__coverage">
+            <strong>Coverage:</strong> Bhubaneswar, Cuttack, Rourkela, Khordha & Coastal Belt
+          </div>
+          <div class="regional-office-card__actions">
+            <a href="https://maps.google.com/?q=Naharakanta+Khordha+Bhubaneswar+Odisha+752101" target="_blank" rel="noopener noreferrer" class="regional-office-card__link">
+              <span>Get Directions</span>
+              <svg class="icon"><use href="/assets/icons/sprite.svg#icon-arrow-right"></use></svg>
+            </a>
+            <a href="tel:+919288381112" class="btn btn--secondary btn--sm">Call Office</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="section section--compact">
+    <div class="container">
+      <div class="cta-banner is-inview">
+        <div class="cta-banner__content">
+          <span class="section-overline">PARTNER WITH JDC SOLAR</span>
+          <h2 class="cta-banner__title">Ready to Discuss Your Solar Power Project?</h2>
+          <p class="cta-banner__description">
+            Connect with our senior engineering team in Adityapur for a comprehensive site assessment and subsidy feasibility analysis.
+          </p>
+          <div class="cta-banner__actions">
+            <button type="button" class="btn btn--primary btn--lg" data-modal-open="survey-modal">
+              Book Free Rooftop Survey →
+            </button>
+            <a href="https://wa.me/919288381112" class="btn btn--whatsapp btn--lg" target="_blank" rel="noopener noreferrer">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-whatsapp"></use></svg>
+              Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

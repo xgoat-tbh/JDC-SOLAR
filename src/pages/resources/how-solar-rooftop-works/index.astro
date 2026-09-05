@@ -1,0 +1,218 @@
+---
+// src/pages/resources/how-solar-rooftop-works/index.astro
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://jdcsolar.com/resources/how-solar-rooftop-works/#article",
+      "headline": "How Rooftop Solar Works: Net-Metering, Inverters & Grid Synchronization",
+      "description": "Comprehensive engineering guide explaining the photovoltaic conversion of sunlight, on-grid inverters, and bidirectional net-metering.",
+      "image": "https://jdcsolar.com/assets/images/banners/banner-resources.jpg",
+      "datePublished": "2026-08-01T08:00:00+05:30",
+      "dateModified": "2026-08-01T08:00:00+05:30",
+      "author": {
+        "@type": "Organization",
+        "name": "JDC Solar Technical Engineering Team"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "JDC Solar",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://jdcsolar.com/assets/brand/logo-mark.png"
+        }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://jdcsolar.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Resources", "item": "https://jdcsolar.com/resources/" },
+        { "@type": "ListItem", "position": 3, "name": "How Rooftop Solar Works", "item": "https://jdcsolar.com/resources/how-solar-rooftop-works/" }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title="How Rooftop Solar Works: Net-Metering, Inverters & Grid Synchronization | JDC Solar"
+  description="Learn how rooftop solar converts sunlight into usable AC electricity, synchronizes with the DISCOM grid, and utilizes bidirectional net-metering to slash power bills."
+  canonical="https://jdcsolar.com/resources/how-solar-rooftop-works/"
+  activeNav="resources"
+  schema={articleSchema}
+>
+  <section class="page-hero page-hero--resources" aria-label="Technical Solar Guide">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumbs">
+        <ol class="breadcrumb__list">
+          <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">Home</a></li>
+          <li class="breadcrumb__separator" aria-hidden="true">/</li>
+          <li class="breadcrumb__item"><a href="/resources/" class="breadcrumb__link">Resources</a></li>
+          <li class="breadcrumb__separator" aria-hidden="true">/</li>
+          <li class="breadcrumb__item" aria-current="page">How Solar Works</li>
+        </ol>
+      </nav>
+
+      <div class="page-hero__badge">
+        <div class="section-tag section-tag--accent">Technical Solar Guide</div>
+      </div>
+      <h1 class="display-title page-hero__title">
+        How Rooftop Solar Works: Net-Metering, Inverters &amp; Grid Synchronization
+      </h1>
+      <p class="lead page-hero__lead">
+        A clear engineering explanation of how photovoltaic silicon modules generate DC power, how on-grid inverters synchronize with state electricity grids, and how bidirectional net-meters reduce electric bills by up to 90%.
+      </p>
+      <div class="page-hero__chips">
+        <div class="page-hero__chip">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+          <span>Photovoltaic Working Principle</span>
+        </div>
+        <div class="page-hero__chip">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+          <span>Grid-Tied Net-Metering Flow</span>
+        </div>
+        <div class="page-hero__chip">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+          <span>Monocrystalline Efficiency</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--medium">
+      <article class="card card--neomorph" style="padding: var(--space-2xl); margin-bottom: var(--space-2xl);">
+        <span class="section-overline">STAGE 1: GENERATION</span>
+        <h2 style="font-size: 1.6rem; color: var(--color-text-headings); margin-bottom: 1rem;">1. Photovoltaic Silicon Physics (Sunlight to DC Power)</h2>
+        <p style="line-height: 1.8; color: var(--color-text-default); margin-bottom: 1.25rem;">
+          When sunlight hits the surface of a monocrystalline silicon solar panel, photons are absorbed by semiconductor material (P-N junction). This photon energy excites electrons, knocking them free from their atomic bonds. An integrated electrical field inside the cell directs these free electrons into a continuous flow, creating direct current (DC) electricity.
+        </p>
+        <div class="grid grid--2col gap-md" style="margin-top: 1.5rem;">
+          <div style="background: var(--color-bg-surface-sunken); padding: 1.25rem; border-radius: var(--radius-lg); border-left: 4px solid var(--color-brand-accent);">
+            <strong style="color: var(--color-text-headings); display: block; margin-bottom: 4px;">Mono PERC / TOPCon Technology:</strong>
+            <p class="text-small text-muted" style="margin-top: 0.5rem;">Modern Tier-1 panels achieve 21.5% to 22.8% cell conversion efficiency, generating substantial power even during cloudy or diffused monsoon days in Jharkhand.</p>
+          </div>
+          <div style="background: var(--color-bg-surface-sunken); padding: 1.25rem; border-radius: var(--radius-lg); border-left: 4px solid var(--color-status-success);">
+            <strong style="color: var(--color-text-headings); display: block; margin-bottom: 4px;">Temperature Coefficient:</strong>
+            <p class="text-small text-muted" style="margin-top: 0.5rem;">Engineered with a low temperature coefficient (-0.30%/°C) ensuring optimal summer yield across Jamshedpur, Ranchi, and Dhanbad heatwaves.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="card card--neomorph" style="padding: var(--space-2xl); margin-bottom: var(--space-2xl);">
+        <span class="section-overline">STAGE 2: INVERSION &amp; SYNCHRONIZATION</span>
+        <h2 style="font-size: 1.6rem; color: var(--color-text-headings); margin-bottom: 1rem;">2. On-Grid String Inverter &amp; Phase Synchronization</h2>
+        <p style="line-height: 1.8; color: var(--color-text-default); margin-bottom: 1.25rem;">
+          Homes and industrial plants run on Alternating Current (AC) at 230V single-phase or 415V three-phase, 50 Hz. The on-grid solar string inverter converts the raw DC current into pure sine-wave AC power that matches the exact voltage, frequency, and phase angle of the DISCOM grid (JBVNL / TSUISL).
+        </p>
+        <p style="line-height: 1.8; color: var(--color-text-default); margin-bottom: 1.25rem;">
+          <strong>Maximum Power Point Tracking (MPPT):</strong> Dual or quad MPPT microprocessors continuously sweep voltage-current curves thousands of times per second to extract maximum peak wattage regardless of partial shading or cloud movement.
+        </p>
+      </article>
+
+      <article class="card card--neomorph" style="padding: var(--space-2xl); margin-bottom: var(--space-2xl);">
+        <span class="section-overline">STAGE 3: DISCOM NET-METERING</span>
+        <h2 style="font-size: 1.6rem; color: var(--color-text-headings); margin-bottom: 1rem;">3. Bidirectional Net-Metering &amp; Monthly Settlement</h2>
+        <p style="line-height: 1.8; color: var(--color-text-default); margin-bottom: 1.25rem;">
+          A bidirectional net-meter replaces your standard electricity meter. It records both the electricity you import from the grid during nighttime and the excess clean solar energy you export to the grid during sunny daytime hours.
+        </p>
+        <div style="background: var(--color-bg-surface-sunken); padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--color-border-subtle); margin-top: 1rem;">
+          <h3 style="font-size: 1.15rem; color: var(--color-brand-accent-text, #C25E00); margin-bottom: 0.75rem;">Sample Jharkhand Monthly Net-Metering Calculation:</h3>
+          <ul style="list-style: disc; padding-left: 1.5rem; line-height: 1.9; color: var(--color-text-default);">
+            <li><strong>Total Consumption:</strong> 400 kWh (units consumed by your household)</li>
+            <li><strong>Solar Generation (3 kWp):</strong> 360 kWh (units generated on your roof)</li>
+            <li><strong>Self-Consumed Solar:</strong> 250 kWh (instant daytime utilization)</li>
+            <li><strong>Surplus Exported to JBVNL:</strong> 110 kWh (sent to grid via bidirectional meter)</li>
+            <li><strong>Grid Import at Night:</strong> 150 kWh (drawn from grid after sunset)</li>
+            <li><strong>Billed Units:</strong> 150 Import - 110 Export = <span style="color: var(--color-status-success); font-weight: 700;">Only 40 kWh Billed!</span> (90% Bill Reduction)</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="card card--neomorph" style="padding: var(--space-2xl); margin-bottom: var(--space-2xl);">
+        <span class="section-overline">STAGE 4: GRID SAFETY &amp; PROTOCOLS</span>
+        <h2 style="font-size: 1.6rem; color: var(--color-text-headings); margin-bottom: 1rem;">4. Anti-Islanding Protection &amp; Grid Safety (IEEE 1547 / CEA)</h2>
+        <p style="line-height: 1.8; color: var(--color-text-default); margin-bottom: 1rem;">
+          In the event of a power outage on the DISCOM line, on-grid inverters shut down within 100 milliseconds. This automatic safety mechanism prevents back-feeding power into dead utility lines, protecting lineworkers and engineers repairing transformers from fatal electrocution.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container container--medium">
+      <div class="section-header">
+        <span class="section-overline">SYSTEM ARCHITECTURES</span>
+        <h2>On-Grid vs. Off-Grid vs. Hybrid Solar Systems</h2>
+        <p class="lead">Understanding the differences to choose the optimal solar configuration for your property.</p>
+      </div>
+
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>Feature / Attribute</th>
+              <th style="color: var(--color-brand-accent-text, #C25E00);">On-Grid (Recommended)</th>
+              <th>Hybrid Solar</th>
+              <th>Off-Grid Solar</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="font-weight: 600;">PM Surya Ghar Subsidy</td>
+              <td style="color: var(--color-status-success); font-weight: 700;">Eligible (Up to ₹78,000)</td>
+              <td>Eligible on PV component</td>
+              <td style="color: var(--color-status-error);">Not Eligible</td>
+            </tr>
+            <tr>
+              <td style="font-weight: 600;">Battery Storage Required</td>
+              <td>No (Virtual Grid Battery)</td>
+              <td>Yes (LiFePO4 Lithium)</td>
+              <td>Yes (Lead-Acid/Lithium)</td>
+            </tr>
+            <tr>
+              <td style="font-weight: 600;">Capital Investment</td>
+              <td style="color: var(--color-status-success); font-weight: 700;">Lowest (Fastest Payback ~3 yrs)</td>
+              <td>Moderate (4–5 yrs Payback)</td>
+              <td>Highest (Battery Replacement)</td>
+            </tr>
+            <tr>
+              <td style="font-weight: 600;">Maintenance Requirement</td>
+              <td style="color: var(--color-status-success);">Minimal (Periodic Panel Wash)</td>
+              <td>Moderate</td>
+              <td>High (Battery Monitoring)</td>
+            </tr>
+            <tr>
+              <td style="font-weight: 600;">Best Suited For</td>
+              <td style="font-weight: 600;">Homes &amp; Businesses with Grid Power</td>
+              <td>Areas with frequent load-shedding</td>
+              <td>Remote farmhouses &amp; un-electrified sites</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--compact">
+    <div class="container">
+      <div class="cta-banner">
+        <div class="cta-banner__content">
+          <span class="section-overline">ENGINEERED FOR EASTERN INDIA</span>
+          <h2 class="cta-banner__title">Calculate Your Exact Rooftop Solar ROI</h2>
+          <p class="cta-banner__description">
+            Use JDC Solar's interactive calculator to model monthly power bill savings, PM Surya Ghar subsidy deductions, and rooftop space requirements for your home or enterprise.
+          </p>
+          <div class="cta-banner__actions">
+            <a href="/solar-calculator/" class="btn btn--primary btn--lg">Open Solar Calculator →</a>
+            <button type="button" class="btn btn--secondary btn--lg" data-modal-open="survey-modal">Book Site Survey</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

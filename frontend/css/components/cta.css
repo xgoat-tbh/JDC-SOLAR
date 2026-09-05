@@ -1,24 +1,32 @@
-/**
- * JDC SOLAR 2.0 - CALL TO ACTION (CTA) SYSTEMS
- * Pre-footer conversion banners with cinematic solar photography and glassmorphic depth
- */
-
 .cta-banner {
-  background-image: url('/assets/images/cta/cta-card-bg.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  box-sizing: border-box;
+  background-color: #0B1426;
+  background-image: linear-gradient(135deg, rgba(11, 20, 38, 0.9) 0%, rgba(15, 23, 42, 0.94) 100%);
   color: #FFFFFF;
   border-radius: var(--radius-2xl);
   padding: clamp(3rem, 6vh, 4.5rem) var(--space-xl);
   text-align: center;
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 0 25px 60px -15px rgba(11, 25, 44, 0.6), 0 0 0 1px rgba(253, 129, 39, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: var(--shadow-xl);
 }
 
-/* Dark cinematic overlay */
+.cta-banner.is-inview {
+  background-image: url('/assets/images/cta/cta-card-bg-mobile.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media (min-width: 768px) {
+  .cta-banner.is-inview {
+    background-image: url('/assets/images/cta/cta-card-bg.jpg');
+  }
+}
+
+
+
 .cta-banner::before {
   content: '';
   position: absolute;
@@ -32,7 +40,6 @@
   z-index: 1;
 }
 
-/* Micro-dot texture overlay */
 .cta-banner::after {
   content: '';
   position: absolute;
@@ -71,4 +78,22 @@
   gap: var(--space-md);
   flex-wrap: wrap;
   align-items: center;
+}
+
+@media (max-width: 767px) {
+  .cta-banner {
+    padding: 2.5rem 1.25rem 2.75rem 1.25rem;
+    border-radius: var(--radius-xl);
+  }
+  .cta-banner__title {
+    font-size: clamp(1.6rem, 5.5vw, 2.1rem);
+    margin-bottom: 0.75rem;
+  }
+  .cta-banner__description {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+  .cta-banner__actions .btn {
+    width: 100%;
+  }
 }

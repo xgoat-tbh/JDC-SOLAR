@@ -5,7 +5,10 @@ package-lock.json
 # Build Outputs & Bundles
 dist/
 build/
+dist_astro/
 .cache/
+.astro/
+*.zip
 
 # Environment Variables & Secrets
 .env

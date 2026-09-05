@@ -1,0 +1,148 @@
+---
+// src/layouts/BaseLayout.astro
+import TopBar from '../components/common/TopBar.astro';
+import Header from '../components/common/Header.astro';
+import MobileDrawer from '../components/common/MobileDrawer.astro';
+import Footer from '../components/common/Footer.astro';
+import MobileActionBar from '../components/common/MobileActionBar.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  canonical?: string;
+  activeNav?: string;
+  pageId?: string;
+  schema?: Record<string, any>;
+}
+
+const {
+  title,
+  description,
+  canonical = 'https://jdcsolar.com/',
+  activeNav = 'home',
+  pageId = 'home',
+  schema
+} = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>{title}</title>
+  <meta name="description" content={description}>
+  <meta name="keywords" content="solar company Jharkhand, rooftop solar Jamshedpur, solar EPC Ranchi, PM Surya Ghar Muft Bijli Yojana, residential solar subsidy, commercial solar Jharkhand">
+  <meta name="author" content="JDC Solar / Jagatdhan Commodities Pvt. Ltd.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href={canonical}>
+
+  <!-- Open Graph -->
+  <meta property="og:locale" content="en_IN">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:url" content={canonical}>
+  <meta property="og:site_name" content="JDC Solar">
+  <meta property="og:image" content="https://jdcsolar.com/assets/images/brand/og-preview.jpg">
+
+  <meta name="theme-color" content="#1B3766">
+  <link rel="dns-prefetch" href="https://formspree.io">
+  <link rel="dns-prefetch" href="https://wa.me">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/brand/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/brand/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+
+  <!-- Local Fonts Preload -->
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/plus-jakarta-sans-latin.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/outfit-latin.woff2" crossorigin>
+
+  <!-- Prevent Theme Flashing Inline Script -->
+  <script is:inline>
+    const savedTheme = localStorage.getItem('jdc_theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
+
+  <!-- Optional Schema.org JSON-LD -->
+  {schema && (
+    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  )}
+</head>
+<body data-page={pageId}>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <TopBar />
+  <Header activeNav={activeNav} />
+  <MobileDrawer activeNav={activeNav} />
+
+  <main id="main-content" role="main">
+    <slot />
+  </main>
+
+  <Footer />
+  <MobileActionBar />
+
+  <!-- Jump to Top Button with SVG Progress Ring -->
+  <button id="jump-to-top" class="jump-to-top" aria-label="Jump to top of page" title="Jump to top">
+    <svg class="jump-to-top__ring" viewBox="0 0 48 48" aria-hidden="true">
+      <circle class="jump-to-top__track" cx="24" cy="24" r="20" />
+      <circle class="jump-to-top__indicator" cx="24" cy="24" r="20" />
+    </svg>
+    <svg class="jump-to-top__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </button>
+
+  <!-- Consultation / Survey Modal -->
+  <dialog id="survey-modal" class="modal-dialog modal-dialog--survey" aria-labelledby="survey-modal-title">
+    <div class="modal-dialog__header">
+      <h2 id="survey-modal-title" class="modal-dialog__title">Book Free Rooftop Solar Survey</h2>
+      <button type="button" class="modal-dialog__close-btn" data-modal-close aria-label="Close Dialog">
+        <svg class="icon"><use href="/assets/icons/sprite.svg#icon-close"></use></svg>
+      </button>
+    </div>
+    <div class="modal-dialog__body">
+      <p class="text-small text-muted" style="margin-bottom: 1.15rem;">Enter your contact details. Our solar engineering team will inspect your roof, run 3D shadow analysis, and calculate your exact PM Surya Ghar subsidy.</p>
+      <form data-validate="true" class="survey-form-grid">
+        <input type="text" name="b_url" class="sr-only" tabindex="-1" autocomplete="off">
+        <div class="form-group">
+          <label class="form-label" for="survey-name">Full Name <span class="required-mark">*</span></label>
+          <input type="text" id="survey-name" name="name" class="form-control" placeholder="e.g. Ramesh Kumar" required>
+          <span id="survey-name-error" class="form-error-msg hidden">Please enter your full name.</span>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="survey-phone">Mobile Number (10 Digits) <span class="required-mark">*</span></label>
+          <input type="tel" id="survey-phone" name="phone" class="form-control" placeholder="e.g. 9876543210" required>
+          <span id="survey-phone-error" class="form-error-msg hidden">Please enter a valid 10-digit Indian phone number.</span>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="survey-city">City / District in Jharkhand <span class="required-mark">*</span></label>
+          <input type="text" id="survey-city" name="city" class="form-control" placeholder="e.g. Jamshedpur, Ranchi, Dhanbad" required>
+          <span id="survey-city-error" class="form-error-msg hidden">Please enter your city or district.</span>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="survey-pincode">Pincode (6 Digits) <span class="required-mark">*</span></label>
+          <input type="text" id="survey-pincode" name="pincode" class="form-control" placeholder="e.g. 831001" required>
+          <span id="survey-pincode-error" class="form-error-msg hidden">Please enter a valid 6-digit pincode.</span>
+        </div>
+        <div class="form-group survey-form-group--full">
+          <label class="form-label" for="survey-bill">Average Monthly Electricity Bill (₹)</label>
+          <select id="survey-bill" name="monthly_bill" class="form-select">
+            <option value="under_1500">Under ₹ 1,500 / month</option>
+            <option value="1500_3000" selected>₹ 1,500 – ₹ 3,000 / month</option>
+            <option value="3000_5000">₹ 3,000 – ₹ 5,000 / month</option>
+            <option value="5000_10000">₹ 5,000 – ₹ 10,000 / month</option>
+            <option value="above_10000">Above ₹ 10,000 / month (Commercial/Industrial)</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn--primary btn--block btn--lg survey-form-submit">Submit Survey Request →</button>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- Vite bundled client animation & interaction engine (Lenis 120 FPS, GSAP, Exploded Module, Canvas, Tilt) -->
+  <script src="../scripts/main.js"></script>
+</body>
+</html>

@@ -55,7 +55,7 @@ JDC Solar 2.0 is the official digital commercial and educational platform for **
 
 #### Verified Requirements (Strict Source-of-Truth)
 - Legal Entity: Jagatdhan Commodities Pvt. Ltd., Adityapur Industrial Area, Jamshedpur, Jharkhand 832109.
-- Primary Phone: `+91 9234611112`, WhatsApp: `+91 9288381112`, Emails: `info@jdcsolar.com`, `sales@jdcsolar.com`.
+- Primary Phone: `+91 92883 81112`, WhatsApp: `+91 92883 81112`, Emails: `info@jdcsolar.com`, `sales@jdcsolar.com`.
 - 6 Core Services: Residential Rooftop, Industrial & Commercial Rooftop, Health & Education Rooftop, Government & PSU, Solar Street Lights, Utility-Scale Solar Parks.
 - Verified Color Palette: Deep Navy (`#1B3766`), Solar Orange (`#FD8127`), Amber (`#FF6900`), Support Purple (`#605BE5`).
 - Complete Privacy Policy and corporate data governance text.
@@ -137,7 +137,7 @@ https://jdcsolar.com/
 | **Projects Explorer** | `/projects/` | Filterable portfolio of completed installations | Prospective buyers | `Book Site Survey` | `Filter by Category` | Category filters, system size (kWp), location, generation stats, photo gallery | Proof / Trust | **P1 (High)** | **Renamed (`/project/` -> `/projects/`)** |
 | **Solar Calculator** | `/solar-calculator/` | Interactive sizing, subsidy & ROI estimator | Homeowners & business owners | `Share Quote on WhatsApp` | `Book Free Rooftop Survey`| State DISCOM selector, units/bill input, real-time results, PM Surya Ghar subsidy, WhatsApp CTA | Interactive / Conversion | **P0 (Critical)** | **Existing (Upgrade)** |
 | **PM Surya Ghar Guide**| `/pm-surya-ghar/` | Step-by-step consumer subsidy manual | Residential homeowners | `Apply with JDC Solar` | `Calculate Subsidy` | National portal workflow, DISCOM inspection guide, document checklist, subsidy slabs | Educational / Informational | **P1 (High)** | **New Page** |
-| **Contact Us** | `/contact/` | Direct communication & survey booking | High-intent leads | `Submit Inquiry` | `Call +91 9234611112` | Adityapur office map/address, direct dial, WhatsApp link, 3-field rapid intake form | Contact / Conversion | **P0 (Critical)** | **Existing (Redesign)** |
+| **Contact Us** | `/contact/` | Direct communication & survey booking | High-intent leads | `Submit Inquiry` | `Call +91 92883 81112` | Adityapur office map/address, direct dial, WhatsApp link, 3-field rapid intake form | Contact / Conversion | **P0 (Critical)** | **Existing (Redesign)** |
 | **Privacy Policy** | `/privacy-policy/` | Data protection & compliance declaration | Legal compliance | `Contact Data Officer` | `Back to Home` | Full corporate data privacy text, data handling terms, contact info | Legal | **P3 (Low)** | **Existing (Preserve)** |
 | **404 Error Page** | `/404.html` | Graceful error handling & recovery navigation | Broken link arrivals | `Return to Homepage` | `Open Solar Calculator` | Error explanation, search/navigation recovery links | Error Recovery | **P3 (Low)** | **New Template** |
 
@@ -248,7 +248,7 @@ OLD: /?wpr_templates=*       NEW: /                                 REDIRECT: 30
 | **Sticky Header** | Elementor Sticky JS | CSS `position: sticky; top: 0;` (Zero CLS) | **MUST PRESERVE** | `header.css` |
 | **Solar Calculator** | Legacy JS (outdated MNRE) | PM Surya Ghar fixed slabs + 16 State DISCOM tariffs + WhatsApp export | **SHOULD IMPROVE** | `frontend/js/calculator/` |
 | **Contact Lead Form** | Royal Addons AJAX | Form with mandatory 10-digit mobile, honeypot spam protection & CRM alert | **SHOULD IMPROVE** | `frontend/js/components/formHandler.js` |
-| **Click-to-Call Handlers**| Fragmented links | Sanitized E.164 phone formats (`tel:+919234611112`) across header & mobile bar | **MUST PRESERVE** | Global Header, Footer, Mobile Bar |
+| **Click-to-Call Handlers**| Fragmented links | Sanitized E.164 phone formats (`tel:+919288381112`) across header & mobile bar | **MUST PRESERVE** | Global Header, Footer, Mobile Bar |
 | **WhatsApp Chat** | Plain Unlinked Text | Direct `https://wa.me/...` links with pre-filled dynamic quote payloads | **SHOULD IMPROVE** | Floating WhatsApp widget + Calculator CTA |
 | **Customer Testimonials**| 5 Anonymous Quotes | Structured cards with client names, locations, kW system sizes, and ratings | **SHOULD IMPROVE** | `frontend/data/testimonials.json` |
 | **FAQ Accordion** | Elementor Accordion | Semantic `<details>`/`<summary>` with animated height and `FAQPage` schema | **SHOULD IMPROVE** | `accordion.css`, `accordion.js` |

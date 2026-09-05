@@ -1,0 +1,422 @@
+---
+// src/pages/projects/index.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const projectsSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Solar Installation Projects Portfolio | JDC Solar",
+  "url": "https://jdcsolar.com/projects/",
+  "description": "Verified residential, commercial, and industrial rooftop solar case studies across Jharkhand and Eastern India."
+};
+---
+
+<BaseLayout
+  title="Solar Projects Portfolio | Rooftop Solar Case Studies | JDC Solar"
+  description="Explore completed solar EPC installations across Jharkhand: 250 kW industrial plants, hospital solar systems, residential rooftop solar, and utility solar parks."
+  canonical="https://jdcsolar.com/projects/"
+  activeNav="projects"
+  schema={projectsSchema}
+>
+
+    <!-- Section 1: Cinematic Subpage Hero Banner -->
+    <section class="page-hero page-hero--projects" aria-label="Verified Project Portfolio">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumbs">
+          <ol class="breadcrumb__list">
+          <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">Home</a></li>
+          <li class="breadcrumb__separator" aria-hidden="true">/</li>
+          <li class="breadcrumb__item" aria-current="page">Projects</li>
+        </ol>
+        </nav>
+
+        <div class="page-hero__badge">
+          <div class="badge--saas-pulse">
+            <span class="badge-pulse-dot"><span class="badge-pulse-dot__ping"></span><span class="badge-pulse-dot__core"></span></span>
+            <span>Verified Project Portfolio</span>
+          </div>
+        </div>
+        <h1 class="display-title page-hero__title">
+          Our Completed Solar Installations & Case Studies
+        </h1>
+        <p class="lead page-hero__lead">
+          Explore real-world clean energy power plants engineered across residential villas, manufacturing units, hospitals, and utility solar farms in Eastern India.
+        </p>
+        <div class="page-hero__chips">
+          <div class="page-hero__chip">
+            <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+            <span>500+ Commissioned Installations</span>
+          </div>
+          <div class="page-hero__chip">
+            <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+            <span>25+ MW Cumulative Capacity</span>
+          </div>
+          <div class="page-hero__chip">
+            <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+            <span>Residential, C&I, Utility</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Interactive Filter & Projects Grid -->
+    <section class="section section--alt" style="padding-top: 2rem;">
+      <div class="container">
+        
+        <!-- Filter Controls Bar -->
+        <div class="project-filters" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem;">
+          <div class="flex gap-xs" style="flex-wrap: wrap;" role="group" aria-label="Filter Projects by Category">
+            <button type="button" class="filter-pill filter-pill--active" data-filter="all" aria-pressed="true">All Projects</button>
+            <button type="button" class="filter-pill" data-filter="residential" aria-pressed="false">Residential Solar</button>
+            <button type="button" class="filter-pill" data-filter="commercial" aria-pressed="false">Commercial & Industrial</button>
+            <button type="button" class="filter-pill" data-filter="institutional" aria-pressed="false">Institutional Solar</button>
+            <button type="button" class="filter-pill" data-filter="government" aria-pressed="false">Government Solar</button>
+            <button type="button" class="filter-pill" data-filter="street-lights" aria-pressed="false">Street Lighting</button>
+            <button type="button" class="filter-pill" data-filter="solar-parks" aria-pressed="false">Utility Solar Parks</button>
+          </div>
+          <div>
+            <span id="project-count-badge" class="badge badge--outline" aria-live="polite">8 Projects</span>
+          </div>
+        </div>
+
+        <!-- Dynamic Projects Grid -->
+        <div id="projects-grid" class="grid grid--3col" data-reveal="stagger">
+          
+          <!-- Project 1: Industrial 250 kWp -->
+          <article class="card-project" data-category="commercial" data-project-slug="adityapur-250kw-industrial-solar">
+            <div class="card-project__media-wrap">
+              <img src="/assets/images/projects/project-adityapur-250kw.jpg" alt="Adityapur 250 kWp Industrial Rooftop Solar Power Plant" class="card-project__image" loading="lazy" width="600" height="400">
+              <span class="card-project__category-tag">Industrial Solar</span>
+            </div>
+            <div class="card-project__body">
+              <div class="card-project__location">
+                <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-location"></use></svg>
+                <span>Adityapur Industrial Area, Jamshedpur</span>
+              </div>
+              <h2 class="card-project__title" style="font-size: 1.25rem;">Commercial Industrial Manufacturing Rooftop</h2>
+              <div class="card-project__metrics">
+                <div class="card-project__metric-item">
+                  <span class="card-project__metric-label">System Size</span>
+                  <span class="card-project__metric-value">250 kWp</span>
+                </div>
+                <div class="card-project__metric-item">
+                  <span class="card-project__metric-label">Annual Savings</span>
+                  <span class="card-project__metric-value">₹ 28.5 Lakhs / yr</span>
+                </div>
+              </div>
+              <div class="card-project__footer">
+                <span class="text-small text-muted">Payback: 3.2 Yrs</span>
+                <button type="button" class="btn btn--ghost btn--sm" data-case-study-slug="adityapur-250kw-industrial-solar">View Case Study →</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: Hospital 50 kWp -->
+          <article class="card-project" data-category="institutional" data-project-slug="bistupur-50kw-hospital-solar">
+            <div class="card-project__media-wrap">
+              <img src="/assets/images/projects/project-bistupur-50kw.jpg" alt="Bistupur 50 kWp Hospital & Healthcare Campus Solar Plant" class="card-project__image" loading="lazy" width="600" height="400">
+              <span class="card-project__category-tag">Institutional Solar</span>
+            </div>
+            <div class="card-project__body">
+              <div class="card-project__location">
+                <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-location"></use></svg>
+                <span>Bistupur, Jamshedpur, Jharkhand</span>
+              </div>
+              <h2 class="card-project__title" style="font-size: 1.25rem;">Hospital & Healthcare Campus Solar Plant</h2>
+              <div class="card-project__metrics">
+                <div class="card-project__metric-item">
+                  <span class="card-project__metric-label">System Size</span>
+                  <span class="card-project__metric-value">50 kWp</span>
+                </div>
+                <div class="card-project__metric-item">
+                  <span class="card-project__metric-label">Annual Savings</span>
+                  <span class="card-project__metric-value">₹ 5.7 Lakhs / yr</span>
+                </div>
+              </div>
+              <div class="card-project__footer">
+                <span class="text-small text-muted">DG-Sync Active</span>
+                <button type="button" class="btn btn--ghost btn--sm" data-case-study-slug="bistupur-50kw-hospital-solar">View Case Study →</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: Villa 5 kWp -->
+          <article class="card-project" data-category="residential" data-project-slug="ranchi-5kw-residential-villa">
+            <div class="card-project__media-wrap">
+              <img src="/assets/images/projects/project-sakchi-villa.jpg" alt="Residential Villa 5 kWp Hybrid Rooftop Solar" class="card-project__image" loading="lazy" width="600" height="400">
+              <span class="card-project__category-tag">Residential Solar</span>
+            </div>
+            <div class="card-project__body">
+              <div class="card-project__location">
+                <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-location"></use></svg>
+                <span>Morabadi, Ranchi, Jharkhand</span>
+              </div>
+              <h2 class="card-project__title" style="font-size: 1.25rem;">Residential Villa Grid-Tied Solar System</h2>
+              <div class="card-project__metrics">
+                <div class="card-project__metric-item">
+                  <span class="card-project__metric-label">System Size</span>
+                  <span class="card-project__metric-value">5.0 kWp</span>
+                </div>
+                <div class="card-project__metric-item">
+                  <span class="card-project__metric-label">Annual Savings</span>
+                  <span class="card-project__metric-value">₹ 48,000 / yr</span>
+                </div>
+              </div>
+              <div class="card-project__footer">
+                <span class="text-small text-muted">PM Surya Ghar</span>
+                <button type="button" class="btn btn--ghost btn--sm" data-case-study-slug="ranchi-5kw-residential-villa">View Case Study →</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 4: Commercial Plaza 100 kWp -->
+          <article class="card-project" data-category="commercial" data-project-slug="sakchi-100kw-commercial-plaza">
+            <div class="card-project__media-wrap">
+              <img src="/assets/images/projects/project-sakchi-plaza.jpg" alt="Sakchi 100 kWp Commercial Plaza & Retail Complex" class="card-project__image" loading="lazy" width="600" height="400">
+              <span class="card-project__category-tag">Commercial Solar</span>
+            </div>
+            <div class="card-project__body">
+              <div class="card-project__location">
+                <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-location"></use></svg>
+                <span>Sakchi Commercial Hub, Jamshedpur</span>
+              </div>
+              <h2 class="card-project__title" style="font-size: 1.25rem;">Commercial Plaza & Retail Shopping Complex</h2>
+              <div class="card-project__metrics">
+                <div class="card-project__metric-item">
+                  <span class="card-project__metric-label">System Size</span>
+                  <span class="card-project__metric-value">100 kWp</span>
+                </div>
+                <div class="card-project__metric-item">
+                  <span class="card-project__metric-label">Annual Savings</span>
+                  <span class="card-project__metric-value">₹ 11.4 Lakhs / yr</span>
+                </div>
+              </div>
+              <div class="card-project__footer">
+                <span class="text-small text-muted">Payback: 3.3 Yrs</span>
+                <button type="button" class="btn btn--ghost btn--sm" data-case-study-slug="sakchi-100kw-commercial-plaza">View Case Study →</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 5: Cold Storage 150 kWp -->
+          <article class="card-project" data-category="commercial" data-project-slug="dhanbad-150kw-cold-storage">
+            <div class="card-project__media-wrap">
+              <img src="/assets/images/projects/project-dhanbad-storage.jpg" alt="Dhanbad 150 kWp Cold Storage & Logistics Rooftop Solar" class="card-project__image" loading="lazy" width="600" height="400">
+              <span class="card-project__category-tag">Industrial Solar</span>
+            </div>
+            <div class="card-project__body">
+              <div class="card-project__location">
+                <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-location"></use></svg>
+                <span>Dhanbad Industrial Zone, Jharkhand</span>
+              </div>
+              <h2 class="card-project__title" style="font-size: 1.25rem;">Industrial Logistics & Warehousing Facility</h2>
+              <div class="card-project__metrics">
+                <div class="card-project__metric-item">
+                  <span class="card-project__metric-label">System Size</span>
+                  <span class="card-project__metric-value">150 kWp</span>
+                </div>
+                <div class="card-project__metric-item">
+                  <span class="card-project__metric-label">Annual Savings</span>
+                  <span class="card-project__metric-value">₹ 17.1 Lakhs / yr</span>
+                </div>
+              </div>
+              <div class="card-project__footer">
+                <span class="text-small text-muted">HT 11kV Net-Meter</span>
+                <button type="button" class="btn btn--ghost btn--sm" data-case-study-slug="dhanbad-150kw-cold-storage">View Case Study →</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 6: Solar Park 1 MWp -->
+          <article class="card-project" data-category="solar-parks" data-project-slug="bokaro-1mw-utility-solar-park">
+            <div class="card-project__media-wrap">
+              <img src="/assets/images/projects/project-bokaro-park.jpg" alt="Bokaro 1.0 MWp Ground-Mounted Utility Solar Power Station" class="card-project__image" loading="lazy" width="600" height="400">
+              <span class="card-project__category-tag">Utility Solar Park</span>
+            </div>
+            <div class="card-project__body">
+              <div class="card-project__location">
+                <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-location"></use></svg>
+                <span>Bokaro Industrial Corridor, Jharkhand</span>
+              </div>
+              <h2 class="card-project__title" style="font-size: 1.25rem;">Ground-Mounted Utility Solar Power Station</h2>
+              <div class="card-project__metrics">
+                <div class="card-project__metric-item">
+                  <span class="card-project__metric-label">System Size</span>
+                  <span class="card-project__metric-value">1.0 MWp</span>
+                </div>
+                <div class="card-project__metric-item">
+                  <span class="card-project__metric-label">Annual Savings</span>
+                  <span class="card-project__metric-value">₹ 1.14 Cr / yr</span>
+                </div>
+              </div>
+              <div class="card-project__footer">
+                <span class="text-small text-muted">33kV Substation</span>
+                <button type="button" class="btn btn--ghost btn--sm" data-case-study-slug="bokaro-1mw-utility-solar-park">View Case Study →</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 7: Street Lights -->
+          <article class="card-project" data-category="street-lights" data-project-slug="jamshedpur-township-street-lights">
+            <div class="card-project__media-wrap">
+              <img src="/assets/images/projects/project-jamshedpur-lights.jpg" alt="Kadma & Mango 120 Units Solar Street Lighting" class="card-project__image" loading="lazy" width="600" height="400">
+              <span class="card-project__category-tag">Street Lighting</span>
+            </div>
+            <div class="card-project__body">
+              <div class="card-project__location">
+                <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-location"></use></svg>
+                <span>Kadma & Mango Townships, Jamshedpur</span>
+              </div>
+              <h2 class="card-project__title" style="font-size: 1.25rem;">Township & Road Solar Street Lighting</h2>
+              <div class="card-project__metrics">
+                <div class="card-project__metric-item">
+                  <span class="card-project__metric-label">Installed Units</span>
+                  <span class="card-project__metric-value">120 Poles</span>
+                </div>
+                <div class="card-project__metric-item">
+                  <span class="card-project__metric-label">Annual Savings</span>
+                  <span class="card-project__metric-value">₹ 2.85 Lakhs / yr</span>
+                </div>
+              </div>
+              <div class="card-project__footer">
+                <span class="text-small text-muted">LiFePO4 Storage</span>
+                <button type="button" class="btn btn--ghost btn--sm" data-case-study-slug="jamshedpur-township-street-lights">View Case Study →</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 8: Government 75 kWp -->
+          <article class="card-project" data-category="government" data-project-slug="ranchi-administrative-government-solar">
+            <div class="card-project__media-wrap">
+              <img src="/assets/images/projects/project-ranchi-gov.jpg" alt="Ranchi 75 kWp Government Administrative Complex Solar Plant" class="card-project__image" loading="lazy" width="600" height="400">
+              <span class="card-project__category-tag">Government Solar</span>
+            </div>
+            <div class="card-project__body">
+              <div class="card-project__location">
+                <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-location"></use></svg>
+                <span>Doranda Administrative Zone, Ranchi</span>
+              </div>
+              <h2 class="card-project__title" style="font-size: 1.25rem;">Government Administrative Complex Solarization</h2>
+              <div class="card-project__metrics">
+                <div class="card-project__metric-item">
+                  <span class="card-project__metric-label">System Size</span>
+                  <span class="card-project__metric-value">75 kWp</span>
+                </div>
+                <div class="card-project__metric-item">
+                  <span class="card-project__metric-label">Annual Savings</span>
+                  <span class="card-project__metric-value">₹ 8.55 Lakhs / yr</span>
+                </div>
+              </div>
+              <div class="card-project__footer">
+                <span class="text-small text-muted">100% DCR Tender</span>
+                <button type="button" class="btn btn--ghost btn--sm" data-case-study-slug="ranchi-administrative-government-solar">View Case Study →</button>
+              </div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Accessible Empty State -->
+        <div id="projects-empty-state" class="empty-state hidden" style="background: var(--color-bg-surface); border: 1px dashed var(--color-border-default); border-radius: var(--radius-xl); padding: var(--space-2xl); text-align: center; margin-top: 1.5rem;">
+          <svg class="icon" style="width: 48px; height: 48px; color: var(--color-brand-accent-text, #C25E00); margin-bottom: 1rem;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-solar-panel"></use></svg>
+          <h2 style="font-size: 1.35rem; margin-bottom: 0.5rem;">No Projects Found for This Category</h2>
+          <p class="text-small text-muted" style="max-width: 450px; margin: 0 auto 1.5rem auto;">We have delivered over 500+ customized solar installations across Eastern India. Try selecting another category or view all projects.</p>
+          <button type="button" id="reset-project-filters" class="btn btn--secondary">Reset All Filters</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section 3: Pre-Footer High Conversion CTA -->
+    <section class="section section--compact">
+      <div class="container">
+        <div class="cta-banner">
+          <div class="cta-banner__content">
+            <span class="badge badge--accent" style="margin-bottom: 1rem;">GET CUSTOM EPC PROPOSAL</span>
+            <h2 class="cta-banner__title">Ready to Solarize Your Property?</h2>
+            <p class="cta-banner__description">
+              Schedule a zero-obligation rooftop feasibility survey with JDC Solar's certified engineers in Adityapur.
+            </p>
+            <div class="cta-banner__actions">
+              <button type="button" class="btn btn--primary btn--lg" data-modal-open="survey-modal">Book Free Site Survey →</button>
+              <a href="https://wa.me/919288381112" class="btn btn--whatsapp btn--lg" target="_blank" rel="noopener noreferrer">
+                <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-whatsapp"></use></svg>
+                Chat on WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  <dialog id="case-study-modal" class="modal-dialog modal-dialog--wide" aria-labelledby="case-study-title">
+    <div class="modal-dialog__header">
+      <div>
+        <span id="case-study-badge" class="modal-category-tag">Case Study</span>
+        <h2 id="case-study-title" class="modal-dialog__title" style="font-size: 1.35rem;">Project Case Study</h2>
+        <div style="font-size: 0.85rem; color: var(--color-text-muted); display: flex; align-items: center; gap: 4px; margin-top: 4px;">
+          <svg class="icon" style="width: 14px; height: 14px;"><use href="/assets/icons/sprite.svg#icon-location"></use></svg>
+          <span id="case-study-location">Jamshedpur, Jharkhand</span>
+        </div>
+      </div>
+      <button type="button" class="modal-dialog__close-btn" data-modal-close aria-label="Close Dialog">
+        <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-close"></use></svg>
+      </button>
+    </div>
+    <div class="modal-dialog__body">
+      <div class="modal-case-study-grid">
+        <!-- Column 1: Description and 4-Card Key Performance Metrics -->
+        <div class="modal-case-study-main">
+          <p id="case-study-desc" class="modal-case-study-desc">
+            Detailed technical overview of the solar installation.
+          </p>
+
+          <div class="modal-stat-grid">
+            <div class="modal-stat-card">
+              <span class="modal-stat-lbl">Installed Capacity</span>
+              <strong id="case-study-capacity" class="modal-stat-val modal-stat-val--capacity">250 kWp</strong>
+            </div>
+            <div class="modal-stat-card">
+              <span class="modal-stat-lbl">Annual Savings</span>
+              <strong id="case-study-savings" class="modal-stat-val modal-stat-val--savings">₹ 28.5 Lakhs / yr</strong>
+            </div>
+            <div class="modal-stat-card">
+              <span class="modal-stat-lbl">Monthly Generation</span>
+              <strong id="case-study-generation" class="modal-stat-val modal-stat-val--generation">~30,000 kWh</strong>
+            </div>
+            <div class="modal-stat-card">
+              <span class="modal-stat-lbl">Estimated Payback</span>
+              <strong id="case-study-payback" class="modal-stat-val modal-stat-val--payback">3.2 Years</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Column 2: Technical Equipment Specs Table and Action Triggers -->
+        <div class="modal-case-study-sidebar">
+          <h3 class="modal-case-study-sidebar-title">Technical Equipment &amp; Grid Specs</h3>
+          <table class="modal-spec-table">
+            <tbody>
+              <tr>
+                <td class="modal-spec-label">Solar Panels</td>
+                <td id="case-study-panels" class="modal-spec-value">Waaree 540W Mono PERC</td>
+              </tr>
+              <tr>
+                <td class="modal-spec-label">Inverters</td>
+                <td id="case-study-inverters" class="modal-spec-value">Growatt 50kW String Inverters</td>
+              </tr>
+              <tr>
+                <td class="modal-spec-label">Grid Connection</td>
+                <td id="case-study-grid" class="modal-spec-value">High Tension (HT) 11kV Net-Metering</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="modal-actions">
+            <a id="case-study-service-link" href="/services/commercial-solar/" class="btn btn--secondary btn--sm">Explore Related Service →</a>
+            <button type="button" class="btn btn--primary btn--sm" data-modal-open="survey-modal">Book Free Site Survey</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </dialog>
+</BaseLayout>

@@ -2,20 +2,24 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>JDC Solar 2.0 — Global UI Component Preview & QA Showcase</title>
   <meta name="description" content="Isolated testing and quality assurance showcase for all JDC Solar 2.0 reusable UI components.">
   <meta name="robots" content="noindex, nofollow">
   <meta name="theme-color" content="#1B3766">
+  <link rel="dns-prefetch" href="https://formspree.io">
+  <link rel="dns-prefetch" href="https://wa.me">
   
+    <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/plus-jakarta-sans-latin.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/outfit-latin.woff2" crossorigin>
   <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
 
-  <!-- Accessible Skip Link -->
+  
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- Top Trust Micro-Bar -->
+  
   <div class="header-topbar hide-on-mobile">
     <div class="container flex flex--between">
       <div class="header-topbar__trust-badge">
@@ -24,27 +28,25 @@
         <span>Jharkhand's Premier Solar EPC Partner</span>
       </div>
       <div class="flex gap-md">
-        <a href="tel:+919234611112">+91 92346 11112</a>
+        <a href="tel:+919288381112">+91 92883 81112</a>
         <a href="mailto:info@jdcsolar.com">info@jdcsolar.com</a>
       </div>
     </div>
   </div>
 
-  <!-- Global Sticky Header -->
+  
   <header class="header" role="banner">
     <div class="container header-main">
-      <!-- Brand Logo -->
+      
       <a href="/" class="header__brand" aria-label="JDC Solar Homepage">
-        <svg class="icon" style="width: 28px; height: 28px; color: var(--color-brand-accent);" aria-hidden="true">
-          <use href="/assets/icons/sprite.svg#icon-sun"></use>
-        </svg>
+        <img src="/assets/brand/logo-mark.png" alt="JDC Solar" class="header__logo-img" width="42" height="42">
         <div>
           <div class="header__logo-text">JDC <span>SOLAR</span></div>
           <span class="header__logo-tag">Engineering • EPC • Subsidies</span>
         </div>
       </a>
 
-      <!-- Desktop Navigation -->
+      
       <nav class="header__nav" aria-label="Main Navigation">
         <ul class="nav-desktop" role="list">
           <li class="nav-desktop__item">
@@ -78,14 +80,19 @@
           <li class="nav-desktop__item">
             <a href="/solar-calculator/" class="nav-desktop__link">Calculator</a>
           </li>
+          <li class="nav-desktop__item"><a href="/resources/" class="nav-desktop__link">Resources</a></li>
           <li class="nav-desktop__item">
             <a href="/contact/" class="nav-desktop__link">Contact</a>
           </li>
         </ul>
       </nav>
 
-      <!-- Header Actions -->
-      <div class="header__actions">
+      
+      <div class="header__actions flex gap-xs" style="align-items: center;">
+        <button type="button" class="theme-toggle-btn" aria-label="Switch to light mode" title="Switch to light mode">
+          <svg class="icon icon-sun" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-sun"></use></svg>
+          <svg class="icon icon-moon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-moon"></use></svg>
+        </button>
         <button type="button" class="btn btn--primary hide-on-mobile" data-modal-open="survey-modal">
           Book Free Survey
         </button>
@@ -98,16 +105,23 @@
     </div>
   </header>
 
-  <!-- Mobile Drawer Overlay & Drawer -->
+  
   <div class="drawer-overlay" aria-hidden="true"></div>
-  <aside id="mobile-drawer" class="drawer" aria-label="Mobile Navigation" aria-modal="true" role="dialog">
+  <div id="mobile-drawer" class="drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
     <div class="drawer__header">
-      <strong style="color: var(--color-brand-primary); font-size: 1.25rem;">JDC SOLAR</strong>
-      <button type="button" class="drawer__close-btn" aria-label="Close Navigation Menu">
-        <svg class="icon" style="width: 24px; height: 24px;" aria-hidden="true">
-          <use href="/assets/icons/sprite.svg#icon-close"></use>
-        </svg>
-      </button>
+      <a href="/" class="flex gap-xs" style="align-items: center; text-decoration: none;" aria-label="JDC Solar Homepage">
+        <img src="/assets/brand/logo-mark.png" alt="JDC Solar Logo" style="width: 32px; height: 32px; object-fit: contain;">
+        <span style="font-size: 1.3rem; font-weight: 800; color: var(--color-text-headings);">JDC <span style="color: var(--color-brand-accent-text, #C25E00);">SOLAR</span></span>
+      </a>
+      <div class="flex gap-xs" style="align-items: center;">
+        <button type="button" class="theme-toggle-btn" aria-label="Switch to light mode" title="Switch to light mode">
+          <svg class="icon icon-sun" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-sun"></use></svg>
+          <svg class="icon icon-moon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-moon"></use></svg>
+        </button>
+        <button type="button" class="drawer__close-btn" data-drawer-close aria-label="Close Navigation Menu">
+          <svg class="icon" style="width: 24px; height: 24px;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-close"></use></svg>
+        </button>
+      </div>
     </div>
     <div class="drawer__body">
       <ul class="drawer__nav-list" role="list">
@@ -127,6 +141,7 @@
         <li class="drawer__nav-item"><a href="/projects/" class="drawer__nav-link">Projects</a></li>
         <li class="drawer__nav-item"><a href="/pm-surya-ghar/" class="drawer__nav-link">PM Surya Ghar Subsidy</a></li>
         <li class="drawer__nav-item"><a href="/solar-calculator/" class="drawer__nav-link">Solar Calculator</a></li>
+        <li class="drawer__nav-item"><a href="/resources/" class="drawer__nav-link">Resources</a></li>
         <li class="drawer__nav-item"><a href="/contact/" class="drawer__nav-link">Contact Us</a></li>
       </ul>
     </div>
@@ -134,16 +149,16 @@
       <button type="button" class="btn btn--primary btn--block" data-modal-open="survey-modal">
         Book Free Site Survey
       </button>
-      <a href="tel:+919234611112" class="btn btn--secondary btn--block">
-        <svg class="icon" style="margin-right: 6px;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-phone"></use></svg> Call +91 92346 11112
+      <a href="tel:+919288381112" class="btn btn--secondary btn--block">
+        <svg class="icon" style="margin-right: 6px;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-phone"></use></svg> Call +91 92883 81112
       </a>
     </div>
-  </aside>
+  </div>
 
-  <!-- Main Content Showcase -->
+  
   <main id="main-content" role="main">
     
-    <!-- Section 1: Breadcrumbs & Introduction -->
+    
     <section class="section section--compact">
       <div class="container">
         <nav class="breadcrumb" aria-label="Breadcrumbs">
@@ -164,7 +179,7 @@
       </div>
     </section>
 
-    <!-- Section 2: Buttons & Badges -->
+    
     <section class="section section--alt">
       <div class="container">
         <h2>1. Button & Badge System</h2>
@@ -196,7 +211,7 @@
       </div>
     </section>
 
-    <!-- Section 3: Stat Cards & Animated Counters -->
+    
     <section class="section">
       <div class="container">
         <h2>2. Numerical Stat Cards & Counters</h2>
@@ -233,12 +248,12 @@
       </div>
     </section>
 
-    <!-- Section 4: Service Cards & Project Cards -->
+    
     <section class="section section--alt">
       <div class="container">
         <h2>3. Reusable Card Family</h2>
         <div class="grid grid--3col" style="margin-bottom: 3rem;">
-          <!-- Service Card -->
+          
           <div class="card card-service card--interactive">
             <div class="card-service__icon-wrap">
               <svg class="icon" style="width: 28px; height: 28px;" aria-hidden="true">
@@ -262,15 +277,13 @@
             </div>
           </div>
 
-          <!-- Project Case Study Card -->
+          
           <div class="card-project">
             <div class="card-project__media-wrap">
               <div style="width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: #1B3766; color: white;">
                 <span>250 kWp Industrial Rooftop</span>
               </div>
-              <div class="card-project__badge-overlay">
-                <div class="badge--saas-pulse"><span class="badge-pulse-dot"><span class="badge-pulse-dot__ping"></span><span class="badge-pulse-dot__core"></span></span><span>Commercial Solar</span></div>
-              </div>
+              <span class="card-project__category-tag">Commercial Solar</span>
             </div>
             <div class="card-project__body">
               <div class="card-project__location">
@@ -295,9 +308,9 @@
             </div>
           </div>
 
-          <!-- Testimonial Card -->
+          
           <div class="card card-testimonial">
-            <div class="card-testimonial__rating" aria-label="5 out of 5 stars rating">
+            <div class="card-testimonial__rating" role="img" aria-label="5 out of 5 stars rating">
               <svg class="icon icon--star-filled" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-star-filled"></use></svg>
               <svg class="icon icon--star-filled" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-star-filled"></use></svg>
               <svg class="icon icon--star-filled" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-star-filled"></use></svg>
@@ -317,13 +330,13 @@
       </div>
     </section>
 
-    <!-- Section 5: Solar Calculator UI Subsystem -->
+    
     <section class="section">
       <div class="container">
         <h2>4. Reusable Solar Calculator UI Dashboard</h2>
         <div class="solar-calculator-ui" style="background: var(--color-bg-surface); border: 1px solid var(--color-border-default); border-radius: var(--radius-xl); padding: var(--space-2xl); box-shadow: var(--shadow-md);">
           <div class="grid grid--2col">
-            <!-- Calculator Inputs -->
+            
             <div>
               <h3>Estimate Your Solar Sizing & Subsidy</h3>
               <p class="text-small text-muted" style="margin-bottom: 1.5rem;">Select your state, property category, and monthly electricity consumption.</p>
@@ -360,13 +373,13 @@
               </div>
             </div>
 
-            <!-- Calculator Outputs -->
+            
             <div style="background: var(--color-bg-alt); padding: var(--space-xl); border-radius: var(--radius-lg); border: 1px solid var(--color-border-subtle); display: flex; flex-direction: column; justify-content: space-between;">
               <div>
                 <span class="badge badge--accent" style="margin-bottom: 0.75rem;">ESTIMATED FEASIBILITY</span>
                 <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1rem;">
                   <span style="font-size: 1.1rem; font-weight: 600;">Recommended Capacity:</span>
-                  <span id="out-system-size" style="font-size: 2rem; font-weight: 800; color: var(--color-brand-primary);">3.0 kWp</span>
+                  <span id="out-system-size" style="font-size: 2rem; font-weight: 800; color: var(--color-text-headings);">3.0 kWp</span>
                 </div>
                 
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
@@ -380,7 +393,7 @@
                   </div>
                   <div>
                     <span class="text-small text-muted">Net Outflow:</span>
-                    <div id="out-net-cost" style="font-weight: 700; color: var(--color-brand-primary);">₹ 87,000</div>
+                    <div id="out-net-cost" style="font-weight: 700; color: var(--color-text-headings);">₹ 87,000</div>
                   </div>
                   <div>
                     <span class="text-small text-muted">Annual Bill Savings:</span>
@@ -412,11 +425,11 @@
       </div>
     </section>
 
-    <!-- Section 6: FAQ Accordion -->
+    
     <section class="section section--alt">
       <div class="container container--medium">
         <div class="section-header">
-          <span class="badge badge--primary">FREQUENTLY ASKED QUESTIONS</span>
+          <span class="section-overline">FREQUENTLY ASKED QUESTIONS</span>
           <h2>5. Accessible FAQ Accordion</h2>
         </div>
 
@@ -448,36 +461,72 @@
       </div>
     </section>
 
-    <!-- Section 7: Brand Ribbon Marquee -->
+    
     <section class="section" style="padding-bottom: 0;">
       <div class="container text-center">
         <span class="badge badge--outline">TIER-1 OEM & TECHNOLOGY PARTNERS</span>
       </div>
       <div class="brand-ribbon">
         <div class="brand-ribbon__track">
-          <div class="brand-ribbon__item">WAAREE SOLAR</div>
-          <div class="brand-ribbon__item">TATA POWER SOLAR</div>
-          <div class="brand-ribbon__item">ADANI SOLAR</div>
-          <div class="brand-ribbon__item">GROWATT INVERTERS</div>
-          <div class="brand-ribbon__item">HAVELLS SOLAR</div>
-          <div class="brand-ribbon__item">SUNGROW POWER</div>
-          <!-- Duplicate for seamless infinite marquee -->
-          <div class="brand-ribbon__item">WAAREE SOLAR</div>
-          <div class="brand-ribbon__item">TATA POWER SOLAR</div>
-          <div class="brand-ribbon__item">ADANI SOLAR</div>
-          <div class="brand-ribbon__item">GROWATT INVERTERS</div>
-          <div class="brand-ribbon__item">HAVELLS SOLAR</div>
-          <div class="brand-ribbon__item">SUNGROW POWER</div>
+          <div class="brand-ribbon__item" tabindex="0">
+            <span class="brand-ribbon__text">WAAREE SOLAR</span>
+            <img class="brand-ribbon__logo" src="/assets/images/partners/waaree.png" alt="Waaree Solar Official Logo" width="160" height="42" loading="lazy">
+          </div>
+          <div class="brand-ribbon__item" tabindex="0">
+            <span class="brand-ribbon__text">TATA POWER SOLAR</span>
+            <img class="brand-ribbon__logo" src="/assets/images/partners/tata-power.png" alt="Tata Power Solar Official Logo" width="160" height="42" loading="lazy">
+          </div>
+          <div class="brand-ribbon__item" tabindex="0">
+            <span class="brand-ribbon__text">ADANI SOLAR</span>
+            <img class="brand-ribbon__logo" src="/assets/images/partners/adani-solar.svg" alt="Adani Solar Official Logo" width="160" height="42" loading="lazy">
+          </div>
+          <div class="brand-ribbon__item" tabindex="0">
+            <span class="brand-ribbon__text">KHETAN SOLAR</span>
+            <img class="brand-ribbon__logo" src="/assets/images/partners/khetan.svg" alt="Khetan Solar Official Logo" width="160" height="42" loading="lazy">
+          </div>
+          <div class="brand-ribbon__item" tabindex="0">
+            <span class="brand-ribbon__text">HAVELLS SOLAR</span>
+            <img class="brand-ribbon__logo" src="/assets/images/partners/havells.png" alt="Havells Solar Official Logo" width="160" height="42" loading="lazy">
+          </div>
+          <div class="brand-ribbon__item" tabindex="0">
+            <span class="brand-ribbon__text">SUNGROW POWER</span>
+            <img class="brand-ribbon__logo" src="/assets/images/partners/sungrow.png" alt="Sungrow Power Official Logo" width="160" height="42" loading="lazy">
+          </div>
+          
+          <div class="brand-ribbon__item" tabindex="0">
+            <span class="brand-ribbon__text">WAAREE SOLAR</span>
+            <img class="brand-ribbon__logo" src="/assets/images/partners/waaree.png" alt="Waaree Solar Official Logo" width="160" height="42" loading="lazy">
+          </div>
+          <div class="brand-ribbon__item" tabindex="0">
+            <span class="brand-ribbon__text">TATA POWER SOLAR</span>
+            <img class="brand-ribbon__logo" src="/assets/images/partners/tata-power.png" alt="Tata Power Solar Official Logo" width="160" height="42" loading="lazy">
+          </div>
+          <div class="brand-ribbon__item" tabindex="0">
+            <span class="brand-ribbon__text">ADANI SOLAR</span>
+            <img class="brand-ribbon__logo" src="/assets/images/partners/adani-solar.svg" alt="Adani Solar Official Logo" width="160" height="42" loading="lazy">
+          </div>
+          <div class="brand-ribbon__item" tabindex="0">
+            <span class="brand-ribbon__text">KHETAN SOLAR</span>
+            <img class="brand-ribbon__logo" src="/assets/images/partners/khetan.svg" alt="Khetan Solar Official Logo" width="160" height="42" loading="lazy">
+          </div>
+          <div class="brand-ribbon__item" tabindex="0">
+            <span class="brand-ribbon__text">HAVELLS SOLAR</span>
+            <img class="brand-ribbon__logo" src="/assets/images/partners/havells.png" alt="Havells Solar Official Logo" width="160" height="42" loading="lazy">
+          </div>
+          <div class="brand-ribbon__item" tabindex="0">
+            <span class="brand-ribbon__text">SUNGROW POWER</span>
+            <img class="brand-ribbon__logo" src="/assets/images/partners/sungrow.png" alt="Sungrow Power Official Logo" width="160" height="42" loading="lazy">
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Section 8: CTA Pre-Footer Banner -->
+    
     <section class="section">
       <div class="container">
         <div class="cta-banner">
           <div class="cta-banner__content">
-            <span class="badge badge--accent" style="margin-bottom: 1rem;">GET STARTED TODAY</span>
+            <span class="section-overline">GET STARTED TODAY</span>
             <h2 class="cta-banner__title">Ready to Cut Your Electricity Bill by 90%?</h2>
             <p class="cta-banner__description">Schedule a free technical rooftop site survey with our solar engineers in Jharkhand. Zero obligation, instant feasibility report.</p>
             <div class="cta-banner__actions">
@@ -496,14 +545,14 @@
 
   </main>
 
-  <!-- Global Footer -->
+  
   <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer-grid">
-        <!-- Column 1: Brand Info -->
+        
         <div>
           <div style="font-size: 1.5rem; font-weight: 800; color: #FFFFFF; margin-bottom: 0.75rem;">
-            JDC <span style="color: var(--color-brand-accent);">SOLAR</span>
+            JDC <span style="color: var(--color-brand-accent-text, #C25E00);">SOLAR</span>
           </div>
           <p style="font-size: 0.9rem; line-height: 1.6; color: var(--color-text-inverse-muted); margin-bottom: 1.5rem;">
             A Jagatdhan Commodities Pvt. Ltd. Company. Engineering high-performance rooftop solar and ground-mounted power plants across Eastern India.
@@ -511,7 +560,7 @@
           <div class="badge badge--accent">Verified MNRE Channel Partner</div>
         </div>
 
-        <!-- Column 2: Solar Services -->
+        
         <div>
           <h3 class="footer__column-title">Solar Services</h3>
           <ul class="footer__links-list">
@@ -524,7 +573,7 @@
           </ul>
         </div>
 
-        <!-- Column 3: Quick Navigation -->
+        
         <div>
           <h3 class="footer__column-title">Quick Links</h3>
           <ul class="footer__links-list">
@@ -536,17 +585,27 @@
           </ul>
         </div>
 
-        <!-- Column 4: Verified Contact Info -->
-        <div>
-          <h3 class="footer__column-title">Headquarters</h3>
+        
+                <div>
+          <h3 class="footer__column-title">Regional Offices</h3>
           <div class="footer-contact">
-            <div class="footer-contact__item">
-              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-location"></use></svg>
-              <span>A-21, 2nd Phase, Industrial Area, Adityapur, Jamshedpur, Jharkhand 832109</span>
+            <div class="footer-branch-list">
+              <div class="footer-branch-item">
+                <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-location"></use></svg>
+                <div><strong>Jharkhand (HQ):</strong> Adityapur, Jamshedpur – 832109</div>
+              </div>
+              <div class="footer-branch-item">
+                <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-location"></use></svg>
+                <div><strong>West Bengal:</strong> Baghajatin Colony, Kolkata – 700092</div>
+              </div>
+              <div class="footer-branch-item">
+                <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-location"></use></svg>
+                <div><strong>Odisha:</strong> Naharakanta, Bhubaneswar – 752101</div>
+              </div>
             </div>
             <div class="footer-contact__item">
               <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-phone"></use></svg>
-              <a href="tel:+919234611112">+91 92346 11112</a>
+              <a href="tel:+919288381112">+91 92883 81112</a>
             </div>
             <div class="footer-contact__item">
               <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-whatsapp"></use></svg>
@@ -558,25 +617,22 @@
             </div>
           </div>
         </div>
+        </div>
       </div>
 
-      <!-- Sub-Footer -->
+      
       <div class="sub-footer">
         <div>
           © 2026 JDC Solar. A Jagatdhan Commodities Pvt. Ltd. Company. All rights reserved.
         </div>
-        <div class="sub-footer__legal-links">
-          <a href="/privacy-policy/">Privacy Policy</a>
-          <span>•</span>
-          <a href="/contact/">Site Survey</a>
-        </div>
+        <div class="sub-footer__legal-links"><a href="/privacy-policy/">Privacy Policy</a></div>
       </div>
     </div>
   </footer>
 
-  <!-- Sticky Mobile Action Bar -->
+  
   <aside class="mobile-action-bar" aria-label="Quick Mobile Actions">
-    <a href="tel:+919234611112" class="mobile-action-bar__tile mobile-action-bar__tile--call">
+    <a href="tel:+919288381112" class="mobile-action-bar__tile mobile-action-bar__tile--call">
       <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-phone"></use></svg>
       <span>Call Us</span>
     </a>
@@ -590,7 +646,18 @@
     </a>
   </aside>
 
-  <!-- Reusable Accessible Modal Dialog -->
+  
+  <button id="jump-to-top" class="jump-to-top" aria-label="Jump to top of page" title="Jump to top">
+    <svg class="jump-to-top__ring" viewBox="0 0 48 48" aria-hidden="true">
+      <circle class="jump-to-top__track" cx="24" cy="24" r="20" />
+      <circle class="jump-to-top__indicator" cx="24" cy="24" r="20" />
+    </svg>
+    <svg class="jump-to-top__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M18 15l-6-6-6 6"/>
+    </svg>
+  </button>
+
+  
   <dialog id="survey-modal" class="modal-dialog" aria-labelledby="survey-modal-title">
     <div class="modal-dialog__header">
       <h2 id="survey-modal-title" class="modal-dialog__title">Book Free Rooftop Survey</h2>
@@ -602,7 +669,7 @@
       <p class="text-small text-muted" style="margin-bottom: 1.5rem;">Enter your contact details. Our solar engineering team will inspect your roof and prepare an exact subsidy proposal.</p>
       
       <form data-validate="true">
-        <!-- Anti-Spam Honeypot Field -->
+        
         <input type="text" name="b_url" class="sr-only" tabindex="-1" autocomplete="off">
 
         <div class="form-group">
@@ -630,7 +697,7 @@
     </div>
   </dialog>
 
-  <!-- Global Application Scripts -->
+  
   <script type="module" src="/js/main.js"></script>
 </body>
 </html>

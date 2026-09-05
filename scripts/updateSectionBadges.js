@@ -27,7 +27,7 @@ htmlFiles.forEach(file => {
   let content = fs.readFileSync(file, 'utf8');
   let original = content;
 
-  // Replace hero badge
+  
   content = content.replace(
     /<div class="hero__eyebrow">[\s\S]*?<\/div>/g,
     `<div class="hero__eyebrow">
@@ -38,7 +38,7 @@ htmlFiles.forEach(file => {
           </div>`
   );
 
-  // Replace generic badge--accent / badge--pulse section headers
+  
   content = content.replace(
     /<span class="badge badge--accent badge--pulse">\s*([^<]+?)\s*<\/span>/g,
     (match, text) => {
@@ -55,13 +55,13 @@ htmlFiles.forEach(file => {
     }
   );
 
-  // Add data-counter attributes to stats bar if present
+  
   content = content.replace(/<span data-counter-target="500">500<\/span><span class="card-stat__suffix">\+<\/span>/g, '<span data-counter="500" data-counter-suffix="+">500+</span>');
   content = content.replace(/<span data-counter-target="25">25<\/span><span class="card-stat__suffix">\+ MW<\/span>/g, '<span data-counter="25" data-counter-suffix="+ MW">25+ MW</span>');
   content = content.replace(/<span data-counter-target="90">90<\/span><span class="card-stat__suffix">%<\/span>/g, '<span data-counter="90" data-counter-suffix="%">90%</span>');
   content = content.replace(/<span data-counter-target="25000">25,000<\/span><span class="card-stat__suffix">\+<\/span>/g, '<span data-counter="25000" data-counter-suffix="+">25,000+</span>');
 
-  // Add bg-atmospheric to section 4, section 7, and section 10
+  
   content = content.replace(/<section class="section bg-alt"/g, '<section class="section bg-atmospheric"');
 
   if (content !== original) {

@@ -1,70 +1,92 @@
-/**
- * JDC SOLAR 2.0 - VISUAL POLISH, SCROLL ANIMATIONS & MICRO-INTERACTIONS
- * Smooth GPU-accelerated transforms, sunlit gradient meshes, and interactive hover states
- */
-
-/* ==========================================================================
-   1. KEYFRAME ANIMATIONS
-   ========================================================================== */
-
 @keyframes pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.4);
     transform: scale(1);
   }
   50% {
-    box-shadow: 0 0 0 8px rgba(245, 158, 11, 0);
     transform: scale(1.02);
   }
 }
 
-@keyframes float-slow {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-8px);
+@keyframes btn-shimmer {
+  0% { transform: translateX(-100%) rotate(45deg); }
+  100% { transform: translateX(200%) rotate(45deg); }
+}
+
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes badge-ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
   }
 }
 
-@keyframes float-reverse {
-  0%, 100% {
-    transform: translateY(0px);
+@keyframes lock-settle-pop {
+  0% {
+    transform: translateY(24px) scale(0.97);
+    opacity: 0.2;
   }
-  50% {
-    transform: translateY(8px);
+  70% {
+    transform: translateY(-2px) scale(1.008);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
   }
 }
 
-/* ==========================================================================
-   2. SCROLL REVEAL ENGINE (PROGRESSIVE ENHANCEMENT)
-   ========================================================================== */
+@keyframes solar-halo-pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.04);
+    opacity: 0.9;
+  }
+}
 
-/* Default: Visible without JS */
+[data-magnetic-anchor] {
+  opacity: 1;
+  transform: translateY(20px);
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[data-magnetic-anchor].is-locked {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-step {
+  position: relative;
+}
+
 [data-reveal] {
   opacity: 1;
   transform: none;
 }
 
-/* When JS is confirmed running, animate unrevealed elements */
 .js-animations-active [data-reveal]:not(.is-revealed) {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
+  transform: translateY(20px);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .js-animations-active [data-reveal="zoom"]:not(.is-revealed) {
-  transform: scale(0.96) translateY(16px);
+  transform: scale(0.96) translateY(12px);
 }
 
 .js-animations-active [data-reveal="slide-left"]:not(.is-revealed) {
-  transform: translateX(-24px);
+  transform: translateX(-20px);
 }
 
 .js-animations-active [data-reveal="slide-right"]:not(.is-revealed) {
-  transform: translateX(24px);
+  transform: translateX(20px);
 }
 
 .js-animations-active [data-reveal].is-revealed {
@@ -72,232 +94,183 @@
   transform: translate(0, 0) scale(1);
 }
 
-/* Staggered Children */
 .js-animations-active [data-reveal="stagger"]:not(.is-revealed) > * {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(16px);
+  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .js-animations-active [data-reveal="stagger"].is-revealed > *:nth-child(1) { transition-delay: 0.04s; opacity: 1; transform: translateY(0); }
-.js-animations-active [data-reveal="stagger"].is-revealed > *:nth-child(2) { transition-delay: 0.10s; opacity: 1; transform: translateY(0); }
-.js-animations-active [data-reveal="stagger"].is-revealed > *:nth-child(3) { transition-delay: 0.16s; opacity: 1; transform: translateY(0); }
-.js-animations-active [data-reveal="stagger"].is-revealed > *:nth-child(4) { transition-delay: 0.22s; opacity: 1; transform: translateY(0); }
-.js-animations-active [data-reveal="stagger"].is-revealed > *:nth-child(5) { transition-delay: 0.28s; opacity: 1; transform: translateY(0); }
-.js-animations-active [data-reveal="stagger"].is-revealed > *:nth-child(6) { transition-delay: 0.34s; opacity: 1; transform: translateY(0); }
+.js-animations-active [data-reveal="stagger"].is-revealed > *:nth-child(2) { transition-delay: 0.08s; opacity: 1; transform: translateY(0); }
+.js-animations-active [data-reveal="stagger"].is-revealed > *:nth-child(3) { transition-delay: 0.12s; opacity: 1; transform: translateY(0); }
+.js-animations-active [data-reveal="stagger"].is-revealed > *:nth-child(4) { transition-delay: 0.16s; opacity: 1; transform: translateY(0); }
+.js-animations-active [data-reveal="stagger"].is-revealed > *:nth-child(5) { transition-delay: 0.20s; opacity: 1; transform: translateY(0); }
+.js-animations-active [data-reveal="stagger"].is-revealed > *:nth-child(6) { transition-delay: 0.24s; opacity: 1; transform: translateY(0); }
 
-/* ==========================================================================
-   3. SCROLL PROGRESS BAR & ATMOSPHERIC LIGHTING
-   ========================================================================== */
-
-/* Pinned Scroll Progress Indicator */
 #scroll-progress-bar {
   position: fixed;
   top: 0;
   left: 0;
   height: 3px;
-  width: 0%;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: left;
   background: linear-gradient(90deg, #FD8127 0%, #F59E0B 50%, #10B981 100%);
   z-index: 10000;
   pointer-events: none;
-  transition: width 0.1s linear;
+  transition: transform 0.08s linear;
 }
 
-/* Layered Atmospheric Solar Backdrop */
-.bg-atmospheric {
+.btn--primary {
   position: relative;
-  background: linear-gradient(180deg, #F8FAFC 0%, #F1F5F9 50%, #F8FAFC 100%);
   overflow: hidden;
 }
 
-.bg-atmospheric::before {
+.btn--primary::after {
   content: '';
   position: absolute;
-  top: -150px;
-  left: 10%;
-  width: 650px;
-  height: 650px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(253, 129, 39, 0.08) 0%, rgba(253, 129, 39, 0) 70%);
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    rgba(255, 255, 255, 0) 20%,
+    rgba(255, 255, 255, 0.18) 50%,
+    rgba(255, 255, 255, 0) 80%
+  );
+  transform: translateX(-100%) rotate(45deg);
   pointer-events: none;
 }
 
-.bg-atmospheric::after {
-  content: '';
-  position: absolute;
-  bottom: -150px;
-  right: 5%;
-  width: 700px;
-  height: 700px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(16, 185, 129, 0.06) 0%, rgba(16, 185, 129, 0) 70%);
-  pointer-events: none;
+.btn--primary:hover::after {
+  animation: btn-shimmer 0.75s ease forwards;
 }
 
-.bg-sunlit-hero {
-  background: radial-gradient(circle at 85% 15%, rgba(245, 158, 11, 0.14) 0%, transparent 45%),
-              radial-gradient(circle at 10% 80%, rgba(2, 132, 199, 0.09) 0%, transparent 40%),
-              linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
-  position: relative;
-  overflow: hidden;
-}
-
-.bg-tech-grid {
-  background-image: radial-gradient(rgba(203, 213, 225, 0.45) 1.5px, transparent 1.5px);
-  background-size: 28px 28px;
-}
-
-.bg-gradient-navy {
-  background: linear-gradient(135deg, #0B192C 0%, #1E3A8A 60%, #0F172A 100%);
-  color: #FFFFFF;
-}
-
-/* Frosted Glass Cards */
-.card--glass {
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.08), 0 0 0 1px rgba(226, 232, 240, 0.6);
-  border-radius: var(--radius-xl);
-}
-
-/* ==========================================================================
-   4. MICRO-INTERACTIONS (CARDS, BUTTONS, INPUTS)
-   ========================================================================== */
-
-/* Card Magnetic Elevation */
-.card, .service-card, .project-card {
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.35s ease;
-}
-
-.card:hover, .service-card:hover, .project-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 35px -10px rgba(15, 23, 42, 0.12), 0 0 15px rgba(245, 158, 11, 0.15);
-  border-color: rgba(245, 158, 11, 0.5);
-}
-
-/* Button Micro-interactions */
-.btn {
-  position: relative;
-  overflow: hidden;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px -4px rgba(245, 158, 11, 0.35);
+.btn:active::after {
+  display: none !important;
 }
 
 .btn:active {
-  transform: translateY(0);
+  transform: scale(0.97);
 }
 
 .btn .icon, .btn svg {
-  transition: transform 0.25s ease;
+  transition: transform var(--duration-fast) var(--ease-standard);
 }
 
 .btn:hover .icon, .btn:hover svg {
   transform: translateX(4px);
 }
 
-/* Live Pulsating Badges */
-.badge--pulse {
-  animation: pulse-glow 2.5s infinite;
+.theme-toggle-btn {
+  transition: transform var(--duration-fast) cubic-bezier(0.34, 1.56, 0.64, 1),
+              background-color var(--duration-fast) ease;
 }
 
-.badge--floating-1 {
-  animation: float-slow 4s ease-in-out infinite;
+.theme-toggle-btn:hover {
+  transform: scale(1.06);
 }
 
-.badge--floating-2 {
-  animation: float-reverse 4.5s ease-in-out infinite;
+.theme-toggle-btn:active {
+  transform: scale(0.92);
 }
 
-/* Fix Dropdown Select Padding & Overflow */
-.form-select, select.form-control {
-  min-width: 100%;
-  width: 100%;
-  padding-right: 2.5rem;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  appearance: none;
-  -webkit-appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23475569'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 1rem center;
-  background-size: 1.1em;
-  cursor: pointer;
-  line-height: 1.5;
+.card, .card-service, .card-project, .why-jdc-card, .card-testimonial {
+  position: relative;
+  transition: transform var(--duration-fast) var(--ease-standard),
+              border-color var(--duration-fast) ease,
+              box-shadow var(--duration-fast) ease;
 }
 
-.form-select:focus, select.form-control:focus {
-  border-color: var(--color-brand-primary);
-  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.18);
-  outline: none;
+.card:hover, .card-service:hover, .card-project:hover, .why-jdc-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-brand-accent);
+  box-shadow: var(--shadow-md);
 }
 
-/* Reduced Motion Respect */
+.metric-tile--neomorph {
+  transition: transform var(--duration-fast) ease, border-color var(--duration-fast) ease;
+}
+
+.metric-tile--neomorph:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-brand-accent);
+}
+
+.badge-pulse-dot__ping {
+  animation: badge-ping 1.6s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.radio-tile {
+  transition: transform var(--duration-fast) var(--ease-bounce),
+              border-color var(--duration-fast) ease,
+              background-color var(--duration-fast) ease;
+}
+
+.radio-tile:hover {
+  transform: translateY(-1px);
+}
+
 @media (prefers-reduced-motion: reduce) {
+  [data-magnetic-anchor],
+  .timeline-step,
   .js-animations-active [data-reveal],
   .js-animations-active [data-reveal="stagger"] > * {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
+    filter: none !important;
   }
-  .badge--pulse, .badge--floating-1, .badge--floating-2 {
+  .btn--primary:hover::after,
+  .badge-pulse-dot__ping,
+  .theme-toggle-btn:hover,
+  .timeline-step.is-step-locked .timeline-step__number {
     animation: none !important;
+    transform: none !important;
   }
 }
 
-/* ==========================================================================
-   5. 3D TILT GLOW OVERLAY
-   ========================================================================== */
-
-.tilt-glow {
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-  z-index: 1;
+@keyframes counter-reveal {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-[data-tilt] > *:not(.tilt-glow) {
-  position: relative;
-  z-index: 2;
+@keyframes accordion-expand {
+  from { opacity: 0; max-height: 0; }
+  to { opacity: 1; max-height: 500px; }
 }
 
-/* ==========================================================================
-   6. VERTICAL TIMELINE SCROLL-DRAW
-   ========================================================================== */
-
-@keyframes draw-line {
-  from { height: 0; }
-  to { height: 100%; }
+@keyframes hero-text-enter {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0);
+  }
 }
 
-.timeline-line {
-  position: absolute;
-  left: 27px;
-  top: 0;
-  width: 3px;
-  height: 100%;
-  background: linear-gradient(180deg, var(--color-border-default) 0%, var(--color-border-default) 100%);
-  border-radius: 2px;
+@keyframes wipe-in-left {
+  from { clip-path: inset(0 100% 0 0); }
+  to { clip-path: inset(0 0 0 0); }
 }
 
-.timeline-line__fill {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 0;
-  background: linear-gradient(180deg, #FD8127 0%, #10B981 100%);
-  border-radius: 2px;
-  transition: height 0.1s linear;
+@keyframes icon-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+.why-jdc-card:hover .why-jdc-card__icon .icon,
+.card-service:hover .card-service__icon .icon {
+  animation: icon-float 1.5s ease-in-out infinite;
 }

@@ -1,0 +1,45 @@
+# JDC Solar
+> Premium high-performance rooftop solar EPC (Engineering, Procurement, and Construction) and verified PM Surya Ghar central subsidy partner based in Jharkhand and serving Eastern India.
+
+## Overview
+JDC Solar is a specialized solar EPC division of Jagatdhan Commodities Pvt. Ltd., headquarted in Adityapur Industrial Area, Jamshedpur. JDC Solar delivers turn-key captive rooftop solar installations for residential, commercial, industrial, institutional, and government clients across Jharkhand, Bihar, West Bengal, and Odisha.
+
+## Key Capabilities & Engineering Standards
+- **Tier-1 Solar Photovoltaic Modules**: Mono PERC and TOPCon panels with minimum 25-year linear performance warranty.
+- **ALMM & DCR Compliance**: Domestic Content Requirement (DCR) certified solar modules meeting Ministry of New and Renewable Energy (MNRE) guidelines for DBT subsidies.
+- **Grid Synchronization & Zero Export**: High-voltage and low-voltage DISCOM net-metering synchronization with bidirectional metering, export-limiting protection, and automated diesel generator (DG) reverse-power synchronization.
+- **Structural Engineering**: Hot-dip galvanized mounting structures engineered to withstand 150+ km/h wind loads, with zero-leakage rooftop anchoring.
+
+## Core Solar Services
+- [Residential Rooftop Solar](https://jdcsolar.com/services/residential-solar/): Grid-connected home solar power plants eligible for direct central government subsidies.
+- [Commercial & Industrial Solar](https://jdcsolar.com/services/commercial-solar/): High-yield captive power plants for heavy engineering plants, manufacturing units, shopping complexes, and industrial warehouses with Section 32 Accelerated Depreciation tax shields.
+- [Institutional Solar](https://jdcsolar.com/services/institutional-solar/): Specialized solar microgrids with automated DG synchronization for hospitals, schools, universities, and diagnostic healthcare hubs.
+- [Government & Tender EPC](https://jdcsolar.com/services/government-solar/): CAPEX/RESCO execution for public sector undertakings (PSUs), municipal water pumping systems, and departmental complexes.
+- [Solar Street Lighting](https://jdcsolar.com/services/street-lights/): Standalone semi-integrated and all-in-one smart LED solar street lighting systems with LiFePO4 batteries and dusk-to-dawn sensors.
+- [Utility Solar Parks](https://jdcsolar.com/services/solar-parks/): Ground-mounted MW-scale solar parks with HT transmission line liaisoning and substations.
+
+## Financial Schemes & Government Subsidies
+- **PM Surya Ghar Muft Bijli Yojana (Residential)**:
+  - 1 kWp System: ₹ 30,000 Direct Benefit Transfer (DBT) central subsidy.
+  - 2 kWp System: ₹ 60,000 Direct Benefit Transfer (DBT) central subsidy.
+  - 3 kWp to 10 kWp System: ₹ 78,000 capped central subsidy.
+  - Eligibility: Residential households with dedicated electricity meter from JBVNL, TSUISL, or state DISCOMs.
+  - Subsidy Portal: https://pmsuryaghar.gov.in (JDC Solar manages end-to-end documentation, inspection, and meter commissioning).
+- **Corporate Tax Incentives (Commercial & Industrial)**:
+  - Income Tax Act Section 32: 40% Accelerated Depreciation in Year 1.
+  - Additional depreciation under Section 32(1)(iia) for manufacturing entities.
+  - Electricity bill reduction typically achieves capital payback within 3 to 4 years.
+
+## Digital Tools & Resources
+- [Interactive Solar Sizing & Subsidy Calculator](https://jdcsolar.com/solar-calculator/): Calculates required kWp capacity, roof area, monthly savings, and net payback period based on DISCOM tariffs.
+- [PM Surya Ghar Subsidy Guide](https://jdcsolar.com/pm-surya-ghar/): Detailed walkthrough of eligibility criteria, document checklists, and DBT disbursement timelines.
+- [Verified Project Portfolio](https://jdcsolar.com/projects/): Documented case studies of completed industrial, hospital, and residential rooftop projects.
+
+## Regional Offices & Contact
+- **Headquarters (Jharkhand)**: Adityapur Industrial Area, Jamshedpur, Jharkhand – 832109
+- **West Bengal Office**: Baghajatin Colony, Kolkata, West Bengal – 700092
+- **Odisha Office**: Naharakanta, Bhubaneswar, Odisha – 752101
+- **Phone**: +91 92883 81112
+- **WhatsApp**: https://wa.me/919288381112
+- **Email**: sales@jdcsolar.com
+- **Website**: https://jdcsolar.com

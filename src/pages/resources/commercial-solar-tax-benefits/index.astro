@@ -1,0 +1,157 @@
+---
+// src/pages/resources/commercial-solar-tax-benefits/index.astro
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const taxSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "@id": "https://jdcsolar.com/resources/commercial-solar-tax-benefits/#article",
+      "headline": "Section 32 Accelerated Depreciation: 40% Year-1 Tax Shield for Businesses",
+      "description": "Comprehensive financial guide explaining Section 32 40% accelerated depreciation, corporate tax write-offs, and GST ITC savings for commercial solar.",
+      "image": "https://jdcsolar.com/assets/images/banners/banner-resources.jpg",
+      "datePublished": "2026-08-05T08:00:00+05:30",
+      "dateModified": "2026-08-05T08:00:00+05:30",
+      "author": {
+        "@type": "Organization",
+        "name": "JDC Solar Commercial Advisory Group"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "JDC Solar",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://jdcsolar.com/assets/brand/logo-mark.png"
+        }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://jdcsolar.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Resources", "item": "https://jdcsolar.com/resources/" },
+        { "@type": "ListItem", "position": 3, "name": "Commercial Tax Benefits", "item": "https://jdcsolar.com/resources/commercial-solar-tax-benefits/" }
+      ]
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title="Section 32 Accelerated Depreciation Solar (40% Tax Shield) | JDC Solar"
+  description="How Indian businesses and factories claim 40% accelerated depreciation on rooftop solar under Section 32 of Income Tax Act. ROI model and tax shield guide."
+  canonical="https://jdcsolar.com/resources/commercial-solar-tax-benefits/"
+  activeNav="resources"
+  schema={taxSchema}
+>
+  <section class="page-hero page-hero--resources" aria-label="Financial & Tax Advisory">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumbs">
+        <ol class="breadcrumb__list">
+          <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">Home</a></li>
+          <li class="breadcrumb__separator" aria-hidden="true">/</li>
+          <li class="breadcrumb__item"><a href="/resources/" class="breadcrumb__link">Resources</a></li>
+          <li class="breadcrumb__separator" aria-hidden="true">/</li>
+          <li class="breadcrumb__item" aria-current="page">Commercial Tax Benefits</li>
+        </ol>
+      </nav>
+
+      <div class="page-hero__badge">
+        <div class="section-tag section-tag--accent">Financial &amp; Tax Advisory</div>
+      </div>
+      <h1 class="display-title page-hero__title">
+        Section 32 Accelerated Depreciation: 40% Year-1 Tax Shield for Businesses
+      </h1>
+      <p class="lead page-hero__lead">
+        While direct PM Surya Ghar DBT subsidies apply to domestic consumers, Indian enterprises, manufacturing plants, and hospitals can claim 40% Accelerated Depreciation (AD) under the Income Tax Act to write off substantial solar capital expenditures.
+      </p>
+      <div class="page-hero__chips">
+        <div class="page-hero__chip">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+          <span>40% Accelerated Depreciation</span>
+        </div>
+        <div class="page-hero__chip">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+          <span>Corporate Tax Savings</span>
+        </div>
+        <div class="page-hero__chip">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+          <span>Accelerated ROI Calculation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container container--medium">
+      <article class="card card--neomorph" style="padding: var(--space-2xl); margin-bottom: var(--space-2xl);">
+        <span class="section-overline">INCOME TAX ACT, 1961</span>
+        <h2 style="font-size: 1.6rem; color: var(--color-text-headings); margin-bottom: 1rem;">How Section 32 Accelerated Depreciation Works</h2>
+        <p style="line-height: 1.8; color: var(--color-text-default); margin-bottom: 1.25rem;">
+          Under Section 32(1)(ii) of the Income Tax Act, commercial enterprises and manufacturing units that invest in renewable energy assets (specifically solar photovoltaic power plants) are entitled to an <strong>Accelerated Depreciation (AD) rate of 40%</strong> on a Written Down Value (WDV) basis in the first financial year of commissioning.
+        </p>
+        <div class="grid grid--2col gap-md" style="margin-top: 1.5rem;">
+          <div style="background: var(--color-bg-surface-sunken); padding: 1.25rem; border-radius: var(--radius-lg); border-left: 4px solid var(--color-brand-accent);">
+            <strong style="color: var(--color-text-headings); display: block; margin-bottom: 4px;">Commissioned Before Oct 1 (Full Rate):</strong>
+            <p class="text-small text-muted" style="margin-top: 0.5rem;">If the solar plant is commissioned on or before September 30 of the financial year (&gt;180 days of operation), the full 40% depreciation can be claimed in Year 1.</p>
+          </div>
+          <div style="background: var(--color-bg-surface-sunken); padding: 1.25rem; border-radius: var(--radius-lg); border-left: 4px solid var(--color-status-success);">
+            <strong style="color: var(--color-text-headings); display: block; margin-bottom: 4px;">Commissioned After Oct 1 (Half Rate):</strong>
+            <p class="text-small text-muted" style="margin-top: 0.5rem;">If commissioned after October 1 (&lt;180 days), 20% is claimed in Year 1, with the remaining balance rolling over to Year 2.</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="card card--neomorph" style="padding: var(--space-2xl); margin-bottom: var(--space-2xl);">
+        <span class="section-overline">FINANCIAL CASE STUDY</span>
+        <h2 style="font-size: 1.6rem; color: var(--color-text-headings); margin-bottom: 1rem;">Financial Model: 100 kWp Plant (₹50 Lakh CAPEX)</h2>
+        <p style="line-height: 1.8; color: var(--color-text-default); margin-bottom: 1.25rem;">
+          Assumed corporate tax bracket: <strong>25.17%</strong> (inclusive of standard surcharge and health/education cess for Indian domestic companies):
+        </p>
+        
+        <div style="background: var(--color-bg-surface-sunken); border: 1px solid var(--color-border-subtle); border-radius: var(--radius-lg); padding: 1.5rem; margin-top: 1rem;">
+          <ul style="list-style: disc; padding-left: 1.5rem; line-height: 2.0; color: var(--color-text-default);">
+            <li><strong>Gross Solar Capital Expenditure:</strong> ₹ 50,00,000</li>
+            <li><strong>Year 1 Depreciation Claim (40%):</strong> ₹ 20,00,000 (written off taxable profit)</li>
+            <li><strong>Direct Corporate Tax Saved in Year 1 (25.17% of ₹20L):</strong> <span style="color: var(--color-status-success); font-weight: 700;">₹ 5,03,400</span></li>
+            <li><strong>Year 2 Depreciation Claim (40% of remaining ₹30L WDV):</strong> ₹ 12,00,000</li>
+            <li><strong>Direct Corporate Tax Saved in Year 2 (25.17% of ₹12L):</strong> <span style="color: var(--color-status-success); font-weight: 700;">₹ 3,02,040</span></li>
+            <li><strong>Cumulative 3-Year Direct Tax Shield:</strong> <span style="color: var(--color-brand-accent-text, #C25E00); font-weight: 800;">₹ 9,87,000+ (~20% of Project Cost!)</span></li>
+            <li><strong>Annual Electricity Bill Savings (100 kWp @ ₹8.50/unit JBVNL):</strong> <span style="color: var(--color-status-success); font-weight: 700;">₹ 12,41,000 / year</span></li>
+            <li><strong>Combined Effective Payback Period:</strong> <span style="color: var(--color-status-success); font-weight: 800; font-size: 1.15rem;">Under 2.8 Years!</span></li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="card card--neomorph" style="padding: var(--space-2xl); margin-bottom: var(--space-2xl);">
+        <span class="section-overline">GOODS &amp; SERVICES TAX</span>
+        <h2 style="font-size: 1.6rem; color: var(--color-text-headings); margin-bottom: 1rem;">GST Input Tax Credit (ITC) on Solar Power Equipment</h2>
+        <p style="line-height: 1.8; color: var(--color-text-default); margin-bottom: 1rem;">
+          Commercial and manufacturing GST-registered entities can claim 100% Input Tax Credit (ITC) on the GST paid for solar panels, on-grid inverters, structure materials, and EPC installation services, offsetting output GST liabilities on finished goods.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section section--compact section--alt">
+    <div class="container">
+      <div class="cta-banner">
+        <div class="cta-banner__content">
+          <span class="section-overline">COMMERCIAL SOLAR ADVISORY</span>
+          <h2 class="cta-banner__title">Schedule a Commercial Solar Feasibility &amp; Tax Audit</h2>
+          <p class="cta-banner__description">
+            Our EPC engineers and financial analysts will audit your factory or commercial complex in Jharkhand, calculating exact HT net-metering yields, 40% AD schedules, and turnkey cost proposals.
+          </p>
+          <div class="cta-banner__actions">
+            <button type="button" class="btn btn--primary btn--lg" data-modal-open="survey-modal">Schedule Corporate Site Audit →</button>
+            <a href="https://wa.me/919288381112" class="btn btn--whatsapp btn--lg" target="_blank" rel="noopener noreferrer">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-whatsapp"></use></svg>
+              Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

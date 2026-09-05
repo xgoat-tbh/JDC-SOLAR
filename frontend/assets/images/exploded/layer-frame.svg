@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%" fill="none">
+  <defs>
+    
+    <linearGradient id="frameMetallicGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="25%" stop-color="#CBD5E1" />
+      <stop offset="50%" stop-color="#94A3B8" />
+      <stop offset="75%" stop-color="#64748B" />
+      <stop offset="100%" stop-color="#334155" />
+    </linearGradient>
+
+    
+    <linearGradient id="bracketSteel" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F1F5F9" />
+      <stop offset="50%" stop-color="#94A3B8" />
+      <stop offset="100%" stop-color="#475569" />
+    </linearGradient>
+
+    
+    <radialGradient id="boltScrew" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="60%" stop-color="#64748B" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </radialGradient>
+  </defs>
+
+  
+  
+  <path d="M20 20 L580 20 L580 380 L20 380 Z M56 56 L56 344 L544 344 L544 56 Z" fill="url(#frameMetallicGrad)" stroke="#1E293B" stroke-width="2" fill-rule="evenodd" />
+
+  
+  <line x1="20" y1="20" x2="580" y2="20" stroke="#FFFFFF" stroke-width="3" />
+  
+  <line x1="20" y1="20" x2="20" y2="380" stroke="#FFFFFF" stroke-width="3" />
+  
+  <line x1="20" y1="380" x2="580" y2="380" stroke="#0F172A" stroke-width="3" />
+  
+  <line x1="580" y1="20" x2="580" y2="380" stroke="#0F172A" stroke-width="3" />
+
+  
+  <rect x="52" y="52" width="496" height="296" rx="2" fill="none" stroke="#0F172A" stroke-width="1.8" />
+  <rect x="58" y="58" width="484" height="284" rx="2" fill="none" stroke="#64748B" stroke-width="1" />
+
+  
+  <line x1="20" y1="20" x2="56" y2="56" stroke="#0F172A" stroke-width="2" />
+  <line x1="580" y1="20" x2="544" y2="56" stroke="#0F172A" stroke-width="2" />
+  <line x1="20" y1="380" x2="56" y2="344" stroke="#0F172A" stroke-width="2" />
+  <line x1="580" y1="380" x2="544" y2="344" stroke="#0F172A" stroke-width="2" />
+
+  
+  
+  <path d="M22 22 L62 22 L62 38 L38 62 L22 62 Z" fill="url(#bracketSteel)" stroke="#0F172A" stroke-width="1.2" />
+  <circle cx="38" cy="38" r="4" fill="url(#boltScrew)" stroke="#0F172A" stroke-width="0.8" />
+  <line x1="36" y1="38" x2="40" y2="38" stroke="#FFFFFF" stroke-width="0.8" />
+
+  
+  <path d="M578 22 L538 22 L538 38 L562 62 L578 62 Z" fill="url(#bracketSteel)" stroke="#0F172A" stroke-width="1.2" />
+  <circle cx="562" cy="38" r="4" fill="url(#boltScrew)" stroke="#0F172A" stroke-width="0.8" />
+  <line x1="560" y1="38" x2="564" y2="38" stroke="#FFFFFF" stroke-width="0.8" />
+
+  
+  <path d="M22 378 L62 378 L62 362 L38 338 L22 338 Z" fill="url(#bracketSteel)" stroke="#0F172A" stroke-width="1.2" />
+  <circle cx="38" cy="362" r="4" fill="url(#boltScrew)" stroke="#0F172A" stroke-width="0.8" />
+  <line x1="36" y1="362" x2="40" y2="362" stroke="#FFFFFF" stroke-width="0.8" />
+
+  
+  <path d="M578 378 L538 378 L538 362 L562 338 L578 338 Z" fill="url(#bracketSteel)" stroke="#0F172A" stroke-width="1.2" />
+  <circle cx="562" cy="362" r="4" fill="url(#boltScrew)" stroke="#0F172A" stroke-width="0.8" />
+  <line x1="560" y1="362" x2="564" y2="362" stroke="#FFFFFF" stroke-width="0.8" />
+
+  
+  <g transform="translate(320, 348)">
+    <rect width="240" height="22" rx="6" fill="rgba(15, 23, 42, 0.94)" stroke="#64748B" stroke-width="1" />
+    <text x="120" y="11" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="7.5" font-weight="700" fill="#E2E8F0" text-anchor="middle" dominant-baseline="central" letter-spacing="0.5">35mm ANODIZED AL ALLOY • 5400 Pa</text>
+  </g>
+</svg>

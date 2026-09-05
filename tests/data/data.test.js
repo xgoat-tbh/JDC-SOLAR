@@ -1,8 +1,3 @@
-/**
- * JDC SOLAR 2.0 - AUTOMATED DATA INTEGRITY TEST SUITE
- * Validates all JSON source of truth data files for valid schema, unique IDs/slugs, and non-empty values.
- */
-
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -31,7 +26,6 @@ console.log('\n========================================');
 console.log('JDC SOLAR 2.0 - DATA INTEGRITY TESTS');
 console.log('========================================\n');
 
-// 1. Projects Data Test
 console.log('--- 1. Testing projects.json ---');
 const projectsPath = path.join(dataDir, 'projects.json');
 assert(fs.existsSync(projectsPath), 'projects.json exists');
@@ -54,7 +48,6 @@ if (fs.existsSync(projectsPath)) {
   assert(allValid, 'All projects have unique IDs, titles, capacities, locations, categories, and descriptions');
 }
 
-// 2. Services Data Test
 console.log('\n--- 2. Testing services.json ---');
 const servicesPath = path.join(dataDir, 'services.json');
 assert(fs.existsSync(servicesPath), 'services.json exists');
@@ -70,7 +63,6 @@ if (fs.existsSync(servicesPath)) {
   assert(allValid, 'All services have valid IDs, titles, slugs, and descriptions');
 }
 
-// 3. Subsidies Data Test
 console.log('\n--- 3. Testing subsidies.json ---');
 const subsidiesPath = path.join(dataDir, 'subsidies.json');
 assert(fs.existsSync(subsidiesPath), 'subsidies.json exists');
@@ -81,7 +73,6 @@ if (fs.existsSync(subsidiesPath)) {
   assert(subsidies.residentialSlabs[0].fixedSubsidy === 30000 && subsidies.residentialSlabs[1].fixedSubsidy === 60000 && subsidies.residentialSlabs[2].fixedSubsidy === 78000, 'Subsidy values match ₹30k, ₹60k, and ₹78k caps');
 }
 
-// 4. Resources Data Test
 console.log('\n--- 4. Testing resources.json ---');
 const resourcesPath = path.join(dataDir, 'resources.json');
 assert(fs.existsSync(resourcesPath), 'resources.json exists');
@@ -91,7 +82,6 @@ if (fs.existsSync(resourcesPath)) {
   assert(resources.downloads && resources.downloads.length >= 2, `resources.json contains ${resources.downloads.length} downloadable PDF assets (>= 2 expected)`);
 }
 
-// 5. FAQs Data Test
 console.log('\n--- 5. Testing faqs.json ---');
 const faqsPath = path.join(dataDir, 'faqs.json');
 assert(fs.existsSync(faqsPath), 'faqs.json exists');
@@ -101,7 +91,6 @@ if (fs.existsSync(faqsPath)) {
   assert(Array.isArray(faqs) && faqs.length >= 6, `faqs.json contains ${faqs.length} categorized FAQs (>= 6 expected)`);
 }
 
-// Summary
 console.log('\n========================================');
 console.log(`Data Integrity Summary: ${passedTests} Passed, ${failedTests} Failed`);
 console.log('========================================\n');

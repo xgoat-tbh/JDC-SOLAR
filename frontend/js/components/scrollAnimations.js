@@ -1,35 +1,27 @@
-/**
- * JDC SOLAR 2.0 - DYNAMIC SCROLL & INTERACTION CONTROLLER
- * Features:
- * 1. Horizontal Scroll-Jacking (Vertical Page Scroll -> Horizontal Carousel Translation)
- * 2. Dynamic Scroll Velocity Skew on Cards
- * 3. Animated Numeric Stat Counter Tickers
- * 4. Pinned Top Scroll Progress Bar
- * 5. Multi-Layer Parallax Drift
- */
-
 import { qs, qsa } from '../core/dom.js';
+import { initProjectCarousel } from './projectCarousel.js';
 
 export function initScrollAnimations() {
   initScrollProgressBar();
   initStatCounters();
-  initHorizontalScrollJacking();
-  initScrollVelocitySkew();
+  initProjectCarousel();
+  initHorizontalScroll();
+  initMagneticAnchorSettle();
+  initParallaxDividerObserver();
 
-  // Respect user preference for reduced motion
   if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     const reveals = qsa('[data-reveal]');
     reveals.forEach(el => el.classList.add('is-revealed'));
+    const anchors = qsa('[data-magnetic-anchor]');
+    anchors.forEach(el => el.classList.add('is-locked'));
+    const steps = qsa('.timeline-step');
+    steps.forEach(el => el.classList.add('is-step-locked'));
     return;
   }
 
   initRevealObserver();
-  initParallaxEffects();
 }
 
-/**
- * 1. Pinned Top Scroll Progress Bar
- */
 function initScrollProgressBar() {
   let bar = qs('#scroll-progress-bar');
   if (!bar) {
@@ -39,115 +31,32 @@ function initScrollProgressBar() {
     document.body.prepend(bar);
   }
 
-  const updateProgress = () => {
-    const scrollY = window.scrollY || window.pageYOffset;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    if (docHeight <= 0) return;
-    const progress = Math.min(Math.max((scrollY / docHeight) * 100, 0), 100);
-    bar.style.width = `${progress}%`;
-  };
-
-  window.addEventListener('scroll', updateProgress, { passive: true });
-  updateProgress();
-}
-
-/**
- * 2. Horizontal Scroll-Jacking (Pin-and-Translate Showcase)
- * When the user scrolls vertically past the project section,
- * the section pins and smoothly translates the track horizontally!
- */
-function initHorizontalScrollJacking() {
-  const section = qs('.horizontal-scroll-section');
-  const track = qs('.horizontal-scroll-track');
-  const fill = qs('.horizontal-scroll-bar-fill');
-  if (!section || !track) return;
-
-  // On desktop screens (min-width: 1024px), activate sticky scroll-jacking
-  const onScroll = () => {
-    if (window.innerWidth < 1024) {
-      track.style.transform = '';
-      return;
-    }
-
-    const rect = section.getBoundingClientRect();
-    const scrollDist = -rect.top;
-    const maxScroll = section.offsetHeight - window.innerHeight;
-
-    if (maxScroll <= 0) return;
-
-    if (rect.top <= 0 && rect.bottom >= window.innerHeight) {
-      const progress = Math.min(Math.max(scrollDist / maxScroll, 0), 1);
-      const maxTranslate = track.scrollWidth - window.innerWidth + 100;
-      track.style.transform = `translateX(-${progress * maxTranslate}px)`;
-      if (fill) {
-        fill.style.width = `${20 + progress * 80}%`;
-      }
-    } else if (rect.top > 0) {
-      track.style.transform = 'translateX(0px)';
-      if (fill) fill.style.width = '20%';
-    } else if (rect.bottom < window.innerHeight) {
-      const maxTranslate = track.scrollWidth - window.innerWidth + 100;
-      track.style.transform = `translateX(-${maxTranslate}px)`;
-      if (fill) fill.style.width = '100%';
-    }
-  };
-
-  window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', onScroll, { passive: true });
-  onScroll();
-}
-
-/**
- * 3. Dynamic Scroll Velocity Skew
- * Adds kinetic energy during scrolling by subtly skewing interactive cards
- */
-function initScrollVelocitySkew() {
-  let lastScrollY = window.scrollY;
-  let scrollVelocity = 0;
   let ticking = false;
+  let docHeight = 0;
 
-  const cards = qsa('.card-service, .horizontal-project-card, .why-jdc-card');
-  if (!cards.length) return;
+  const measureDoc = () => {
+    docHeight = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+  };
 
-  const onScroll = () => {
-    const currentScrollY = window.scrollY;
-    const delta = currentScrollY - lastScrollY;
-    lastScrollY = currentScrollY;
+  window.addEventListener('resize', measureDoc, { passive: true });
+  window.addEventListener('orientationchange', measureDoc, { passive: true });
 
-    // Clamp velocity
-    scrollVelocity = Math.max(Math.min(delta * 0.08, 4), -4);
-
+  const updateProgress = () => {
     if (!ticking) {
       window.requestAnimationFrame(() => {
-        cards.forEach(card => {
-          // Only apply skew if element is in viewport
-          const rect = card.getBoundingClientRect();
-          if (rect.top < window.innerHeight && rect.bottom > 0) {
-            card.style.transform = `skewY(${scrollVelocity * 0.4}deg)`;
-          }
-        });
-
-        // Ease back to normal skew
-        setTimeout(() => {
-          cards.forEach(card => {
-            if (!card.matches(':hover')) {
-              card.style.transform = '';
-            }
-          });
-        }, 120);
-
+        if (!docHeight) measureDoc();
+        const scrollY = window.scrollY || window.pageYOffset;
+        const progress = Math.min(Math.max(scrollY / docHeight, 0), 1);
+        bar.style.transform = `scaleX(${progress})`;
         ticking = false;
       });
       ticking = true;
     }
   };
 
-  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('scroll', updateProgress, { passive: true });
 }
 
-/**
- * 4. Animated Numeric Stat Counter Ticker
- */
 function initStatCounters() {
   const counterElements = qsa('[data-counter]');
   if (!counterElements.length) return;
@@ -169,7 +78,7 @@ function animateCounter(el) {
   const prefix = el.getAttribute('data-counter-prefix') || '';
   const suffix = el.getAttribute('data-counter-suffix') || '';
   const isDecimal = target % 1 !== 0;
-  const duration = 1800;
+  const duration = 1200;
   const startTime = performance.now();
 
   const easeOutExpo = (x) => (x === 1 ? 1 : 1 - Math.pow(2, -10 * x));
@@ -193,9 +102,6 @@ function animateCounter(el) {
   requestAnimationFrame(update);
 }
 
-/**
- * 5. Staggered Scroll Reveal Observer
- */
 function initRevealObserver() {
   const revealElements = qsa('[data-reveal]');
   if (!revealElements.length) return;
@@ -211,32 +117,252 @@ function initRevealObserver() {
     });
   }, {
     root: null,
-    rootMargin: '0px 0px -40px 0px',
-    threshold: 0.08
+    rootMargin: '0px 0px -30px 0px',
+    threshold: 0.05
   });
 
   revealElements.forEach(el => observer.observe(el));
 }
 
-/**
- * 6. Subtle Parallax Float on Scroll
- */
-function initParallaxEffects() {
-  const parallaxItems = qsa('[data-parallax]');
-  if (!parallaxItems.length) return;
+function initHorizontalScroll() {
+  if (qs('[data-project-carousel]')) return;
+  const wrapper = qs('.horizontal-scroll-track-wrapper');
+  const fill = qs('.horizontal-scroll-bar-fill');
+  if (!wrapper) return;
+
+  const prevBtn = qs('.gallery-nav-btn--prev');
+  const nextBtn = qs('.gallery-nav-btn--next');
 
   let ticking = false;
-  window.addEventListener('scroll', () => {
+  let cachedStep = 380;
+  let cachedMaxScroll = 1;
+  let hasMeasured = false;
+
+  const measureStep = () => {
+    cachedMaxScroll = Math.max(1, wrapper.scrollWidth - wrapper.clientWidth);
+    const card = qs('.horizontal-project-card', wrapper);
+    if (card) {
+      const style = window.getComputedStyle(wrapper);
+      const gap = parseFloat(style.columnGap || style.gap) || 24;
+      cachedStep = card.offsetWidth + gap;
+    }
+    hasMeasured = true;
+  };
+
+  // Observe wrapper entering viewport and measure lazily during browser idle
+  if ('IntersectionObserver' in window) {
+    const wrapperObserver = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        wrapperObserver.disconnect();
+        if (typeof requestIdleCallback === 'function') {
+          requestIdleCallback(measureStep, { timeout: 300 });
+        } else {
+          setTimeout(measureStep, 150);
+        }
+      }
+    }, { rootMargin: '150px' });
+    wrapperObserver.observe(wrapper);
+  }
+
+  const invalidateMeasurement = () => {
+    hasMeasured = false;
+  };
+
+  window.addEventListener('resize', invalidateMeasurement, { passive: true });
+  window.addEventListener('orientationchange', invalidateMeasurement, { passive: true });
+
+  const updateGalleryState = () => {
+    if (!hasMeasured) {
+      measureStep();
+    }
+    const scrollLeft = wrapper.scrollLeft;
+
+    // 1. Progress Bar update via GPU scaleX (zero layout reflow)
+    if (fill) {
+      if (cachedMaxScroll <= 0) {
+        fill.style.transform = 'scaleX(1)';
+      } else {
+        const progress = Math.min(Math.max(scrollLeft / cachedMaxScroll, 0.15), 1);
+        fill.style.transform = `scaleX(${progress})`;
+      }
+    }
+
+    // 2. Navigation buttons update
+    if (prevBtn) {
+      const isAtStart = scrollLeft <= 5;
+      prevBtn.disabled = isAtStart;
+      prevBtn.setAttribute('aria-disabled', String(isAtStart));
+    }
+    if (nextBtn) {
+      const isAtEnd = scrollLeft >= cachedMaxScroll - 5;
+      nextBtn.disabled = isAtEnd;
+      nextBtn.setAttribute('aria-disabled', String(isAtEnd));
+    }
+
+    ticking = false;
+  };
+
+  const onScroll = () => {
     if (!ticking) {
-      window.requestAnimationFrame(() => {
-        const scrollY = window.scrollY;
-        parallaxItems.forEach(item => {
-          const speed = parseFloat(item.getAttribute('data-parallax')) || 0.1;
-          item.style.transform = `translateY(${scrollY * speed}px)`;
-        });
-        ticking = false;
-      });
+      window.requestAnimationFrame(updateGalleryState);
       ticking = true;
     }
-  }, { passive: true });
+  };
+
+  wrapper.addEventListener('scroll', onScroll, { passive: true });
+
+  // Initial state setup without forcing synchronous layout/reflow
+  if (prevBtn) {
+    prevBtn.disabled = true;
+    prevBtn.setAttribute('aria-disabled', 'true');
+  }
+  if (fill) {
+    fill.style.transform = 'scaleX(0.15)';
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', () => {
+      if (!hasMeasured) measureStep();
+      wrapper.scrollBy({ left: -cachedStep, behavior: 'smooth' });
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', () => {
+      if (!hasMeasured) measureStep();
+      wrapper.scrollBy({ left: cachedStep, behavior: 'smooth' });
+    });
+  }
+
+  // Mouse drag functionality for desktop trackpad/mouse
+  let isDown = false;
+  let startX = 0;
+  let scrollStart = 0;
+  let wrapperLeft = 0;
+
+  wrapper.addEventListener('mousedown', (e) => {
+    isDown = true;
+    wrapperLeft = wrapper.getBoundingClientRect().left;
+    wrapper.classList.add('is-dragging');
+    startX = e.clientX - wrapperLeft;
+    scrollStart = wrapper.scrollLeft;
+  });
+
+  wrapper.addEventListener('mouseleave', () => {
+    if (isDown) {
+      isDown = false;
+      wrapper.classList.remove('is-dragging');
+    }
+  });
+
+  wrapper.addEventListener('mouseup', () => {
+    if (isDown) {
+      isDown = false;
+      wrapper.classList.remove('is-dragging');
+    }
+  });
+
+  wrapper.addEventListener('mousemove', (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.clientX - wrapperLeft;
+    const walk = (x - startX) * 1.5;
+    wrapper.scrollLeft = scrollStart - walk;
+    onScroll();
+  });
+}
+
+function initMagneticAnchorSettle() {
+  const anchors = qsa('[data-magnetic-anchor]');
+  if (anchors.length) {
+    const anchorObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-locked');
+        }
+      });
+    }, {
+      rootMargin: '0px 0px -80px 0px',
+      threshold: 0.15
+    });
+
+    anchors.forEach(el => anchorObserver.observe(el));
+  }
+
+  const steps = qsa('.timeline-step');
+  if (steps.length) {
+    const stepObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-step-locked');
+        }
+      });
+    }, {
+      rootMargin: '0px 0px -60px 0px',
+      threshold: 0.25
+    });
+
+    steps.forEach(step => stepObserver.observe(step));
+  }
+
+  const serviceCards = qsa('.card-service');
+  if (serviceCards.length) {
+    const serviceObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-inview');
+        }
+      });
+    }, {
+      rootMargin: '0px 0px -40px 0px',
+      threshold: 0.15
+    });
+
+    serviceCards.forEach(card => serviceObserver.observe(card));
+  }
+}
+
+function initParallaxDividerObserver() {
+  const lazyBgs = qsa('.parallax-divider, .cta-banner--cinematic, .cta-banner');
+  if (!lazyBgs.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-inview');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    rootMargin: '400px 0px 400px 0px',
+    threshold: 0.01
+  });
+
+  lazyBgs.forEach(el => observer.observe(el));
+
+  // Dynamic parallax scroll on desktop pointer devices only (avoids layout thrashing during mobile touch scroll)
+  const isTouchOrMobile = ('ontouchstart' in window || navigator.maxTouchPoints > 0 || window.innerWidth < 1024);
+  const dividers = qsa('.parallax-divider');
+  if (dividers.length && !isTouchOrMobile) {
+    let ticking = false;
+    const updateParallax = () => {
+      const vh = window.innerHeight;
+      const rects = Array.from(dividers).map(div => div.getBoundingClientRect());
+      dividers.forEach((div, i) => {
+        const rect = rects[i];
+        if (rect.top < vh && rect.bottom > 0) {
+          const progress = (rect.top / vh) * 50;
+          div.style.backgroundPositionY = `calc(50% + ${progress.toFixed(1)}px)`;
+        }
+      });
+      ticking = false;
+    };
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(updateParallax);
+        ticking = true;
+      }
+    }, { passive: true });
+  }
 }

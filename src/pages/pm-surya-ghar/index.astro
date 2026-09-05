@@ -1,0 +1,323 @@
+---
+// src/pages/pm-surya-ghar/index.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const suryaGharSchema = {
+  "@context": "https://schema.org",
+  "@type": "GovernmentService",
+  "name": "PM Surya Ghar Muft Bijli Yojana Application Assistance",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "JDC Solar"
+  },
+  "serviceType": "Rooftop Solar Subsidy",
+  "areaServed": "Jharkhand"
+};
+---
+
+<BaseLayout
+  title="PM Surya Ghar Subsidy Guide Jharkhand | Claim ₹78,000 | JDC Solar"
+  description="Complete guide to PM Surya Ghar Muft Bijli Yojana in Jharkhand. Slabs up to ₹78,000, eligibility checklist, JBVNL net-metering, and application assistance by JDC Solar."
+  canonical="https://jdcsolar.com/pm-surya-ghar/"
+  activeNav="pm-surya-ghar"
+  schema={suryaGharSchema}
+>
+  <section class="page-hero page-hero--surya-ghar" aria-label="Central Government Subsidy">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumbs">
+        <ol class="breadcrumb__list">
+          <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">Home</a></li>
+          <li class="breadcrumb__separator" aria-hidden="true">/</li>
+          <li class="breadcrumb__item" aria-current="page">PM Surya Ghar Subsidy Guide</li>
+        </ol>
+      </nav>
+
+      <div class="page-hero__badge">
+        <div class="badge--saas-pulse">
+          <span class="badge-pulse-dot"><span class="badge-pulse-dot__ping"></span><span class="badge-pulse-dot__core"></span></span>
+          <span>Central Government Subsidy</span>
+        </div>
+      </div>
+      <h1 class="display-title page-hero__title">
+        PM Surya Ghar: Muft Bijli Yojana Complete Subsidy Guide
+      </h1>
+      <p class="lead page-hero__lead">
+        The Government of India provides up to <strong>₹78,000 direct financial subsidy</strong> to homeowners installing grid-connected rooftop solar. As an approved EPC vendor in Jharkhand, JDC Solar manages 100% of your National Portal paperwork, JBVNL approvals, and net-meter commissioning.
+      </p>
+      <div class="page-hero__chips">
+        <div class="page-hero__chip">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+          <span>Up to ₹78,000 Direct DBT</span>
+        </div>
+        <div class="page-hero__chip">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+          <span>100% Portal Paperwork Managed</span>
+        </div>
+        <div class="page-hero__chip">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+          <span>Zero Electricity Bills</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slabs Section -->
+  <section class="section section--alt">
+    <div class="container container--medium">
+      <div class="section-header">
+        <div class="section-tag section-tag--accent">OFFICIAL CENTRAL SLABS</div>
+        <h2>Central Financial Assistance (CFA) Slabs</h2>
+        <p class="lead">Fixed subsidy amounts credited directly to your Aadhaar-linked bank account via DBT.</p>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem;">
+        <div class="subsidy-slab-pill">
+          <div>
+            <div class="subsidy-slab-pill__kw">1 kWp Solar Rooftop System</div>
+            <span class="text-small text-muted">Generates ~120 kWh/mo • Ideal for 1-BHK / Small Residences</span>
+          </div>
+          <div class="subsidy-slab-pill__amount">₹ 30,000</div>
+        </div>
+
+        <div class="subsidy-slab-pill">
+          <div>
+            <div class="subsidy-slab-pill__kw">2 kWp Solar Rooftop System</div>
+            <span class="text-small text-muted">Generates ~240 kWh/mo • Ideal for 2-3 BHK Residences</span>
+          </div>
+          <div class="subsidy-slab-pill__amount">₹ 60,000</div>
+        </div>
+
+        <div class="subsidy-slab-pill subsidy-slab-pill--popular">
+          <div>
+            <div class="subsidy-slab-pill__kw" style="font-size: 1.15rem;">3 kWp to 10 kWp System (Maximized Subsidy)</div>
+            <span class="text-small text-muted">Generates ~360 - 1,200 kWh/mo • Ideal for Villas & Multi-Story Homes</span>
+          </div>
+          <div class="subsidy-slab-pill__amount" style="font-size: 1.5rem;">₹ 78,000</div>
+        </div>
+
+        <div class="subsidy-slab-pill">
+          <div>
+            <div class="subsidy-slab-pill__kw">Group Housing Societies / RWAs (Common Meters)</div>
+            <span class="text-small text-muted">₹18,000 per kW up to 500 kW capacity for common facilities (lifts, pumps, EV chargers)</span>
+          </div>
+          <div class="subsidy-slab-pill__amount" style="font-size: 1.15rem;">₹ 18,000 / kW</div>
+        </div>
+      </div>
+
+      <div style="background: var(--color-bg-surface); border: 1px solid var(--color-border-subtle); border-radius: var(--radius-lg); padding: var(--space-lg); font-size: 0.88rem; color: var(--color-text-secondary);">
+        <strong>Official Sizing Rule:</strong> Systems above 3 kWp receive the maximum capped subsidy of ₹78,000 for individual residential meters. Commercial, industrial, and institutional connections receive ₹0 direct subsidy but are eligible for 40% Section 32 Accelerated Tax Depreciation.
+      </div>
+    </div>
+  </section>
+
+  <!-- Eligibility -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-overline">WHO QUALIFIES</span>
+        <h2>PM Surya Ghar Subsidy Eligibility Criteria</h2>
+        <p class="lead">Check if your property meets the official Ministry requirements.</p>
+      </div>
+
+      <div class="grid grid--3col">
+        <div class="card">
+          <h3 style="color: var(--color-text-headings); margin-bottom: 0.5rem;">1. Residential Electricity Meter</h3>
+          <p class="text-small text-muted">The applicant must have an active residential grid connection with a local DISCOM (such as JBVNL or TSUISL in Jharkhand) in their name.</p>
+        </div>
+        <div class="card">
+          <h3 style="color: var(--color-text-headings); margin-bottom: 0.5rem;">2. Roof Ownership & Space</h3>
+          <p class="text-small text-muted">The applicant must own an unobstructed, shadow-free rooftop space (~100 sq.ft per kWp capacity) suitable for solar structure mounting.</p>
+        </div>
+        <div class="card">
+          <h3 style="color: var(--color-text-headings); margin-bottom: 0.5rem;">3. DCR & ALMM Certified Panels</h3>
+          <p class="text-small text-muted">To qualify for central DBT subsidy, installations must use 100% Domestic Content Requirement (DCR) solar cells and ALMM-approved modules.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Step by step -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag section-tag--accent">PORTAL APPLICATION WORKFLOW</div>
+        <h2>How to Claim Your ₹78,000 Subsidy Step-by-Step</h2>
+        <p class="lead">JDC Solar guides you through every milestone on the National Portal.</p>
+      </div>
+
+      <div class="grid grid--4col">
+        <div class="card card-process">
+          <div class="card-process__number">01</div>
+          <h3 class="card-process__title">Portal Registration</h3>
+          <p class="card-process__desc">Register on <code>pmsuryaghar.gov.in</code> using your JBVNL Consumer Number and mobile.</p>
+        </div>
+        <div class="card card-process">
+          <div class="card-process__number">02</div>
+          <h3 class="card-process__title">Feasibility Approval</h3>
+          <p class="card-process__desc">JBVNL reviews your sanctioned load and approves the technical grid connection feasibility.</p>
+        </div>
+        <div class="card card-process">
+          <div class="card-process__number">03</div>
+          <h3 class="card-process__title">JDC Solar EPC</h3>
+          <p class="card-process__desc">Select JDC Solar as your approved vendor. Our engineers install Tier-1 DCR panels and inverters.</p>
+        </div>
+        <div class="card card-process">
+          <div class="card-process__number">04</div>
+          <h3 class="card-process__title">Net-Meter & DBT</h3>
+          <p class="card-process__desc">DISCOM installs the bidirectional meter, conducts inspection, and ₹78k subsidy is credited to your bank.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Document checklist -->
+  <section class="section">
+    <div class="container container--medium">
+      <div class="section-header">
+        <span class="section-overline">DOCUMENT CHECKLIST</span>
+        <h2>Mandatory Documents for Subsidy Registration</h2>
+        <p class="lead">Have these 4 items ready for quick national portal verification.</p>
+      </div>
+
+      <div class="grid grid--2col">
+        <div class="card" style="display: flex; gap: 1rem; align-items: flex-start;">
+          <div style="width: 44px; height: 44px; border-radius: var(--radius-lg); background: rgba(253, 129, 39, 0.1); border: 1px solid rgba(253, 129, 39, 0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg class="icon" style="width: 22px; height: 22px; color: var(--color-brand-accent-text, #C25E00);" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-document"></use></svg></div>
+          <div>
+            <h3 style="font-size: 1.15rem; margin-bottom: 0.25rem;">1. Latest Electricity Bill</h3>
+            <p class="text-small text-muted">Recent JBVNL or TSUISL electricity bill showing consumer number, sanctioned load, and address.</p>
+          </div>
+        </div>
+        <div class="card" style="display: flex; gap: 1rem; align-items: flex-start;">
+          <div style="width: 44px; height: 44px; border-radius: var(--radius-lg); background: rgba(253, 129, 39, 0.1); border: 1px solid rgba(253, 129, 39, 0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg class="icon" style="width: 22px; height: 22px; color: var(--color-brand-accent-text, #C25E00);" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-id-card"></use></svg></div>
+          <div>
+            <h3 style="font-size: 1.15rem; margin-bottom: 0.25rem;">2. Aadhaar Card</h3>
+            <p class="text-small text-muted">Aadhaar card of the electricity connection owner (must be linked to bank account for DBT credit).</p>
+          </div>
+        </div>
+        <div class="card" style="display: flex; gap: 1rem; align-items: flex-start;">
+          <div style="width: 44px; height: 44px; border-radius: var(--radius-lg); background: rgba(253, 129, 39, 0.1); border: 1px solid rgba(253, 129, 39, 0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg class="icon" style="width: 22px; height: 22px; color: var(--color-brand-accent-text, #C25E00);" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-bank"></use></svg></div>
+          <div>
+            <h3 style="font-size: 1.15rem; margin-bottom: 0.25rem;">3. Cancelled Cheque / Bank Passbook</h3>
+            <p class="text-small text-muted">Bank details showing account number and IFSC code for direct DBT subsidy deposit.</p>
+          </div>
+        </div>
+        <div class="card" style="display: flex; gap: 1rem; align-items: flex-start;">
+          <div style="width: 44px; height: 44px; border-radius: var(--radius-lg); background: rgba(253, 129, 39, 0.1); border: 1px solid rgba(253, 129, 39, 0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0;"><svg class="icon" style="width: 22px; height: 22px; color: var(--color-brand-accent-text, #C25E00);" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-home"></use></svg></div>
+          <div>
+            <h3 style="font-size: 1.15rem; margin-bottom: 0.25rem;">4. Clear Rooftop Photograph</h3>
+            <p class="text-small text-muted">Clear photo of the roof area where solar panels will be installed (taken during site survey).</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Authority links -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="grid grid--2col" style="align-items: center;">
+        <div>
+          <div class="section-tag section-tag--accent">ROLE & RESPONSIBILITY</div>
+          <h2 style="margin-top: 0.5rem; margin-bottom: 1rem;">JDC Solar's Role vs Government Authority</h2>
+          <p style="margin-bottom: 1rem;">
+            <strong>What JDC Solar Handles:</strong> Comprehensive site survey, 3D shadow analysis, Tier-1 DCR procurement, precision structural mounting, wiring, surge protection, and full National Portal paperwork liaisoning.
+          </p>
+          <p>
+            <strong>What the Government / DISCOM Controls:</strong> Technical grid feasibility approval, installation inspection, net-meter testing, and direct DBT subsidy disbursal to your bank account.
+          </p>
+        </div>
+
+        <div style="background: var(--color-bg-surface); border: 1px solid var(--color-border-default); border-radius: var(--radius-xl); padding: var(--space-xl); box-shadow: var(--shadow-md);">
+          <h3 style="font-size: 1.2rem; color: var(--color-text-headings); margin-bottom: 1rem;">Authoritative Government Portals</h3>
+          <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.95rem;">
+            <li>
+              <a href="https://pmsuryaghar.gov.in/" target="_blank" rel="noopener noreferrer" style="color: var(--color-brand-accent-text, #C25E00); font-weight: 600; display: inline-flex; align-items: center; gap: 6px;">
+                <svg class="icon" style="width: 15px; height: 15px; color: var(--color-brand-accent-text, #C25E00);" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-globe"></use></svg>
+                <span>PM Surya Ghar National Portal ↗</span>
+              </a>
+              <span class="text-small text-muted" style="display: block;">Official Government of India Scheme Portal</span>
+            </li>
+            <li>
+              <a href="https://mnre.gov.in/" target="_blank" rel="noopener noreferrer" style="color: var(--color-brand-accent-text, #C25E00); font-weight: 600; display: inline-flex; align-items: center; gap: 6px;">
+                <svg class="icon" style="width: 15px; height: 15px; color: var(--color-brand-accent-text, #C25E00);" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-globe"></use></svg>
+                <span>Ministry of New & Renewable Energy (MNRE) ↗</span>
+              </a>
+              <span class="text-small text-muted" style="display: block;">Governing Central Ministry Guidelines</span>
+            </li>
+            <li>
+              <a href="https://jbvnl.co.in/" target="_blank" rel="noopener noreferrer" style="color: var(--color-brand-accent-text, #C25E00); font-weight: 600; display: inline-flex; align-items: center; gap: 6px;">
+                <svg class="icon" style="width: 15px; height: 15px; color: var(--color-brand-accent-text, #C25E00);" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-globe"></use></svg>
+                <span>Jharkhand Bijli Vitran Nigam Ltd (JBVNL) ↗</span>
+              </a>
+              <span class="text-small text-muted" style="display: block;">State DISCOM Net-Metering Authority</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQs -->
+  <section class="section">
+    <div class="container container--medium">
+      <div class="section-header">
+        <span class="section-overline">FREQUENTLY ASKED QUESTIONS</span>
+        <h2>PM Surya Ghar Scheme FAQs</h2>
+      </div>
+
+      <div class="accordion-group">
+        <details class="accordion-item" open>
+          <summary class="accordion-summary">
+            <span>Is the PM Surya Ghar subsidy deducted upfront from my invoice?</span>
+            <span class="accordion-summary__icon" aria-hidden="true"><svg class="icon"><use href="/assets/icons/sprite.svg#icon-chevron-down"></use></svg></span>
+          </summary>
+          <div class="accordion-content">
+            <p>No. Under the official PM Surya Ghar guidelines, the subsidy is paid as a Direct Benefit Transfer (DBT) directly into your linked bank account from the central government within 30 days of net-meter commissioning.</p>
+          </div>
+        </details>
+
+        <details class="accordion-item">
+          <summary class="accordion-summary">
+            <span>Can I claim the subsidy if the electricity meter is in my landlord's name?</span>
+            <span class="accordion-summary__icon" aria-hidden="true"><svg class="icon"><use href="/assets/icons/sprite.svg#icon-chevron-down"></use></svg></span>
+          </summary>
+          <div class="accordion-content">
+            <p>No. The electricity bill, bank account, and Aadhaar card must belong to the same person. If you own the property, you can apply for a name transfer with JBVNL before registering on the National Portal.</p>
+          </div>
+        </details>
+
+        <details class="accordion-item">
+          <summary class="accordion-summary">
+            <span>What happens if my sanctioned load is lower than my desired solar capacity?</span>
+            <span class="accordion-summary__icon" aria-hidden="true"><svg class="icon"><use href="/assets/icons/sprite.svg#icon-chevron-down"></use></svg></span>
+          </summary>
+          <div class="accordion-content">
+            <p>Your rooftop solar capacity cannot exceed your sanctioned load with JBVNL. JDC Solar assists you in submitting a load enhancement application to JBVNL alongside your solar application.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--compact section--alt">
+    <div class="container">
+      <div class="cta-banner is-inview">
+        <div class="cta-banner__content">
+          <span class="section-overline">ZERO HASSLE SUBSIDY APPLICATION</span>
+          <h2 class="cta-banner__title">Ready to Claim Your ₹78,000 Central Subsidy?</h2>
+          <p class="cta-banner__description">
+            Schedule a free rooftop site inspection with JDC Solar. We check your roof structure, calculate your exact sizing, and manage your complete National Portal registration.
+          </p>
+          <div class="cta-banner__actions">
+            <button type="button" class="btn btn--primary btn--lg" data-modal-open="survey-modal">Book Free Site Survey →</button>
+            <a href="https://wa.me/919288381112" class="btn btn--whatsapp btn--lg" target="_blank" rel="noopener noreferrer">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-whatsapp"></use></svg>
+              Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

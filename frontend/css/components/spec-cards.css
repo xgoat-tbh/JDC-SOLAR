@@ -1,0 +1,273 @@
+/* ==========================================================================
+   INTERACTIVE SAAS TELEMETRY & SPECIFICATION CARDS
+   Engineering-grade cards with live telemetry tags, key metrics,
+   and smooth accordion technical spec drawers.
+   ========================================================================== */
+
+.grid:has(> .card-telemetry-spec),
+.grid:has(> [data-spec-card]) {
+  align-items: start;
+}
+
+.card-telemetry-spec {
+  box-sizing: border-box;
+  background-color: var(--color-bg-surface);
+  border: 1.5px solid var(--color-border-default);
+  border-radius: var(--radius-xl);
+  padding: clamp(1.25rem, 2.5vw, 1.65rem);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  align-self: start;
+  position: relative;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.25s ease,
+              box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-telemetry-spec:hover {
+  transform: translateY(-4px);
+  border-color: rgba(253, 129, 39, 0.45);
+  box-shadow: var(--shadow-md);
+}
+
+[data-theme="dark"] .card-telemetry-spec:hover {
+  border-color: rgba(253, 129, 39, 0.6);
+  box-shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(253, 129, 39, 0.25);
+}
+
+.card-telemetry-spec__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 1.15rem;
+}
+
+.card-telemetry-spec__icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-lg);
+  background: rgba(253, 129, 39, 0.1);
+  border: 1px solid rgba(253, 129, 39, 0.25);
+  color: var(--color-brand-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.2s ease;
+}
+
+.card-telemetry-spec__icon-box .icon {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+  display: block;
+}
+
+.card-telemetry-spec:hover .card-telemetry-spec__icon-box {
+  transform: scale(1.08) translateY(-2px);
+  background-color: rgba(253, 129, 39, 0.18);
+}
+
+.card-telemetry-spec__status-tag {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.76rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+
+.card-telemetry-spec__status-tag .status-pulse-dot,
+.status-pulse-dot {
+  display: none !important;
+}
+
+.card-telemetry-spec__title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-text-headings);
+  line-height: 1.32;
+  margin-bottom: 0.5rem;
+}
+
+.card-telemetry-spec__desc {
+  font-size: 0.88rem;
+  color: var(--color-text-secondary);
+  line-height: 1.58;
+  margin-bottom: 1.15rem;
+  flex-grow: 0;
+}
+
+.card-telemetry-spec__metric {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background-color: var(--color-bg-surface-sunken);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+  margin-bottom: 0.85rem;
+  margin-top: 0;
+}
+
+.card-telemetry-spec__metric-val {
+  font-size: 1.25rem;
+  font-weight: 800;
+  font-family: var(--font-family-heading);
+  color: var(--color-brand-accent);
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+
+.card-telemetry-spec__metric-lbl {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-muted);
+}
+
+.card-telemetry-spec__toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 44px;
+  padding: 9px 14px;
+  background: transparent;
+  border: 1.5px solid var(--color-border-default);
+  border-radius: var(--radius-md);
+  font-family: var(--font-family-heading);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.card-telemetry-spec__toggle-btn:hover {
+  border-color: var(--color-brand-accent);
+  color: var(--color-brand-accent);
+  background-color: var(--color-bg-surface-sunken);
+}
+
+.card-telemetry-spec__toggle-btn:active {
+  transform: scale(0.97);
+}
+
+.card-telemetry-spec__toggle-btn .icon {
+  width: 15px;
+  height: 15px;
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  color: var(--color-text-muted);
+}
+
+.card-telemetry-spec.is-expanded .card-telemetry-spec__toggle-btn {
+  background-color: var(--color-brand-accent-subtle);
+  border-color: var(--color-brand-accent);
+  color: var(--color-brand-accent);
+}
+
+.card-telemetry-spec.is-expanded .card-telemetry-spec__toggle-btn .icon {
+  transform: rotate(180deg);
+  color: var(--color-brand-accent);
+}
+
+/* Zero-Jank CSS Grid Drawer Transition */
+.card-telemetry-spec__drawer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: hidden;
+}
+
+.card-telemetry-spec.is-expanded .card-telemetry-spec__drawer {
+  grid-template-rows: 1fr;
+  margin-top: 0.85rem;
+}
+
+.card-telemetry-spec__drawer-inner {
+  min-height: 0;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.24s ease 0.06s, transform 0.24s cubic-bezier(0.16, 1, 0.3, 1) 0.06s;
+}
+
+.card-telemetry-spec.is-expanded .card-telemetry-spec__drawer-inner {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.spec-detail-list {
+  list-style: none !important;
+  padding: 12px 14px;
+  margin: 0;
+  background-color: var(--color-bg-surface-sunken);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--color-text-secondary);
+}
+
+.spec-detail-list li {
+  list-style: none !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px dashed var(--color-border-subtle);
+}
+
+.spec-detail-list li::marker {
+  display: none !important;
+  content: '' !important;
+}
+
+.spec-detail-list li:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.spec-detail-list li strong {
+  color: var(--color-text-secondary);
+  font-weight: 600;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+}
+
+.spec-detail-list li span {
+  text-align: right;
+  font-weight: 600;
+  color: var(--color-text-headings);
+  word-break: break-word;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card-telemetry-spec,
+  .card-telemetry-spec__toggle-btn,
+  .card-telemetry-spec__drawer,
+  .card-telemetry-spec__drawer-inner,
+  .card-telemetry-spec__icon-box {
+    transition: none !important;
+  }
+  .status-pulse-dot {
+    animation: none !important;
+  }
+}

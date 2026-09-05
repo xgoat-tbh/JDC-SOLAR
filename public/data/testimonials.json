@@ -1,0 +1,44 @@
+{
+  "testimonials": [
+    {
+      "id": "test-01",
+      "author": "Rajesh K. Sharma",
+      "role": "Homeowner",
+      "location": "Bistupur, Jamshedpur, Jharkhand",
+      "systemCapacity": "5 kWp Hybrid Rooftop Solar",
+      "rating": 5,
+      "quote": "JDC Solar managed our complete PM Surya Ghar subsidy application and JBVNL net-metering without any hassle. Our monthly electricity bill dropped from ₹4,500 to less than ₹500. Highly professional engineering team!",
+      "verifiedCustomer": true
+    },
+    {
+      "id": "test-02",
+      "author": "Anand K. Verma",
+      "role": "Managing Director, Auto Ancillary Unit",
+      "location": "Adityapur Industrial Area, Jharkhand",
+      "systemCapacity": "250 kWp Industrial Rooftop Plant",
+      "rating": 5,
+      "quote": "We installed a 250 kWp system on our plant shed. JDC Solar finished execution within 20 days with zero disruption to our manufacturing shifts. The Section 32 tax benefit and bill savings made the payback under 3.5 years.",
+      "verifiedCustomer": true
+    },
+    {
+      "id": "test-03",
+      "author": "Dr. S. Mukherjee",
+      "role": "Medical Director, Diagnostic Center",
+      "location": "Ranchi, Jharkhand",
+      "systemCapacity": "25 kWp Rooftop Solar with DG Sync",
+      "rating": 5,
+      "quote": "Power continuity and clean energy were essential for our MRI and CT scan equipment. JDC Solar's engineering team designed a DG-synchronized plant that slashed our diesel consumption drastically.",
+      "verifiedCustomer": true
+    },
+    {
+      "id": "test-04",
+      "author": "Praveen Tiwari",
+      "role": "Residential Society Secretary",
+      "location": "Morabadi, Ranchi, Jharkhand",
+      "systemCapacity": "10 kWp Common Area Rooftop Solar",
+      "rating": 5,
+      "quote": "The entire society common area lighting and lift power is now powered 100% by solar. The solar calculator on their website gave us an exact estimate that matched the actual performance.",
+      "verifiedCustomer": true
+    }
+  ]
+}

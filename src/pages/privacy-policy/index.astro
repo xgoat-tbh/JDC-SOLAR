@@ -1,0 +1,106 @@
+---
+// src/pages/privacy-policy/index.astro
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Privacy Policy & Data Security | JDC Solar"
+  description="Transparent information on how JDC Solar protects your personal data, site survey records, and rooftop energy audits."
+  canonical="https://jdcsolar.com/privacy-policy/"
+  activeNav="privacy-policy"
+>
+  <section class="page-hero page-hero--privacy" aria-label="Privacy Policy">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumbs">
+        <ol class="breadcrumb__list">
+          <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">Home</a></li>
+          <li class="breadcrumb__separator" aria-hidden="true">/</li>
+          <li class="breadcrumb__item" aria-current="page">Privacy Policy</li>
+        </ol>
+      </nav>
+
+      <div class="page-hero__badge">
+        <div class="section-tag section-tag--accent">Data Protection Commitment</div>
+      </div>
+      <h1 class="display-title page-hero__title">
+        Privacy Policy & Data Security
+      </h1>
+      <p class="lead page-hero__lead">
+        Transparent information on how JDC Solar protects your personal data, site survey records, and rooftop energy audits.
+      </p>
+      <div class="page-hero__chips">
+        <div class="page-hero__chip">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-shield"></use></svg>
+          <span>SSL Encrypted Data</span>
+        </div>
+        <div class="page-hero__chip">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+          <span>Zero Third-Party Sharing</span>
+        </div>
+        <div class="page-hero__chip">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+          <span>DISCOM Compliance Protected</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <article class="section section--compact">
+    <div class="container container--medium">
+      <div style="font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 1.5rem;">Last Updated: August 2026</div>
+
+      <div style="font-size: 1rem; line-height: 1.8; color: var(--color-text-primary);">
+        <h2 style="font-size: 1.35rem; color: var(--color-text-headings); margin-top: 1.5rem; margin-bottom: 0.5rem;">
+          1. Overview & Data Controller
+        </h2>
+        <p>
+          <strong>JDC Solar</strong> (a brand of <strong>Jagatdhan Commodities Pvt. Ltd.</strong>, having its registered office at A-21, 2nd Phase, Industrial Area, Adityapur, Jamshedpur, Jharkhand 832109) respects your privacy and is committed to protecting any personal information you share with us.
+        </p>
+
+        <h2 style="font-size: 1.35rem; color: var(--color-text-headings); margin-top: 1.5rem; margin-bottom: 0.5rem;">
+          2. Information We Collect
+        </h2>
+        <p>
+          When you request a solar rooftop feasibility survey, submit a contact form, or utilize our solar estimation calculator, we may collect:
+        </p>
+        <ul style="padding-left: 1.5rem; margin-bottom: 1rem; list-style-type: disc;">
+          <li><strong>Contact Details:</strong> Full Name, Mobile Phone Number, Email Address.</li>
+          <li><strong>Property Location:</strong> City, District, or Pincode in Jharkhand.</li>
+          <li><strong>Energy Consumption Data:</strong> Monthly electricity units (kWh) or average bill amount.</li>
+        </ul>
+
+        <h2 style="font-size: 1.35rem; color: var(--color-text-headings); margin-top: 1.5rem; margin-bottom: 0.5rem;">
+          3. Purpose of Data Processing
+        </h2>
+        <p>
+          We process your information exclusively for the following operational purposes:
+        </p>
+        <ul style="padding-left: 1.5rem; margin-bottom: 1rem; list-style-type: disc;">
+          <li>To contact you and schedule an on-site rooftop feasibility inspection.</li>
+          <li>To calculate solar system sizing and prepare a customized financial ROI proposal.</li>
+          <li>To assist with National Portal and JBVNL net-metering documentation upon your explicit authorization.</li>
+        </ul>
+
+        <h2 style="font-size: 1.35rem; color: var(--color-text-headings); margin-top: 1.5rem; margin-bottom: 0.5rem;">
+          4. Zero Data Selling Guarantee
+        </h2>
+        <p>
+          JDC Solar does <strong>not sell, rent, trade, or distribute</strong> your personal contact information to third-party telemarketers, lead brokers, or advertising networks.
+        </p>
+
+        <h2 style="font-size: 1.35rem; color: var(--color-text-headings); margin-top: 1.5rem; margin-bottom: 0.5rem;">
+          5. Grievance Officer & Contact
+        </h2>
+        <p>
+          If you have questions regarding this Privacy Policy or wish to have your contact details updated or deleted from our records, please reach out to our privacy desk:
+        </p>
+        <div style="background: var(--color-bg-surface-sunken); padding: 1.25rem 1.5rem; border-radius: var(--radius-md); border: 1px solid var(--color-border-subtle); margin-top: 1rem;">
+          <strong>Privacy Grievance Officer:</strong><br />
+          JDC Solar / Jagatdhan Commodities Pvt. Ltd.<br />
+          A-21, 2nd Phase, Industrial Area, Adityapur, Jamshedpur, Jharkhand 832109<br />
+          Email: <a href="mailto:sales@jdcsolar.com" style="color: var(--color-brand-accent-text, #C25E00); font-weight: 600;">sales@jdcsolar.com</a> | Phone: <a href="tel:+919288381112" style="color: var(--color-brand-accent-text, #C25E00); font-weight: 600;">+91 92883 81112</a>
+        </div>
+      </div>
+    </div>
+  </article>
+</BaseLayout>

@@ -1,0 +1,58 @@
+---
+// src/components/common/Header.astro
+interface Props {
+  activeNav?: string;
+}
+
+const { activeNav = 'home' } = Astro.props;
+---
+<header class="header" role="banner">
+  <div class="container header-main">
+    <a href="/" class="header__brand" aria-label="JDC Solar Homepage">
+      <img src="/assets/brand/logo-mark.png" alt="JDC Solar" class="header__logo-img" width="40" height="40">
+      <div>
+        <div class="header__logo-text">JDC <span>SOLAR</span></div>
+        <span class="header__logo-tag">Engineering • EPC • Subsidies</span>
+      </div>
+    </a>
+
+    <nav class="header__nav" aria-label="Main Navigation">
+      <ul class="nav-desktop" role="list">
+        <li class="nav-desktop__item"><a href="/" class:list={["nav-desktop__link", activeNav === 'home' && 'active']}>Home</a></li>
+        <li class="nav-desktop__item"><a href="/about/" class:list={["nav-desktop__link", activeNav === 'about' && 'active']}>About Us</a></li>
+        <li class="nav-desktop__item">
+          <a href="/services/" class:list={["nav-desktop__link", activeNav === 'services' && 'active']}>
+            Services
+            <svg class="nav-chevron icon" aria-hidden="true">
+              <use href="/assets/icons/sprite.svg#icon-chevron-down"></use>
+            </svg>
+          </a>
+          <ul class="nav-desktop__dropdown" role="list">
+            <li><a href="/services/residential-solar/" class="nav-desktop__dropdown-link"><span class="dropdown-icon"><svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-home"></use></svg></span><span>Residential Rooftop Solar</span></a></li>
+            <li><a href="/services/commercial-solar/" class="nav-desktop__dropdown-link"><span class="dropdown-icon"><svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-building"></use></svg></span><span>Commercial & Industrial Solar</span></a></li>
+            <li><a href="/services/institutional-solar/" class="nav-desktop__dropdown-link"><span class="dropdown-icon"><svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-hospital"></use></svg></span><span>Institutional Solar</span></a></li>
+            <li><a href="/services/government-solar/" class="nav-desktop__dropdown-link"><span class="dropdown-icon"><svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-government"></use></svg></span><span>Government & Tender EPC</span></a></li>
+            <li><a href="/services/street-lights/" class="nav-desktop__dropdown-link"><span class="dropdown-icon"><svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-lightbulb"></use></svg></span><span>Solar Street Lighting</span></a></li>
+            <li><a href="/services/solar-parks/" class="nav-desktop__dropdown-link"><span class="dropdown-icon"><svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-solar-park"></use></svg></span><span>Utility Solar Parks</span></a></li>
+          </ul>
+        </li>
+        <li class="nav-desktop__item"><a href="/projects/" class:list={["nav-desktop__link", activeNav === 'projects' && 'active']}>Projects</a></li>
+        <li class="nav-desktop__item"><a href="/pm-surya-ghar/" class:list={["nav-desktop__link", activeNav === 'surya-ghar' && 'active']}>PM Surya Ghar</a></li>
+        <li class="nav-desktop__item"><a href="/solar-calculator/" class:list={["nav-desktop__link", activeNav === 'calculator' && 'active']}>Calculator</a></li>
+        <li class="nav-desktop__item"><a href="/resources/" class:list={["nav-desktop__link", activeNav === 'resources' && 'active']}>Resources</a></li>
+        <li class="nav-desktop__item"><a href="/contact/" class:list={["nav-desktop__link", activeNav === 'contact' && 'active']}>Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header__actions flex gap-xs" style="align-items: center;">
+      <button type="button" class="theme-toggle-btn" aria-label="Switch to light mode" title="Switch to light mode">
+        <svg class="icon icon-sun" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-sun"></use></svg>
+        <svg class="icon icon-moon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-moon"></use></svg>
+      </button>
+      <button type="button" class="btn btn--primary hide-on-mobile" data-modal-open="survey-modal">Book Free Survey</button>
+      <button type="button" class="header__toggle-btn" aria-label="Open Navigation Menu" aria-expanded="false" aria-controls="mobile-drawer">
+        <svg class="icon" style="width: 24px; height: 24px;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-menu"></use></svg>
+      </button>
+    </div>
+  </div>
+</header>

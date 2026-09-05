@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%" fill="none">
+  <defs>
+    
+    <linearGradient id="evaFrostedMilky" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.8" />
+      <stop offset="50%" stop-color="#E2E8F0" stop-opacity="0.65" />
+      <stop offset="100%" stop-color="#CBD5E1" stop-opacity="0.75" />
+    </linearGradient>
+
+    
+    <linearGradient id="evaSealEdge" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9" />
+      <stop offset="50%" stop-color="#94A3B8" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.9" />
+    </linearGradient>
+
+    
+    <pattern id="evaHoneycomb" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M10 0 L20 5 L20 15 L10 20 L0 15 L0 5 Z" fill="none" stroke="#64748B" stroke-width="0.75" stroke-opacity="0.35" />
+      <circle cx="10" cy="10" r="1.5" fill="#475569" fill-opacity="0.4" />
+    </pattern>
+
+    
+    <linearGradient id="evaSheenSweep" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.5" />
+      <stop offset="40%" stop-color="#FFFFFF" stop-opacity="0.1" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.4" />
+    </linearGradient>
+  </defs>
+
+  
+  <rect x="20" y="20" width="560" height="360" rx="8" fill="url(#evaFrostedMilky)" stroke="url(#evaSealEdge)" stroke-width="2.5" />
+
+  
+  <rect x="20" y="20" width="560" height="360" rx="8" fill="url(#evaHoneycomb)" />
+
+  
+  <polygon points="100,20 240,20 380,380 240,380" fill="url(#evaSheenSweep)" />
+
+  
+  <rect x="26" y="26" width="548" height="348" rx="6" fill="none" stroke="#FFFFFF" stroke-width="1.5" stroke-dasharray="8, 4" opacity="0.6" />
+
+  
+  <g transform="translate(340, 28)">
+    <rect width="220" height="22" rx="11" fill="rgba(15, 23, 42, 0.9)" stroke="#CBD5E1" stroke-width="1.2" />
+    <text x="110" y="11" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="7.5" font-weight="700" fill="#F8FAFC" text-anchor="middle" dominant-baseline="central" letter-spacing="0.5">CROSS-LINKED EVA • PID BARRIER</text>
+  </g>
+</svg>

@@ -1,8 +1,3 @@
-/**
- * JDC SOLAR 2.0 - HTML VALIDATION SCRIPT
- * Performs static checks for doctype, lang, meta viewport, title, meta description, and semantic landmarks
- */
-
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';

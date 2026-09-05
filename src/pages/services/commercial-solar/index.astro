@@ -1,0 +1,171 @@
+---
+// src/pages/services/commercial-solar/index.astro
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const commercialSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Commercial & Industrial Solar EPC | JDC Solar",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "JDC Solar"
+  },
+  "serviceType": "Commercial Solar Power Plants",
+  "areaServed": "Eastern India"
+};
+---
+
+<BaseLayout
+  title="Commercial & Industrial Solar Power Plants Jharkhand | CAPEX & OPEX | JDC Solar"
+  description="High-capacity rooftop solar EPC for factories, manufacturing complexes, and commercial plazas in Jharkhand. 40% Section 32 tax depreciation and HT net-metering."
+  canonical="https://jdcsolar.com/services/commercial-solar/"
+  activeNav="services"
+  schema={commercialSchema}
+>
+  <section class="page-hero page-hero--commercial" aria-label="Commercial Rooftop Solar">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumbs">
+        <ol class="breadcrumb__list">
+          <li class="breadcrumb__item"><a href="/" class="breadcrumb__link">Home</a></li>
+          <li class="breadcrumb__separator" aria-hidden="true">/</li>
+          <li class="breadcrumb__item"><a href="/services/" class="breadcrumb__link">Services</a></li>
+          <li class="breadcrumb__separator" aria-hidden="true">/</li>
+          <li class="breadcrumb__item" aria-current="page">Commercial &amp; Industrial Solar</li>
+        </ol>
+      </nav>
+
+      <div class="page-hero__badge">
+        <div class="badge--saas-pulse">
+          <span class="badge-pulse-dot"><span class="badge-pulse-dot__ping"></span><span class="badge-pulse-dot__core"></span></span>
+          <span>Commercial Rooftop Solar</span>
+        </div>
+      </div>
+      <h1 class="display-title page-hero__title">
+        Commercial &amp; Industrial Solar Power Plants (20 kWp to 1 MW+)
+      </h1>
+      <p class="lead page-hero__lead">
+        Slash peak demand electricity tariffs for factories, industrial manufacturing units, cold storages, and commercial plazas with high-yield rooftop solar and 40% accelerated tax depreciation.
+      </p>
+      <div class="page-hero__chips">
+        <div class="page-hero__chip">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+          <span>40% Section 32 Tax Depreciation</span>
+        </div>
+        <div class="page-hero__chip">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+          <span>HT 11kV/33kV Net-Metering</span>
+        </div>
+        <div class="page-hero__chip">
+          <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg>
+          <span>3.2 Years Payback</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAPEX vs OPEX Models -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag section-tag--accent">B2B FINANCIAL OPTIONS</div>
+        <h2>Flexible Commercial Financing Structures</h2>
+        <p class="lead">Select between direct asset ownership or zero-capital power purchase agreements.</p>
+      </div>
+
+      <div class="grid grid--2col">
+        <div class="card" style="border-top: 4px solid var(--color-brand-primary);">
+          <span class="section-overline">DIRECT OWNERSHIP</span>
+          <h3 style="font-size: 1.4rem; margin-bottom: 0.75rem;">CAPEX Model</h3>
+          <p style="color: var(--color-text-secondary); margin-bottom: 1.5rem;">
+            The enterprise purchases and owns the solar power plant directly, reaping 100% of the energy bill savings and maximizing tax depreciation advantages.
+          </p>
+          <ul style="list-style: none; padding: 0; margin-bottom: 1.5rem; line-height: 1.8; font-size: 0.95rem;">
+            <li><svg class="icon" style="width: 14px; height: 14px; color: var(--color-status-success); margin-right: 6px; display: inline-block;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg><strong>100% Free Power:</strong> Full generation directly offsets grid tariff.</li>
+            <li><svg class="icon" style="width: 14px; height: 14px; color: var(--color-status-success); margin-right: 6px; display: inline-block;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg><strong>Section 32 Tax Shield:</strong> 40% Year 1 tax write-off.</li>
+            <li><svg class="icon" style="width: 14px; height: 14px; color: var(--color-status-success); margin-right: 6px; display: inline-block;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg><strong>Rapid ROI:</strong> 3.0 to 4.0 years full payback.</li>
+            <li><svg class="icon" style="width: 14px; height: 14px; color: var(--color-status-success); margin-right: 6px; display: inline-block;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg><strong>Full Asset Control:</strong> 25-year operational lifespan.</li>
+          </ul>
+          <button type="button" class="btn btn--primary btn--block" data-modal-open="survey-modal">Inquire for CAPEX Proposal</button>
+        </div>
+
+        <div class="card" style="border-top: 4px solid var(--color-brand-accent);">
+          <span class="section-overline">ZERO UPFRONT INVESTMENT</span>
+          <h3 style="font-size: 1.4rem; margin-bottom: 0.75rem;">OPEX / RESCO Model</h3>
+          <p style="color: var(--color-text-secondary); margin-bottom: 1.5rem;">
+            Solar power plant is installed and maintained by an energy investor on your roof. You simply purchase electricity at a guaranteed tariff 30-40% cheaper than DISCOM rates.
+          </p>
+          <ul style="list-style: none; padding: 0; margin-bottom: 1.5rem; line-height: 1.8; font-size: 0.95rem;">
+            <li><svg class="icon" style="width: 14px; height: 14px; color: var(--color-status-success); margin-right: 6px; display: inline-block;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg><strong>Zero Capital Expenditure:</strong> Pay only for units generated.</li>
+            <li><svg class="icon" style="width: 14px; height: 14px; color: var(--color-status-success); margin-right: 6px; display: inline-block;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg><strong>Instant Power Cost Reduction:</strong> 30–40% below grid rates.</li>
+            <li><svg class="icon" style="width: 14px; height: 14px; color: var(--color-status-success); margin-right: 6px; display: inline-block;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg><strong>Zero Maintenance Responsibility:</strong> Investor manages O&amp;M.</li>
+            <li><svg class="icon" style="width: 14px; height: 14px; color: var(--color-status-success); margin-right: 6px; display: inline-block;" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-check"></use></svg><strong>Long-Term Tariff Hedge:</strong> Locked-in predictable rates.</li>
+          </ul>
+          <button type="button" class="btn btn--secondary btn--block" data-modal-open="survey-modal">Inquire for RESCO Proposal</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 32 Tax Shield -->
+  <section class="section">
+    <div class="container">
+      <div style="background: linear-gradient(135deg, var(--color-brand-primary-dark) 0%, var(--color-brand-primary) 100%); border-radius: var(--radius-2xl); padding: var(--space-2xl); color: #FFFFFF; box-shadow: var(--shadow-xl);">
+        <div class="grid grid--2col" style="align-items: center;">
+          <div>
+            <span class="badge" style="background: rgba(253, 129, 39, 0.2); color: #FFFFFF; border: 1px solid var(--color-brand-accent); margin-bottom: 1rem;">TAX SHIELD BENEFIT</span>
+            <h2 style="color: #FFFFFF; font-size: 1.85rem; margin-bottom: 1rem;">Section 32 Accelerated Depreciation (40%)</h2>
+            <p style="color: var(--color-text-inverse-body); line-height: 1.65; margin-bottom: 1rem;">
+              Under Section 32 of the Indian Income Tax Act, commercial and industrial enterprises can claim <strong>40% accelerated depreciation</strong> on solar power assets in the very first year of commissioning.
+            </p>
+            <p style="color: var(--color-text-inverse-muted); font-size: 0.95rem; line-height: 1.6;">
+              This substantial corporate tax write-off dramatically lowers effective project cost, shortening real-world investment payback periods to under 3.5 years.
+            </p>
+          </div>
+          <div style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: var(--radius-lg); padding: var(--space-xl);">
+            <h3 style="color: #FFFFFF; font-size: 1.25rem; margin-bottom: 1rem;">Example: 100 kWp Plant (₹50 Lakhs Asset)</h3>
+            <div style="display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.95rem;">
+              <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem;">
+                <span>Gross Capital Investment:</span>
+                <span style="font-weight: 700;">₹ 50,00,000</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem;">
+                <span>Year 1 Tax Depreciation (40%):</span>
+                <span style="font-weight: 700; color: var(--color-brand-accent-text, #C25E00);">₹ 20,00,000</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem;">
+                <span>Corporate Tax Savings (@ 25% Tax Rate):</span>
+                <span style="font-weight: 700; color: #22C55E;">₹ 5,00,000</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; padding-top: 0.5rem;">
+                <span>Effective Year 1 Net Outflow:</span>
+                <span style="font-weight: 800; font-size: 1.1rem;">₹ 45,00,000</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="section section--compact section--alt">
+    <div class="container">
+      <div class="cta-banner is-inview">
+        <div class="cta-banner__content">
+          <span class="section-overline">CUSTOM INDUSTRIAL ENGINEERING</span>
+          <h2 class="cta-banner__title">Ready to Slash Your Factory Electricity Bills?</h2>
+          <p class="cta-banner__description">
+            Contact JDC Solar's industrial engineering division in Adityapur for a free on-site load audit and HT net-metering feasibility report.
+          </p>
+          <div class="cta-banner__actions">
+            <button type="button" class="btn btn--primary btn--lg" data-modal-open="survey-modal">Schedule On-Site Industrial Audit →</button>
+            <a href="https://wa.me/919288381112" class="btn btn--whatsapp btn--lg" target="_blank" rel="noopener noreferrer">
+              <svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-whatsapp"></use></svg>
+              Chat on WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

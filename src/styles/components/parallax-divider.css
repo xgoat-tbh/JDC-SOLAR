@@ -1,0 +1,88 @@
+.parallax-divider {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+.parallax-divider::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(11, 20, 38, 0.55) 0%,
+    rgba(15, 23, 42, 0.35) 50%,
+    rgba(11, 20, 38, 0.55) 100%
+  );
+  pointer-events: none;
+}
+
+.parallax-divider__text {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  max-width: var(--container-max-width, 1200px);
+  margin: 0 auto;
+  padding: 0 clamp(1.5rem, 5vw, 3rem);
+  box-sizing: border-box;
+  color: #FFFFFF;
+  font-family: var(--font-family-heading);
+  font-size: clamp(0.95rem, 1.8vw, 1.35rem);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.85);
+  line-height: 1.4;
+}
+
+.parallax-divider.is-inview.parallax-divider--panels {
+  background-image: url('/assets/images/hero/divider-solar-panels.jpg');
+}
+
+.parallax-divider.is-inview.parallax-divider--worker {
+  background-image: url('/assets/images/hero/divider-worker-silhouette.jpg');
+}
+
+.parallax-divider.is-inview.parallax-divider--farm {
+  background-image: url('/assets/images/hero/cta-solar-farm.jpg');
+}
+
+@media (min-width: 768px) {
+  .parallax-divider.is-inview.parallax-divider--panels {
+    background-image: url('/assets/images/hero/divider-solar-panels.jpg');
+  }
+
+  .parallax-divider.is-inview.parallax-divider--worker {
+    background-image: url('/assets/images/hero/divider-worker-silhouette.jpg');
+  }
+
+  .parallax-divider.is-inview.parallax-divider--farm {
+    background-image: url('/assets/images/hero/cta-solar-farm.jpg');
+  }
+}
+
+
+
+@media (max-width: 767px) {
+  .parallax-divider {
+    min-height: 180px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .parallax-divider {
+    background-attachment: scroll;
+  }
+}

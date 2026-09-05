@@ -1,9 +1,3 @@
-/**
- * JDC SOLAR 2.0 - PROJECT HORIZONTAL MOMENTUM CAROUSEL ENGINE
- * Supports smooth mouse-drag panning, touch gestures, wheel scrolling,
- * glassmorphic navigation arrows, and synchronized progress fill.
- */
-
 import { qs, qsa } from '../core/dom.js';
 
 export function initCarousel() {
@@ -16,7 +10,14 @@ export function initCarousel() {
     const nextBtn = qs('.carousel-nav-btn--next', wrapper);
     const progressFill = qs('.carousel-progress-fill', wrapper);
 
-    // 1. Mouse Drag Panning
+    let cardWidth = 360;
+    const measureCard = () => {
+      if (track.firstElementChild) {
+        cardWidth = track.firstElementChild.offsetWidth + 24;
+      }
+    };
+    window.addEventListener('resize', measureCard, { passive: true });
+
     let isDown = false;
     let startX;
     let scrollLeft;
@@ -42,40 +43,67 @@ export function initCarousel() {
       if (!isDown) return;
       e.preventDefault();
       const x = e.pageX - track.offsetLeft;
-      const walk = (x - startX) * 1.5; // Drag sensitivity
+      const walk = (x - startX) * 1.5;
       track.scrollLeft = scrollLeft - walk;
     });
 
-    // 2. Navigation Button Clicks
     if (prevBtn) {
       prevBtn.addEventListener('click', () => {
-        const cardWidth = track.firstElementChild ? track.firstElementChild.offsetWidth + 24 : 360;
+        measureCard();
         track.scrollBy({ left: -cardWidth, behavior: 'smooth' });
       });
     }
 
     if (nextBtn) {
       nextBtn.addEventListener('click', () => {
-        const cardWidth = track.firstElementChild ? track.firstElementChild.offsetWidth + 24 : 360;
+        measureCard();
         track.scrollBy({ left: cardWidth, behavior: 'smooth' });
       });
     }
 
-    // 3. Update Progress Bar on Scroll
+    let ticking = false;
     const updateProgress = () => {
       if (!progressFill) return;
       const maxScroll = track.scrollWidth - track.clientWidth;
       if (maxScroll <= 0) {
         progressFill.style.width = '100%';
+        ticking = false;
         return;
       }
       const scrollFraction = track.scrollLeft / maxScroll;
-      const minFill = 20; // 20% minimum thumb size
+      const minFill = 20;
       const currentFill = minFill + scrollFraction * (100 - minFill);
-      progressFill.style.width = `${Math.min(100, Math.max(minFill, currentFill))}%`;
+      progressFill.style.width = `${Math.min(100, Math.max(minFill, currentFill)).toFixed(1)}%`;
+      ticking = false;
     };
 
-    track.addEventListener('scroll', updateProgress, { passive: true });
+    const onScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(updateProgress);
+        ticking = true;
+      }
+    };
+
+    track.addEventListener('scroll', onScroll, { passive: true });
     updateProgress();
   });
+
+  const brandItems = qsa('.brand-ribbon__item');
+  if (brandItems.length) {
+    brandItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const wasActive = item.classList.contains('is-active');
+        brandItems.forEach(b => b.classList.remove('is-active'));
+        if (!wasActive) {
+          item.classList.add('is-active');
+        }
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.brand-ribbon__item')) {
+        brandItems.forEach(b => b.classList.remove('is-active'));
+      }
+    });
+  }
 }
