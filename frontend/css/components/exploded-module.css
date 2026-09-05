@@ -45,34 +45,24 @@
   touch-action: pan-y;
 }
 
-/* Floating Glassmorphic HUD Chip */
-.exploded-hud-chip {
+/* Minimalist Containerless HUD Label */
+.exploded-hud-label {
   position: absolute;
-  top: 16px;
+  top: 18px;
   left: 20px;
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 14px;
-  background: rgba(15, 23, 42, 0.76);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 9999px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.28);
+  background: transparent;
+  border: none;
+  box-shadow: none;
   z-index: 20;
   pointer-events: none;
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-              opacity 0.35s ease;
+  user-select: none;
 }
 
-[data-theme="light"] .exploded-hud-chip {
-  background: rgba(255, 255, 255, 0.88);
-  border-color: rgba(15, 23, 42, 0.12);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-}
-
-.exploded-hud-chip__beacon {
+.exploded-hud-beacon {
+  display: inline-block;
   width: 7px;
   height: 7px;
   border-radius: 50%;
@@ -87,21 +77,22 @@
   50% { opacity: 0.45; transform: scale(0.85); }
 }
 
-.exploded-hud-chip__num {
+.exploded-hud-num {
   font-family: var(--font-family-heading);
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   font-weight: 800;
   color: var(--color-brand-accent, #FD8127);
   letter-spacing: 0.05em;
   line-height: 1;
 }
 
-.exploded-hud-chip__title {
-  font-size: 0.78rem;
-  font-weight: 600;
+.exploded-hud-title {
+  font-size: 0.9rem;
+  font-weight: 700;
   color: var(--color-text-headings);
   white-space: nowrap;
   line-height: 1;
+  letter-spacing: -0.01em;
 }
 
 .exploded-scene {
@@ -122,10 +113,10 @@
   background-repeat: no-repeat;
   background-position: center;
   background-color: transparent;
-  transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1),
-              opacity 0.38s ease,
-              box-shadow 0.38s ease,
-              filter 0.38s ease;
+  transition: transform 0.55s cubic-bezier(0.34, 1.56, 0.64, 1),
+              opacity 0.4s ease,
+              box-shadow 0.4s ease,
+              filter 0.4s ease;
   transform-style: preserve-3d;
   pointer-events: none;
   cursor: default;
@@ -135,45 +126,47 @@
 .exploded-layer--glass {
   background-image: url('/assets/images/exploded/layer-glass.svg');
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16);
-  transform: translateZ(calc(var(--exploded-sep, 0.50) * var(--layer-dist-glass) + var(--pop-glass, 0px))) scale3d(var(--scale-glass, 1), var(--scale-glass, 1), 1);
+  transform: translateZ(calc(var(--exploded-sep, 0.50) * var(--layer-dist-glass)));
 }
 
 .exploded-layer--coating {
   background-image: url('/assets/images/exploded/layer-coating.svg');
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
-  transform: translateZ(calc(var(--exploded-sep, 0.50) * var(--layer-dist-coating) + var(--pop-coating, 0px))) scale3d(var(--scale-coating, 1), var(--scale-coating, 1), 1);
+  transform: translateZ(calc(var(--exploded-sep, 0.50) * var(--layer-dist-coating)));
 }
 
 .exploded-layer--cells {
   background-image: url('/assets/images/exploded/layer-cells.svg');
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
-  transform: translateZ(calc(var(--exploded-sep, 0.50) * var(--layer-dist-cells) + var(--pop-cells, 0px))) scale3d(var(--scale-cells, 1), var(--scale-cells, 1), 1);
+  transform: translateZ(calc(var(--exploded-sep, 0.50) * var(--layer-dist-cells)));
 }
 
 .exploded-layer--eva {
   background-image: url('/assets/images/exploded/layer-eva.svg');
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
-  transform: translateZ(calc(var(--exploded-sep, 0.50) * var(--layer-dist-eva) + var(--pop-eva, 0px))) scale3d(var(--scale-eva, 1), var(--scale-eva, 1), 1);
+  transform: translateZ(calc(var(--exploded-sep, 0.50) * var(--layer-dist-eva)));
 }
 
 .exploded-layer--frame {
   background-image: url('/assets/images/exploded/layer-frame.svg');
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.42);
-  transform: translateZ(calc(var(--exploded-sep, 0.50) * var(--layer-dist-frame) + var(--pop-frame, 0px))) scale3d(var(--scale-frame, 1), var(--scale-frame, 1), 1);
+  transform: translateZ(calc(var(--exploded-sep, 0.50) * var(--layer-dist-frame)));
 }
 
-/* Spotlight Isolation: Inactive layers smoothly dim and desaturate */
+/* Inactive layers softly dimmed when a component is inspected */
 .exploded-scene.has-active-layer .exploded-layer:not(.is-inspected) {
-  opacity: 0.38;
-  filter: grayscale(0.25) contrast(0.92);
+  opacity: 0.28;
+  filter: grayscale(0.32) contrast(0.9);
+  z-index: 1;
 }
 
-/* Active Layer: Elevated with a radiant warm solar-amber rim highlight */
+/* Active Layer: Physically floats to the VERY TOP of the 3D stack in spotlight */
 .exploded-layer.is-inspected {
-  opacity: 1;
-  filter: brightness(1.12) contrast(1.05);
-  box-shadow: 0 0 24px rgba(253, 129, 39, 0.45), 0 16px 36px rgba(0, 0, 0, 0.45);
-  z-index: 10;
+  opacity: 1 !important;
+  filter: brightness(1.15) contrast(1.05) !important;
+  box-shadow: 0 0 32px rgba(253, 129, 39, 0.52), 0 20px 42px rgba(0, 0, 0, 0.48) !important;
+  transform: translateZ(calc(var(--exploded-sep, 0.50) * var(--layer-dist-glass) + 65px)) scale3d(1.035, 1.035, 1.035) !important;
+  z-index: 50 !important;
 }
 
 .exploded-specs-list {
@@ -342,15 +335,17 @@
     height: 280px;
     overflow: hidden;
   }
-  .exploded-hud-chip {
+  .exploded-hud-label {
     top: 10px;
     left: 12px;
-    padding: 4px 10px;
     gap: 6px;
     max-width: calc(100% - 24px);
   }
-  .exploded-hud-chip__title {
-    font-size: 0.72rem;
+  .exploded-hud-num {
+    font-size: 0.78rem;
+  }
+  .exploded-hud-title {
+    font-size: 0.82rem;
     max-width: 260px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -359,6 +354,9 @@
     width: 220px;
     height: 150px;
     transform: translateY(16px) rotateX(calc(52deg + var(--tilt-x, 0deg))) rotateZ(calc(-34deg + var(--tilt-y, 0deg))) scale(0.88);
+  }
+  .exploded-layer.is-inspected {
+    transform: translateZ(calc(var(--exploded-sep, 0.50) * var(--layer-dist-glass) + 42px)) scale3d(1.03, 1.03, 1.03) !important;
   }
   .exploded-spec-card {
     padding: 8px 10px;
@@ -390,13 +388,16 @@
   .exploded-viewport {
     height: 250px;
   }
-  .exploded-hud-chip__title {
-    font-size: 0.68rem;
+  .exploded-hud-title {
+    font-size: 0.74rem;
     max-width: 210px;
   }
   .exploded-scene {
     width: 190px;
     height: 130px;
     transform: translateY(14px) rotateX(calc(52deg + var(--tilt-x, 0deg))) rotateZ(calc(-34deg + var(--tilt-y, 0deg))) scale(0.82);
+  }
+  .exploded-layer.is-inspected {
+    transform: translateZ(calc(var(--exploded-sep, 0.50) * var(--layer-dist-glass) + 35px)) scale3d(1.025, 1.025, 1.025) !important;
   }
 }
