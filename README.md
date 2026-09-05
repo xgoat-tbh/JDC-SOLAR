@@ -2,7 +2,7 @@
 
 <div align="center">
 
-<img src="frontend/assets/brand/logo.png" alt="JDC Solar Logo" width="280">
+<img src="frontend/assets/brand/logo.png" alt="JDC Solar Logo" width="220">
 
 <p align="center">
   <strong>Next-Generation High-Performance Solar EPC Digital Platform</strong><br>
@@ -20,12 +20,6 @@
 [![Zero Framework](https://img.shields.io/badge/Framework-Zero_Dependencies_Vanilla-orange?style=flat-square)](#-technology-stack)
 [![Automated Tests](https://img.shields.io/badge/Automated_Tests-101%2F101_Passing-success?style=flat-square&logo=vitest)](#-automated-testing-suite)
 
-</div>
-
----
-
-<div align="center">
-  <img src="frontend/assets/brand/og-preview.jpg" alt="JDC Solar Platform Banner" width="100%" style="border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);">
 </div>
 
 ---
