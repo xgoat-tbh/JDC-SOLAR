@@ -348,16 +348,16 @@ async function optimizeImages() {
       try {
         const inputBuffer = fs.readFileSync(pngPath);
         if (pngPath.endsWith('logo-mark.png')) {
-          // Resize logo mark to 40x40 (exact 1x display dimension to eliminate Lighthouse delivery flag)
+          // Resize logo mark to 40x40 (exact 1x display dimension to eliminate Lighthouse delivery flag) with 16-color 4-bit palette (drops to ~680 bytes)
           const resizedBuf = await sharp(inputBuffer)
             .resize(40, 40, { fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } })
-            .png({ compressionLevel: 9, palette: true, quality: 85 })
+            .png({ compressionLevel: 9, palette: true, colors: 16 })
             .toBuffer();
           fs.writeFileSync(pngPath, resizedBuf);
           totalSaved += (originalSize - resizedBuf.length);
           const pctSaved = Math.round((1 - resizedBuf.length / originalSize) * 100);
           const relPath = path.relative(distDir, pngPath);
-          console.log(`  ✅ ${relPath} PNG resized to 40x40 (${(originalSize/1024).toFixed(0)}KB → ${(resizedBuf.length/1024).toFixed(0)}KB, ${pctSaved}% smaller)`);
+          console.log(`  ✅ ${relPath} PNG resized to 40x40 (${(originalSize/1024).toFixed(1)}KB → ${(resizedBuf.length/1024).toFixed(1)}KB, ${pctSaved}% smaller)`);
           continue;
         }
 
@@ -424,7 +424,7 @@ for (const htmlPath of htmlFiles) {
     if (html !== before) modified = true;
   }
 
-  // 4b. Replace <script type="module" src="/js/main.js"> with bundled version + cache-busting version query
+  // 4b. Replace <script type="module" src="/js/main.js"> with deferred bundled version (no modulepreload to eliminate critical request chaining)
   const jsBundlePath = path.join(distDir, 'js', 'main.bundle.js');
   if (fs.existsSync(jsBundlePath)) {
     const before = html;
@@ -432,12 +432,10 @@ for (const htmlPath of htmlFiles) {
       /<script\s+type="module"\s+src="\/js\/(?:main\.js|main\.bundle\.js)(?:\?[^"]*)?"\s*><\/script>/g,
       `<script type="module" defer src="/js/main.bundle.js?v=${buildVersion}"></script>`
     );
-    if (!html.includes('rel="modulepreload"')) {
-      html = html.replace(
-        /<\/head>/i,
-        `  <link rel="modulepreload" href="/js/main.bundle.js?v=${buildVersion}">\n</head>`
-      );
-    }
+    // Strip any existing modulepreload tags so JS does not compete with LCP image in critical request chain
+    html = html.replace(/\s*<link\s+rel="modulepreload"[^>]*>\s*/g, '\n');
+    // Add cache-busting version query to logo-mark.png to prevent stale CDN cache
+    html = html.replace(/\/assets\/brand\/logo-mark\.png(?:\?[^"']*)?/g, `/assets/brand/logo-mark.png?v=${buildVersion}`);
     if (html !== before) modified = true;
   }
 
