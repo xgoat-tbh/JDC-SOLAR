@@ -125,3 +125,41 @@ p, li, a, span, address, td, th {
   overflow-wrap: break-word;
   word-break: break-word;
 }
+
+/* Accessibility Invariants: Visually Hidden & Off-screen Skip Link */
+.sr-only,
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.skip-link {
+  position: absolute !important;
+  top: var(--space-sm, 0.75rem);
+  left: var(--space-sm, 0.75rem);
+  z-index: var(--z-layer-toast, 700);
+  padding: var(--space-sm, 0.75rem) var(--space-md, 1rem);
+  background-color: var(--color-brand-primary, #1B3766);
+  color: #FFFFFF !important;
+  font-weight: 600;
+  font-size: var(--font-size-body-sm, 0.875rem);
+  border-radius: var(--radius-sm, 6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  transform: translateY(-300%) !important;
+  transition: transform var(--duration-fast, 0.15s) ease-out;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  transform: translateY(0) !important;
+  outline: 3px solid var(--color-brand-accent, #FD8127);
+  outline-offset: 2px;
+}
+

@@ -119,6 +119,7 @@ if (fs.existsSync(cssEntryPath)) {
       path.join(frontendDir, 'css', 'reset.css'),
       path.join(frontendDir, 'css', 'typography.css'),
       path.join(frontendDir, 'css', 'layout.css'),
+      path.join(frontendDir, 'css', 'utilities.css'),
       path.join(frontendDir, 'css', 'components', 'header.css'),
       path.join(frontendDir, 'css', 'components', 'drawer.css'),
       path.join(frontendDir, 'css', 'components', 'button.css'),
