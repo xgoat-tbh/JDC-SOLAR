@@ -147,6 +147,7 @@ ErrorDocument 500 /404.html
   # Images & Media
   <FilesMatch "\.(png|jpg|jpeg|webp|avif|svg|ico)$">
     Header set Cache-Control "public, max-age=31536000, stale-while-revalidate=86400"
+    Header set Access-Control-Allow-Origin "*"
   </FilesMatch>
 
   # CSS & JS (Cached for performance, but allows smooth updates)

@@ -442,6 +442,8 @@ for (const htmlPath of htmlFiles) {
     html = html.replace(/\s*<link\s+rel="modulepreload"[^>]*>\s*/g, '\n');
     // Add cache-busting version query to logo-mark.png to prevent stale CDN cache
     html = html.replace(/\/assets\/brand\/logo-mark\.png(?:\?[^"']*)?/g, `/assets/brand/logo-mark.png?v=${buildVersion}`);
+    // Ensure all SVG sprite references target sprite.v2.svg for complete cache invalidation
+    html = html.replace(/\/assets\/icons\/sprite\.svg/g, '/assets/icons/sprite.v2.svg');
     if (html !== before) modified = true;
   }
 
@@ -623,6 +625,7 @@ const requiredFiles = [
   'assets/brand/favicon-32x32.png',
   'assets/brand/apple-touch-icon.png',
   'assets/icons/sprite.svg',
+  'assets/icons/sprite.v2.svg',
   'data/projects.json',
   'data/services.json',
   'data/subsidies.json',
