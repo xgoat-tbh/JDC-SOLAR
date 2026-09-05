@@ -123,6 +123,11 @@ if (fs.existsSync(cssEntryPath)) {
       path.join(frontendDir, 'css', 'components', 'header.css'),
       path.join(frontendDir, 'css', 'components', 'drawer.css'),
       path.join(frontendDir, 'css', 'components', 'button.css'),
+      path.join(frontendDir, 'css', 'components', 'breadcrumb.css'),
+      path.join(frontendDir, 'css', 'components', 'page-hero.css'),
+      path.join(frontendDir, 'css', 'components', 'badge.css'),
+      path.join(frontendDir, 'css', 'components', 'card.css'),
+      path.join(frontendDir, 'css', 'components', 'form.css'),
       path.join(frontendDir, 'css', 'responsive-polish.css')
     ];
 
@@ -438,6 +443,13 @@ for (const htmlPath of htmlFiles) {
     // Add cache-busting version query to logo-mark.png to prevent stale CDN cache
     html = html.replace(/\/assets\/brand\/logo-mark\.png(?:\?[^"']*)?/g, `/assets/brand/logo-mark.png?v=${buildVersion}`);
     if (html !== before) modified = true;
+  }
+
+  // 4b2. Inject Instant Theme Bootstrapper in <head> to eliminate theme flickering
+  const themeBootstrapper = '<script>(function(){try{var t=localStorage.getItem("jdc_theme")||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");document.documentElement.setAttribute("data-theme",t);if(t==="dark"){var m=document.querySelector(\'meta[name="theme-color"]\');if(m)m.setAttribute("content","#0B132B");}}catch(e){}})();</script>';
+  if (!html.includes('jdc_theme') && html.includes('<meta name="theme-color"')) {
+    html = html.replace(/<meta\s+name="theme-color"[^>]*>/i, `$&\n  ${themeBootstrapper}`);
+    modified = true;
   }
 
   // 4c. Inline Critical Above-the-Fold CSS & load main.css non-render-blocking

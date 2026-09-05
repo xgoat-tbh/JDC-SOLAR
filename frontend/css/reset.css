@@ -163,3 +163,26 @@ p, li, a, span, address, td, th {
   outline-offset: 2px;
 }
 
+/* FOUC Protection: Breadcrumb & Subpage Layout Invariants */
+.breadcrumb__list,
+ol.breadcrumb__list {
+  list-style: none !important;
+  list-style-type: none !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important;
+  gap: var(--space-xs, 0.5rem) !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.breadcrumb__item,
+li.breadcrumb__item {
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+.breadcrumb__separator {
+  user-select: none;
+}
+
