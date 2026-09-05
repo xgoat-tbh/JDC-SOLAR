@@ -12,6 +12,8 @@
   --layer-dist-cells: 30px;
   --layer-dist-eva: -35px;
   --layer-dist-frame: -95px;
+  --tilt-x: 0deg;
+  --tilt-y: 0deg;
 }
 
 .exploded-module-grid {
@@ -39,7 +41,67 @@
   position: relative;
   user-select: none;
   -webkit-user-select: none;
+  pointer-events: auto;
+  touch-action: pan-y;
+}
+
+/* Floating Glassmorphic HUD Chip */
+.exploded-hud-chip {
+  position: absolute;
+  top: 16px;
+  left: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(15, 23, 42, 0.76);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 9999px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.28);
+  z-index: 20;
   pointer-events: none;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.35s ease;
+}
+
+[data-theme="light"] .exploded-hud-chip {
+  background: rgba(255, 255, 255, 0.88);
+  border-color: rgba(15, 23, 42, 0.12);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.exploded-hud-chip__beacon {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-brand-accent, #FD8127);
+  box-shadow: 0 0 10px var(--color-brand-accent, #FD8127);
+  animation: hudBeaconPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  flex-shrink: 0;
+}
+
+@keyframes hudBeaconPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.45; transform: scale(0.85); }
+}
+
+.exploded-hud-chip__num {
+  font-family: var(--font-family-heading);
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--color-brand-accent, #FD8127);
+  letter-spacing: 0.05em;
+  line-height: 1;
+}
+
+.exploded-hud-chip__title {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-text-headings);
+  white-space: nowrap;
+  line-height: 1;
 }
 
 .exploded-scene {
@@ -47,8 +109,8 @@
   width: min(380px, 86%);
   height: min(260px, 66%);
   transform-style: preserve-3d;
-  transform: rotateX(54deg) rotateZ(-36deg);
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: rotateX(calc(54deg + var(--tilt-x, 0deg))) rotateZ(calc(-36deg + var(--tilt-y, 0deg)));
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
   pointer-events: none;
 }
 
@@ -60,48 +122,58 @@
   background-repeat: no-repeat;
   background-position: center;
   background-color: transparent;
-  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.35s ease,
-              filter 0.35s ease;
+  transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1),
+              opacity 0.38s ease,
+              box-shadow 0.38s ease,
+              filter 0.38s ease;
   transform-style: preserve-3d;
   pointer-events: none;
   cursor: default;
-  will-change: transform;
+  will-change: transform, opacity;
 }
 
 .exploded-layer--glass {
   background-image: url('/assets/images/exploded/layer-glass.svg');
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
-  transform: translateZ(calc(var(--exploded-sep, 0.50) * var(--layer-dist-glass) + var(--pop-glass, 0px)));
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16);
+  transform: translateZ(calc(var(--exploded-sep, 0.50) * var(--layer-dist-glass) + var(--pop-glass, 0px))) scale3d(var(--scale-glass, 1), var(--scale-glass, 1), 1);
 }
 
 .exploded-layer--coating {
   background-image: url('/assets/images/exploded/layer-coating.svg');
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
-  transform: translateZ(calc(var(--exploded-sep, 0.50) * var(--layer-dist-coating) + var(--pop-coating, 0px)));
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+  transform: translateZ(calc(var(--exploded-sep, 0.50) * var(--layer-dist-coating) + var(--pop-coating, 0px))) scale3d(var(--scale-coating, 1), var(--scale-coating, 1), 1);
 }
 
 .exploded-layer--cells {
   background-image: url('/assets/images/exploded/layer-cells.svg');
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
-  transform: translateZ(calc(var(--exploded-sep, 0.50) * var(--layer-dist-cells) + var(--pop-cells, 0px)));
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+  transform: translateZ(calc(var(--exploded-sep, 0.50) * var(--layer-dist-cells) + var(--pop-cells, 0px))) scale3d(var(--scale-cells, 1), var(--scale-cells, 1), 1);
 }
 
 .exploded-layer--eva {
   background-image: url('/assets/images/exploded/layer-eva.svg');
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
-  transform: translateZ(calc(var(--exploded-sep, 0.50) * var(--layer-dist-eva) + var(--pop-eva, 0px)));
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+  transform: translateZ(calc(var(--exploded-sep, 0.50) * var(--layer-dist-eva) + var(--pop-eva, 0px))) scale3d(var(--scale-eva, 1), var(--scale-eva, 1), 1);
 }
 
 .exploded-layer--frame {
   background-image: url('/assets/images/exploded/layer-frame.svg');
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
-  transform: translateZ(calc(var(--exploded-sep, 0.50) * var(--layer-dist-frame) + var(--pop-frame, 0px)));
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.42);
+  transform: translateZ(calc(var(--exploded-sep, 0.50) * var(--layer-dist-frame) + var(--pop-frame, 0px))) scale3d(var(--scale-frame, 1), var(--scale-frame, 1), 1);
 }
 
+/* Spotlight Isolation: Inactive layers smoothly dim and desaturate */
+.exploded-scene.has-active-layer .exploded-layer:not(.is-inspected) {
+  opacity: 0.38;
+  filter: grayscale(0.25) contrast(0.92);
+}
+
+/* Active Layer: Elevated with a radiant warm solar-amber rim highlight */
 .exploded-layer.is-inspected {
-  /* Subtle highlight without glowing orange drop-shadow */
-  filter: brightness(1.06);
+  opacity: 1;
+  filter: brightness(1.12) contrast(1.05);
+  box-shadow: 0 0 24px rgba(253, 129, 39, 0.45), 0 16px 36px rgba(0, 0, 0, 0.45);
+  z-index: 10;
 }
 
 .exploded-specs-list {
@@ -270,10 +342,23 @@
     height: 280px;
     overflow: hidden;
   }
+  .exploded-hud-chip {
+    top: 10px;
+    left: 12px;
+    padding: 4px 10px;
+    gap: 6px;
+    max-width: calc(100% - 24px);
+  }
+  .exploded-hud-chip__title {
+    font-size: 0.72rem;
+    max-width: 260px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
   .exploded-scene {
     width: 220px;
     height: 150px;
-    transform: translateY(16px) rotateX(52deg) rotateZ(-34deg) scale(0.88);
+    transform: translateY(16px) rotateX(calc(52deg + var(--tilt-x, 0deg))) rotateZ(calc(-34deg + var(--tilt-y, 0deg))) scale(0.88);
   }
   .exploded-spec-card {
     padding: 8px 10px;
@@ -305,9 +390,13 @@
   .exploded-viewport {
     height: 250px;
   }
+  .exploded-hud-chip__title {
+    font-size: 0.68rem;
+    max-width: 210px;
+  }
   .exploded-scene {
     width: 190px;
     height: 130px;
-    transform: translateY(14px) rotateX(52deg) rotateZ(-34deg) scale(0.82);
+    transform: translateY(14px) rotateX(calc(52deg + var(--tilt-x, 0deg))) rotateZ(calc(-34deg + var(--tilt-y, 0deg))) scale(0.82);
   }
 }

@@ -1,68 +1,74 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%" fill="none">
   <defs>
-    
-    <linearGradient id="glassBody" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.25" />
-      <stop offset="30%" stop-color="#BAE6FD" stop-opacity="0.08" />
-      <stop offset="70%" stop-color="#0284C7" stop-opacity="0.04" />
-      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.18" />
+    <!-- Ultra-clear low-iron glass substrate gradient -->
+    <linearGradient id="glassSubstrate" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F0F9FF" stop-opacity="0.32" />
+      <stop offset="25%" stop-color="#E0F2FE" stop-opacity="0.12" />
+      <stop offset="65%" stop-color="#BAE6FD" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0.18" />
     </linearGradient>
 
-    
-    <linearGradient id="glassEdge" x1="0%" y1="0%" x2="100%" y2="0%">
+    <!-- Refractive glass edge (pencil polish) -->
+    <linearGradient id="glassPencilEdge" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.95" />
-      <stop offset="35%" stop-color="#38BDF8" stop-opacity="0.8" />
-      <stop offset="70%" stop-color="#0284C7" stop-opacity="0.6" />
-      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.9" />
+      <stop offset="30%" stop-color="#38BDF8" stop-opacity="0.75" />
+      <stop offset="70%" stop-color="#0284C7" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#E0F2FE" stop-opacity="0.85" />
     </linearGradient>
 
-    
-    <linearGradient id="glareSweep1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.45" />
-      <stop offset="50%" stop-color="#E0F2FE" stop-opacity="0.15" />
-      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0" />
+    <!-- Primary soft specular light sweep -->
+    <linearGradient id="specularSheenA" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.42" />
+      <stop offset="18%" stop-color="#FFFFFF" stop-opacity="0.18" />
+      <stop offset="35%" stop-color="#FFFFFF" stop-opacity="0" />
+      <stop offset="65%" stop-color="#FFFFFF" stop-opacity="0" />
+      <stop offset="85%" stop-color="#BAE6FD" stop-opacity="0.14" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.38" />
     </linearGradient>
 
-    <linearGradient id="glareSweep2" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0" />
-      <stop offset="50%" stop-color="#BAE6FD" stop-opacity="0.25" />
-      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.5" />
+    <!-- Secondary subtle cross-reflection -->
+    <linearGradient id="specularSheenB" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.15" />
+      <stop offset="45%" stop-color="#FFFFFF" stop-opacity="0" />
+      <stop offset="100%" stop-color="#38BDF8" stop-opacity="0.08" />
     </linearGradient>
 
-    <radialGradient id="cornerGlint" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="1" />
-      <stop offset="40%" stop-color="#38BDF8" stop-opacity="0.7" />
+    <!-- Corner facet glint -->
+    <radialGradient id="glintGlow" cx="20%" cy="20%" r="80%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9" />
+      <stop offset="40%" stop-color="#38BDF8" stop-opacity="0.4" />
       <stop offset="100%" stop-color="#38BDF8" stop-opacity="0" />
     </radialGradient>
   </defs>
 
-  
-  <rect x="22" y="24" width="556" height="356" rx="8" fill="#0284C7" fill-opacity="0.15" />
+  <!-- Ambient glass shadow/occlusion base -->
+  <rect x="22" y="22" width="556" height="356" rx="6" fill="#0284C7" fill-opacity="0.06" />
 
-  
-  <rect x="20" y="20" width="560" height="360" rx="8" fill="url(#glassBody)" stroke="url(#glassEdge)" stroke-width="2.5" />
+  <!-- Main glass body -->
+  <rect x="20" y="20" width="560" height="360" rx="6" fill="url(#glassSubstrate)" stroke="url(#glassPencilEdge)" stroke-width="1.75" />
 
-  
-  <polygon points="120,20 260,20 160,380 20,380" fill="url(#glareSweep1)" />
-  <polygon points="400,20 490,20 370,380 280,380" fill="url(#glareSweep2)" />
+  <!-- Inner polished bevel margin (0.5mm visual chamfer) -->
+  <rect x="23" y="23" width="554" height="354" rx="4" fill="none" stroke="#FFFFFF" stroke-width="0.8" stroke-opacity="0.65" />
 
-  
-  <rect x="20" y="32" width="6" height="24" rx="2" fill="#0F172A" />
-  <rect x="32" y="20" width="24" height="6" rx="2" fill="#0F172A" />
-  <rect x="574" y="32" width="6" height="24" rx="2" fill="#0F172A" />
-  <rect x="544" y="20" width="24" height="6" rx="2" fill="#0F172A" />
-  <rect x="20" y="344" width="6" height="24" rx="2" fill="#0F172A" />
-  <rect x="32" y="374" width="24" height="6" rx="2" fill="#0F172A" />
-  <rect x="574" y="344" width="6" height="24" rx="2" fill="#0F172A" />
-  <rect x="544" y="374" width="24" height="6" rx="2" fill="#0F172A" />
+  <!-- Realistic diagonal light reflections -->
+  <path d="M 90 20 L 220 20 L 120 380 L 20 380 L 20 290 Z" fill="url(#specularSheenA)" />
+  <path d="M 360 20 L 470 20 L 370 380 L 260 380 Z" fill="url(#specularSheenA)" opacity="0.75" />
+  <rect x="20" y="20" width="560" height="360" rx="6" fill="url(#specularSheenB)" />
 
-  
-  <circle cx="22" cy="22" r="12" fill="url(#cornerGlint)" />
-  <circle cx="578" cy="378" r="14" fill="url(#cornerGlint)" />
+  <!-- Specular corner glints -->
+  <circle cx="24" cy="24" r="16" fill="url(#glintGlow)" />
+  <circle cx="576" cy="376" r="16" fill="url(#glintGlow)" opacity="0.6" />
 
-  
-  <g transform="translate(340, 28)">
-    <rect width="220" height="22" rx="11" fill="rgba(15, 23, 42, 0.88)" stroke="#38BDF8" stroke-width="1.2" />
-    <text x="110" y="11" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="7.5" font-weight="700" fill="#E0F2FE" text-anchor="middle" dominant-baseline="central" letter-spacing="0.5">3.2mm TEMPERED GLASS • 94.5% TX</text>
+  <!-- Precision corner alignment registration ticks -->
+  <path d="M 20 36 L 36 36 M 36 20 L 36 36" stroke="#FFFFFF" stroke-width="0.75" stroke-opacity="0.5" />
+  <path d="M 580 36 L 564 36 M 564 20 L 564 36" stroke="#FFFFFF" stroke-width="0.75" stroke-opacity="0.5" />
+  <path d="M 20 364 L 36 364 M 36 380 L 36 364" stroke="#FFFFFF" stroke-width="0.75" stroke-opacity="0.5" />
+  <path d="M 580 364 L 564 364 M 564 380 L 564 364" stroke="#FFFFFF" stroke-width="0.75" stroke-opacity="0.5" />
+
+  <!-- Micro-etched tempering safety stamp (authentic technical marking) -->
+  <g transform="translate(435, 362)" opacity="0.65">
+    <circle cx="6" cy="6" r="4.5" fill="none" stroke="#FFFFFF" stroke-width="0.6" />
+    <path d="M 6 3.5 L 6 8.5 M 3.5 6 L 8.5 6" stroke="#FFFFFF" stroke-width="0.6" />
+    <text x="16" y="8" font-family="'JetBrains Mono', 'SF Mono', Consolas, monospace" font-size="5" font-weight="600" fill="#FFFFFF" letter-spacing="0.6">TEMPERED • EN 12150-1</text>
   </g>
 </svg>

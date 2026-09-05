@@ -1044,17 +1044,20 @@
         <div class="exploded-module-wrapper" data-exploded-module data-magnetic-anchor>
           <div class="exploded-module-grid">
             
-            <div class="exploded-viewport">
-              <div class="exploded-scene">
-                
-                <div id="layer-glass" class="exploded-layer exploded-layer--glass" title="3.2mm Solar Tempered Glass"></div>
-                
+            <div class="exploded-viewport" id="exploded-viewport" aria-label="3D Interactive Solar Module Viewport">
+              <!-- Floating Glassmorphic HUD Chip -->
+              <div class="exploded-hud-chip" id="exploded-hud-chip" aria-live="polite">
+                <span class="exploded-hud-chip__beacon"></span>
+                <span class="exploded-hud-chip__num" id="exploded-hud-num">01</span>
+                <span class="exploded-hud-chip__title" id="exploded-hud-title">3.2mm Low-Iron Tempered Glass</span>
+              </div>
+
+              <div class="exploded-scene has-active-layer" id="exploded-scene">
+                <!-- 5 Structural Layers -->
+                <div id="layer-glass" class="exploded-layer exploded-layer--glass is-inspected" title="3.2mm Solar Tempered Glass"></div>
                 <div id="layer-coating" class="exploded-layer exploded-layer--coating" title="Nano Anti-Reflective Coating"></div>
-                
                 <div id="layer-cells" class="exploded-layer exploded-layer--cells" title="M10 Monocrystalline Cells"></div>
-                
                 <div id="layer-eva" class="exploded-layer exploded-layer--eva" title="Moisture Barrier EVA Sheet"></div>
-                
                 <div id="layer-frame" class="exploded-layer exploded-layer--frame" title="Aerospace-Grade Aluminum Frame"></div>
               </div>
             </div>

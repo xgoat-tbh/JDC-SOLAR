@@ -1,76 +1,77 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="100%" height="100%" fill="none">
   <defs>
-    
-    <linearGradient id="frameMetallicGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+    <!-- Satin brushed anodized aluminum profile gradient -->
+    <linearGradient id="anodizedAluminumGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#FFFFFF" />
-      <stop offset="25%" stop-color="#CBD5E1" />
-      <stop offset="50%" stop-color="#94A3B8" />
-      <stop offset="75%" stop-color="#64748B" />
-      <stop offset="100%" stop-color="#334155" />
+      <stop offset="15%" stop-color="#E2E8F0" />
+      <stop offset="45%" stop-color="#CBD5E1" />
+      <stop offset="75%" stop-color="#94A3B8" />
+      <stop offset="100%" stop-color="#64748B" />
     </linearGradient>
 
-    
-    <linearGradient id="bracketSteel" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#F1F5F9" />
-      <stop offset="50%" stop-color="#94A3B8" />
-      <stop offset="100%" stop-color="#475569" />
-    </linearGradient>
-
-    
-    <radialGradient id="boltScrew" cx="40%" cy="40%" r="60%">
-      <stop offset="0%" stop-color="#FFFFFF" />
-      <stop offset="60%" stop-color="#64748B" />
+    <!-- Deep extrusion channel shadow gradient -->
+    <linearGradient id="channelShadow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#334155" />
       <stop offset="100%" stop-color="#0F172A" />
-    </radialGradient>
+    </linearGradient>
+
+    <!-- Metallic edge highlight stroke -->
+    <linearGradient id="satinEdge" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="50%" stop-color="#E2E8F0" />
+      <stop offset="100%" stop-color="#94A3B8" />
+    </linearGradient>
   </defs>
 
-  
-  
-  <path d="M20 20 L580 20 L580 380 L20 380 Z M56 56 L56 344 L544 344 L544 56 Z" fill="url(#frameMetallicGrad)" stroke="#1E293B" stroke-width="2" fill-rule="evenodd" />
+  <!-- Outer frame perimeter with 35mm structural depth -->
+  <path d="M 20 20 L 580 20 L 580 380 L 20 380 Z M 48 48 L 48 352 L 552 352 L 552 48 Z" fill="url(#anodizedAluminumGrad)" stroke="#475569" stroke-width="1.5" fill-rule="evenodd" />
 
-  
-  <line x1="20" y1="20" x2="580" y2="20" stroke="#FFFFFF" stroke-width="3" />
-  
-  <line x1="20" y1="20" x2="20" y2="380" stroke="#FFFFFF" stroke-width="3" />
-  
-  <line x1="20" y1="380" x2="580" y2="380" stroke="#0F172A" stroke-width="3" />
-  
-  <line x1="580" y1="20" x2="580" y2="380" stroke="#0F172A" stroke-width="3" />
+  <!-- Outer beveled specular chamfers -->
+  <line x1="20" y1="20" x2="580" y2="20" stroke="#FFFFFF" stroke-width="2" />
+  <line x1="20" y1="20" x2="20" y2="380" stroke="#FFFFFF" stroke-width="2" />
+  <line x1="20" y1="380" x2="580" y2="380" stroke="#334155" stroke-width="2" />
+  <line x1="580" y1="20" x2="580" y2="380" stroke="#334155" stroke-width="2" />
 
-  
-  <rect x="52" y="52" width="496" height="296" rx="2" fill="none" stroke="#0F172A" stroke-width="1.8" />
-  <rect x="58" y="58" width="484" height="284" rx="2" fill="none" stroke="#64748B" stroke-width="1" />
+  <!-- Internal silicone sealing gasket bed channel -->
+  <rect x="44" y="44" width="512" height="312" rx="2" fill="none" stroke="url(#channelShadow)" stroke-width="1.5" />
+  <rect x="48" y="48" width="504" height="304" rx="2" fill="none" stroke="#94A3B8" stroke-width="0.8" />
 
-  
-  <line x1="20" y1="20" x2="56" y2="56" stroke="#0F172A" stroke-width="2" />
-  <line x1="580" y1="20" x2="544" y2="56" stroke="#0F172A" stroke-width="2" />
-  <line x1="20" y1="380" x2="56" y2="344" stroke="#0F172A" stroke-width="2" />
-  <line x1="580" y1="380" x2="544" y2="344" stroke="#0F172A" stroke-width="2" />
+  <!-- Precision 45-degree corner miter extrusion seams -->
+  <line x1="20" y1="20" x2="48" y2="48" stroke="#475569" stroke-width="1.5" />
+  <line x1="580" y1="20" x2="552" y2="48" stroke="#475569" stroke-width="1.5" />
+  <line x1="20" y1="380" x2="48" y2="352" stroke="#475569" stroke-width="1.5" />
+  <line x1="580" y1="380" x2="552" y2="352" stroke="#475569" stroke-width="1.5" />
 
-  
-  
-  <path d="M22 22 L62 22 L62 38 L38 62 L22 62 Z" fill="url(#bracketSteel)" stroke="#0F172A" stroke-width="1.2" />
-  <circle cx="38" cy="38" r="4" fill="url(#boltScrew)" stroke="#0F172A" stroke-width="0.8" />
-  <line x1="36" y1="38" x2="40" y2="38" stroke="#FFFFFF" stroke-width="0.8" />
+  <!-- Precision corner internal bracket rivet details -->
+  <circle cx="34" cy="34" r="2.5" fill="#64748B" stroke="#334155" stroke-width="0.75" />
+  <circle cx="566" cy="34" r="2.5" fill="#64748B" stroke="#334155" stroke-width="0.75" />
+  <circle cx="34" cy="366" r="2.5" fill="#64748B" stroke="#334155" stroke-width="0.75" />
+  <circle cx="566" cy="366" r="2.5" fill="#64748B" stroke="#334155" stroke-width="0.75" />
 
-  
-  <path d="M578 22 L538 22 L538 38 L562 62 L578 62 Z" fill="url(#bracketSteel)" stroke="#0F172A" stroke-width="1.2" />
-  <circle cx="562" cy="38" r="4" fill="url(#boltScrew)" stroke="#0F172A" stroke-width="0.8" />
-  <line x1="560" y1="38" x2="564" y2="38" stroke="#FFFFFF" stroke-width="0.8" />
+  <!-- Drainage weep slots (engineered water runoff perforations) -->
+  <rect x="180" y="24" width="28" height="4" rx="2" fill="#1E293B" stroke="#64748B" stroke-width="0.5" />
+  <rect x="390" y="24" width="28" height="4" rx="2" fill="#1E293B" stroke="#64748B" stroke-width="0.5" />
+  <rect x="180" y="372" width="28" height="4" rx="2" fill="#1E293B" stroke="#64748B" stroke-width="0.5" />
+  <rect x="390" y="372" width="28" height="4" rx="2" fill="#1E293B" stroke="#64748B" stroke-width="0.5" />
 
-  
-  <path d="M22 378 L62 378 L62 362 L38 338 L22 338 Z" fill="url(#bracketSteel)" stroke="#0F172A" stroke-width="1.2" />
-  <circle cx="38" cy="362" r="4" fill="url(#boltScrew)" stroke="#0F172A" stroke-width="0.8" />
-  <line x1="36" y1="362" x2="40" y2="362" stroke="#FFFFFF" stroke-width="0.8" />
+  <!-- Structural racking mounting slots (profile holes) -->
+  <rect x="25" y="150" width="4" height="24" rx="2" fill="#1E293B" />
+  <rect x="25" y="226" width="4" height="24" rx="2" fill="#1E293B" />
+  <rect x="571" y="150" width="4" height="24" rx="2" fill="#1E293B" />
+  <rect x="571" y="226" width="4" height="24" rx="2" fill="#1E293B" />
 
-  
-  <path d="M578 378 L538 378 L538 362 L562 338 L578 338 Z" fill="url(#bracketSteel)" stroke="#0F172A" stroke-width="1.2" />
-  <circle cx="562" cy="362" r="4" fill="url(#boltScrew)" stroke="#0F172A" stroke-width="0.8" />
-  <line x1="560" y1="362" x2="564" y2="362" stroke="#FFFFFF" stroke-width="0.8" />
+  <!-- Electrical protective ground symbol stamp (authentic electrical engineering standard) -->
+  <g transform="translate(60, 362)" opacity="0.8">
+    <circle cx="7" cy="7" r="6" fill="none" stroke="#475569" stroke-width="0.75" />
+    <line x1="7" y1="3" x2="7" y2="7" stroke="#475569" stroke-width="0.8" />
+    <line x1="4" y1="7" x2="10" y2="7" stroke="#475569" stroke-width="0.8" />
+    <line x1="5" y1="9" x2="9" y2="9" stroke="#475569" stroke-width="0.8" />
+    <line x1="6" y1="11" x2="8" y2="11" stroke="#475569" stroke-width="0.8" />
+    <text x="17" y="9" font-family="'JetBrains Mono', 'SF Mono', Consolas, monospace" font-size="5" font-weight="600" fill="#475569" letter-spacing="0.5">GROUND ⏚</text>
+  </g>
 
-  
-  <g transform="translate(320, 348)">
-    <rect width="240" height="22" rx="6" fill="rgba(15, 23, 42, 0.94)" stroke="#64748B" stroke-width="1" />
-    <text x="120" y="11" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="7.5" font-weight="700" fill="#E2E8F0" text-anchor="middle" dominant-baseline="central" letter-spacing="0.5">35mm ANODIZED AL ALLOY • 5400 Pa</text>
+  <!-- Mechanical engineering rating stamp -->
+  <g transform="translate(425, 362)" opacity="0.8">
+    <text x="0" y="8" font-family="'JetBrains Mono', 'SF Mono', Consolas, monospace" font-size="5" font-weight="600" fill="#475569" letter-spacing="0.5">AL6063-T6 • 5400Pa/2400Pa</text>
   </g>
 </svg>

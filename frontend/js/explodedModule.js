@@ -3,6 +3,8 @@ export function initExplodedModule() {
   if (!container || container.dataset.moduleInit === 'true') return;
   container.dataset.moduleInit = 'true';
 
+  const viewport = container.querySelector('#exploded-viewport') || container.querySelector('.exploded-viewport');
+  const scene = container.querySelector('#exploded-scene') || container.querySelector('.exploded-scene');
   const layers = container.querySelectorAll('.exploded-layer');
   const layerButtons = container.querySelectorAll('[data-layer-target]');
   const track = container.querySelector('#exploded-slider-track');
@@ -10,28 +12,51 @@ export function initExplodedModule() {
   const thumb = container.querySelector('#exploded-slider-thumb');
   const valueLabel = container.querySelector('#exploded-separation-val');
 
+  // Floating HUD Chip elements
+  const hudNum = container.querySelector('#exploded-hud-num');
+  const hudTitle = container.querySelector('#exploded-hud-title');
+
   if (!track || !fill || !thumb) return;
 
   let isDragging = false;
   let currentPos = 50;
   let targetPos = 50;
   let animationId = null;
+  let hasPlayedIntro = false;
+  let hasUserInteracted = false;
+
+  // Parallax Tilt State (±6 deg range)
+  let targetTiltX = 0;
+  let targetTiltY = 0;
+  let currentTiltX = 0;
+  let currentTiltY = 0;
+  let cachedViewportRect = null;
 
   const snapPoints = [0, 25, 50, 75, 100];
 
-  
+  // Dynamic Layer Elevation & Scale (Works continuously at ANY separation value)
   const popOutMap = {
-    'layer-glass': { var: '--pop-glass', val: '75px' },
-    'layer-coating': { var: '--pop-coating', val: '55px' },
-    'layer-cells': { var: '--pop-cells', val: '45px' },
-    'layer-eva': { var: '--pop-eva', val: '-45px' },
-    'layer-frame': { var: '--pop-frame', val: '-75px' }
+    'layer-glass': { var: '--pop-glass', scaleVar: '--scale-glass', val: '40px', scale: '1.025' },
+    'layer-coating': { var: '--pop-coating', scaleVar: '--scale-coating', val: '32px', scale: '1.025' },
+    'layer-cells': { var: '--pop-cells', scaleVar: '--scale-cells', val: '28px', scale: '1.025' },
+    'layer-eva': { var: '--pop-eva', scaleVar: '--scale-eva', val: '-28px', scale: '1.025' },
+    'layer-frame': { var: '--pop-frame', scaleVar: '--scale-frame', val: '-40px', scale: '1.025' }
   };
 
   const allPopVars = ['--pop-glass', '--pop-coating', '--pop-cells', '--pop-eva', '--pop-frame'];
+  const allScaleVars = ['--scale-glass', '--scale-coating', '--scale-cells', '--scale-eva', '--scale-frame'];
+
+  const layerInfo = {
+    'layer-glass': { num: '01', title: '3.2mm Low-Iron Tempered Glass' },
+    'layer-coating': { num: '02', title: 'Nano Anti-Reflective (AR) Coating' },
+    'layer-cells': { num: '03', title: 'M10 Monocrystalline Cells (16BB)' },
+    'layer-eva': { num: '04', title: 'Dual-Layer Cross-Linked EVA' },
+    'layer-frame': { num: '05', title: 'Anodized Aerospace Aluminum Frame' }
+  };
 
   function resetAllPops() {
     allPopVars.forEach(v => container.style.setProperty(v, '0px'));
+    allScaleVars.forEach(v => container.style.setProperty(v, '1'));
   }
 
   function applyPosition(pos) {
@@ -45,29 +70,48 @@ export function initExplodedModule() {
     if (valueLabel) {
       valueLabel.textContent = `${Math.round(clamped)}%`;
     }
-
-    
-    if (clamped > 35) {
-      resetAllPops();
-    }
   }
 
   function renderLoop() {
+    let needsContinue = false;
+
+    // 1. Slider position interpolation
     if (isDragging) {
       currentPos = targetPos;
       applyPosition(currentPos);
-      animationId = requestAnimationFrame(renderLoop);
+      needsContinue = true;
     } else {
       const diff = targetPos - currentPos;
       if (Math.abs(diff) > 0.08) {
-        currentPos += diff * 0.22;
+        currentPos += diff * 0.16;
         applyPosition(currentPos);
-        animationId = requestAnimationFrame(renderLoop);
-      } else {
+        needsContinue = true;
+      } else if (currentPos !== targetPos) {
         currentPos = targetPos;
         applyPosition(currentPos);
-        animationId = null;
       }
+    }
+
+    // 2. Parallax tilt interpolation
+    const tiltDiffX = targetTiltX - currentTiltX;
+    const tiltDiffY = targetTiltY - currentTiltY;
+    if (Math.abs(tiltDiffX) > 0.04 || Math.abs(tiltDiffY) > 0.04) {
+      currentTiltX += tiltDiffX * 0.14;
+      currentTiltY += tiltDiffY * 0.14;
+      container.style.setProperty('--tilt-x', `${currentTiltX.toFixed(2)}deg`);
+      container.style.setProperty('--tilt-y', `${currentTiltY.toFixed(2)}deg`);
+      needsContinue = true;
+    } else if (currentTiltX !== targetTiltX || currentTiltY !== targetTiltY) {
+      currentTiltX = targetTiltX;
+      currentTiltY = targetTiltY;
+      container.style.setProperty('--tilt-x', `${currentTiltX.toFixed(2)}deg`);
+      container.style.setProperty('--tilt-y', `${currentTiltY.toFixed(2)}deg`);
+    }
+
+    if (needsContinue) {
+      animationId = requestAnimationFrame(renderLoop);
+    } else {
+      animationId = null;
     }
   }
 
@@ -77,6 +121,35 @@ export function initExplodedModule() {
     }
   }
 
+  // ── Viewport Interactive Tilt Parallax ──────────────────────────────
+  function onViewportPointerMove(e) {
+    if (!viewport) return;
+    if (!cachedViewportRect) {
+      cachedViewportRect = viewport.getBoundingClientRect();
+    }
+    const rect = cachedViewportRect;
+    if (rect.width > 0 && rect.height > 0) {
+      const xRatio = (e.clientX - rect.left) / rect.width - 0.5;
+      const yRatio = (e.clientY - rect.top) / rect.height - 0.5;
+      targetTiltX = -yRatio * 12; // ±6 deg on X
+      targetTiltY = xRatio * 12;  // ±6 deg on Y
+      startAnimation();
+    }
+  }
+
+  function onViewportPointerLeave() {
+    targetTiltX = 0;
+    targetTiltY = 0;
+    cachedViewportRect = null;
+    startAnimation();
+  }
+
+  if (viewport) {
+    viewport.addEventListener('pointermove', onViewportPointerMove, { passive: true });
+    viewport.addEventListener('pointerleave', onViewportPointerLeave, { passive: true });
+  }
+
+  // ── Slider Pointer Events ──────────────────────────────────────────
   let cachedTrackRect = null;
 
   function calculatePos(clientX) {
@@ -97,6 +170,7 @@ export function initExplodedModule() {
   }
 
   function onPointerDown(e) {
+    hasUserInteracted = true;
     isDragging = true;
     track.classList.add('is-dragging');
     cachedTrackRect = track.getBoundingClientRect();
@@ -120,14 +194,14 @@ export function initExplodedModule() {
     try { track.releasePointerCapture(e.pointerId); } catch (err) {}
   }
 
-  
   track.addEventListener('pointerdown', onPointerDown, { passive: false });
   track.addEventListener('pointermove', onPointerMove, { passive: false });
   track.addEventListener('pointerup', onPointerUp, { passive: true });
   track.addEventListener('pointercancel', onPointerUp, { passive: true });
 
-  
+  // ── Keyboard Accessibility ────────────────────────────────────────
   track.addEventListener('keydown', (e) => {
+    hasUserInteracted = true;
     if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') {
       e.preventDefault();
       targetPos = Math.max(0, currentPos - 5);
@@ -147,9 +221,10 @@ export function initExplodedModule() {
     }
   });
 
-  
+  // ── Spotlight Layer Selection ─────────────────────────────────────
   function selectLayer(targetId) {
-    
+    if (scene) scene.classList.add('has-active-layer');
+
     layerButtons.forEach(btn => {
       if (btn.getAttribute('data-layer-target') === targetId) {
         btn.classList.add('is-active');
@@ -158,7 +233,6 @@ export function initExplodedModule() {
       }
     });
 
-    
     layers.forEach(layer => {
       if (layer.id === targetId) {
         layer.classList.add('is-inspected');
@@ -167,29 +241,41 @@ export function initExplodedModule() {
       }
     });
 
-    
     resetAllPops();
-    if (currentPos <= 35 && popOutMap[targetId]) {
+    if (popOutMap[targetId]) {
       container.style.setProperty(popOutMap[targetId].var, popOutMap[targetId].val);
+      container.style.setProperty(popOutMap[targetId].scaleVar, popOutMap[targetId].scale);
+    }
+
+    if (hudNum && hudTitle && layerInfo[targetId]) {
+      hudNum.textContent = layerInfo[targetId].num;
+      hudTitle.textContent = layerInfo[targetId].title;
     }
   }
 
-  
   if (layerButtons.length) {
     layerButtons.forEach(btn => {
       btn.addEventListener('click', () => {
+        hasUserInteracted = true;
         const targetId = btn.getAttribute('data-layer-target');
         selectLayer(targetId);
       });
     });
   }
 
-  
+  // ── Scroll-Into-View Cinematic Auto-Explode Intro ──────────────────
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           container.classList.add('is-visible');
+          if (!hasPlayedIntro && !hasUserInteracted) {
+            hasPlayedIntro = true;
+            currentPos = 0;
+            targetPos = 50;
+            applyPosition(0);
+            startAnimation();
+          }
         }
       });
     }, { threshold: 0.25 });
@@ -197,7 +283,7 @@ export function initExplodedModule() {
     observer.observe(container);
   }
 
-  
+  // Default initial configuration
   applyPosition(50);
   selectLayer('layer-glass');
 }
