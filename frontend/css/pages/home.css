@@ -1029,24 +1029,6 @@
   }
 }
 
-/* ── Performance: content-visibility for below-fold sections ── */
-.services-overview,
-.projects-showcase,
-.solar-calculator-section,
-.before-after-section,
-.testimonials-section,
-.partners-section,
-.cta-section,
-.spec-cards-section,
-.exploded-module-section,
-.power-flow-section,
-.regional-offices-section,
-.process-roadmap,
-.tariff-section {
-  content-visibility: auto;
-  contain-intrinsic-size: auto 600px;
-}
-
 /* ── Section Centering & Scroll Anchor Alignment ── */
 #calculator,
 #rooftop-slider,
